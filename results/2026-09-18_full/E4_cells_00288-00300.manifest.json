@@ -1,0 +1,697 @@
+{
+ "command": "code/01_run_experiment.py --experiment E4 --config code/configs/base.yaml --cells 288:300 --out results/2026-09-18_full",
+ "experiment": "E4",
+ "cells": [
+  288,
+  300
+ ],
+ "n_rep_override": null,
+ "config_path": "code/configs/base.yaml",
+ "config": {
+  "meta": {
+   "protocol": "notes/protocol-2026-09-18-v01.md",
+   "config_version": "base-2026-09-18-v02",
+   "master_seed": 20260918,
+   "chunk_size": 20000
+  },
+  "parameters": {
+   "S_median_mm": {
+    "value": 10.0,
+    "unit": "mm",
+    "source": "VC width medians in T-TEER cohorts 9.5 [7.2-12.3] mm (10.1007/s00392-020-01784-w), 11 [8-12] and 13 [10-16] mm (10.3389/fcvm.2024.1452446); construct close",
+    "note": "median true AP span T1"
+   },
+   "S_log_sd": {
+    "value": 0.4,
+    "unit": "log",
+    "source": "derived: ln(12.3/7.2)/1.349 = 0.40 from IQR in 10.1007/s00392-020-01784-w",
+    "note": "5th-95th pct about 5.2 to 19 mm"
+   },
+   "r_lower": {
+    "value": 0.4,
+    "unit": "ratio",
+    "source": "assumed",
+    "note": "lower bound of SL/AP ellipticity ratio"
+   },
+   "r_upper": {
+    "value": 1.0,
+    "unit": "ratio",
+    "source": "assumed",
+    "note": "upper bound of SL/AP ratio"
+   },
+   "r_mean": {
+    "value": 0.64,
+    "grid": [
+     0.53,
+     0.64,
+     0.8,
+     0.9
+    ],
+    "unit": "ratio",
+    "source": "0.64 reproduces mean AP-SL VC width difference 3.9 mm (Song 2011, 10.1016/j.echo.2011.01.005, 3D TTE) at base case mix; 0.53 = 3D min/max VC diameter ratio of means (Singh 2026, 10.21037/acs-2025-1-72-tvd); 0.8 and 0.9 assumed",
+    "note": "E4 grid"
+   },
+   "r_concentration": {
+    "value": 8.0,
+    "unit": "none",
+    "source": "assumed",
+    "note": "a+b of the scaled Beta on (r_lower, r_upper)"
+   },
+   "K": {
+    "value": 3,
+    "grid": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "unit": "views",
+    "source": "design",
+    "note": "view 1 = anchor"
+   },
+   "view_errors": {
+    "value": true,
+    "grid": [
+     false,
+     true
+    ],
+    "unit": "bool",
+    "source": "design",
+    "note": "master switch for u and o (E4 noise-only scenario)"
+   },
+   "view_under": {
+    "value": true,
+    "unit": "bool",
+    "source": "design",
+    "note": "include plane-obliquity underestimation u"
+   },
+   "view_over": {
+    "value": true,
+    "grid": [
+     false,
+     true
+    ],
+    "unit": "bool",
+    "source": "design",
+    "note": "include atrial-level/blooming overestimation o"
+   },
+   "u_scale": {
+    "value": [
+     0.06,
+     0.25,
+     0.25,
+     0.3
+    ],
+    "unit": "fraction",
+    "source": "half-normal scale; long-axis mean underestimation 0.8*0.25 = 20% matches biplane-vs-3D 19-25% (Singh 2026 Table 3) and TG-SAX vs ME inflow-outflow gap difference about 2.9 mm of 8.1 (bRIGHT, 10.1016/j.echo.2023.12.002); anchor value assumed",
+    "note": "per view (anchor first); low-underestimation scenario [0.03,0.10,0.10,0.15] used as sensitivity"
+   },
+   "u_max": {
+    "value": 0.9,
+    "unit": "fraction",
+    "source": "assumed",
+    "note": "cap on u so mu stays positive"
+   },
+   "p_over": {
+    "value": [
+     0.05,
+     0.15,
+     0.15,
+     0.2
+    ],
+    "unit": "probability",
+    "source": "assumed (no clinical source; weak in-vitro blooming proxy 10.1016/j.echo.2005.03.021)",
+    "note": "probability of overestimation per view"
+   },
+   "o_median": {
+    "value": 0.15,
+    "unit": "fraction",
+    "source": "assumed",
+    "note": "median multiplicative overestimation when present"
+   },
+   "o_log_sd": {
+    "value": 0.5,
+    "unit": "log",
+    "source": "assumed",
+    "note": ""
+   },
+   "rho": {
+    "value": 0.3,
+    "grid": [
+     0.0,
+     0.3,
+     0.6,
+     0.9
+    ],
+    "unit": "correlation",
+    "source": "assumed",
+    "note": "inter-view correlation of latent error drivers"
+   },
+   "beat_cv": {
+    "value": 0.15,
+    "grid": [
+     0.05,
+     0.1,
+     0.15,
+     0.2,
+     0.25,
+     0.3
+    ],
+    "unit": "fraction",
+    "source": "beat-to-beat CV of colour PISA distance 15.5% (Moraldo 2013, 10.1016/j.ijcard.2012.11.059, close); jet area CV 14-22% (Wong 1987, 10.1016/0002-9149(87)91035-6, proxy)",
+    "note": "sigma_beat = sqrt(ln(1+cv^2))"
+   },
+   "beat_noise_centering": {
+    "value": "median",
+    "grid": [
+     "median",
+     "mean"
+    ],
+    "unit": "enum",
+    "source": "design",
+    "note": "median: eta ~ N(0, s^2) exactly as protocol (beat mean biased up by exp(s^2/2)); mean: eta centred so E[span]=mu"
+   },
+   "rhythm": {
+    "value": "sinus",
+    "grid": [
+     "sinus",
+     "AF"
+    ],
+    "unit": "enum",
+    "source": "design",
+    "note": ""
+   },
+   "rr_cv_sinus": {
+    "value": 0.03,
+    "unit": "fraction",
+    "source": "assumed",
+    "note": "RR CV in sinus rhythm"
+   },
+   "rr_cv_af": {
+    "value": 0.2,
+    "grid": [
+     0.1,
+     0.2,
+     0.3
+    ],
+    "unit": "fraction",
+    "source": "assumed",
+    "note": "RR CV in AF"
+   },
+   "beta_rr": {
+    "value": 0.2,
+    "unit": "log/log",
+    "source": "assumed (direction from Sumida 2003 aortic Doppler",
+    "10.1016/s0894-7317(03)00275-x)": null,
+    "note": ""
+   },
+   "beta_drr": {
+    "value": 0.0,
+    "unit": "log/log",
+    "source": "assumed",
+    "note": "slope on log(RR2/RR1); 0 = protocol model (index beat has no special advantage)"
+   },
+   "af_extra_cv": {
+    "value": 0.05,
+    "unit": "fraction",
+    "source": "assumed",
+    "note": "additional residual beat CV in AF"
+   },
+   "data_mode": {
+    "value": "prospective",
+    "grid": [
+     "retrospective",
+     "prospective"
+    ],
+    "unit": "enum",
+    "source": "design",
+    "note": ""
+   },
+   "avail_lambda": {
+    "value": 4.0,
+    "unit": "beats",
+    "source": "assumed",
+    "note": "zero-truncated Poisson parameter for retrospective available beats"
+   },
+   "max_beats_retro": {
+    "value": 15,
+    "unit": "beats",
+    "source": "assumed",
+    "note": "cap on retrospective available beats"
+   },
+   "max_beats_prosp": {
+    "value": 30,
+    "unit": "beats",
+    "source": "assumed",
+    "note": "acquisition cap standing in for 'unlimited on request'"
+   },
+   "N_beats": {
+    "value": 3,
+    "grid": [
+     1,
+     3,
+     5,
+     7,
+     10,
+     13
+    ],
+    "unit": "beats",
+    "source": "design",
+    "note": ""
+   },
+   "window": {
+    "value": 0.15,
+    "grid": [
+     null,
+     0.1,
+     0.15,
+     0.2,
+     0.25
+    ],
+    "unit": "fraction",
+    "source": "design",
+    "note": "null = no acceptance window"
+   },
+   "limited_value": {
+    "value": "all_acquired",
+    "grid": [
+     "all_acquired",
+     "first_n"
+    ],
+    "unit": "enum",
+    "source": "design",
+    "note": "value reported when window never met"
+   },
+   "sigma_cal_mm": {
+    "value": 1.0,
+    "unit": "mm",
+    "source": "per-reading VC width error SD 0.69 mm (Hauptmann 2026 TTE, 10.1001/jamacardio.2026.3803) and within-reader about 1.2 mm single width (derived from Singh 2026 TEE ICCs)",
+    "note": "per-beat caliper SD"
+   },
+   "sigma_rb_mm": {
+    "value": 0.75,
+    "grid": [
+     0.0,
+     0.75,
+     2.0
+    ],
+    "unit": "mm",
+    "source": "about 0.75 mm from inter-minus-intra variance (Singh 2026, n=10, imprecise); 2.0 represents unstandardised multi-institution readers (Alexander 2022, 10.1053/j.jvca.2022.03.025, not convertible)",
+    "note": "reader-level bias SD"
+   },
+   "measure_floor_mm": {
+    "value": null,
+    "grid": [
+     null,
+     0.5
+    ],
+    "unit": "mm",
+    "source": "design",
+    "note": "null = protocol-literal Gaussian caliper error (negative readings possible for small SL spans); a value floors each measured beat"
+   },
+   "drift_mm_per_100": {
+    "value": 0.0,
+    "unit": "mm",
+    "source": "assumed",
+    "note": "reader drift per 100 cases (E5/E6 only)"
+   },
+   "g_log_sd": {
+    "value": 0.1,
+    "unit": "log",
+    "source": "inter-instrument SD(log width) 0.09-0.13 derived from matched-Nyquist jet areas across 6 machines by sqrt conversion (Fan 1994, 10.1161/01.cir.89.5.2141, proxy)",
+    "note": "study-level multiplicative factor"
+   },
+   "t_warn": {
+    "value": 3.0,
+    "grid": [
+     2.0,
+     3.0,
+     4.0
+    ],
+    "unit": "mm",
+    "source": "design",
+    "note": ""
+   },
+   "t_adj": {
+    "value": 5.0,
+    "grid": [
+     4.0,
+     5.0,
+     6.0
+    ],
+    "unit": "mm",
+    "source": "design",
+    "note": ""
+   },
+   "s_det": {
+    "value": 0.8,
+    "grid": [
+     0.0,
+     0.5,
+     0.8,
+     1.0
+    ],
+    "unit": "probability",
+    "source": "design",
+    "note": ""
+   },
+   "f_rej": {
+    "value": 0.1,
+    "grid": [
+     0.0,
+     0.1,
+     0.3
+    ],
+    "unit": "probability",
+    "source": "design",
+    "note": ""
+   },
+   "a4_scrutiny": {
+    "value": "triggered",
+    "grid": [
+     "triggered",
+     "adj_only",
+     "all_higher"
+    ],
+    "unit": "enum",
+    "source": "design",
+    "note": "which higher verification views the reader judges (protocol ambiguous)"
+   },
+   "cutoffs_mm": {
+    "value": [
+     7.0,
+     10.0,
+     13.0
+    ],
+    "unit": "mm",
+    "source": "design",
+    "note": "generic cut-offs"
+   },
+   "error_threshold_mm": {
+    "value": 2.0,
+    "unit": "mm",
+    "source": "assumed",
+    "note": "true error present if g*S*o_v or g*S*u_anchor exceeds this"
+   },
+   "sigma_ai_mm": {
+    "value": 2.0,
+    "grid": [
+     1.0,
+     2.0,
+     3.0
+    ],
+    "unit": "mm",
+    "source": "assumed",
+    "note": "AI error SD vs T1"
+   },
+   "n_val": {
+    "value": 200,
+    "unit": "patients",
+    "source": "design",
+    "note": "patients per simulated validation study"
+   },
+   "n_readers": {
+    "value": 4,
+    "unit": "readers",
+    "source": "design",
+    "note": "reader pool per study (E5)"
+   },
+   "adj_tol_mm": {
+    "value": 2.0,
+    "grid": [
+     1.0,
+     2.0,
+     3.0
+    ],
+    "unit": "mm",
+    "source": "design",
+    "note": "adjudication tolerance between two reads"
+   },
+   "adjudication_value": {
+    "value": "adjudicator",
+    "grid": [
+     "adjudicator",
+     "closest_pair_mean"
+    ],
+    "unit": "enum",
+    "source": "design",
+    "note": ""
+   },
+   "reference_estimator": {
+    "value": "A4",
+    "grid": [
+     "A1",
+     "A4"
+    ],
+    "unit": "enum",
+    "source": "design",
+    "note": "rule used for each read"
+   },
+   "calib_n": {
+    "value": 20000,
+    "unit": "patients",
+    "source": "design",
+    "note": "patients used to fit the inherited-bias AI (regression of single read on T1)"
+   },
+   "study_axis": {
+    "value": "AP",
+    "grid": [
+     "AP",
+     "SL"
+    ],
+    "unit": "enum",
+    "source": "design",
+    "note": "axis analysed in E5/E6"
+   },
+   "gold_n": {
+    "value": [
+     25,
+     50,
+     100,
+     200
+    ],
+    "unit": "patients",
+    "source": "design",
+    "note": "double-read gold set sizes"
+   },
+   "production_n": {
+    "value": 500,
+    "unit": "patients",
+    "source": "design",
+    "note": ""
+   },
+   "overlap_frac": {
+    "value": [
+     0.1,
+     0.2,
+     0.3,
+     0.5
+    ],
+    "unit": "fraction",
+    "source": "design",
+    "note": ""
+   },
+   "sentinel_n": {
+    "value": [
+     10,
+     25,
+     50,
+     100
+    ],
+    "unit": "patients",
+    "source": "design",
+    "note": "manual-only sentinel subset"
+   },
+   "anchor_alpha": {
+    "value": [
+     0.0,
+     0.1,
+     0.2,
+     0.3,
+     0.5
+    ],
+    "unit": "fraction",
+    "source": "design",
+    "note": "0 included as size check"
+   },
+   "ai_draft_sigma_mm": {
+    "value": 2.0,
+    "grid": [
+     1.0,
+     2.0,
+     3.0
+    ],
+    "unit": "mm",
+    "source": "assumed",
+    "note": ""
+   },
+   "ai_draft_bias_mm": {
+    "value": 1.0,
+    "unit": "mm",
+    "source": "assumed",
+    "note": "systematic error of the AI draft vs T1"
+   },
+   "test_level": {
+    "value": 0.05,
+    "unit": "probability",
+    "source": "design",
+    "note": "type I error for sentinel tests"
+   }
+  },
+  "experiments": {
+   "E1": {
+    "n_patients": 100000,
+    "fixed": {},
+    "vary": [
+     {
+      "name": "u_level",
+      "levels": [
+       {
+        "u_scale": [
+         0.06,
+         0.25,
+         0.25,
+         0.3
+        ]
+       },
+       {
+        "u_scale": [
+         0.03,
+         0.1,
+         0.1,
+         0.15
+        ]
+       }
+      ]
+     },
+     "K",
+     "beat_cv",
+     "view_over",
+     "rho",
+     "N_beats"
+    ]
+   },
+   "E2": {
+    "n_patients": 100000,
+    "fixed": {
+     "K": 1
+    },
+    "vary": [
+     {
+      "name": "rhythm_state",
+      "levels": [
+       {
+        "rhythm": "sinus"
+       },
+       {
+        "rhythm": "AF",
+        "rr_cv_af": 0.1
+       },
+       {
+        "rhythm": "AF",
+        "rr_cv_af": 0.2
+       },
+       {
+        "rhythm": "AF",
+        "rr_cv_af": 0.3
+       }
+      ]
+     },
+     "beat_cv",
+     "window",
+     "N_beats",
+     "data_mode"
+    ]
+   },
+   "E3": {
+    "n_patients": 100000,
+    "fixed": {},
+    "vary": [
+     {
+      "name": "u_level",
+      "levels": [
+       {
+        "u_scale": [
+         0.06,
+         0.25,
+         0.25,
+         0.3
+        ]
+       },
+       {
+        "u_scale": [
+         0.03,
+         0.1,
+         0.1,
+         0.15
+        ]
+       }
+      ]
+     },
+     "K",
+     "beat_cv",
+     "view_over"
+    ]
+   },
+   "E4": {
+    "n_patients": 100000,
+    "fixed": {
+     "K": 4
+    },
+    "vary": [
+     {
+      "name": "u_level",
+      "levels": [
+       {
+        "u_scale": [
+         0.06,
+         0.25,
+         0.25,
+         0.3
+        ]
+       },
+       {
+        "u_scale": [
+         0.03,
+         0.1,
+         0.1,
+         0.15
+        ]
+       }
+      ]
+     },
+     "view_errors",
+     "r_mean",
+     "beat_cv",
+     "N_beats"
+    ]
+   },
+   "E5": {
+    "n_studies": 2000,
+    "fixed": {},
+    "vary": [
+     "beat_cv",
+     "view_over"
+    ]
+   },
+   "E6": {
+    "n_studies": 2000,
+    "fixed": {},
+    "vary": [
+     "beat_cv",
+     "sigma_rb_mm",
+     "ai_draft_sigma_mm"
+    ]
+   }
+  }
+ },
+ "duomaxsim": "0.1.0",
+ "python": "3.11.16",
+ "numpy": "2.4.6",
+ "scipy": "1.17.1",
+ "pandas": "3.0.5",
+ "host": "mel0393",
+ "date": "2026-09-18T14:43:29+0200",
+ "wall_s_total": 82.05682029691525,
+ "rows": 1440
+}

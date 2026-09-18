@@ -1,0 +1,4 @@
+test,sentinel_n,p_beat_cv,p_sigma_rb_mm,p_ai_draft_sigma_mm,value,mcse
+either_unadjusted,100,0.3,2.0,1.0,0.1905,0.008780938161722813
+f_variance,100,0.3,2.0,1.0,0.151,0.008006216334823834
+welch_mean,50,0.3,0.75,1.0,0.0645,0.005492711079239468

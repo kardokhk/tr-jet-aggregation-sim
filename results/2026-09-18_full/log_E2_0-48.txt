@@ -1,0 +1,1 @@
+wrote results/2026-09-18_full/E2_cells_00000-00048.parquet rows=6432 wall=42.4s

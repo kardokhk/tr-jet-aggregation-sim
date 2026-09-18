@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this software or its results, please cite it as below."
+title: "Beat and view aggregation rules for tricuspid regurgitant jet dimensions: simulation code and results"
+version: 0.3.1
+date-released: 2026-09-18
+doi: 10.5281/zenodo.22833344
+license: MIT
+repository-code: "https://github.com/kardokhk/tr-jet-aggregation-sim"
+authors:
+  - family-names: Kakabra
+    given-names: Kardokh
+    affiliation: "RCSI University of Medicine and Health Sciences; CVRI Dublin"
+keywords:
+  - tricuspid regurgitation
+  - echocardiography
+  - measurement error
+  - Monte Carlo simulation
+  - reference standard
+  - artificial intelligence validation

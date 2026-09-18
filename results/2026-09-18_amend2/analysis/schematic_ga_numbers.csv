@@ -1,0 +1,47 @@
+name,value,mcse,source,note
+"E1b A1 AP bias vs T1, max over 12 view-accuracy scenarios",0.01615579299059838,0.006027636584871373,"amend2 E1 cell 180, estimator A1, AP, T1, bias_mm","u_anchor 0.03, u_long 0.5"
+"E1b A1 AP bias vs T1, min over 12 view-accuracy scenarios",-1.9274649101480417,0.008176023676060925,"amend2 E1 cell 756, estimator A1, AP, T1, bias_mm","u_anchor 0.25, u_long 0.25"
+"E1b A2 AP bias vs T1, max over 12 view-accuracy scenarios",-0.27504934153958793,0.005217798391316469,"amend2 E1 cell 36, estimator A2, AP, T1, bias_mm","u_anchor 0.03, u_long 0.1"
+"E1b A2 AP bias vs T1, min over 12 view-accuracy scenarios",-3.1609321231952983,0.008079344150049612,"amend2 E1 cell 828, estimator A2, AP, T1, bias_mm","u_anchor 0.25, u_long 0.5"
+"E1b A3 AP bias vs T1, max over 12 view-accuracy scenarios",0.9197770079649943,0.006349697209956212,"amend2 E1 cell 36, estimator A3, AP, T1, bias_mm","u_anchor 0.03, u_long 0.1"
+"E1b A3 AP bias vs T1, min over 12 view-accuracy scenarios",-0.7675215473108369,0.007319215296873411,"amend2 E1 cell 828, estimator A3, AP, T1, bias_mm","u_anchor 0.25, u_long 0.5"
+"E1b A4 AP bias vs T1, max over 12 view-accuracy scenarios",0.762640753204349,0.005912899852230857,"amend2 E1 cell 36, estimator A4, AP, T1, bias_mm, s_det 0.8, f_rej 0.1","u_anchor 0.03, u_long 0.1"
+"E1b A4 AP bias vs T1, min over 12 view-accuracy scenarios",-0.9722003195820829,0.007314102595149571,"amend2 E1 cell 828, estimator A4, AP, T1, bias_mm, s_det 0.8, f_rej 0.1","u_anchor 0.25, u_long 0.5"
+"E2 A1 RMSE vs T1, sinus, CV 15%, N 1, W 0.0",2.52595,0.00791701,"full/analysis/E2_error.csv: sinus, 0.15, prospective, AP, A1, subset all, T1, rmse_mm",
+"E2 A1 RMSE vs T1, sinus, CV 15%, N 3, W 0.0",1.94244,0.00627396,"full/analysis/E2_error.csv: sinus, 0.15, prospective, AP, A1, subset all, T1, rmse_mm",
+"E2 A1 RMSE vs T1, sinus, CV 15%, N 5, W 0.0",1.79908,0.00596741,"full/analysis/E2_error.csv: sinus, 0.15, prospective, AP, A1, subset all, T1, rmse_mm",
+"E2 A1 RMSE vs T1, sinus, CV 15%, N 7, W 0.0",1.71858,0.00608717,"full/analysis/E2_error.csv: sinus, 0.15, prospective, AP, A1, subset all, T1, rmse_mm",
+"E2 A1 RMSE vs T1, sinus, CV 15%, N 10, W 0.0",1.68645,0.0058576,"full/analysis/E2_error.csv: sinus, 0.15, prospective, AP, A1, subset all, T1, rmse_mm",
+"E2 A1 RMSE vs T1, sinus, CV 15%, N 13, W 0.0",1.64494,0.005569,"full/analysis/E2_error.csv: sinus, 0.15, prospective, AP, A1, subset all, T1, rmse_mm",
+"E2 A1 RMSE vs T1, sinus, CV 15%, N 1, W 0.15",2.54177,0.00817728,"full/analysis/E2_error.csv: sinus, 0.15, prospective, AP, A1, subset all, T1, rmse_mm",
+"E2 A1 RMSE vs T1, sinus, CV 15%, N 3, W 0.15",2.04082,0.00654564,"full/analysis/E2_error.csv: sinus, 0.15, prospective, AP, A1, subset all, T1, rmse_mm",
+"E2 A1 RMSE vs T1, sinus, CV 15%, N 5, W 0.15",1.89188,0.00618684,"full/analysis/E2_error.csv: sinus, 0.15, prospective, AP, A1, subset all, T1, rmse_mm",
+"E2 A1 RMSE vs T1, sinus, CV 15%, N 7, W 0.15",1.81743,0.00583557,"full/analysis/E2_error.csv: sinus, 0.15, prospective, AP, A1, subset all, T1, rmse_mm",
+"E2 A1 RMSE vs T1, sinus, CV 15%, N 10, W 0.15",1.75247,0.00604346,"full/analysis/E2_error.csv: sinus, 0.15, prospective, AP, A1, subset all, T1, rmse_mm",
+"E2 A1 RMSE vs T1, sinus, CV 15%, N 13, W 0.15",1.70764,0.00542356,"full/analysis/E2_error.csv: sinus, 0.15, prospective, AP, A1, subset all, T1, rmse_mm",
+"E2 window effect on A1 RMSE vs T1, N 3, W 0.15 (windowed minus none)",0.0983771,0.00906686,"full/analysis/E2_window_effect.csv: sinus, 0.15, N 3, prospective, AP, A1, T1, rmse_mm, W 0.15",95% MCI 0.081 to 0.116
+"E2 P(window 15% met by first 3 beats), sinus, CV 15%, AP",0.41789,0.00155967,"full/analysis/E2_window_met.csv: sinus, 0.15, W 0.15, N 3, prospective, AP",
+"E4 hit rate for true error > 2 mm at threshold 3 mm, AP (per pair)",0.215586167035931,0.004943210463041353,"full/analysis/E4_operating.csv: cell 193, AP, tau 3",MCSE conservative (pair SE x sqrt 3)
+"E4 false-alarm rate at threshold 3 mm, AP (per pair)",0.0217914467228672,0.0002762940296288,"full/analysis/E4_operating.csv: cell 193, AP, tau 3",
+"E4 hit rate for true error > 2 mm at threshold 5 mm, AP (per pair)",0.0883826220980638,0.0034120530325165346,"full/analysis/E4_operating.csv: cell 193, AP, tau 5",MCSE conservative (pair SE x sqrt 3)
+"E4 false-alarm rate at threshold 5 mm, AP (per pair)",0.0028613584111045,0.0001010826558719,"full/analysis/E4_operating.csv: cell 193, AP, tau 5",
+"E4 p_any_trigger at 3 mm, AP, no view errors",0.13073,0.0010660190762833,"full/analysis/E4_any_trigger.csv: cell 49, AP, p_any_trigger, tau 3",
+"E4 p_any_adj at 5 mm, AP, no view errors",0.0237,0.0004810229724243,"full/analysis/E4_any_trigger.csv: cell 49, AP, p_any_adj, tau 5",
+"E4 p_any_trigger at 3 mm, AP, view errors",0.09269,0.0009170526915068,"full/analysis/E4_any_trigger.csv: cell 193, AP, p_any_trigger, tau 3",
+"E4 p_any_adj at 5 mm, AP, view errors",0.02447,0.0004885818160758,"full/analysis/E4_any_trigger.csv: cell 193, AP, p_any_adj, tau 5",
+"E5b independent AI true_mae, sigma_AI 2 mm, lambda 1, reference mean of 2 reads",1.5942918899935408,0.0018771386799669974,"amend2 E5 cell 11, ai independent, ref mean2, true_mae",
+"E5b independent AI apparent_mae, sigma_AI 2 mm, lambda 1, reference mean of 2 reads",2.117475159009091,0.0029376592155096245,"amend2 E5 cell 11, ai independent, ref mean2, apparent_mae",
+"E5b shared AI true_mae, sigma_AI 2 mm, lambda 1, reference mean of 2 reads",2.082018608496891,0.0026350572091628907,"amend2 E5 cell 11, ai shared, ref mean2, true_mae",
+"E5b shared AI apparent_mae, sigma_AI 2 mm, lambda 1, reference mean of 2 reads",1.7856509720300993,0.00240922030062228,"amend2 E5 cell 11, ai shared, ref mean2, apparent_mae",
+"E5b P(shared AI apparent MAE < independent AI), ref mean2, lambda 1, sigma 2",0.999,0.0007067531393633852,"amend2 E5 cell 11, ai shared, ref mean2, p_lower_mae_than_independent",
+"E5b paired apparent MAE difference shared minus independent, ref mean2",-0.33182418697899163,0.002386745854960046,"amend2 E5 cell 11, ai shared, ref mean2, paired_mae_diff_mean",
+"E5b P(shared AI apparent MAE < independent AI), ref single, lambda 1, sigma 2",0.9985,0.0008653756409790912,"amend2 E5 cell 11, ai shared, ref single, p_lower_mae_than_independent",
+"E5b paired apparent MAE difference shared minus independent, ref single",-0.3317457106739211,0.0024345641930525463,"amend2 E5 cell 11, ai shared, ref single, paired_mae_diff_mean",
+E5b paired true MAE difference shared minus independent (vs T1),0.48772671850335003,0.0022888600077065626,"amend2 E5 cell 11, ai shared, ref T1, paired_mae_diff_mean",
+"E5 independent AI Bland-Altman bias true (vs T1), sigma 2",-0.0004064498040053,0.0031407966588375,"full/analysis/E5E6_E5_ai_agreement.csv: cell 5, independent, 2.0, mean2, ba_bias, true",
+"E5 independent AI Bland-Altman bias apparent vs mean of 2 reads, sigma 2",-0.4019651764840952,0.0093686956563329,"full/analysis/E5E6_E5_ai_agreement.csv: cell 5, independent, 2.0, mean2, ba_bias, apparent",
+"E5 inherited AI Bland-Altman bias true (vs T1), sigma 2",0.4135433861626918,0.0031411926912504,"full/analysis/E5E6_E5_ai_agreement.csv: cell 5, inherited, 2.0, mean2, ba_bias, true",
+"E5 inherited AI Bland-Altman bias apparent vs mean of 2 reads, sigma 2",0.0119846594826019,0.009367893567941,"full/analysis/E5E6_E5_ai_agreement.csv: cell 5, inherited, 2.0, mean2, ba_bias, apparent",
+"E5 independent AI MAE true, sigma 2",1.595233399220093,0.0018401541823403,"full/analysis/E5E6_E5_ai_agreement.csv: cell 5, independent, 2.0, single, mae, true",
+"E5 independent AI MAE apparent vs single read, sigma 2",2.222850355608531,0.0031238691233364,"full/analysis/E5E6_E5_ai_agreement.csv: cell 5, independent, 2.0, single, mae, apparent",
+"E5 independent AI MAE relative inflation vs single read (%), sigma 2",39.3432683076519,,"full/analysis/E5E6_E5_ai_agreement.csv: cell 5, independent, 2.0, single, mae, rel_diff_pct",

@@ -1,0 +1,6 @@
+test,n_combos,min_size,median_size,max_size,n_outside_mci,n_above,n_below,n_strict_valid,n_liberal_valid
+bf,216,0.0305,0.047,0.062,25,2,23,214,216
+bf_onesided,216,0.024,0.041,0.057,111,0,111,216,216
+either_unadjusted,216,0.0885,0.124,0.1855,216,216,0,0,0
+f_variance,216,0.047,0.075,0.1385,166,166,0,50,109
+welch_mean,216,0.038,0.0495,0.0615,12,2,10,214,216

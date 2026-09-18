@@ -1,0 +1,146 @@
+panel,axis,series,x_beat_cv,y,mcse,n,table,x_false_alarm,x_mcse,n_nonevent,x_r_mean
+a,AP,p_any_trigger tau=2 view_errors=True,0.05,0.10041,0.0009504095532979,100000.0,E4_any_trigger.csv cell 181,,,,
+a,AP,p_any_trigger tau=2 view_errors=True,0.1,0.13606,0.0010841940619649,100000.0,E4_any_trigger.csv cell 187,,,,
+a,AP,p_any_trigger tau=2 view_errors=True,0.15,0.18365,0.0012244291629163,100000.0,E4_any_trigger.csv cell 193,,,,
+a,AP,p_any_trigger tau=2 view_errors=True,0.2,0.23329,0.0013374071029421,100000.0,E4_any_trigger.csv cell 199,,,,
+a,AP,p_any_trigger tau=2 view_errors=True,0.25,0.28122,0.0014217429852121,100000.0,E4_any_trigger.csv cell 205,,,,
+a,AP,p_any_trigger tau=2 view_errors=True,0.3,0.3236,0.0014794696347002,100000.0,E4_any_trigger.csv cell 211,,,,
+a,AP,p_any_trigger tau=2 view_errors=False,0.05,0.06784,0.0007952215691239,100000.0,E4_any_trigger.csv cell 37,,,,
+a,AP,p_any_trigger tau=2 view_errors=False,0.1,0.17529,0.0012023452744532,100000.0,E4_any_trigger.csv cell 43,,,,
+a,AP,p_any_trigger tau=2 view_errors=False,0.15,0.28164,0.0014223885207635,100000.0,E4_any_trigger.csv cell 49,,,,
+a,AP,p_any_trigger tau=2 view_errors=False,0.2,0.36454,0.0015220071892077,100000.0,E4_any_trigger.csv cell 55,,,,
+a,AP,p_any_trigger tau=2 view_errors=False,0.25,0.43159,0.0015662696827175,100000.0,E4_any_trigger.csv cell 61,,,,
+a,AP,p_any_trigger tau=2 view_errors=False,0.3,0.47431,0.0015790504231974,100000.0,E4_any_trigger.csv cell 67,,,,
+a,AP,p_any_trigger tau=3 view_errors=True,0.05,0.04015,0.0006207896382833,100000.0,E4_any_trigger.csv cell 181,,,,
+a,AP,p_any_trigger tau=3 view_errors=True,0.1,0.05853,0.0007423222959065,100000.0,E4_any_trigger.csv cell 187,,,,
+a,AP,p_any_trigger tau=3 view_errors=True,0.15,0.09269,0.0009170526915068,100000.0,E4_any_trigger.csv cell 193,,,,
+a,AP,p_any_trigger tau=3 view_errors=True,0.2,0.1332,0.0010745127267743,100000.0,E4_any_trigger.csv cell 199,,,,
+a,AP,p_any_trigger tau=3 view_errors=True,0.25,0.1768,0.001206406896532,100000.0,E4_any_trigger.csv cell 205,,,,
+a,AP,p_any_trigger tau=3 view_errors=True,0.3,0.2209,0.0013118810540593,100000.0,E4_any_trigger.csv cell 211,,,,
+a,AP,p_any_trigger tau=3 view_errors=False,0.05,0.00593,0.0002427928149678,100000.0,E4_any_trigger.csv cell 37,,,,
+a,AP,p_any_trigger tau=3 view_errors=False,0.1,0.05136,0.0006980125385693,100000.0,E4_any_trigger.csv cell 43,,,,
+a,AP,p_any_trigger tau=3 view_errors=False,0.15,0.13073,0.0010660190762833,100000.0,E4_any_trigger.csv cell 49,,,,
+a,AP,p_any_trigger tau=3 view_errors=False,0.2,0.21422,0.0012974197146644,100000.0,E4_any_trigger.csv cell 55,,,,
+a,AP,p_any_trigger tau=3 view_errors=False,0.25,0.28743,0.0014311324016316,100000.0,E4_any_trigger.csv cell 61,,,,
+a,AP,p_any_trigger tau=3 view_errors=False,0.3,0.34225,0.0015003830760842,100000.0,E4_any_trigger.csv cell 67,,,,
+a,AP,p_any_trigger tau=4 view_errors=True,0.05,0.01815,0.0004221442585183,100000.0,E4_any_trigger.csv cell 181,,,,
+a,AP,p_any_trigger tau=4 view_errors=True,0.1,0.02711,0.0005135664309512,100000.0,E4_any_trigger.csv cell 187,,,,
+a,AP,p_any_trigger tau=4 view_errors=True,0.15,0.04641,0.0006652526730498,100000.0,E4_any_trigger.csv cell 193,,,,
+a,AP,p_any_trigger tau=4 view_errors=True,0.2,0.07448,0.0008302573673265,100000.0,E4_any_trigger.csv cell 199,,,,
+a,AP,p_any_trigger tau=4 view_errors=True,0.25,0.10972,0.0009883396258371,100000.0,E4_any_trigger.csv cell 205,,,,
+a,AP,p_any_trigger tau=4 view_errors=True,0.3,0.14811,0.0011232694596578,100000.0,E4_any_trigger.csv cell 211,,,,
+a,AP,p_any_trigger tau=4 view_errors=False,0.05,0.00032,5.65594908039314e-05,100000.0,E4_any_trigger.csv cell 37,,,,
+a,AP,p_any_trigger tau=4 view_errors=False,0.1,0.01339,0.0003634653752422,100000.0,E4_any_trigger.csv cell 43,,,,
+a,AP,p_any_trigger tau=4 view_errors=False,0.15,0.05667,0.0007311532746285,100000.0,E4_any_trigger.csv cell 49,,,,
+a,AP,p_any_trigger tau=4 view_errors=False,0.2,0.11725,0.0010173614770571,100000.0,E4_any_trigger.csv cell 55,,,,
+a,AP,p_any_trigger tau=4 view_errors=False,0.25,0.18206,0.0012203038818261,100000.0,E4_any_trigger.csv cell 61,,,,
+a,AP,p_any_trigger tau=4 view_errors=False,0.3,0.23758,0.0013458667972723,100000.0,E4_any_trigger.csv cell 67,,,,
+b,AP,p_any_adj tau=5 view_errors=True,0.05,0.0087,0.0002936717555366,100000.0,E4_any_trigger.csv cell 181,,,,
+b,AP,p_any_adj tau=5 view_errors=True,0.1,0.01326,0.0003617205053629,100000.0,E4_any_trigger.csv cell 187,,,,
+b,AP,p_any_adj tau=5 view_errors=True,0.15,0.02447,0.0004885818160758,100000.0,E4_any_trigger.csv cell 193,,,,
+b,AP,p_any_adj tau=5 view_errors=True,0.2,0.0416,0.0006314225209794,100000.0,E4_any_trigger.csv cell 199,,,,
+b,AP,p_any_adj tau=5 view_errors=True,0.25,0.06812,0.0007967412729362,100000.0,E4_any_trigger.csv cell 205,,,,
+b,AP,p_any_adj tau=5 view_errors=True,0.3,0.09843,0.0009420272559751,100000.0,E4_any_trigger.csv cell 211,,,,
+b,AP,p_any_adj tau=5 view_errors=False,0.05,3e-05,1.732024826611905e-05,100000.0,E4_any_trigger.csv cell 37,,,,
+b,AP,p_any_adj tau=5 view_errors=False,0.1,0.00381,0.0001948200169387,100000.0,E4_any_trigger.csv cell 43,,,,
+b,AP,p_any_adj tau=5 view_errors=False,0.15,0.0237,0.0004810229724243,100000.0,E4_any_trigger.csv cell 49,,,,
+b,AP,p_any_adj tau=5 view_errors=False,0.2,0.0632,0.000769452792574,100000.0,E4_any_trigger.csv cell 55,,,,
+b,AP,p_any_adj tau=5 view_errors=False,0.25,0.11251,0.0009992572236416,100000.0,E4_any_trigger.csv cell 61,,,,
+b,AP,p_any_adj tau=5 view_errors=False,0.3,0.16136,0.0011632839309472,100000.0,E4_any_trigger.csv cell 67,,,,
+b,AP,p_any_adj tau=6 view_errors=True,0.05,0.00464,0.0002149062679402,100000.0,E4_any_trigger.csv cell 181,,,,
+b,AP,p_any_adj tau=6 view_errors=True,0.1,0.00631,0.0002504033526133,100000.0,E4_any_trigger.csv cell 187,,,,
+b,AP,p_any_adj tau=6 view_errors=True,0.15,0.0136,0.0003662654774886,100000.0,E4_any_trigger.csv cell 193,,,,
+b,AP,p_any_adj tau=6 view_errors=True,0.2,0.02428,0.0004867286882853,100000.0,E4_any_trigger.csv cell 199,,,,
+b,AP,p_any_adj tau=6 view_errors=True,0.25,0.04195,0.0006339573921013,100000.0,E4_any_trigger.csv cell 205,,,,
+b,AP,p_any_adj tau=6 view_errors=True,0.3,0.06569,0.0007834208568834,100000.0,E4_any_trigger.csv cell 211,,,,
+b,AP,p_any_adj tau=6 view_errors=False,0.05,0.0,0.0,100000.0,E4_any_trigger.csv cell 37,,,,
+b,AP,p_any_adj tau=6 view_errors=False,0.1,0.00105,0.000102415697039,100000.0,E4_any_trigger.csv cell 43,,,,
+b,AP,p_any_adj tau=6 view_errors=False,0.15,0.01091,0.0003284961476182,100000.0,E4_any_trigger.csv cell 49,,,,
+b,AP,p_any_adj tau=6 view_errors=False,0.2,0.03423,0.0005749635388439,100000.0,E4_any_trigger.csv cell 55,,,,
+b,AP,p_any_adj tau=6 view_errors=False,0.25,0.06968,0.000805137861487,100000.0,E4_any_trigger.csv cell 61,,,,
+b,AP,p_any_adj tau=6 view_errors=False,0.3,0.10867,0.0009841790035354,100000.0,E4_any_trigger.csv cell 67,,,,
+c,AP,ppv tau=2,0.05,0.5329581993569131,0.0081668322012526,11196.0,E4_operating.csv cell 181,,,,
+c,AP,ppv tau=2,0.1,0.3935934031081509,0.0067393731570192,15765.0,E4_operating.csv cell 187,,,,
+c,AP,ppv tau=2,0.15,0.2897990378995639,0.0052686948285195,22243.0,E4_operating.csv cell 193,,,,
+c,AP,ppv tau=2,0.2,0.2269595470359506,0.0042371007970612,29318.0,E4_operating.csv cell 199,,,,
+c,AP,ppv tau=2,0.25,0.1979393807239424,0.0036030335729817,36688.0,E4_operating.csv cell 205,,,,
+c,AP,ppv tau=2,0.3,0.1697689859651532,0.0031114503889462,43677.0,E4_operating.csv cell 211,,,,
+c,AP,ppv tau=3,0.05,0.7970844110039972,0.0106812677125493,4253.0,E4_operating.csv cell 181,,,,
+c,AP,ppv tau=3,0.1,0.6004025390927388,0.0105562728063183,6459.0,E4_operating.csv cell 187,,,,
+c,AP,ppv tau=3,0.15,0.423823501562352,0.0083287225254029,10561.0,E4_operating.csv cell 193,,,,
+c,AP,ppv tau=3,0.2,0.3117755114968011,0.0063855290342013,15787.0,E4_operating.csv cell 199,,,,
+c,AP,ppv tau=3,0.25,0.2561229686559563,0.0051442094542533,21599.0,E4_operating.csv cell 205,,,,
+c,AP,ppv tau=3,0.3,0.2117972085680456,0.0042390003455134,27871.0,E4_operating.csv cell 211,,,,
+c,AP,ppv tau=4,0.05,0.9382321618743344,0.009621641964227,1878.0,E4_operating.csv cell 181,,,,
+c,AP,ppv tau=4,0.1,0.7788194444444444,0.0133954173367117,2880.0,E4_operating.csv cell 187,,,,
+c,AP,ppv tau=4,0.15,0.5737833594976453,0.0119987248111025,5096.0,E4_operating.csv cell 193,,,,
+c,AP,ppv tau=4,0.2,0.4047787193973635,0.0092236207250623,8496.0,E4_operating.csv cell 199,,,,
+c,AP,ppv tau=4,0.25,0.3209298697246275,0.0071416068357469,12819.0,E4_operating.csv cell 205,,,,
+c,AP,ppv tau=4,0.3,0.2571172382873795,0.0056668309583724,17844.0,E4_operating.csv cell 211,,,,
+c,AP,ppv tau=5,0.05,0.9910514541387024,0.0054552694149926,894.0,E4_operating.csv cell 181,,,,
+c,AP,ppv tau=5,0.1,0.8909747292418773,0.0145054771998783,1385.0,E4_operating.csv cell 187,,,,
+c,AP,ppv tau=5,0.15,0.6966590736522399,0.0155141646186885,2634.0,E4_operating.csv cell 193,,,,
+c,AP,ppv tau=5,0.2,0.4903617067359757,0.0127429503323528,4617.0,E4_operating.csv cell 199,,,,
+c,AP,ppv tau=5,0.25,0.3848547717842324,0.0095965335177467,7712.0,E4_operating.csv cell 205,,,,
+c,AP,ppv tau=5,0.3,0.3053588600402133,0.0074585105873969,11439.0,E4_operating.csv cell 211,,,,
+c,AP,ppv tau=6,0.05,0.997872340425532,0.0036812919556861,470.0,E4_operating.csv cell 181,,,,
+c,AP,ppv tau=6,0.1,0.9540581929555896,0.0141904283806339,653.0,E4_operating.csv cell 187,,,,
+c,AP,ppv tau=6,0.15,0.7734265734265734,0.0191737314262513,1430.0,E4_operating.csv cell 193,,,,
+c,AP,ppv tau=6,0.2,0.5865603644646925,0.0166193928254256,2634.0,E4_operating.csv cell 199,,,,
+c,AP,ppv tau=6,0.25,0.44702342574683,0.0126244541431146,4653.0,E4_operating.csv cell 205,,,,
+c,AP,ppv tau=6,0.3,0.3540766738660907,0.0096238597026562,7408.0,E4_operating.csv cell 211,,,,
+d,AP,beat_cv=0.05 tau=2,,0.2907328006236601,0.0031697203709219,20524.0,E4_operating.csv cell 181,0.018710014455624,0.0002563087812089,279476.0,
+d,AP,beat_cv=0.05 tau=3,,0.1651724809978562,0.0025920073064657,20524.0,E4_operating.csv cell 181,0.0030879216820048,0.0001049516589991,279476.0,
+d,AP,beat_cv=0.05 tau=4,,0.0858507113623076,0.001955462576521,20524.0,E4_operating.csv cell 181,0.0004150624740585,3.852958466007092e-05,279476.0,
+d,AP,beat_cv=0.05 tau=5,,0.0431689729097641,0.0014186409105606,20524.0,E4_operating.csv cell 181,2.8624998210937613e-05,1.0120320323018058e-05,279476.0,
+d,AP,beat_cv=0.05 tau=6,,0.0228512960436562,0.0010430490828532,20524.0,E4_operating.csv cell 181,3.5781247763672017e-06,3.578118374873018e-06,279476.0,
+d,AP,beat_cv=0.15 tau=2,,0.3104710528850785,0.0032110880576665,20762.0,E4_operating.csv cell 193,0.0565718132918872,0.0004371869743848,279238.0,
+d,AP,beat_cv=0.15 tau=3,,0.215586167035931,0.0028539638914979,20762.0,E4_operating.csv cell 193,0.0217914467228672,0.0002762940296288,279238.0,
+d,AP,beat_cv=0.15 tau=4,,0.1408342163568057,0.0024141151631598,20762.0,E4_operating.csv cell 193,0.0077783109748673,0.0001662492710422,279238.0,
+d,AP,beat_cv=0.15 tau=5,,0.0883826220980638,0.0019699497368127,20762.0,E4_operating.csv cell 193,0.0028613584111045,0.0001010826558719,279238.0,
+d,AP,beat_cv=0.15 tau=6,,0.0532703978422117,0.0015585522094848,20762.0,E4_operating.csv cell 193,0.0011603005321625,6.44237326735004e-05,279238.0,
+d,AP,beat_cv=0.3 tau=2,,0.3534149945188504,0.003300214806181,20981.0,E4_operating.csv cell 211,0.1299624756736996,0.0006365918743869,279019.0,
+d,AP,beat_cv=0.3 tau=3,,0.2813497926695582,0.0031043378881133,20981.0,E4_operating.csv cell 211,0.0787329895096749,0.0005098638746236,279019.0,
+d,AP,beat_cv=0.3 tau=4,,0.2186740384157094,0.0028536561932803,20981.0,E4_operating.csv cell 211,0.0475093094018686,0.0004027196675336,279019.0,
+d,AP,beat_cv=0.3 tau=5,,0.1664839616796148,0.0025717579407524,20981.0,E4_operating.csv cell 211,0.0284783473526892,0.0003148957104363,279019.0,
+d,AP,beat_cv=0.3 tau=6,,0.1250178733139507,0.002283350344947,20981.0,E4_operating.csv cell 211,0.0171493697561814,0.0002457824977616,279019.0,
+e,AP-SL,true tau=2,,0.9658425,4.786465669653424e-05,14400000.0,E4_ellipticity_truth.csv (E4 cells pooled (144 cells x 1e5 patients)),,,,0.53
+e,AP-SL,true tau=2,,0.8604066666666667,9.132779584118888e-05,14400000.0,E4_ellipticity_truth.csv (E4 cells pooled (144 cells x 1e5 patients)),,,,0.64
+e,AP-SL,true tau=2,,0.4531176388888889,0.0001311810782575,14400000.0,E4_ellipticity_truth.csv (E4 cells pooled (144 cells x 1e5 patients)),,,,0.8
+e,AP-SL,true tau=2,,0.1425013888888888,9.211810921523918e-05,14400000.0,E4_ellipticity_truth.csv (E4 cells pooled (144 cells x 1e5 patients)),,,,0.9
+e,AP-SL,true tau=3,,0.8352247222222222,9.77611835073934e-05,14400000.0,E4_ellipticity_truth.csv (E4 cells pooled (144 cells x 1e5 patients)),,,,0.53
+e,AP-SL,true tau=3,,0.6243195138888888,0.0001276237576026,14400000.0,E4_ellipticity_truth.csv (E4 cells pooled (144 cells x 1e5 patients)),,,,0.64
+e,AP-SL,true tau=3,,0.2192377083333333,0.0001090274352507,14400000.0,E4_ellipticity_truth.csv (E4 cells pooled (144 cells x 1e5 patients)),,,,0.8
+e,AP-SL,true tau=3,,0.0499136805555555,5.738654570889896e-05,14400000.0,E4_ellipticity_truth.csv (E4 cells pooled (144 cells x 1e5 patients)),,,,0.9
+e,AP-SL,true tau=4,,0.6340046527777777,0.0001269412465347,14400000.0,E4_ellipticity_truth.csv (E4 cells pooled (144 cells x 1e5 patients)),,,,0.53
+e,AP-SL,true tau=4,,0.3968510416666667,0.0001289272761187,14400000.0,E4_ellipticity_truth.csv (E4 cells pooled (144 cells x 1e5 patients)),,,,0.64
+e,AP-SL,true tau=4,,0.1005844444444444,7.926187870152287e-05,14400000.0,E4_ellipticity_truth.csv (E4 cells pooled (144 cells x 1e5 patients)),,,,0.8
+e,AP-SL,true tau=4,,0.0181680555555555,3.519585805895288e-05,14400000.0,E4_ellipticity_truth.csv (E4 cells pooled (144 cells x 1e5 patients)),,,,0.9
+e,AP-SL,true tau=5,,0.435707,0.0004958491808513,1000000.0,"E4_ellipticity_truth.csv (supplementary draw_latent, seed (20260918, spawn_key=(99,0)))",,,,0.53
+e,AP-SL,true tau=5,,0.23321,0.00042287479932,1000000.0,"E4_ellipticity_truth.csv (supplementary draw_latent, seed (20260918, spawn_key=(99,1)))",,,,0.64
+e,AP-SL,true tau=5,,0.045447,0.000208282428906,1000000.0,"E4_ellipticity_truth.csv (supplementary draw_latent, seed (20260918, spawn_key=(99,2)))",,,,0.8
+e,AP-SL,true tau=5,,0.007071,8.379141339660049e-05,1000000.0,"E4_ellipticity_truth.csv (supplementary draw_latent, seed (20260918, spawn_key=(99,3)))",,,,0.9
+e,AP-SL,true tau=6,,0.280955,0.0004494655581632,1000000.0,"E4_ellipticity_truth.csv (supplementary draw_latent, seed (20260918, spawn_key=(99,0)))",,,,0.53
+e,AP-SL,true tau=6,,0.13199,0.0003384798958579,1000000.0,"E4_ellipticity_truth.csv (supplementary draw_latent, seed (20260918, spawn_key=(99,1)))",,,,0.64
+e,AP-SL,true tau=6,,0.02082,0.000142781397948,1000000.0,"E4_ellipticity_truth.csv (supplementary draw_latent, seed (20260918, spawn_key=(99,2)))",,,,0.8
+e,AP-SL,true tau=6,,0.002847,5.328127805336505e-05,1000000.0,"E4_ellipticity_truth.csv (supplementary draw_latent, seed (20260918, spawn_key=(99,3)))",,,,0.9
+f,AP-SL,measured anchor tau=2,,0.86954,0.0010650830408939,100000.0,E4_ellipticity_cells.csv cell 157,,,,0.53
+f,AP-SL,measured anchor tau=2,,0.73997,0.0013871351740187,100000.0,E4_ellipticity_cells.csv cell 193,,,,0.64
+f,AP-SL,measured anchor tau=2,,0.49913,0.0015811364365544,100000.0,E4_ellipticity_cells.csv cell 229,,,,0.8
+f,AP-SL,measured anchor tau=2,,0.36251,0.001520185843573,100000.0,E4_ellipticity_cells.csv cell 265,,,,0.9
+f,AP-SL,measured anchor tau=3,,0.72925,0.0014051492358464,100000.0,E4_ellipticity_cells.csv cell 157,,,,0.53
+f,AP-SL,measured anchor tau=3,,0.56457,0.0015678989607114,100000.0,E4_ellipticity_cells.csv cell 193,,,,0.64
+f,AP-SL,measured anchor tau=3,,0.31163,0.0014646390104732,100000.0,E4_ellipticity_cells.csv cell 229,,,,0.8
+f,AP-SL,measured anchor tau=3,,0.18867,0.0012372292879656,100000.0,E4_ellipticity_cells.csv cell 265,,,,0.9
+f,AP-SL,measured anchor tau=4,,0.56557,0.0015674838917832,100000.0,E4_ellipticity_cells.csv cell 157,,,,0.53
+f,AP-SL,measured anchor tau=4,,0.39826,0.0015480599872097,100000.0,E4_ellipticity_cells.csv cell 193,,,,0.64
+f,AP-SL,measured anchor tau=4,,0.18308,0.0012229542657025,100000.0,E4_ellipticity_cells.csv cell 229,,,,0.8
+f,AP-SL,measured anchor tau=4,,0.09552,0.000929494107566,100000.0,E4_ellipticity_cells.csv cell 265,,,,0.9
+f,AP-SL,measured anchor tau=5,,0.41233,0.0015566437328431,100000.0,E4_ellipticity_cells.csv cell 157,,,,0.53
+f,AP-SL,measured anchor tau=5,,0.26521,0.0013959715466298,100000.0,E4_ellipticity_cells.csv cell 193,,,,0.64
+f,AP-SL,measured anchor tau=5,,0.10566,0.0009720903476529,100000.0,E4_ellipticity_cells.csv cell 229,,,,0.8
+f,AP-SL,measured anchor tau=5,,0.04924,0.0006842179652713,100000.0,E4_ellipticity_cells.csv cell 265,,,,0.9
+f,AP-SL,measured anchor tau=6,,0.28767,0.0014314886346038,100000.0,E4_ellipticity_cells.csv cell 157,,,,0.53
+f,AP-SL,measured anchor tau=6,,0.17121,0.0011912058424134,100000.0,E4_ellipticity_cells.csv cell 193,,,,0.64
+f,AP-SL,measured anchor tau=6,,0.0603,0.0007527543423986,100000.0,E4_ellipticity_cells.csv cell 229,,,,0.8
+f,AP-SL,measured anchor tau=6,,0.02571,0.0005004897191751,100000.0,E4_ellipticity_cells.csv cell 265,,,,0.9

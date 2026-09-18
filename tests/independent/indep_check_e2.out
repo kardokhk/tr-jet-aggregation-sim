@@ -1,0 +1,10 @@
+base (sigma_cal 1.0, sigma_rb 0.75)
+  p_met_first_N 0.4126 (MCSE 0.0035)
+  beats acquired 3.908 (MCSE 0.007)
+  RMSE vs Tv no window 1.3697, window 1.5339
+  relbias% vs Tv no window 1.138, window 1.920; paired diff 0.782 (MCSE 0.084)
+no additive error
+  p_met_first_N 0.5686 (MCSE 0.0035)
+  beats acquired 3.551 (MCSE 0.005)
+  RMSE vs Tv no window 1.0181, window 1.1743
+  relbias% vs Tv no window 1.129, window 0.825; paired diff -0.305 (MCSE 0.057)

@@ -1,0 +1,13 @@
+test,sentinel_n,min_size,median_size,max_size,n_cells,n_outside
+either_unadjusted,10,0.086,0.11875,0.151,54,54
+either_unadjusted,25,0.0945,0.127,0.1745,54,54
+either_unadjusted,50,0.101,0.13225,0.178,54,54
+either_unadjusted,100,0.1,0.125,0.1905,54,54
+f_variance,10,0.0415,0.0685,0.102,54,39
+f_variance,25,0.047,0.0765,0.125,54,44
+f_variance,50,0.052,0.08325,0.13,54,46
+f_variance,100,0.049,0.0815,0.151,54,47
+welch_mean,10,0.0375,0.0495,0.062,54,4
+welch_mean,25,0.0405,0.052,0.0625,54,3
+welch_mean,50,0.039,0.04975,0.0645,54,5
+welch_mean,100,0.039,0.0505,0.063,54,2

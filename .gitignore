@@ -1,0 +1,26 @@
+# Allowlist: only the simulation-study materials are tracked. Everything else in this
+# directory (other workstreams, confidential material, scratch notes and unpublished manuscript
+# drafts) stays local.
+/*
+!/.gitignore
+!/README.md
+!/LICENSE
+!/LICENSE-DATA
+!/CITATION.cff
+!/run_all.sh
+!/environment.md
+!/environment-explicit.txt
+!/requirements.txt
+!/code/
+!/tests/
+!/results/
+!/figures/
+!/notes/
+notes/*
+!notes/parameter-table-2026-09-18.md
+!notes/lab-notebook.md
+!notes/code-sha256-2026-09-18-v02.txt
+figures/superseded/
+__pycache__/
+*.pyc
+.pytest_cache/

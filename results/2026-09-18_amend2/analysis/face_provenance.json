@@ -1,0 +1,22 @@
+{
+ "script": "code/12_face_validity.py",
+ "config": "code/configs/base.yaml",
+ "config_version": "base-2026-09-18-v02",
+ "duomaxsim": "0.1.0",
+ "master_seed": 20260921,
+ "seed_children": "SeedSequence(20260921).spawn(3) -> a, b, c; a spawns 1 extra child for the n=10 design; b and c spawn one child per scenario",
+ "numpy": "2.4.6",
+ "pandas": "3.0.5",
+ "n": {
+  "a_hauptmann": "2000 studies x 50",
+  "a_singh": "10000 studies x 10",
+  "b_d": "88000 patients per (a, L) scenario",
+  "c": "30000 patients x 3 views x 5 beats"
+ },
+ "cpu_s": {
+  "a": 3.6,
+  "b_d": 16.7,
+  "c": 1.1
+ },
+ "date": "2026-09-18"
+}

@@ -1,0 +1,633 @@
+{
+ "command": "code/01_run_experiment.py --config code/configs/base.yaml --out results/2026-09-18_pilot --experiment E4 --cells 282:288 --n-rep 10000",
+ "experiment": "E4",
+ "cells": [
+  282,
+  288
+ ],
+ "n_rep_override": 10000,
+ "config_path": "code/configs/base.yaml",
+ "config": {
+  "meta": {
+   "protocol": "notes/protocol-2026-09-18-v01.md",
+   "config_version": "base-2026-09-18-v01",
+   "master_seed": 20260918,
+   "chunk_size": 20000
+  },
+  "parameters": {
+   "S_median_mm": {
+    "value": 9.0,
+    "unit": "mm",
+    "source": "provisional",
+    "note": "median true AP span T1 (protocol 3.1)"
+   },
+   "S_log_sd": {
+    "value": 0.49,
+    "unit": "log",
+    "source": "provisional",
+    "note": "log-SD; gives 5th-95th pct about 4 to 20 mm (ln(20/4)/3.29)"
+   },
+   "r_lower": {
+    "value": 0.4,
+    "unit": "ratio",
+    "source": "provisional",
+    "note": "lower bound of SL/AP ellipticity ratio"
+   },
+   "r_upper": {
+    "value": 1.0,
+    "unit": "ratio",
+    "source": "provisional",
+    "note": "upper bound of SL/AP ratio"
+   },
+   "r_mean": {
+    "value": 0.614,
+    "grid": [
+     0.55,
+     0.614,
+     0.75,
+     0.9
+    ],
+    "unit": "ratio",
+    "source": "provisional",
+    "note": "mean SL/AP ratio; 0.614 reproduces mean AP-SL difference of about 3.9 mm (Song 2011 10.1016/j.echo.2011.01.005) at base case mix; grid is an assumption for E4"
+   },
+   "r_concentration": {
+    "value": 8.0,
+    "unit": "none",
+    "source": "provisional",
+    "note": "a+b of the scaled Beta on (r_lower, r_upper)"
+   },
+   "K": {
+    "value": 3,
+    "grid": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "unit": "views",
+    "source": "provisional",
+    "note": "view 1 = anchor"
+   },
+   "view_errors": {
+    "value": true,
+    "grid": [
+     false,
+     true
+    ],
+    "unit": "bool",
+    "source": "provisional",
+    "note": "master switch for u and o (E4 noise-only scenario)"
+   },
+   "view_under": {
+    "value": true,
+    "unit": "bool",
+    "source": "provisional",
+    "note": "include plane-obliquity underestimation u"
+   },
+   "view_over": {
+    "value": true,
+    "grid": [
+     false,
+     true
+    ],
+    "unit": "bool",
+    "source": "provisional",
+    "note": "include atrial-level/blooming overestimation o"
+   },
+   "u_scale": {
+    "value": [
+     0.03,
+     0.1,
+     0.1,
+     0.15
+    ],
+    "unit": "fraction",
+    "source": "provisional",
+    "note": "half-normal scale of u per view (anchor first)"
+   },
+   "u_max": {
+    "value": 0.9,
+    "unit": "fraction",
+    "source": "provisional",
+    "note": "cap on u so mu stays positive"
+   },
+   "p_over": {
+    "value": [
+     0.05,
+     0.15,
+     0.15,
+     0.2
+    ],
+    "unit": "probability",
+    "source": "provisional",
+    "note": "probability of overestimation per view"
+   },
+   "o_median": {
+    "value": 0.15,
+    "unit": "fraction",
+    "source": "provisional",
+    "note": "median multiplicative overestimation when present"
+   },
+   "o_log_sd": {
+    "value": 0.5,
+    "unit": "log",
+    "source": "provisional",
+    "note": "log-SD of overestimation magnitude"
+   },
+   "rho": {
+    "value": 0.3,
+    "grid": [
+     0.0,
+     0.3,
+     0.6,
+     0.9
+    ],
+    "unit": "correlation",
+    "source": "provisional",
+    "note": "shared-component inter-view correlation of latent error drivers"
+   },
+   "beat_cv": {
+    "value": 0.15,
+    "grid": [
+     0.05,
+     0.1,
+     0.15,
+     0.2,
+     0.25,
+     0.3
+    ],
+    "unit": "fraction",
+    "source": "provisional",
+    "note": "beat-to-beat CV; sigma_beat = sqrt(ln(1+cv^2))"
+   },
+   "beat_noise_centering": {
+    "value": "median",
+    "grid": [
+     "median",
+     "mean"
+    ],
+    "unit": "enum",
+    "source": "provisional",
+    "note": "median: eta ~ N(0, s^2) exactly as protocol (beat mean biased up by exp(s^2/2)); mean: eta centred so E[span]=mu"
+   },
+   "rhythm": {
+    "value": "sinus",
+    "grid": [
+     "sinus",
+     "AF"
+    ],
+    "unit": "enum",
+    "source": "provisional",
+    "note": ""
+   },
+   "rr_cv_sinus": {
+    "value": 0.03,
+    "unit": "fraction",
+    "source": "provisional",
+    "note": "RR CV in sinus rhythm"
+   },
+   "rr_cv_af": {
+    "value": 0.2,
+    "grid": [
+     0.1,
+     0.2,
+     0.3
+    ],
+    "unit": "fraction",
+    "source": "provisional",
+    "note": "RR CV in AF"
+   },
+   "beta_rr": {
+    "value": 0.2,
+    "unit": "log/log",
+    "source": "provisional",
+    "note": "slope of log span on log preceding RR (centred)"
+   },
+   "beta_drr": {
+    "value": 0.0,
+    "unit": "log/log",
+    "source": "provisional",
+    "note": "slope on log(RR2/RR1); 0 = protocol model (index beat has no special advantage)"
+   },
+   "af_extra_cv": {
+    "value": 0.05,
+    "unit": "fraction",
+    "source": "provisional",
+    "note": "additional residual beat CV in AF"
+   },
+   "data_mode": {
+    "value": "prospective",
+    "grid": [
+     "retrospective",
+     "prospective"
+    ],
+    "unit": "enum",
+    "source": "provisional",
+    "note": ""
+   },
+   "avail_lambda": {
+    "value": 4.0,
+    "unit": "beats",
+    "source": "provisional",
+    "note": "zero-truncated Poisson parameter for retrospective available beats"
+   },
+   "max_beats_retro": {
+    "value": 15,
+    "unit": "beats",
+    "source": "provisional",
+    "note": "cap on retrospective available beats"
+   },
+   "max_beats_prosp": {
+    "value": 30,
+    "unit": "beats",
+    "source": "provisional",
+    "note": "acquisition cap standing in for 'unlimited on request'"
+   },
+   "N_beats": {
+    "value": 3,
+    "grid": [
+     1,
+     3,
+     5,
+     7,
+     10,
+     13
+    ],
+    "unit": "beats",
+    "source": "provisional",
+    "note": ""
+   },
+   "window": {
+    "value": 0.15,
+    "grid": [
+     null,
+     0.1,
+     0.15,
+     0.2,
+     0.25
+    ],
+    "unit": "fraction",
+    "source": "provisional",
+    "note": "null = no acceptance window"
+   },
+   "limited_value": {
+    "value": "all_acquired",
+    "grid": [
+     "all_acquired",
+     "first_n"
+    ],
+    "unit": "enum",
+    "source": "provisional",
+    "note": "value reported when window never met"
+   },
+   "sigma_cal_mm": {
+    "value": 1.0,
+    "unit": "mm",
+    "source": "provisional",
+    "note": "per-beat caliper SD (protocol base)"
+   },
+   "sigma_rb_mm": {
+    "value": 0.5,
+    "grid": [
+     0.0,
+     0.5,
+     1.0
+    ],
+    "unit": "mm",
+    "source": "provisional",
+    "note": "reader-level bias SD"
+   },
+   "measure_floor_mm": {
+    "value": null,
+    "grid": [
+     null,
+     0.5
+    ],
+    "unit": "mm",
+    "source": "provisional",
+    "note": "null = protocol-literal Gaussian caliper error (negative readings possible for small SL spans); a value floors each measured beat"
+   },
+   "drift_mm_per_100": {
+    "value": 0.0,
+    "unit": "mm",
+    "source": "provisional",
+    "note": "reader drift per 100 cases (E5/E6 only)"
+   },
+   "g_log_sd": {
+    "value": 0.1,
+    "unit": "log",
+    "source": "provisional",
+    "note": "study-level multiplicative gain/Nyquist factor, median 1"
+   },
+   "t_warn": {
+    "value": 3.0,
+    "grid": [
+     2.0,
+     3.0,
+     4.0
+    ],
+    "unit": "mm",
+    "source": "provisional",
+    "note": ""
+   },
+   "t_adj": {
+    "value": 5.0,
+    "grid": [
+     4.0,
+     5.0,
+     6.0
+    ],
+    "unit": "mm",
+    "source": "provisional",
+    "note": ""
+   },
+   "s_det": {
+    "value": 0.8,
+    "grid": [
+     0.0,
+     0.5,
+     0.8,
+     1.0
+    ],
+    "unit": "probability",
+    "source": "provisional",
+    "note": ""
+   },
+   "f_rej": {
+    "value": 0.1,
+    "grid": [
+     0.0,
+     0.1,
+     0.3
+    ],
+    "unit": "probability",
+    "source": "provisional",
+    "note": ""
+   },
+   "a4_scrutiny": {
+    "value": "triggered",
+    "grid": [
+     "triggered",
+     "adj_only",
+     "all_higher"
+    ],
+    "unit": "enum",
+    "source": "provisional",
+    "note": "which higher verification views the reader judges (protocol ambiguous)"
+   },
+   "cutoffs_mm": {
+    "value": [
+     7.0,
+     10.0,
+     13.0
+    ],
+    "unit": "mm",
+    "source": "provisional",
+    "note": "generic cut-offs"
+   },
+   "error_threshold_mm": {
+    "value": 2.0,
+    "unit": "mm",
+    "source": "provisional",
+    "note": "true error present if g*S*o_v or g*S*u_anchor exceeds this"
+   },
+   "sigma_ai_mm": {
+    "value": 2.0,
+    "grid": [
+     1.0,
+     2.0,
+     3.0
+    ],
+    "unit": "mm",
+    "source": "provisional",
+    "note": "AI error SD vs T1"
+   },
+   "n_val": {
+    "value": 200,
+    "unit": "patients",
+    "source": "provisional",
+    "note": "patients per simulated validation study"
+   },
+   "n_readers": {
+    "value": 4,
+    "unit": "readers",
+    "source": "provisional",
+    "note": "reader pool per study (E5)"
+   },
+   "adj_tol_mm": {
+    "value": 2.0,
+    "grid": [
+     1.0,
+     2.0,
+     3.0
+    ],
+    "unit": "mm",
+    "source": "provisional",
+    "note": "adjudication tolerance between two reads"
+   },
+   "adjudication_value": {
+    "value": "adjudicator",
+    "grid": [
+     "adjudicator",
+     "closest_pair_mean"
+    ],
+    "unit": "enum",
+    "source": "provisional",
+    "note": ""
+   },
+   "reference_estimator": {
+    "value": "A4",
+    "grid": [
+     "A1",
+     "A4"
+    ],
+    "unit": "enum",
+    "source": "provisional",
+    "note": "rule used for each read"
+   },
+   "calib_n": {
+    "value": 20000,
+    "unit": "patients",
+    "source": "provisional",
+    "note": "patients used to fit the inherited-bias AI (regression of single read on T1)"
+   },
+   "study_axis": {
+    "value": "AP",
+    "grid": [
+     "AP",
+     "SL"
+    ],
+    "unit": "enum",
+    "source": "provisional",
+    "note": "axis analysed in E5/E6"
+   },
+   "gold_n": {
+    "value": [
+     25,
+     50,
+     100,
+     200
+    ],
+    "unit": "patients",
+    "source": "provisional",
+    "note": "double-read gold set sizes"
+   },
+   "production_n": {
+    "value": 500,
+    "unit": "patients",
+    "source": "provisional",
+    "note": ""
+   },
+   "overlap_frac": {
+    "value": [
+     0.1,
+     0.2,
+     0.3,
+     0.5
+    ],
+    "unit": "fraction",
+    "source": "provisional",
+    "note": ""
+   },
+   "sentinel_n": {
+    "value": [
+     10,
+     25,
+     50,
+     100
+    ],
+    "unit": "patients",
+    "source": "provisional",
+    "note": "manual-only sentinel subset"
+   },
+   "anchor_alpha": {
+    "value": [
+     0.0,
+     0.1,
+     0.2,
+     0.3,
+     0.5
+    ],
+    "unit": "fraction",
+    "source": "provisional",
+    "note": "0 included as size check"
+   },
+   "ai_draft_sigma_mm": {
+    "value": 2.0,
+    "grid": [
+     1.0,
+     2.0,
+     3.0
+    ],
+    "unit": "mm",
+    "source": "provisional",
+    "note": ""
+   },
+   "ai_draft_bias_mm": {
+    "value": 1.0,
+    "unit": "mm",
+    "source": "provisional",
+    "note": "systematic error of the AI draft vs T1"
+   },
+   "test_level": {
+    "value": 0.05,
+    "unit": "probability",
+    "source": "provisional",
+    "note": "type I error for sentinel tests"
+   }
+  },
+  "experiments": {
+   "E1": {
+    "n_patients": 100000,
+    "fixed": {},
+    "vary": [
+     "K",
+     "beat_cv",
+     "view_over",
+     "rho",
+     "N_beats"
+    ]
+   },
+   "E2": {
+    "n_patients": 100000,
+    "fixed": {
+     "K": 1
+    },
+    "vary": [
+     {
+      "name": "rhythm_state",
+      "levels": [
+       {
+        "rhythm": "sinus"
+       },
+       {
+        "rhythm": "AF",
+        "rr_cv_af": 0.1
+       },
+       {
+        "rhythm": "AF",
+        "rr_cv_af": 0.2
+       },
+       {
+        "rhythm": "AF",
+        "rr_cv_af": 0.3
+       }
+      ]
+     },
+     "beat_cv",
+     "window",
+     "N_beats",
+     "data_mode"
+    ]
+   },
+   "E3": {
+    "n_patients": 100000,
+    "fixed": {},
+    "vary": [
+     "K",
+     "beat_cv",
+     "view_over"
+    ]
+   },
+   "E4": {
+    "n_patients": 100000,
+    "fixed": {
+     "K": 4
+    },
+    "vary": [
+     "view_errors",
+     "r_mean",
+     "beat_cv",
+     "N_beats"
+    ]
+   },
+   "E5": {
+    "n_studies": 2000,
+    "fixed": {},
+    "vary": [
+     "beat_cv",
+     "view_over"
+    ]
+   },
+   "E6": {
+    "n_studies": 2000,
+    "fixed": {},
+    "vary": [
+     "beat_cv",
+     "sigma_rb_mm",
+     "ai_draft_sigma_mm"
+    ]
+   }
+  }
+ },
+ "duomaxsim": "0.1.0",
+ "python": "3.11.16",
+ "numpy": "2.4.6",
+ "scipy": "1.17.1",
+ "pandas": "3.0.5",
+ "host": "login02.meluxina.lxp.lu",
+ "date": "2026-09-18T14:21:43+0200",
+ "wall_s_total": 4.925846402999014,
+ "rows": 912
+}

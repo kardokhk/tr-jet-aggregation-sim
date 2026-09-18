@@ -1,0 +1,1 @@
+wrote results/2026-09-18_full/E3_cells_00088-00096.parquet rows=2352 wall=29.6s
