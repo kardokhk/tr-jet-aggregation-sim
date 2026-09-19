@@ -21,8 +21,9 @@ case "${1:-analyse}" in
     for f in code/figures/fig*.py; do echo "== $f"; $PY "$f"; done
     $PY code/13_schematic_figures.py all
     $PY code/14_make_tables_v02.py
+    $PY code/15_make_tables_v04.py      # v04 tables (main Table 1, Supplementary Tables S1 to S6)
     if [ -d drafts ]; then   # manuscript drafts are kept outside the public repository
-      python3 code/tools/number_refs.py drafts/manuscript-2026-09-18-v03.md drafts/manuscript-2026-09-18-v03-numbered.md \
+      python3 code/tools/number_refs.py drafts/manuscript-2026-09-19-v04.md drafts/manuscript-2026-09-19-v04-numbered.md \
         notes/scratch/2026-09-18-refs-verified.json notes/refs-extra-verified-2026-09-18.json
     fi ;;
 esac

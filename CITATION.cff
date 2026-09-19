@@ -1,9 +1,9 @@
 cff-version: 1.2.0
 message: "If you use this software or its results, please cite it as below."
 title: "Beat and view aggregation rules for tricuspid regurgitant jet dimensions: simulation code and results"
-version: 0.3.1
-date-released: 2026-09-18
-doi: 10.5281/zenodo.22833344
+version: 0.4.0
+date-released: 2026-09-19
+doi: 10.5281/zenodo.22848024
 license: MIT
 repository-code: "https://github.com/kardokhk/tr-jet-aggregation-sim"
 authors:

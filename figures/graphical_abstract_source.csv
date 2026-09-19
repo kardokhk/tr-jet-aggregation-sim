@@ -63,5 +63,5 @@ c,,,,,,,,,,"hit rate, true error > 2 mm",3.0,0.215586167035931,,,
 c,,,,,,,,,,"hit rate, true error > 2 mm",5.0,0.0883826220980638,,,
 c,,,,,,,,,,"P(any trigger), no view errors",3.0,0.13073,,,
 c,,,,,,,,,,"P(any adjudication), no view errors",5.0,0.0237,,,
-d,,,,,,,,,,,,,AI with error independent of the images,1.5942918899935408,2.117475159009091
-d,,,,,,,,,,,,,AI sharing the reference's image error,2.082018608496891,1.7856509720300993
+d,,,,,,,,,,,,,Independent AI,1.5942918899935408,2.117475159009091
+d,,,,,,,,,,,,,AI sharing image error,2.082018608496891,1.7856509720300993

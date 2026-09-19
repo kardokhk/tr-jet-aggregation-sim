@@ -19,7 +19,7 @@ numbers) and are written to the source CSV only so that the drawing is regenerab
 Every number in the graphical abstract is computed here from the result files and checked
 against the values quoted in the task brief before drawing (assertions below).
 
-Run: /project/home/p201509/envs/duomax-sim/bin/python code/13_schematic_figures.py [fig1|ga|all]
+Run: /project/home/p201509/envs/duomax-sim/bin/python code/13_schematic_figures.py [fig1|fig1alt|ga|all]\n  fig1alt writes figures/fig1_design_alt.png only (alternative layout, not a deliverable).
 """
 import glob
 import os
@@ -31,6 +31,8 @@ import figqa  # noqa: E402
 import matplotlib.pyplot as plt  # noqa: E402
 import numpy as np  # noqa: E402
 import pandas as pd  # noqa: E402
+from matplotlib.layout_engine import PlaceHolderLayoutEngine  # noqa: E402
+from matplotlib.lines import Line2D  # noqa: E402
 from matplotlib.patches import Ellipse, FancyArrowPatch, FancyBboxPatch, Polygon, Rectangle  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -53,9 +55,9 @@ FS_BODY, FS_HEAD, FS_LETTER = 6.5, 7.0, 8.0
 
 
 # ============================================================================ helpers
-def qa(fig, stem, width_mm):
+def qa(fig, stem, width_mm, min_pt=6.0):
     paths = figstyle.save_all(fig, stem)
-    probs = figqa.report(fig)
+    probs = figqa.report(fig, min_pt=min_pt)
     grey, actual = figqa.greyscale_and_downscale(stem + ".png", width_mm)
     script_mtime = os.path.getmtime(os.path.abspath(__file__))
     assert os.path.getmtime(stem + ".png") > script_mtime, "stale PNG"
@@ -88,72 +90,89 @@ def box(ax, x, y, w, h, fc="white", ec="black", lw=0.6, r=0.6):
 
 
 # ============================================================================ Figure 1
-def fig1():
-    W_MM, H_MM = 183, 125
-    fig = plt.figure(figsize=figstyle.mm(W_MM, H_MM), layout="constrained")
-    fig.get_layout_engine().set(w_pad=0.02, h_pad=0.02, wspace=0.02, hspace=0.02)
-    gs = fig.add_gridspec(2, 3, width_ratios=[0.95, 0.80, 1.40], height_ratios=[1.0, 1.0])
-    ax_a1 = fig.add_subplot(gs[0, 0])
-    ax_a2 = fig.add_subplot(gs[1, 0])
-    ax_b = fig.add_subplot(gs[:, 1])
-    ax_c = fig.add_subplot(gs[:, 2])
-    for ax in (ax_a1, ax_a2, ax_b, ax_c):
+# v05 (2026-09-19): clean schematic. The legend carries the explanation; the figure carries at most
+# about four words per label and no formulas. Drawn on a millimetre canvas: every sub-drawing is an
+# axes placed in figure millimetres, with an exact drawing scale, so geometry does not depend on a
+# layout engine. Two layouts: "row" (a | b | c, main output) and "stack" (a and b stacked left, c right,
+# saved as fig1_design_alt.png only).
+# v06 (2026-09-19): EHJ-CVI 2 mm text floor -> body 8 pt, panel titles 9 pt bold, letters 9 pt bold
+F1_BODY, F1_HEAD, F1_LETTER = 8.0, 9.0, 9.0   # body text; panel titles and letters bold
+C_LINE = "#8C8C8C"      # thin grey box outlines
+C_FILL = "#F2F2F2"      # light box fill
+C_OR = "#555555"        # orientation labels
+R_BOX = 1.0             # corner radius (mm) of every box
+
+
+class MMCanvas:
+    def __init__(self, W, H):
+        self.W, self.H = W, H
+        self.fig = plt.figure(figsize=figstyle.mm(W, H), layout="none")
+        # rc turns constrained layout on, and matplotlib re-reads it at savefig when the engine is None;
+        # a do-nothing engine keeps this absolute millimetre canvas untouched
+        self.fig.set_layout_engine(PlaceHolderLayoutEngine(adjust_compatible=True,
+                                                           colorbar_gridspec=True))
+        # overlay axes in figure millimetres (y up), for panel headings
+        self.ov = self.fig.add_axes([0, 0, 1, 1])
+        self.ov.set_xlim(0, W)
+        self.ov.set_ylim(0, H)
+        self.ov.set_xticks([])
+        self.ov.set_yticks([])
+        self.ov.set_axis_off()
+        self.ov.set_zorder(-1)
+
+    def axes(self, x0, y0, w, h):
+        """Axes at (x0, y0) mm from the lower-left corner, w x h mm."""
+        return self.fig.add_axes([x0 / self.W, y0 / self.H, w / self.W, h / self.H])
+
+    def drawing(self, x0, ytop, xlim, ylim, s):
+        """Axes for a drawing at s mm per data unit, top-left corner at (x0, ytop) mm."""
+        w, h = (xlim[1] - xlim[0]) * s, (ylim[1] - ylim[0]) * s
+        ax = self.axes(x0, ytop - h, w, h)
+        ax.set_xlim(*xlim)
+        ax.set_ylim(*ylim)
+        ax.set_xticks([])
+        ax.set_yticks([])
         ax.set_axis_off()
-    src = []
-    GREY = "#666666"
+        return ax
 
-    # ---------------------------------------------------------------- a (top): orifice en face
-    ax = ax_a1
-    ax.set_xlim(-8.2, 8.2)
-    ax.set_ylim(-6.3, 7.0)
-    ax.set_aspect("equal")
-    ax.set_anchor("N")
-    ax.text(-8.1, 6.9, "a", ha="left", va="top", fontsize=FS_LETTER, fontweight="bold")
-    ax.text(-6.9, 6.9, "View 1 (anchor): en face short axis", ha="left", va="top",
-            fontsize=FS_HEAD, fontweight="bold")
-    ax.text(-6.9, 5.7, "$T_1$ = largest true span over all planes, per axis", ha="left",
-            va="top", fontsize=FS_BODY)
+    def heading(self, x, ytop, letter, title):
+        self.ov.text(x, ytop, letter, ha="left", va="top", fontsize=F1_LETTER, fontweight="bold")
+        self.ov.text(x + 3.6, ytop, title, ha="left", va="top", fontsize=F1_HEAD,
+                     fontweight="bold")
+
+
+def draw_enface(ax):
+    """Orifice en face: true AP and SL spans, orientation, one oblique plane with a shorter chord."""
     A, B = 5.0, 3.2   # semi-axes: AP (horizontal) and SL (vertical), SL/AP = 0.64
-    ax.add_patch(Ellipse((0, 0), 2 * A, 2 * B, fc="#E8E8E8", ec="black", lw=0.8))
-    # view 3 plane through the centre along AP (behind the AP arrow)
-    ax.plot([-7.4, 6.4], [0.0, 0.0], color="black", lw=0.6, ls=(0, (3, 1.5)), zorder=1)
-    ax.text(6.6, -0.1, "view 3", ha="left", va="top", fontsize=FS_BODY)
-    # true spans
-    dim(ax, -A, A, 0.0, None, lw=0.9)
-    ax.text(-2.4, -0.3, "true AP span", ha="center", va="top", fontsize=FS_BODY)
+    ax.add_patch(Ellipse((0, 0), 2 * A, 2 * B, fc="#E8E8E8", ec="black", lw=0.8, zorder=1))
+    arrow(ax, (-A, 0), (A, 0), style="<|-|>", lw=0.9, ms=4)
     arrow(ax, (0, -B), (0, B), style="<|-|>", lw=0.9, ms=4)
-    ax.text(0.3, 1.5, "true SL\nspan", ha="left", va="center", fontsize=FS_BODY)
-    # orientation: AP axis horizontal (anterior left, posterior right), SL axis vertical
-    # (septal top, lateral bottom); 6 pt grey so the labels do not compete with the spans
-    FS_OR, C_OR = 6.0, "#444444"
-    ax.text(0.0, B + 0.2, "septal", ha="center", va="bottom", fontsize=FS_OR, color=C_OR)
-    ax.text(0.0, -B - 0.2, "lateral", ha="center", va="top", fontsize=FS_OR, color=C_OR)
-    ax.text(-A - 0.3, 0.3, "anterior", ha="right", va="bottom", fontsize=FS_OR, color=C_OR)
-    ax.text(A + 0.3, 0.3, "posterior", ha="left", va="bottom", fontsize=FS_OR, color=C_OR)
-    # view 2 plane: offset parallel plane -> shorter chord (underestimation)
-    yoff = -2.3
-    half = A * np.sqrt(1 - (yoff / B) ** 2)
-    ax.plot([-7.4, 6.4], [yoff, yoff], color=GREY, lw=0.6, ls=(0, (3, 1.5)), zorder=1)
-    ax.plot([-half, half], [yoff, yoff], color="black", lw=1.8, solid_capstyle="butt", zorder=2)
-    ax.text(6.6, yoff, "view 2", ha="left", va="center", fontsize=FS_BODY)
-    ax.text(-6.9, -4.3, "View 2 (long axis), oblique or offset plane: chord\n"
-            "shorter than the AP span (underestimation $u$)", ha="left", va="top",
-            fontsize=FS_BODY)
+    ax.text(-2.5, 0.25, "AP", ha="center", va="bottom", fontsize=F1_BODY)
+    ax.text(0.3, 1.6, "SL", ha="left", va="center", fontsize=F1_BODY)
+    # orientation: AP horizontal (anterior left, posterior right), SL vertical (septal top,
+    # lateral bottom); unchanged from v04, to be checked by the co-author
+    ax.text(0.0, B + 0.25, "septal", ha="center", va="bottom", fontsize=F1_BODY, color=C_OR)
+    ax.text(0.0, -B - 0.25, "lateral", ha="center", va="top", fontsize=F1_BODY, color=C_OR)
+    ax.text(-A - 0.3, 0.0, "anterior", ha="right", va="center", fontsize=F1_BODY, color=C_OR)
+    ax.text(A + 0.3, 0.0, "posterior", ha="left", va="center", fontsize=F1_BODY, color=C_OR)
+    # oblique imaging plane y = m x + c: dashed trace, chord inside the orifice drawn heavy
+    m, c = -0.20, -2.05
+    qa_, qb, qc = 1 / A ** 2 + m ** 2 / B ** 2, 2 * m * c / B ** 2, c ** 2 / B ** 2 - 1
+    xs = np.sort(np.roots([qa_, qb, qc]).real)
+    chord = np.hypot(xs[1] - xs[0], m * (xs[1] - xs[0]))
+    assert chord < 2 * A, chord          # the oblique chord is shorter than the true AP span
+    xe = np.array([-5.9, 6.4])
+    ax.plot(xe, m * xe + c, color="black", lw=0.6, ls=(0, (3, 1.5)), zorder=2)
+    ax.plot(xs, m * xs + c, color="black", lw=1.8, solid_capstyle="butt", zorder=3)
+    ax.text(2.6, -3.75, "oblique plane:\nshorter chord", ha="left", va="top",
+            fontsize=F1_BODY, linespacing=1.1)
 
-    # ---------------------------------------------------------------- a (bottom): long-axis side view
-    ax = ax_a2
-    ax.set_xlim(-8.2, 8.2)
-    ax.set_ylim(-8.2, 7.0)
-    ax.set_aspect("equal")
-    ax.set_anchor("N")
-    ax.text(-6.9, 6.9, "View 3 (long axis): side view of the jet", ha="left", va="top",
-            fontsize=FS_HEAD, fontweight="bold")
-    # Systolic tenting: leaflets hinge at the annulus and bow toward the ventricle; their tips
-    # meet (coaptation) below the annular plane. The jet leaves the coaptation gap toward the atrium.
+
+def draw_sideview(ax):
+    """Long-axis side view of the jet: tented leaflets, funnel-shaped jet, two width markers.
+    Geometry unchanged from v04."""
     gap, y_tip, y_ann, x_hinge = 1.5, -2.6, 0.0, 6.0
-    ax.plot([-7.4, 7.4], [y_ann, y_ann], color=GREY, lw=0.6, ls=(0, (3, 1.5)), zorder=1)
-    ax.text(7.4, y_ann + 0.25, "annular\nplane", ha="right", va="bottom", fontsize=FS_BODY,
-            color="black", linespacing=1.0)
+    ax.plot([-7.0, 7.0], [y_ann, y_ann], color=C_LINE, lw=0.5, ls=(0, (3, 1.5)), zorder=1)
     tt = np.linspace(0, 1, 40)
     for sgn in (-1, 1):
         p0, p1, p2 = np.array([sgn * x_hinge, y_ann]), np.array([sgn * 3.4, y_tip + 0.05]), \
@@ -161,155 +180,178 @@ def fig1():
         cur = ((1 - tt) ** 2)[:, None] * p0 + (2 * (1 - tt) * tt)[:, None] * p1 + (tt ** 2)[:, None] * p2
         ax.plot(cur[:, 0], cur[:, 1], color="black", lw=1.6, solid_capstyle="round", zorder=3)
         ax.plot([sgn * x_hinge], [y_ann], marker="o", ms=2.6, color="black", zorder=4)
-    ax.text(6.3, -1.3, "leaflet", ha="center", va="top", fontsize=FS_BODY)
-    jet = Polygon([(-gap / 2, y_tip), (gap / 2, y_tip), (3.4, 4.2), (-3.4, 4.2)], closed=True,
-                  fc="#BFBFBF", ec="none", zorder=0)
-    ax.add_patch(jet)
-    ax.text(0, 4.35, "atrium", ha="center", va="bottom", fontsize=FS_BODY)
-    ax.text(4.2, -3.3, "ventricle", ha="center", va="top", fontsize=FS_BODY)
-    # proximal jet width: the jet neck just atrial to the leaflet tips (not the gap between them)
+    ax.add_patch(Polygon([(-gap / 2, y_tip), (gap / 2, y_tip), (3.4, 4.2), (-3.4, 4.2)],
+                         closed=True, fc="#BFBFBF", ec="none", zorder=0))
+    ax.text(0, 4.4, "atrium", ha="center", va="bottom", fontsize=F1_BODY)
+    ax.text(0, -3.0, "ventricle", ha="center", va="top", fontsize=F1_BODY)
+
+    def width_at(y):
+        return gap / 2 + (3.4 - gap / 2) * (y - y_tip) / (4.2 - y_tip)
+    # measured span: the jet neck just atrial to the leaflet tips
     y_neck = y_tip + 0.8
-    w_neck = gap / 2 + (3.4 - gap / 2) * (y_neck - y_tip) / (4.2 - y_tip)
-    dim(ax, -w_neck, w_neck, y_neck, None, lw=0.9)
-    ax.text(-7.4, -3.3, "proximal jet at coaptation\nlevel: correct span", ha="left",
-            va="top", fontsize=FS_BODY, linespacing=1.05)
-    ax.plot([-2.2, -w_neck + 0.15], [-3.3, y_neck - 0.1], color="black", lw=0.5)   # leader
+    w = width_at(y_neck)
+    arrow(ax, (-w, y_neck), (w, y_neck), style="<|-|>", lw=0.9, ms=4)
+    ax.text(-4.3, 1.2, "measured\nspan", ha="right", va="center", fontsize=F1_BODY,
+            linespacing=1.1)
+    ax.plot([-4.2, -w - 0.1], [1.0, y_neck + 0.1], color="black", lw=0.5)     # leader
+    # higher in the atrium: too wide
     y_hi = 2.7
-    w_hi = gap / 2 + (3.4 - gap / 2) * (y_hi - y_tip) / (4.2 - y_tip)
-    dim(ax, -w_hi, w_hi, y_hi, None, lw=0.9)
-    ax.text(w_hi + 0.4, y_hi, "above the leaflet tips:\nwider (overestimation $o$)",
-            ha="left", va="center", fontsize=FS_BODY)
-    ax.text(-6.9, -5.9, "Expected view mean: $\\mu_v = S\\,(1 - u_v + o_v)$,\n"
-            "$S$ the true span on that axis", ha="left", va="top", fontsize=FS_BODY)
+    w = width_at(y_hi)
+    arrow(ax, (-w, y_hi), (w, y_hi), style="<|-|>", lw=0.9, ms=4)
+    ax.text(w + 0.4, y_hi, "above tips:\ntoo wide", ha="left", va="center", fontsize=F1_BODY,
+            linespacing=1.1)
 
-    # ---------------------------------------------------------------- b: beats per view
-    ax = ax_b
-    ax.set_xlim(0, 10)
-    ax.set_ylim(0, 30.0)
-    ax.text(0.0, 29.85, "b", ha="left", va="top", fontsize=FS_LETTER, fontweight="bold")
-    ax.text(0.9, 29.85, "Beats measured in each view", ha="left", va="top", fontsize=FS_HEAD,
-            fontweight="bold")
-    ax.text(0.0, 28.5, "Spans vary from beat to beat (beat CV);\neach reading adds caliper "
-            "error (bars).\nThe first N beats are tested against\n±W of their own mean.",
-            ha="left", va="top", fontsize=FS_BODY, linespacing=1.15)
-    views = [
-        ("View 1 (anchor)", [9.3, 10.1, 9.7], [], 20.3, "window met\nwith N = 3"),
-        ("View 2", [8.9, 6.6, 8.5, 8.2], [1], 12.9, "beat 2 outside\nthe first-3 window:\nbeat 4 "
-         "added,\n3 most consistent\nbeats kept"),
-        ("View 3", [11.6, 12.4, 11.9], [], 5.5, "window met\nwith N = 3"),
-    ]
-    yscale = 1.2   # drawing units per mm of span
-    Wf = 0.15
-    for name, vals, dropped, y0, note in views:
-        kept = [v for i, v in enumerate(vals) if i not in dropped]
-        m = float(np.mean(kept))
-        ax.add_patch(Rectangle((0.2, y0 - Wf * m * yscale), 4.6, 2 * Wf * m * yscale,
-                               fc="#DDDDDD", ec="none", zorder=0))
-        m3 = float(np.mean(vals[:3]))
-        if dropped:
-            # window of the first three beats (the test that failed), centred on their own mean
-            assert any(abs(v - m3) > Wf * m3 for v in vals[:3]), "first-3 window must fail"
-            ax.add_patch(Rectangle((0.3, y0 + (m3 - m) * yscale - Wf * m3 * yscale), 3.2,
-                                   2 * Wf * m3 * yscale, fc="none", ec="black", lw=0.6,
-                                   ls=(0, (2.5, 1.5)), zorder=1))
-        else:
-            assert all(abs(v - m3) <= Wf * m3 for v in vals[:3]), "first-3 window must be met"
-        # coded rule: kept beats lie within +-W of their own mean
-        assert all(abs(v - m) <= Wf * m for i, v in enumerate(vals) if i not in dropped)
-        ax.plot([0.2, 4.8], [y0, y0], color="black", lw=0.8)
-        for i, v in enumerate(vals):
-            x = 0.9 + 1.1 * i
-            y = y0 + (v - m) * yscale
-            open_ = i in dropped
-            ax.errorbar(x, y, yerr=0.8 * yscale, fmt="o", ms=3.4, lw=0.6, capsize=1.2,
-                        mfc="white" if open_ else "black", mec="black", ecolor="black",
-                        mew=0.8)
-            src.append(dict(figure="fig1_design", panel="b", view=name, beat=i + 1,
-                            span_mm=v, kept=not open_, view_mean_mm=round(m, 3),
-                            first3_mean_mm=round(m3, 3), window=Wf,
-                            note="illustrative values, not simulation output"))
-        # label sits above the grey band but below the lowest whisker of the view above
-        ax.text(0.0, y0 + 2.5, name, ha="left", va="bottom", fontsize=FS_BODY,
-                fontweight="bold")
-        ax.text(5.2, y0, note, ha="left", va="center", fontsize=FS_BODY, linespacing=1.15)
-    ax.text(0.0, 0.0, "Line and grey band, mean of the kept beats\n±W; dashed box, ±W around the "
-            "mean of\nthe first 3 beats; open circle, beat not\nkept. If the window is never met, "
-            "the\nview is flagged as limited sampling.", ha="left", va="bottom", fontsize=FS_BODY, linespacing=1.15)
 
-    # ---------------------------------------------------------------- c: estimators and outputs
-    ax = ax_c
-    ax.set_xlim(0, 100)
-    ax.set_ylim(0, 100)
-    ax.text(0.0, 99.8, "c", ha="left", va="top", fontsize=FS_LETTER, fontweight="bold")
-    ax.text(4.5, 99.8, "Estimators combine the beats and view means", ha="left", va="top",
-            fontsize=FS_HEAD, fontweight="bold")
-    rows = [
-        ("A1", "anchor mean", "mean of the anchor-view beats"),
-        ("A2", "mean", "mean of the view means"),
-        ("A3", "maximum", "largest view mean"),
-        ("A4", "composite rule", "anchor mean; a verification view mean exceeding it by at "
-         "least\n$t_{warn}$ raises a warning, by at least $t_{adj}$ an adjudication; the reader\n"
-         "rejects a view judged artefactual, otherwise keeps the\nhighest mean"),
-        ("A5", "median", "median of the view means"),
-        ("A6", "index beat", "one anchor-view beat, RR ratio closest to 1"),
-        ("A7", "offset-corrected mean",
-         "each view mean divided by its known (1 − $u$ + $o$), then averaged"),
-    ]
-    y = 95.0
-    x_l, bw = 0.5, 99.0
-    LH = 2.35   # line height in axes units at 6.5 pt
-    for e, name, desc in rows:
-        nlines = desc.count("\n") + 1
-        h = 1.4 + LH * (nlines + 1) + 0.6
-        box(ax, x_l, y - h, bw, h, fc="white", ec=es.COLOR[e], lw=1.6, r=0.8)
-        ax.plot([x_l + 2.6], [y - 0.8 - LH / 2], marker=es.MARKER[e], ms=4, color=es.COLOR[e],
+BEATS = [8.9, 6.6, 8.5, 8.2]     # illustrative view-2 spans (mm), beats 1 to 4
+BEAT_OUT = 1                     # beat 2 (index 1) excluded
+CAL_ERR = 0.8                    # illustrative caliper error bar (mm)
+WIN = 0.15
+
+
+def draw_beats(ax, src):
+    kept = [v for i, v in enumerate(BEATS) if i != BEAT_OUT]
+    m = float(np.mean(kept))
+    lo, hi = m * (1 - WIN), m * (1 + WIN)
+    assert all(lo <= v <= hi for v in kept) and not lo <= BEATS[BEAT_OUT] <= hi
+    ax.axhspan(lo, hi, xmin=0.0, xmax=1.0, color="#E0E0E0", lw=0, zorder=0)
+    ax.axhline(m, color="#7A7A7A", lw=0.6, zorder=1)
+    for i, v in enumerate(BEATS):
+        out = i == BEAT_OUT
+        ax.errorbar(i + 1, v, yerr=CAL_ERR, fmt="o", ms=4.0, lw=0.6, capsize=1.5,
+                    mfc="white" if out else "black", mec="black", ecolor="black", mew=0.8,
+                    zorder=3)
+        src.append(dict(figure="fig1_design", panel="b", view="View 2", beat=i + 1, span_mm=v,
+                        caliper_error_bar_mm=CAL_ERR, kept=not out, kept_mean_mm=round(m, 3),
+                        window=WIN, window_lo_mm=round(lo, 3), window_hi_mm=round(hi, 3),
+                        note="illustrative values, not simulation output"))
+    ax.text(4.45, hi + 0.12, "±15% window", ha="right", va="bottom", fontsize=F1_BODY)
+    ax.text(2.2, BEATS[BEAT_OUT], "excluded", ha="left", va="center", fontsize=F1_BODY)
+    ax.set_xlim(0.5, 4.5)
+    ax.set_ylim(5.0, 11.0)
+    ax.set_xticks([1, 2, 3, 4])
+    ax.set_yticks([5, 7, 9, 11])
+    ax.tick_params(labelsize=F1_BODY)
+    ax.set_xlabel("Beat", fontsize=F1_BODY)
+    ax.set_ylabel("Span (mm)", fontsize=F1_BODY)
+
+
+def rbox(ax, x, y, w, h, text=None, fc=C_FILL, ec=C_LINE, lw=0.5, bold=False, tx=None, **k):
+    box(ax, x, y, w, h, fc=fc, ec=ec, lw=lw, r=R_BOX)
+    if text:
+        ax.text(x + w / 2 if tx is None else tx, y + h / 2, text,
+                ha="center" if tx is None else "left", va="center", fontsize=F1_BODY,
+                fontweight="bold" if bold else "normal", linespacing=1.1, **k)
+
+
+def draw_flow(ax, w, h):
+    """Views -> four rules -> two outputs. Coordinates are millimetres inside the axes."""
+    ax.set_xlim(0, w)
+    ax.set_ylim(0, h)
+    ax.set_xticks([])
+    ax.set_yticks([])
+    ax.set_axis_off()
+    AMS = 5.5                          # arrow head size
+    gap_v = 5.0                        # vertical gap spanned by an arrow
+    # views
+    rw = w - 9.0                       # width of the rule container; the view row matches it
+    bh, vg = 6.0, 2.0                  # v06: view gap 2.5 -> 2.0 mm so "Anchor view" clears its box at 8 pt
+    vw = (rw - 2 * vg) / 3
+    y = h - bh
+    xs_v = [0.5 + i * (vw + vg) for i in range(3)]
+    for x, lab in zip(xs_v, ["Anchor view", "View 2", "View 3"]):
+        rbox(ax, x, y, vw, bh, lab)
+    # rules: white rows inside one light container, so an arrow from the container means "each rule"
+    pad = 1.6
+    rh, rg = 6.0, 1.4
+    top_rules = y - gap_v
+    for x in xs_v:
+        arrow(ax, (x + vw / 2, y), (x + vw / 2, top_rules), lw=0.6, ms=AMS)
+    yr = top_rules - pad
+    ymid = {}
+    rows_y = []
+    for e in ["A1", "A2", "A3", "A4"]:
+        yr -= rh
+        rows_y.append(yr)
+        ymid[e] = yr + rh / 2
+        yr -= rg
+    bottom_rules = yr + rg - pad
+    rbox(ax, 0.5, bottom_rules, rw, top_rules - bottom_rules)
+    for e, yr in zip(["A1", "A2", "A3", "A4"], rows_y):
+        rbox(ax, 0.5 + pad, yr, rw - 2 * pad, rh, fc="white")
+        ax.plot([0.5 + pad + 3.5], [yr + rh / 2], marker=es.MARKER[e], ms=4.5, color=es.COLOR[e],
                 mfc=es.mfc(e), mec=es.COLOR[e], mew=0.9, ls="none")
-        ax.text(x_l + 5.0, y - 0.7, f"{e} {name}", ha="left", va="top", fontsize=FS_BODY,
-                fontweight="bold")
-        ax.text(x_l + 5.0, y - 0.7 - LH, desc, ha="left", va="top", fontsize=FS_BODY,
-                linespacing=1.15)
-        y -= h + 0.9
-    y_est_bottom = y + 0.9
-    # outputs: two branches, each a column of boxes (x0, top, heading, body)
-    ow = 47.0
-    XL, XR = 0.5, 52.5
+        ax.text(0.5 + pad + 7.0, yr + rh / 2, es.LABEL[e], ha="left", va="center",
+                fontsize=F1_BODY)
+    # outputs
+    ow, oh = (w - 1.0 - 4.0) / 2, 9.5
+    xl, xr = 0.5, 0.5 + ow + 4.0
+    top_out = bottom_rules - gap_v
+    rbox(ax, xl, top_out - oh, ow, oh, "Accuracy against\nthe true span")
+    rbox(ax, xr, top_out - oh, ow, oh, "Reference for\nAI validation")
+    arrow(ax, (xl + ow / 2, bottom_rules), (xl + ow / 2, top_out), lw=0.6, ms=AMS)
+    # the reference is read with the largest view mean after review only: elbow from that row
+    xe = 0.5 + rw + 4.0
+    ax.plot([0.5 + rw - pad, xe, xe], [ymid["A4"], ymid["A4"], top_out + 0.01], color="black", lw=0.6)
+    arrow(ax, (xe, top_out + 0.6), (xe, top_out), lw=0.6, ms=AMS)
+    top_ai = top_out - oh - gap_v
+    # v06: two lines at the height of the other output boxes (one line filled the box edge to edge at 8 pt)
+    rbox(ax, xr, top_ai - oh, ow, oh, "Apparent vs true\nAI error")
+    arrow(ax, (xr + ow / 2, top_out - oh), (xr + ow / 2, top_ai), lw=0.6, ms=AMS)
+    return top_ai - oh          # lowest y used
 
-    def obox(x0, top, head, body):
-        nl = body.count("\n") + 1
-        h = 1.4 + LH * (nl + 1) + 0.6
-        box(ax, x0, top - h, ow, h, fc="#F2F2F2", ec="black", lw=0.6, r=0.8)
-        ax.text(x0 + 2.0, top - 0.7, head, ha="left", va="top", fontsize=FS_BODY,
-                fontweight="bold")
-        ax.text(x0 + 2.0, top - 0.7 - LH, body, ha="left", va="top", fontsize=FS_BODY,
-                linespacing=1.15)
-        return top - h
 
-    y_arrow_top = y_est_bottom - 0.4
-    top_out = y_est_bottom - 4.0
-    b1 = obox(XL, top_out, "Comparison with the truth",
-              "bias and RMSE against the\ntrue spans $T_1$ and $T_2$;\n"
-              "classification at 7, 10\nand 13 mm")
-    b2 = obox(XR, top_out, "Reference for AI validation",
-              "A4 reads: single read,\nmean of two reads, or\nadjudicated read")
-    for x0 in (XL, XR):
-        arrow(ax, (x0 + ow / 2, y_arrow_top), (x0 + ow / 2, top_out), lw=0.7)
-    top2 = min(b1, b2) - 3.5
-    b3 = obox(XR, top2, "AI with known true error",
-              "error independent of the\nimages, inheriting the\nprotocol bias, or sharing\n"
-              "image error")
-    b4 = obox(XL, top2, "Apparent and true agreement",
-              "MAE, Bland-Altman bias\nand limits, ICC of the AI\nagainst the reference\n"
-              "and against $T_1$")
-    arrow(ax, (XR + ow / 2, b2), (XR + ow / 2, top2), lw=0.7)
-    ymid = (top2 + b3) / 2
-    arrow(ax, (XR, ymid), (XL + ow, ymid), lw=0.7)
-    hbox = top2 - b3
-    assert top2 - hbox > 0, top2 - hbox
-
-    pd.DataFrame(src).to_csv(os.path.join(FIG, "fig1_design_source.csv"), index=False)
-    stem = os.path.join(FIG, "fig1_design")
-    qa(fig, stem, W_MM)
+def fig1(layout="row"):
+    src = []
+    if layout == "row":
+        # v06 (8 pt text): 78 -> 82 mm tall, panel c starts 3 mm further left and 3 mm wider; drawings,
+        # plot and flow unchanged in scale
+        W_MM, H_MM = 183, 82
+        cv = MMCanvas(W_MM, H_MM)
+        top = H_MM - 1.0
+        # a: 0-60 mm
+        cv.heading(0.5, top, "a", "Sources of error")
+        ax = cv.drawing(0.5, top - 6.5, (-9.6, 9.6), (-5.6, 4.5), 3.0)
+        draw_enface(ax)
+        ax = cv.drawing(3.0, top - 43.0, (-8.8, 8.8), (-4.0, 5.3), 3.0)
+        draw_sideview(ax)
+        # b: 64-107 mm
+        cv.heading(64.0, top, "b", "Beat-consistency window")
+        ax = cv.axes(75.0, 16.0, 31.0, 50.0)
+        draw_beats(ax, src)
+        # c: 112-183 mm
+        cv.heading(112.0, top, "c", "View rules and outputs")
+        ax = cv.axes(112.0, 1.5, 70.5, top - 7.0 - 1.5)
+        low = draw_flow(ax, 70.5, top - 7.0 - 1.5)
+        stem = os.path.join(FIG, "fig1_design")
+    else:
+        W_MM, H_MM = 183, 106
+        cv = MMCanvas(W_MM, H_MM)
+        top = H_MM - 1.0
+        cv.heading(0.5, top, "a", "Sources of error")
+        ax = cv.drawing(0.5, top - 6.0, (-9.6, 9.6), (-5.6, 4.5), 2.75)
+        draw_enface(ax)
+        ax = cv.drawing(55.0, top - 6.0, (-8.8, 8.8), (-4.0, 5.3), 2.75)
+        draw_sideview(ax)
+        cv.heading(0.5, top - 40.0, "b", "Beat-consistency window")
+        ax = cv.axes(24.0, 12.0, 60.0, 46.0)
+        draw_beats(ax, src)
+        cv.heading(113.0, top, "c", "View rules and outputs")
+        ax = cv.axes(113.0, 2.0, 69.5, top - 6.5 - 2.0)
+        low = draw_flow(ax, 69.5, top - 6.5 - 2.0)
+        stem = os.path.join(FIG, "fig1_design_alt")
+    assert low >= 0, low
+    fig = cv.fig
+    if layout == "row":
+        pd.DataFrame(src).to_csv(os.path.join(FIG, "fig1_design_source.csv"), index=False)
+        qa(fig, stem, W_MM, min_pt=F1_BODY)
+    else:
+        fig.savefig(stem + ".png", dpi=600)
+        probs = figqa.report(fig)
+        print(f"[fig1_design_alt] figqa: {len(probs)} issue(s)")
+        for p in probs:
+            print("   ", p)
     plt.close(fig)
+
 
 # ============================================================================ GA numbers
 def ga_numbers():
@@ -441,6 +483,12 @@ def ga_numbers():
 
 # ============================================================================ Graphical abstract
 def ga():
+    """Graphical abstract, v05 (2026-09-19): 180 x 110 mm landscape. Calm 2 x 2 layout of the v02
+    abstract at legible size, reached by removing content: body text 10 pt, tick labels 9 pt, panel
+    titles 11 pt bold on one line, figure title 12 pt bold on one line. In-panel notes removed (the
+    caption carries them); only the extreme values named in the brief are printed.
+    Same four panels, data and source rows as v04. No plotted value changed.
+    """
     nums, s, rmse = ga_numbers()
     N = nums.set_index("name")
 
@@ -448,26 +496,33 @@ def ga():
         return float(N.loc[name, "value"])
 
     W_MM, H_MM = 180, 110
+    FS = 10.0     # axis labels, value labels, keys
+    FT = 9.0      # tick labels
+    TFS = 11.0    # panel titles, bold
     fig = plt.figure(figsize=figstyle.mm(W_MM, H_MM), layout="constrained")
-    fig.get_layout_engine().set(w_pad=0.03, h_pad=0.03, wspace=0.06, hspace=0.08)
-    fig.suptitle("Composite multi-view echocardiographic reference rules for tricuspid "
-                 "regurgitant jet span: simulation results", fontsize=8.5, fontweight="bold",
-                 x=0.01, ha="left")
-    gs = fig.add_gridspec(2, 2)
-    axs = [fig.add_subplot(gs[i, j]) for i in range(2) for j in range(2)]
+    fig.get_layout_engine().set(w_pad=0.04, h_pad=0.04, wspace=0.10, hspace=0.12)
+    fig.suptitle(GA_TITLE, fontsize=12, fontweight="bold", x=0.01, ha="left")
+    outer = fig.add_gridspec(2, 1, height_ratios=[1.15, 1.0])
+    top = outer[0].subgridspec(1, 2, width_ratios=[1.2, 0.8])
+    bot = outer[1].subgridspec(1, 2, width_ratios=[1.0, 1.0])
+    axs = [fig.add_subplot(top[0, 0]), fig.add_subplot(top[0, 1]), fig.add_subplot(bot[0, 0]),
+           fig.add_subplot(bot[0, 1])]
     src = []
-    FS = 7.0
 
     def fmt(x):
-        return f"{x:+.2f}".replace("-", "\u2212")
-    TFS = 8.0
+        return f"{x:+.2f}".replace("-", "−")
+
+    def txt(ax, *a, **k):
+        t = ax.text(*a, **k)
+        t.set_in_layout(False)
+        return t
 
     # ---- panel a: bias range across view accuracy
     ax = axs[0]
     ests = ["A1", "A2", "A3", "A4"]
-    names = {"A1": "Anchor\nmean", "A2": "Mean of\nviews", "A3": "Maximum\nof views",
-             "A4": "Composite\nrule"}
-    ax.axhspan(-1, 1, color="#E6E6E6", zorder=0, lw=0)
+    names = {"A1": "Anchor-view\nmean", "A2": "Mean across\nviews", "A3": "Largest\nview mean",
+             "A4": "Largest view mean\nafter review"}
+    ax.axhspan(-1, 1, color="#EBEBEB", zorder=0, lw=0)
     ax.axhline(0, color="black", lw=0.5, zorder=1)
     for i, e in enumerate(ests):
         g = s[s.estimator == e]
@@ -475,54 +530,49 @@ def ga():
         ax.plot([i, i], [lo, hi], color=es.COLOR[e], lw=2.2, solid_capstyle="butt", zorder=2)
         xs = i + np.linspace(-0.13, 0.13, len(g))
         gg = g.sort_values(["p_u_anchor", "p_u_long"])
-        ax.plot(xs, gg.value, ls="none", marker=es.MARKER[e], ms=3.0, mfc=es.mfc(e),
+        ax.plot(xs, gg.value, ls="none", marker=es.MARKER[e], ms=3.2, mfc=es.mfc(e),
                 mec=es.COLOR[e], mew=0.7, zorder=3)
-        ax.text(i + 0.24, hi, fmt(hi), ha="left", va="center", fontsize=FS)
-        ax.text(i + 0.24, lo, fmt(lo), ha="left", va="center", fontsize=FS)
+        if e == "A3":
+            txt(ax, i + 0.2, hi, fmt(hi), ha="left", va="center", fontsize=FS)
+            txt(ax, i + 0.2, lo, fmt(lo), ha="left", va="center", fontsize=FS)
+        if e == "A2":
+            txt(ax, i + 0.2, lo, fmt(lo), ha="left", va="center", fontsize=FS)
         for _, r in gg.iterrows():
             src.append(dict(panel="a", estimator=e, u_anchor=r.p_u_anchor, u_long=r.p_u_long,
                             bias_mm=r.value, mcse=r.mcse, source_cell=int(r.cell)))
-    ax.set_xticks(range(4), [names[e] for e in ests], fontsize=FS)
-    ax.set_xlim(-0.5, 3.75)
-    ax.set_ylim(-4.35, 1.6)
-    ax.text(-0.45, -4.25, "Points left to right: anchor underestimation 2.4% to 20%,\n"
-            "long-axis 8% to 40% within each; no beat window", ha="left", va="bottom",
-            fontsize=6.5, color="#444444", linespacing=1.05)
+    ax.set_xticks(range(4), [names[e] for e in ests], fontsize=FT)
+    ax.set_xlim(-0.5, 3.6)
+    ax.set_ylim(-3.6, 1.5)
     ax.set_yticks([-3, -2, -1, 0, 1])
-    ax.tick_params(axis="y", labelsize=FS)
-    ax.set_ylabel("Bias against true span (mm)", fontsize=FS)
-    ax.set_title("a  Maximum-type rules stay within about ±1 mm across\n    unknown view "
-                 "accuracy; mean-type rules reach −3 mm", fontsize=TFS, fontweight="bold")
-    ax.text(-0.45, 1.05, "grey band ±1 mm", ha="left", va="bottom", fontsize=FS, color="#444444")
+    ax.tick_params(axis="y", labelsize=FT)
+    ax.tick_params(axis="x", length=0)
+    ax.set_ylabel("Bias (mm)", fontsize=FS)
+    ax.set_title(GA_TITLES["a"], fontsize=TFS, fontweight="bold", loc="left")
 
     # ---- panel b: beat window adds error
     ax = axs[1]
-    for W, ls, mfc, lab in ((0.0, "-", "black", "no window"), (0.15, (0, (3, 1.5)), "white",
-                                                                 "±15% window")):
+    for W, ls, mfc in ((0.0, "-", "black"), (0.15, (0, (3, 1.5)), "white")):
         g = rmse[rmse.W == W]
-        ax.plot(g.p_N_beats, g.value, ls=ls, color="black", marker="o", ms=3.2, mfc=mfc,
+        ax.plot(g.p_N_beats, g.value, ls=ls, color="black", marker="o", ms=3.5, mfc=mfc,
                 mec="black", mew=0.8, lw=0.9)
         for _, r in g.iterrows():
             src.append(dict(panel="b", W=W, N_beats=int(r.p_N_beats), rmse_mm=r.value,
                             mcse=r.mcse))
     g0 = rmse[rmse.W == 0.0].set_index("p_N_beats").value
     g1 = rmse[rmse.W == 0.15].set_index("p_N_beats").value
-    ax.text(13.4, g1[13] + 0.02, "±15% window", ha="left", va="bottom", fontsize=FS)
-    ax.text(13.4, g0[13] - 0.02, "no window", ha="left", va="top", fontsize=FS)
-    pmet = v("E2 P(window 15% met by first 3 beats), sinus, CV 15%, AP")
-    ax.annotate(f"3 beats: {g0[3]:.2f} to {g1[3]:.2f} mm\nwindow met by the first 3 beats\n"
-                f"in {100 * pmet:.0f}% of views", xy=(3, g1[3]), xytext=(5.2, 2.35),
-                fontsize=FS, ha="left", va="center",
-                arrowprops=dict(arrowstyle="-", lw=0.5, color="black", shrinkA=1, shrinkB=2))
+    xl_ = 8.3     # direct labels just above the dashed and below the solid line, between 7 and 10 beats
+    y1 = np.interp(xl_, g1.index, g1.values)
+    y0 = np.interp(xl_, g0.index, g0.values)
+    txt(ax, xl_, y1 + 0.035, "±15% window", ha="left", va="bottom", fontsize=FS)
+    txt(ax, xl_, y0 - 0.06, "no window", ha="left", va="top", fontsize=FS)
     ax.set_xticks([1, 3, 5, 7, 10, 13])
-    ax.set_xlim(0.5, 17.5)
+    ax.set_xlim(0.3, 13.7)
     ax.set_ylim(1.5, 2.6)
-    ax.spines["bottom"].set_bounds(1, 13)
-    ax.tick_params(labelsize=FS)
-    ax.set_xlabel("Beats averaged in the anchor view", fontsize=FS)
-    ax.set_ylabel("Root-mean-square error (mm)", fontsize=FS)
-    ax.set_title("b  A percentage beat window adds error\n    to the anchor-view mean",
-                 fontsize=TFS, fontweight="bold")
+    ax.set_yticks([1.6, 2.0, 2.4])
+    ax.tick_params(labelsize=FT)
+    ax.set_xlabel("Beats averaged", fontsize=FS)
+    ax.set_ylabel("RMSE (mm)", fontsize=FS)
+    ax.set_title(GA_TITLES["b"], fontsize=TFS, fontweight="bold", loc="left")
 
     # ---- panel c: triggers detect few true errors
     ax = axs[2]
@@ -530,30 +580,30 @@ def ga():
     h5 = v("E4 hit rate for true error > 2 mm at threshold 5 mm, AP (per pair)")
     n3 = v("E4 p_any_trigger at 3 mm, AP, no view errors")
     n5 = v("E4 p_any_adj at 5 mm, AP, no view errors")
-    cats = ["True view errors > 2 mm\nthat trigger", "Patients triggered with\nno view error"]
+    cats = ["Views with\nerror > 2 mm", "Patients without\nview error"]
     y = np.array([1.0, 0.0])
     bh = 0.34
     ax.barh(y + bh / 2, [100 * h3, 100 * n3], height=bh, color="#555555", ec="black", lw=0.5,
-            label="warning, 3 mm")
+            label="3 mm warning")
     ax.barh(y - bh / 2, [100 * h5, 100 * n5], height=bh, color="white", ec="black", lw=0.5,
-            hatch="//////", label="adjudication, 5 mm")
+            hatch="//////", label="5 mm adjudication")
     for yy, val in ((1 + bh / 2, h3), (0 + bh / 2, n3), (1 - bh / 2, h5), (0 - bh / 2, n5)):
-        ax.text(100 * val + 0.8, yy, f"{100 * val:.1f}%", ha="left", va="center", fontsize=FS)
-    for yy, (a, b) in ((1, (h3, h5)), (0, (n3, n5))):
-        pass
+        txt(ax, 100 * val + 0.8, yy, f"{100 * val:.1f}%", ha="left", va="center", fontsize=FS)
     src += [dict(panel="c", quantity="hit rate, true error > 2 mm", threshold_mm=3, value=h3),
             dict(panel="c", quantity="hit rate, true error > 2 mm", threshold_mm=5, value=h5),
             dict(panel="c", quantity="P(any trigger), no view errors", threshold_mm=3, value=n3),
             dict(panel="c", quantity="P(any adjudication), no view errors", threshold_mm=5, value=n5)]
-    ax.set_yticks(y, cats, fontsize=FS)
+    ax.set_yticks(y, cats, fontsize=FT)
+    ax.tick_params(axis="y", length=0)
     ax.set_xlim(0, 30)
-    ax.set_ylim(-0.6, 1.9)
-    ax.tick_params(axis="x", labelsize=FS)
-    ax.set_xlabel("Percentage of true errors or of patients (%)", fontsize=FS)
-    ax.legend(loc="upper right", fontsize=FS, frameon=False, handlelength=1.2,
-              bbox_to_anchor=(1.0, 1.02))
-    ax.set_title("c  Fixed-millimetre cross-view triggers detect few true\n    errors and fire on "
-                 "measurement noise", fontsize=TFS, fontweight="bold")
+    ax.set_xticks([0, 10, 20, 30])
+    ax.set_ylim(-1.0, 1.45)
+    ax.tick_params(axis="x", labelsize=FT)
+    ax.set_xlabel("Triggered (%)", fontsize=FS)
+    leg = ax.legend(loc="lower right", ncol=1, fontsize=FS, frameon=False, handlelength=1.4,
+                    borderaxespad=0.0, labelspacing=0.3)
+    leg.set_in_layout(False)
+    ax.set_title(GA_TITLES["c"], fontsize=TFS, fontweight="bold", loc="left")
 
     # ---- panel d: reference hides/inflates AI error
     ax = axs[3]
@@ -561,34 +611,36 @@ def ga():
     ai_ = v("E5b independent AI apparent_mae, sigma_AI 2 mm, lambda 1, reference mean of 2 reads")
     ts = v("E5b shared AI true_mae, sigma_AI 2 mm, lambda 1, reference mean of 2 reads")
     as_ = v("E5b shared AI apparent_mae, sigma_AI 2 mm, lambda 1, reference mean of 2 reads")
-    pl = v("E5b P(shared AI apparent MAE < independent AI), ref mean2, lambda 1, sigma 2")
-    rowsd = [(1.0, "AI with error\nindependent of\nthe images", ti, ai_),
-             (0.0, "AI sharing the\nreference's\nimage error", ts, as_)]
+    rowsd = [(1.0, "Independent AI", ti, ai_), (0.0, "AI sharing\nimage error", ts, as_)]
     for yy, lab, t, a in rowsd:
         sgn = 1 if a > t else -1
         arrow(ax, (t + sgn * 0.03, yy), (a - sgn * 0.035, yy), style="-|>", lw=0.9, ms=7)
-        ax.plot([t], [yy], marker="o", ms=4.5, color="black", ls="none", zorder=3)
-        ax.plot([a], [yy], marker="s", ms=4.5, mfc="white", mec="black", mew=0.9, ls="none",
+        ax.plot([t], [yy], marker="o", ms=5, color="black", ls="none", zorder=3)
+        ax.plot([a], [yy], marker="s", ms=5, mfc="white", mec="black", mew=0.9, ls="none",
                 zorder=3)
-        ax.text(t, yy + 0.2, f"{t:.2f}", ha="center", va="bottom", fontsize=FS)
-        ax.text(a, yy + 0.2, f"{a:.2f}", ha="center", va="bottom", fontsize=FS)
+        txt(ax, t, yy + 0.16, f"{t:.2f}", ha="center", va="bottom", fontsize=FS)
+        txt(ax, a, yy + 0.16, f"{a:.2f}", ha="center", va="bottom", fontsize=FS)
         src.append(dict(panel="d", ai=lab.replace("\n", " "), true_mae=t, apparent_mae=a))
-    ax.plot([], [], marker="o", ms=4.5, color="black", ls="none", label="true (against the true span)")
-    ax.plot([], [], marker="s", ms=4.5, mfc="white", mec="black", ls="none",
-            label="apparent (against mean of 2 reads)")
-    ax.legend(loc="lower right", bbox_to_anchor=(1.0, 0.0), ncol=1, fontsize=FS,
-              frameon=False, handletextpad=0.3, borderaxespad=0.2)
-    ax.text(1.395, 0.5, f"Ranking reversed in {100 * pl:.1f}% of validation studies",
-            ha="left", va="center", fontsize=FS, style="normal")
-    ax.set_yticks([1, 0], [r[1] for r in rowsd], fontsize=FS)
+    hd = [Line2D([], [], marker="o", ms=5, color="black", ls="none", label="true"),
+          Line2D([], [], marker="s", ms=5, mfc="white", mec="black", ls="none", label="apparent")]
+    leg = ax.legend(handles=hd, loc="lower right", ncol=2, fontsize=FS, frameon=False, handletextpad=0.2,
+                    borderaxespad=0.0, columnspacing=1.0)
+    leg.set_in_layout(False)
+    ax.set_yticks([1, 0], [r[1] for r in rowsd], fontsize=FT)
+    ax.tick_params(axis="y", length=0)
     ax.set_ylim(-0.75, 1.55)
-    ax.set_xlim(1.35, 2.35)
+    ax.set_xlim(1.4, 2.3)
     ax.set_xticks([1.4, 1.6, 1.8, 2.0, 2.2])
-    ax.tick_params(axis="x", labelsize=FS)
-    ax.set_xlabel("Mean absolute error of the AI (mm)", fontsize=FS)
-    ax.set_title("d  Protocol-built references inflate\n    independent AI error, hide "
-                 "shared error", fontsize=TFS, fontweight="bold")
+    ax.tick_params(axis="x", labelsize=FT)
+    ax.set_xlabel("AI mean absolute error (mm)", fontsize=FS)
+    ax.set_title(GA_TITLES["d"], fontsize=TFS, fontweight="bold", loc="left")
 
+    # titles start at the left edge of each column (the y-axis decorations), not of the axes box
+    fig.canvas.draw()
+    r = fig.canvas.get_renderer()
+    for ax in axs:
+        left = ax.yaxis.get_tightbbox(r).x0
+        ax._left_title.set_x((left - ax.bbox.x0) / ax.bbox.width)   # the loc="left" heading
 
     pd.DataFrame(src).to_csv(os.path.join(FIG, "graphical_abstract_source.csv"), index=False)
     stem = os.path.join(FIG, "graphical_abstract")
@@ -596,9 +648,19 @@ def ga():
     plt.close(fig)
 
 
+# one line at 12 pt bold: "...: simulation results" measured 191 mm, so it is shortened (176 mm)
+GA_TITLE = "Combining beats and views in tricuspid jet measurement: a simulation study"
+GA_TITLES = {"a": "a  Largest view mean stays within ±1 mm",
+             "b": "b  A ±15% beat window adds error",
+             "c": "c  Millimetre triggers miss most view errors",
+             "d": "d  References distort apparent AI error"}
+
+
 if __name__ == "__main__":
     what = sys.argv[1] if len(sys.argv) > 1 else "all"
     if what in ("fig1", "all"):
-        fig1()
+        fig1("row")
+    if what in ("fig1alt", "all"):
+        fig1("stack")
     if what in ("ga", "all"):
         ga()

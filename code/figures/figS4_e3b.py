@@ -4,7 +4,7 @@
 
 Input : results/2026-09-18_amend2/analysis/E1bE3b_e3_long.csv (from code/08_analyse_amend2_e1e3.py).
 Output: figures/figS4_e3b.{pdf,png,tif}, figures/figS4_e3b_source.csv.
-E3b cells: K 3, beat CV 15%, overestimation on, acceptance window 15%, median true AP span 10 mm,
+E3b cells: K 3, beat CV 15%, overestimation on, beat-consistency window 15%, median true AP span 10 mm,
 rho 0.3, N 3, sinus, prospective; reference T1 on the same axis; A4 s_det 0.8, f_rej 0.1.
 """
 from __future__ import annotations
@@ -15,6 +15,7 @@ from pathlib import Path
 sys.path.insert(0, "/home/users/u104629/.claude/academic/assets")
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import figqa  # noqa: E402
+import estimator_style as es  # noqa: E402  shared text sizes (8 pt floor)
 import figstyle  # noqa: E402
 import matplotlib.pyplot as plt  # noqa: E402
 import numpy as np  # noqa: E402
@@ -39,12 +40,18 @@ SPEC_LIM = {("AP", 7.0): (60, 101, 10), ("AP", 10.0): (75, 100.5, 5), ("AP", 13.
             ("SL", 7.0): (75, 100.5, 5), ("SL", 10.0): (88, 100.3, 4), ("SL", 13.0): (95, 100.2, 1)}
 
 
+# Categorical x positions. v05 (8 pt): within-group spacing 1.0 -> 1.15 and group pitch 3.8 -> 3.7 (same total
+# span), so the 8 pt tick labels "20" and "40" no longer touch. Separators stay 0.4 after each group's last point.
+DX_IN, PITCH = 1.15, 3.7
+
+
 def xpos(a, L):
-    return ANCH.index(a) * 3.8 + LONG.index(L)
+    return ANCH.index(a) * PITCH + LONG.index(L) * DX_IN
 
 
 def main():
     fam = figstyle.use_print_style()
+    es.use_journal_text()
     d = pd.read_csv(AN / "E1bE3b_e3_long.csv")
     d = d[d.estimand == "T1"]
     src = []
@@ -63,7 +70,7 @@ def main():
                     ax.plot(x, 100 * g[metric], **kw(e, ms=2.6, lw=0.8))
                 src.append(s.assign(panel=f"{axis} {metric} {cut:g} mm"))
             for a in ANCH[1:]:
-                ax.axvline(xpos(a, 8.0) - 1.4, color="0.85", lw=0.5, zorder=0)
+                ax.axvline(xpos(a, 8.0) - (PITCH - 2 * DX_IN) + 0.4, color="0.85", lw=0.5, zorder=0)
             if metric == "sensitivity":
                 ax.set_ylim(*YLIM[metric])
                 ax.set_yticks(np.arange(20, 101, 20))
@@ -75,9 +82,9 @@ def main():
                 ax.set_yticks(np.arange(lo, 100.01, step))
             ax.set_xlim(-0.6, xpos(20.0, 40.0) + 0.6)
             ax.set_xticks(ticks)
-            ax.set_xticklabels([f"{L:g}" for a in ANCH for L in LONG], fontsize=6)
+            ax.set_xticklabels([f"{L:g}" for a in ANCH for L in LONG], fontsize=es.FS_MIN)
             if i == 0:
-                ax.set_title(f"Cut-off {cut:g} mm", fontsize=7)
+                ax.set_title(f"Cut-off {cut:g} mm", fontsize=es.FS_TITLE)
             if j == 0:
                 ax.set_ylabel(f"{axis} {metric} (%)")
             elif metric == "sensitivity":
@@ -85,18 +92,18 @@ def main():
             if i == 0:
                 for a in ANCH:
                     ax.text(xpos(a, 20.0), YLIM[metric][0] + 1, f"Anchor\n{a:g}%", ha="center", va="bottom",
-                            fontsize=6, color="0.35")
+                            fontsize=es.FS_MIN, color="0.35")
             if i == 3:
                 ax.set_xlabel("Long-axis mean underestimation (%)")
     hs = [Line2D([], [], **kw(e)) for e in EST4]
     fig.legend(hs, [LABEL[e] for e in EST4], loc="outside upper center", ncol=4, frameon=False,
-               handlelength=2.8, columnspacing=1.8, fontsize=6.5)
-    figstyle.panel_labels([axs[i, 0] for i in range(4)], list("abcd"))
+               handlelength=2.8, columnspacing=1.8, fontsize=es.FS_MIN)
+    figstyle.panel_labels([axs[i, 0] for i in range(4)], list("abcd"), size=es.FS_LETTER)
 
     paths = figstyle.save_all(fig, str(STEM))
     pd.concat(src, ignore_index=True).to_csv(str(STEM) + "_source.csv", index=False)
     fig.canvas.draw()
-    for q in figqa.report(fig):
+    for q in figqa.report(fig, min_pt=es.FS_MIN):
         print("QA:", q)
     print(figqa.greyscale_and_downscale(str(STEM) + ".png", WIDTH_MM))
     print("font", fam, paths)

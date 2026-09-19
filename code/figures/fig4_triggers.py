@@ -16,6 +16,8 @@ from pathlib import Path
 
 sys.path.insert(0, "/home/users/u104629/.claude/academic/assets")
 import figqa  # noqa: E402
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import estimator_style as es  # noqa: E402  shared text sizes (8 pt floor)
 import figstyle  # noqa: E402
 import matplotlib.pyplot as plt  # noqa: E402
 import numpy as np  # noqa: E402
@@ -25,7 +27,7 @@ from matplotlib.lines import Line2D  # noqa: E402
 ROOT = Path(__file__).resolve().parents[2]
 AN = ROOT / "results" / "2026-09-18_full" / "analysis"
 STEM = ROOT / "figures" / "fig4_triggers"
-WIDTH_MM, HEIGHT_MM = 183.0, 118.0
+WIDTH_MM, HEIGHT_MM = 183.0, 130.0
 Z = 1.959964
 AXIS = "AP"
 BASE = dict(u="base", r_mean=0.64, N_beats=3)
@@ -37,6 +39,7 @@ CV_LS = {0.05: "-", 0.15: "--", 0.30: ":"}
 
 def main():
     fam = figstyle.use_print_style()
+    es.use_journal_text()
     anyt = pd.read_csv(AN / "E4_any_trigger.csv")
     oc = pd.read_csv(AN / "E4_operating.csv")
     truth = pd.read_csv(AN / "E4_ellipticity_truth.csv")
@@ -53,9 +56,9 @@ def main():
     # The per-patient rate at threshold tau is identical for warning and adjudication
     # (one-sided rule; checked in 04_analyse_E4.py), so tau 4 mm is drawn once, in a.
     for key, metric, taus, ylab in (("a", "p_any_trigger", [2.0, 3.0, 4.0],
-                                     "Patients with ≥ 1 warning (%)"),
+                                     "Patients with ≥ 1\nwarning (%)"),
                                     ("b", "p_any_adj", [5.0, 6.0],
-                                     "Patients with ≥ 1 adjudication (%)")):
+                                     "Patients with ≥ 1\nadjudication (%)")):
         ax = axd[key]
         for t in taus:
             for ve, ls, fill in ((True, "-", True), (False, "--", False)):
@@ -71,8 +74,8 @@ def main():
         ax.set_ylim(0, 50 if key == "a" else 20)  # own scale per panel; see caption
         ax.set_yticks(range(0, 51, 10) if key == "a" else range(0, 21, 5))
         ax.set_xlim(3, 32)
-        ax.set_title("Warning threshold $t_{warn}$ 2 to 4 mm" if key == "a"
-                     else "Adjudication threshold $t_{adj}$ 5 and 6 mm", fontsize=7)
+        ax.set_title("Warning threshold\n$t_{warn}$ 2 to 4 mm" if key == "a"
+                     else "Adjudication threshold\n$t_{adj}$ 5 and 6 mm", fontsize=es.FS_TITLE)
 
     # ---- c: PPV of a trigger at threshold tau for a true error, AP, view errors on
     ax = axd["c"]
@@ -90,11 +93,11 @@ def main():
             src.append(dict(panel="c", axis=AXIS, series=f"ppv tau={t:g}", x_beat_cv=r.beat_cv, y=r.ppv,
                             mcse=r.ppv_mcse_conservative, n=r.n_fired_pairs, table=f"E4_operating.csv cell {r.cell}"))
     ax.set_xlabel("Beat-to-beat CV (%)")
-    ax.set_ylabel("PPV for a true error > 2 mm (%)")
+    ax.set_ylabel("PPV for a true error\n> 2 mm (%)")
     ax.set_xticks([5, 10, 15, 20, 25, 30])
     ax.set_xlim(3, 32)
     ax.set_ylim(0, 100)
-    ax.set_title("Positive predictive value, view errors", fontsize=7)
+    ax.set_title("Positive predictive value,\nview errors", fontsize=es.FS_TITLE)
 
     # ---- d: operating points (false-alarm vs hit rate per pair), AP, three beat CVs
     ax = axd["d"]
@@ -109,17 +112,18 @@ def main():
                             x_mcse=r.false_alarm_mcse, y=r.hit, mcse=r.hit_mcse, n=r.n_event_pairs,
                             n_nonevent=r.n_nonevent_pairs, table=f"E4_operating.csv cell {r.cell}"))
         top = s.sort_values("tau").iloc[0]
-        left = cv != 0.30
+        # CV 5% left of its top point, CV 15% centred above it, CV 30% to the right (8 pt labels, v05)
+        dx, ha = {0.05: (-5, "right"), 0.15: (0, "center"), 0.30: (3, "left")}[cv]
         ax.annotate(f"CV {100 * cv:.0f}%", (100 * top.false_alarm, 100 * top.hit),
-                    xytext=(-5 if left else 3, 3), textcoords="offset points", fontsize=6,
-                    ha="right" if left else "left", va="bottom", color="0.2")
-    ax.set_xlabel("False-alarm rate per view pair (%, symlog scale)")
+                    xytext=(dx, 5 if cv == 0.15 else 3), textcoords="offset points", fontsize=es.FS_MIN,
+                    ha=ha, va="bottom", color="0.2")
+    ax.set_xlabel("False-alarm rate per view pair\n(%, symlog scale)")
     ax.set_ylabel("Hit rate per view pair (%)")
     ax.set_xscale("symlog", linthresh=0.5, linscale=0.6)
     ax.set_xlim(-0.12, 20)
     ax.set_xticks([0, 0.5, 1, 2, 5, 10, 20])
     ax.set_xticklabels(["0", "0.5", "1", "2", "5", "10", "20"])
-    ax.set_title("Operating points, view errors", fontsize=7)
+    ax.set_title("Operating points,\nview errors", fontsize=es.FS_TITLE)
     ax.xaxis.set_minor_locator(plt.NullLocator())
     ax.set_ylim(0, 42)
 
@@ -134,10 +138,10 @@ def main():
             src.append(dict(panel="e", axis="AP-SL", series=f"true tau={t:g}", x_r_mean=r.r_mean, y=r.value,
                             mcse=r.mcse, n=r.n, table=f"E4_ellipticity_truth.csv ({r.source})"))
     ax.set_xlabel("Mean SL/AP ratio")
-    ax.set_ylabel("True |AP − SL| ≥ threshold (%)")
+    ax.set_ylabel("True |AP − SL| ≥\nthreshold (%)")
     ax.set_ylim(0, 100)
     ax.set_xticks([0.53, 0.64, 0.8, 0.9])
-    ax.set_title("True span difference between axes", fontsize=7)
+    ax.set_title("True span difference\nbetween axes", fontsize=es.FS_TITLE)
 
     # ---- f: measured anchor-view AP-SL difference exceeds tau (base cell)
     ax = axd["f"]
@@ -151,10 +155,10 @@ def main():
             src.append(dict(panel="f", axis="AP-SL", series=f"measured anchor tau={t:g}", x_r_mean=r.r_mean,
                             y=r.value, mcse=r.mcse, n=r.n, table=f"E4_ellipticity_cells.csv cell {r.cell}"))
     ax.set_xlabel("Mean SL/AP ratio")
-    ax.set_ylabel("Anchor-view |AP − SL| ≥ threshold (%)")
+    ax.set_ylabel("Anchor-view |AP − SL|\n≥ threshold (%)")
     ax.set_ylim(0, 100)
     ax.set_xticks([0.53, 0.64, 0.8, 0.9])
-    ax.set_title("Measured difference, anchor view", fontsize=7)
+    ax.set_title("Measured difference,\nanchor view", fontsize=es.FS_TITLE)
 
     # one shared key: threshold (grey level + marker, all panels) and scenario (a, b only)
     hk = [Line2D([], [], color=TCOL[t], marker=TMARK[t], ms=3, lw=0.9, label=f"{t:g} mm") for t in TAUS]
@@ -163,11 +167,11 @@ def main():
            Line2D([], [], color="0.3", ls="--", marker="o", ms=3, mfc="white", lw=0.9,
                   label="No view errors (a, b)")]
     fig.legend(handles=hk, loc="outside upper center", ncol=7, frameon=False, handlelength=2.4,
-               columnspacing=1.2, title="Threshold τ", title_fontsize=6.5, fontsize=6.5)
-    figstyle.panel_labels([axd[k] for k in "abcdef"], list("abcdef"), dx=-0.2, dy=1.02)
+               columnspacing=1.2, title="Threshold τ", title_fontsize=es.FS_MIN, fontsize=es.FS_MIN)
+    figstyle.panel_labels([axd[k] for k in "abcdef"], list("abcdef"), dx=-0.25, dy=1.02, size=es.FS_LETTER)
 
     STEM.parent.mkdir(parents=True, exist_ok=True)
-    probs = figqa.report(fig)
+    probs = figqa.report(fig, min_pt=es.FS_MIN)
     paths = figstyle.save_all(fig, str(STEM))
     pd.DataFrame(src).to_csv(f"{STEM}_source.csv", index=False)
     grey, actual = figqa.greyscale_and_downscale(str(STEM) + ".png", WIDTH_MM)

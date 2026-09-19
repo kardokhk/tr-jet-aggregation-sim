@@ -13,6 +13,7 @@ from pathlib import Path
 sys.path.insert(0, "/home/users/u104629/.claude/academic/assets")
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import figqa  # noqa: E402
+import estimator_style as es  # noqa: E402  shared text sizes (8 pt floor)
 import figstyle  # noqa: E402
 import matplotlib.pyplot as plt  # noqa: E402
 import pandas as pd  # noqa: E402
@@ -23,19 +24,20 @@ from estimator_style import COLOR, EST, LABEL, kw  # noqa: E402
 ROOT = Path(__file__).resolve().parents[2]
 AN = ROOT / "results" / "2026-09-18_full" / "analysis"
 STEM = ROOT / "figures" / "figS2_misclassification"
-WIDTH_MM, HEIGHT_MM = 183.0, 112.0
+WIDTH_MM, HEIGHT_MM = 183.0, 120.0
 AXIS = "AP"
 Z = 1.959964
 DODGE = {e: (i - 3) * 0.28 for i, e in enumerate(EST)}
-ROWS = [("base", "Underestimation 20%, overestimation on"),
-        ("low", "Underestimation 8%, overestimation on")]
+ROWS = [("base", "Underestimation 20%,\noverestimation on"),
+        ("low", "Underestimation 8%,\noverestimation on")]
 COLS = [("sensitivity", "Sensitivity (%)", (60, 100)),
         ("specificity", "Specificity (%)", (60, 100)),
-        ("nri_vs_A1", "NRI vs A1 (percentage points)", (-12, 9))]
+        ("nri_vs_A1", "NRI vs anchor-view mean\n(percentage points)", (-12, 9))]
 
 
 def main():
     fam = figstyle.use_print_style()
+    es.use_journal_text()
     w = pd.read_csv(AN / "E1E3_e3_base.csv")
     w = w[w.axis == AXIS]
     mosaic = [["a", "b", "c"], ["d", "e", "f"]]
@@ -72,15 +74,15 @@ def main():
                 ax.set_yticks([-10, -5, 0, 5])
             ax.set_xlabel("Cut-off c (mm)")
             ax.set_ylabel(ylab)
-            ax.set_title(utitle, fontsize=7)
+            ax.set_title(utitle, fontsize=es.FS_TITLE)
     hs = [Line2D([], [], **kw(e, lw=0)) for e in EST]
-    fig.legend(hs, [LABEL[e] for e in EST], loc="outside upper center", ncol=7, frameon=False,
-               handlelength=1.2, columnspacing=1.2, fontsize=6.5)
-    figstyle.panel_labels([axd[k] for k in "abcdef"], list("abcdef"))
+    fig.legend(hs, [LABEL[e] for e in EST], loc="outside upper center", ncol=4, frameon=False,  # 4 columns: plain names
+               handlelength=1.2, columnspacing=1.2, fontsize=es.FS_MIN)
+    figstyle.panel_labels([axd[k] for k in "abcdef"], list("abcdef"), size=es.FS_LETTER)
     paths = figstyle.save_all(fig, str(STEM))
     pd.concat(src, ignore_index=True).to_csv(str(STEM) + "_source.csv", index=False)
     fig.canvas.draw()
-    for d in figqa.report(fig):
+    for d in figqa.report(fig, min_pt=es.FS_MIN):
         print("QA:", d)
     print(figqa.greyscale_and_downscale(str(STEM) + ".png", WIDTH_MM))
     print("font", fam, paths)

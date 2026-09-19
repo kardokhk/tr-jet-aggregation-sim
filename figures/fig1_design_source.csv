@@ -1,11 +1,5 @@
-figure,panel,view,beat,span_mm,kept,view_mean_mm,first3_mean_mm,window,note
-fig1_design,b,View 1 (anchor),1,9.3,True,9.7,9.7,0.15,"illustrative values, not simulation output"
-fig1_design,b,View 1 (anchor),2,10.1,True,9.7,9.7,0.15,"illustrative values, not simulation output"
-fig1_design,b,View 1 (anchor),3,9.7,True,9.7,9.7,0.15,"illustrative values, not simulation output"
-fig1_design,b,View 2,1,8.9,True,8.533,8.0,0.15,"illustrative values, not simulation output"
-fig1_design,b,View 2,2,6.6,False,8.533,8.0,0.15,"illustrative values, not simulation output"
-fig1_design,b,View 2,3,8.5,True,8.533,8.0,0.15,"illustrative values, not simulation output"
-fig1_design,b,View 2,4,8.2,True,8.533,8.0,0.15,"illustrative values, not simulation output"
-fig1_design,b,View 3,1,11.6,True,11.967,11.967,0.15,"illustrative values, not simulation output"
-fig1_design,b,View 3,2,12.4,True,11.967,11.967,0.15,"illustrative values, not simulation output"
-fig1_design,b,View 3,3,11.9,True,11.967,11.967,0.15,"illustrative values, not simulation output"
+figure,panel,view,beat,span_mm,caliper_error_bar_mm,kept,kept_mean_mm,window,window_lo_mm,window_hi_mm,note
+fig1_design,b,View 2,1,8.9,0.8,True,8.533,0.15,7.253,9.813,"illustrative values, not simulation output"
+fig1_design,b,View 2,2,6.6,0.8,False,8.533,0.15,7.253,9.813,"illustrative values, not simulation output"
+fig1_design,b,View 2,3,8.5,0.8,True,8.533,0.15,7.253,9.813,"illustrative values, not simulation output"
+fig1_design,b,View 2,4,8.2,0.8,True,8.533,0.15,7.253,9.813,"illustrative values, not simulation output"

@@ -5,7 +5,7 @@ composite multi-beat, multi-view echocardiographic measurement rules for tricusp
 dimensions, and of how reference standards built from them change the apparent performance of
 artificial intelligence (AI) models.
 
-Author: Kardokh Kakabra (RCSI / CVRI Dublin). Archived release: https://doi.org/10.5281/zenodo.22833344 (see `CITATION.cff`). Funding: Disruptive Technologies Innovation Fund (DTIF),
+Author: Kardokh Kakabra (RCSI / CVRI Dublin). Archived releases (all versions): https://doi.org/10.5281/zenodo.22833343 (see `CITATION.cff` for the current version). Funding: Disruptive Technologies Innovation Fund (DTIF),
 Enterprise Ireland, grant DT20240543A (project code 26151); the funder had no role in the study.
 
 ## Contents
@@ -16,7 +16,7 @@ Enterprise Ireland, grant DT20240543A (project code 26151); the funder had no ro
 - `code/lib/duomaxsim/`: simulation package (generative model, rules, estimators, metrics, experiments)
 - `code/01_run_experiment.py`: command-line runner; `code/configs/*.yaml`: configurations and seeds
 - `code/slurm/*.sh`: batch scripts used on the MeluXina supercomputer
-- `code/02_*.py` to `code/14_*.py`: analysis, face-validity and table scripts; `code/figures/`: figure scripts
+- `code/02_*.py` to `code/15_*.py`: analysis, face-validity and table scripts (`15_make_tables_v04.py` builds the tables of manuscript v04); `code/figures/`: figure scripts
 - `tests/`: unit tests (`pytest tests`) and independent reimplementations (`tests/independent/`)
 - `results/2026-09-18_full` (pre-specified E1 to E6), `_sens` (exploratory sensitivity analyses),
   `_amend2` (amendment 2), `_pilot` (timing pilot); each run directory holds `provenance.txt` and

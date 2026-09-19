@@ -112,3 +112,10 @@ Label: all output of this config is "amendment 2", secondary to E1 to E6.
 Pilot plausibility: at lambda 0 the shared AI equals the independent AI (paired difference 0); at lambda 1 (cell 17) the shared AI had lower apparent MAE than the independent AI against the single read in 100/100 pilot studies while its true MAE was higher by 1.02 mm. BF rejection at anchor_alpha 0 was 0.05 to 0.12 in 100-study pilots (not a size estimate). These pilot numbers are for code checking only.
 
 **Not done.** Face-validity comparison (amendment 2, last bullet) is an analysis step, not implemented here. No analysis scripts updated for the new metrics. Job not submitted.
+
+## 2026-09-19: release 0.4.0 (presentation only)
+
+- Added code/15_make_tables_v04.py: main-text Table 1 (four view rules, clinical wording) and Supplementary Tables S1 to S6 (former Tables 1 to 4, former Supplementary Table S1, and a name-to-code mapping). Every Table 1 cell was checked against its CSV cell.
+- Figures relabelled with plain rule names (anchor-view mean, mean across views, largest view mean, largest view mean after review, median across views, index beat, offset-corrected mean) instead of A1 to A7; main Figures 2 and 3 swapped numbers (fig2_beat_rules, fig3_view_accuracy); Figure 1 and the graphical abstract redrawn with less text; figure text raised to at least 8 pt for EHJ-CVI.
+- No simulation, analysis result or plotted value changed: every figure source CSV and every file under results/ is identical to release 0.3.1.
+

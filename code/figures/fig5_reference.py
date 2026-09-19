@@ -1,4 +1,4 @@
-"""Figure 5 (final numbering; amendment 2 version): reference design, AI sharing image-level error, reference-programme
+"""Figure 5 (final numbering, unchanged in v04; amendment 2 version; v04 relabelling 2026-09-19): reference design, AI sharing image-level error, reference-programme
 precision and sentinel power (E5b, E6b).
 
 Replaces the v01 figure (v01 script and outputs kept in notes/scratch/2026-09-18-fig6_reference_v1_script.py
@@ -15,7 +15,8 @@ code/figures/estimator_style.py are deliberately not used. One meaning per colou
 viridis ramp = sigma_AI (a only); black/grey with marker shape = reference design (b only);
 black = precision series in c (sigma_rb by marker fill); grey ramp = sentinel n (d only).
 The anchoring fraction is written w throughout; the Greek letter for the test level is not reused for it.
-All text is 7 pt (8 pt panel letters); mathtext subscripts are avoided because they render below 6 pt.
+All text is at least 8 pt (8.5 pt titles, 9 pt bold panel letters; EHJ-CVI 2 mm floor, v05 2026-09-19);
+mathtext subscripts are avoided because they render below the floor.
 """
 import os
 import sys
@@ -23,27 +24,34 @@ import sys
 sys.path.insert(0, "/home/users/u104629/.claude/academic/assets")
 import figstyle  # noqa: E402  (sets Agg)
 import figqa  # noqa: E402
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import estimator_style as es  # noqa: E402  shared text sizes (8 pt floor)
 import matplotlib.pyplot as plt  # noqa: E402
 import numpy as np  # noqa: E402
 import pandas as pd  # noqa: E402
 from matplotlib.lines import Line2D  # noqa: E402
+from matplotlib.transforms import ScaledTranslation  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 AN = os.path.join(ROOT, "results", "2026-09-18_amend2", "analysis")
 STEM = os.path.join(ROOT, "figures", "fig5_reference")
-WIDTH_MM, HEIGHT_MM = 183, 150
+WIDTH_MM, HEIGHT_MM = 183, 170
 Z = 1.959964
 
 fam = figstyle.use_print_style()
-plt.rcParams.update({"xtick.labelsize": 7, "ytick.labelsize": 7, "legend.fontsize": 7,
-                     "legend.title_fontsize": 7})
+
+es.use_journal_text()
 
 # ---------------------------------------------------------------- data
 agr = pd.read_csv(os.path.join(AN, "E5bE6b_E5b_ai_agreement.csv"))
 agr = agr[(agr.p_beat_cv == 0.15) & (agr.p_view_over)]
 w0 = agr[agr.p_ai_shared_lambda == 0.0]
-REFS = [("true", "T1\n(true)"), ("single", "Single\nread"), ("adj_tol1", "Adj.\n1 mm"),
-        ("adj_tol2", "Adj.\n2 mm"), ("adj_tol3", "Adj.\n3 mm"), ("mean2", "Mean\nof 2")]
+# Adjudicated references: tolerance on the tick, one group label "Adjudicated" under the three ticks
+# (six two-line "Adjudicated" ticks do not fit the panel width).
+# v05 (8 pt): the tolerance ticks are stacked ("1" over "mm") like the other two-line ticks, because
+# "1 mm 2 mm 3 mm" on one line touch at 8 pt; the group label moves to a third line.
+REFS = [("true", "True\nspan"), ("single", "Single\nread"), ("adj_tol1", "1\nmm"),
+        ("adj_tol2", "2\nmm"), ("adj_tol3", "3\nmm"), ("mean2", "Mean\nof 2")]
 SIGMAS = [1.0, 2.0, 3.0]
 cmap = plt.get_cmap("viridis")
 SIG_COL = {1.0: cmap(0.0), 2.0: cmap(0.45), 3.0: cmap(0.78)}
@@ -73,7 +81,7 @@ sent = sent[(sent.p_beat_cv == 0.15) & (sent.p_sigma_rb_mm == 0.75) & (sent.p_ai
 fig = plt.figure(figsize=figstyle.mm(WIDTH_MM, HEIGHT_MM), layout="constrained")
 assert HEIGHT_MM <= figstyle.MAX_HEIGHT_MM
 axd = fig.subplot_mosaic([["a1", "a2", "b"], ["c1", "c2", "d"], ["c1", "c2", "e"]],
-                         height_ratios=[1.0, 0.74, 0.30])
+                         height_ratios=[1.0, 0.74, 0.30], width_ratios=[1.1, 1.1, 1.0])
 fig.get_layout_engine().set(w_pad=2 / 72, h_pad=2 / 72, wspace=0.04, hspace=0.06)
 
 # ---------------------------------------------------------------- a: apparent vs true, lambda 0
@@ -92,9 +100,15 @@ for key, m, ylab in (("a1", "mae", "MAE vs reference (mm)"),
     ax.axvline(0.5, color="0.6", lw=0.5, ls=":")
     ax.set_xticks(x)
     ax.set_xticklabels([lab for _, lab in REFS])
+    # group label for the adjudicated ticks (x 2 to 4), on the second tick-label line, with a bracket
+    tr = ax.get_xaxis_transform()
+    ax.annotate("Adjudicated", xy=(3, 0), xycoords=tr, xytext=(0, -26.0), textcoords="offset points",
+                ha="center", va="top", fontsize=es.FS_MIN, annotation_clip=False)
+    ax.plot([1.65, 4.35], [0, 0], transform=tr + ScaledTranslation(0, -25.0 / 72, fig.dpi_scale_trans),
+            color="0.3", lw=0.5, clip_on=False)
     ax.set_xlim(-0.5, len(REFS) - 0.5)
     ax.set_ylabel(ylab)
-    ax.set_xlabel("Reference")
+    ax.set_xlabel("Reference", labelpad=13)   # clears the "Adjudicated" group label
     ax.set_ylim(0, None)
 axd["a1"].set_ylim(0, 3.1)
 axd["a1"].set_yticks(np.arange(0, 3.01, 0.5))
@@ -108,9 +122,9 @@ axd["a2"].legend(handles=h_ai, loc="lower right", frameon=False, handlelength=2.
 # ---------------------------------------------------------------- b: shared AI vs lambda (sigma_AI 2)
 ax = axd["b"]
 LAMS = [0.0, 0.5, 1.0]
-B_SERIES = [("T1", "True MAE (vs T1)", dict(color="0.0", ls="-", marker="o", mfc="0.0", lw=1.1)),
+B_SERIES = [("T1", "True MAE (vs true span)", dict(color="0.0", ls="-", marker="o", mfc="0.0", lw=1.1)),
             ("single", "Apparent, single read", dict(color="0.0", ls="--", marker="s", mfc="white", lw=0.9)),
-            ("adj_tol2", "Apparent, Adj. 2 mm", dict(color="0.45", ls=(0, (1.2, 1.2)), marker="^", mfc="0.45",
+            ("adj_tol2", "Apparent, adjudicated 2 mm", dict(color="0.45", ls=(0, (1.2, 1.2)), marker="^", mfc="0.45",
                                                      lw=0.9)),
             ("mean2", "Apparent, mean of 2 reads", dict(color="0.45", ls=(0, (5.0, 1.6, 1.2, 1.6)), marker="D", mfc="white", lw=0.9))]
 sh = agr[(agr.ai == "shared") & (agr.sigma_ai_mm == 2.0) & (agr.m == "mae")]
@@ -128,9 +142,9 @@ for ref, lab, st in B_SERIES:
         src.append(dict(panel="b", quantity="mae_true" if ref == "T1" else "mae_apparent", ai="shared",
                         lam=lam, sigma_ai_mm=2.0, reference=ref, value=yi, mcse=si, n_studies=2000,
                         n_patients_per_study=200))
-ax.set_xlabel("Fraction of image-level error shared, $\\lambda$")
+ax.set_xlabel("Share of image error reproduced by AI")
 ax.set_ylabel("MAE of AI (mm)")
-ax.set_xticks(LAMS)
+ax.set_xticks(LAMS, ["0%", "50%", "100%"])
 ax.set_xlim(-0.08, 1.08)
 ax.set_ylim(1.0, 2.4)
 ax.legend(loc="lower left", frameon=False, handlelength=4.0, title="AI error SD 2 mm", alignment="left")
@@ -175,7 +189,10 @@ h_c = [Line2D([], [], color="0.0", lw=0.9, marker="o", ms=3.2, label="Empirical 
        Line2D([], [], color="0.0", ls="none", marker="D", mfc="none", ms=5.5, mew=0.6,
               label="Overlap design, 500-case set")]
 axd["c2"].set_ylim(0, 7.2)
-axd["c2"].legend(handles=h_c, loc="upper right", frameon=False, handlelength=1.8)
+# v05 (8 pt): the five-entry key no longer fits beside the n = 25 points, so the two line types are keyed
+# in c1 (above the curves) and the three marker types in c2
+axd["c1"].legend(handles=h_c[:2], loc="upper right", frameon=False, handlelength=2.2, borderaxespad=0.2)
+axd["c2"].legend(handles=h_c[2:], loc="upper right", frameon=False, handlelength=1.8, borderaxespad=0.2)
 
 # ---------------------------------------------------------------- d: sentinel power, BF one-sided (F faint)
 # Upper axes: rejection rate against w. Lower strip (still panel d): empirical size at w = 0 on its own
@@ -207,13 +224,13 @@ for n in NS:
                         value=r.value, mcse=r.mcse, n_studies=2000))
 ax.axhline(0.05, color="0.0", lw=0.5, ls=LV_LS, zorder=0)
 ax.axhline(0.80, color="0.0", lw=0.5, ls=PW_LS, zorder=0)
-ax.set_xlabel("Anchoring fraction w")
+ax.set_xlabel("Drift towards AI draft")
 ax.set_ylabel("Rejection rate")
 # head room above 1.0 holds the two keys, so no reference line or data passes through them
 ax.set_ylim(0, 1.62)
 ax.set_yticks(np.arange(0, 1.01, 0.2))
 ax.spines["left"].set_bounds(0, 1.0)
-ax.set_xticks([0, 0.1, 0.2, 0.3, 0.5])
+ax.set_xticks([0, 0.1, 0.2, 0.3, 0.5], ["0%", "10%", "20%", "30%", "50%"])
 h_d = [Line2D([], [], color=NS_COL[n], marker=NS_MK[n], ms=3.2, lw=1.0, label=f"{n}") for n in NS]
 h_t = [Line2D([], [], color="0.3", ls="-", lw=1.0, label="Brown-Forsythe"),
        Line2D([], [], color="0.3", ls="-", lw=0.6, alpha=0.3, label="F test (faint)"),
@@ -231,14 +248,14 @@ axz.set_xticklabels([str(n) for n in NS])
 axz.set_xlim(-0.5, len(NS) - 0.5)
 axz.set_ylim(0, 0.10)
 axz.set_yticks([0, 0.05, 0.10])
-axz.set_xlabel("Sentinel n (size at w = 0)")
+axz.set_xlabel("Sentinel n (size at no drift)")
 axz.set_ylabel("Size")
 
 figstyle.panel_labels([axd[k] for k in ("a1", "b", "c1", "d")], letters=["a", "b", "c", "d"],
-                      dx=-0.28, dy=1.02)
+                      dx=-0.28, dy=1.02, size=es.FS_LETTER)
 
 fig.canvas.draw()
-problems = figqa.report(fig)
+problems = figqa.report(fig, min_pt=es.FS_MIN)
 paths = figstyle.save_all(fig, STEM)
 pd.DataFrame(src).to_csv(STEM + "_source.csv", index=False)
 grey, actual = figqa.greyscale_and_downscale(STEM + ".png", WIDTH_MM)

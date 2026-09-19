@@ -1,10 +1,10 @@
 #!/usr/bin/env python
-"""Figure 2 (final numbering; amendment 2): estimator bias and RMSE across view-accuracy scenarios (E1b).
+"""Figure 3 (v04 numbering, 2026-09-19; was Figure 2 in v03; amendment 2): estimator bias and RMSE across view-accuracy scenarios (E1b).
 
 Input : results/2026-09-18_amend2/analysis/E1bE3b_e1_long.csv, E1bE3b_e1_inflation.csv,
         E1bE3b_e1_worstcase.csv (from code/08_analyse_amend2_e1e3.py).
-Output: figures/fig2_view_accuracy.{pdf,png,tif}, figures/fig2_view_accuracy_source.csv.
-AP axis, estimand T1. Panels a-c at K 3 (a, b), beat CV 15% (a, b), overestimation on, no acceptance
+Output: figures/fig3_view_accuracy.{pdf,png,tif}, figures/fig3_view_accuracy_source.csv.
+AP axis, estimand T1. Panels a-c at K 3 (a, b), beat CV 15% (a, b), overestimation on, no beat-consistency
 window, median true AP span 10 mm; rho 0.3, N 3, sinus, prospective; A4 s_det 0.8, f_rej 0.1.
 """
 from __future__ import annotations
@@ -15,6 +15,7 @@ from pathlib import Path
 sys.path.insert(0, "/home/users/u104629/.claude/academic/assets")
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import figqa  # noqa: E402
+import estimator_style as es  # noqa: E402  shared text sizes (8 pt floor)
 import figstyle  # noqa: E402
 import matplotlib.pyplot as plt  # noqa: E402
 import numpy as np  # noqa: E402
@@ -27,8 +28,8 @@ from estimator_style import COLOR, LABEL, LS, MARKER, kw, mfc  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
 AN = ROOT / "results" / "2026-09-18_amend2" / "analysis"
-STEM = ROOT / "figures" / "fig2_view_accuracy"
-WIDTH_MM, HEIGHT_MM = 183.0, 160.0
+STEM = ROOT / "figures" / "fig3_view_accuracy"
+WIDTH_MM, HEIGHT_MM = 183.0, 170.0
 AXIS = "AP"
 EST4 = ["A1", "A2", "A3", "A4"]
 LONG = [8.0, 20.0, 40.0]
@@ -47,6 +48,7 @@ def base_mask(d, K=3, cv=0.15):
 
 def main():
     fam = figstyle.use_print_style()
+    es.use_journal_text()
     lw = pd.read_csv(AN / "E1bE3b_e1_long.csv")
     lw = lw[(lw.estimand == "T1")]
     inf = pd.read_csv(AN / "E1bE3b_e1_inflation.csv")
@@ -66,8 +68,8 @@ def main():
 
     # ---- a, b: bias and RMSE vs anchor underestimation, one panel per long-axis level
     base = lw[base_mask(lw)]
-    for row, metric, ylab, ylim in (("a", "bias", "Bias vs T1 (mm)", (-3.4, 1.2)),
-                                    ("b", "rmse", "RMSE vs T1 (mm)", (1.5, 4.3))):
+    for row, metric, ylab, ylim in (("a", "bias", "Bias vs true maximal\nspan (mm)", (-3.4, 1.2)),
+                                    ("b", "rmse", "RMSE vs true maximal\nspan (mm)", (1.5, 4.3))):
         for j, L in enumerate(LONG, start=1):
             ax = axd[f"{row}{j}"]
             if metric == "bias":
@@ -82,14 +84,14 @@ def main():
             ax.xaxis.set_minor_locator(plt.NullLocator())
             ax.set_xlim(2.0, 24.0)
             ax.set_ylim(*ylim)
-            ax.set_title(f"Long-axis views {L:g}% underestimated", fontsize=7)
-            ax.set_xlabel("Anchor mean underestimation (%, log scale)")
+            ax.set_title(f"Long-axis views {L:g}% underestimated", fontsize=es.FS_TITLE)
+            ax.set_xlabel("Mean anchor-view underestimation\n(%, log scale)")
             if j == 1:
                 ax.set_ylabel(ylab)
             else:
                 ax.tick_params(labelleft=False)
 
-    # ---- c: selection inflation E[A3 - A1] vs beat CV by K
+    # ---- c: excess of the largest view mean over the anchor-view mean, E[A3 - A1], vs beat CV by K
     ax = axd["c"]
     ib = inf[(inf.view_over) & (inf.window == 0) & (inf.S_median_mm == 10.0) & (inf.axis == AXIS)]
     off = {2: -1.4, 3: 0.0, 4: 1.4}
@@ -108,13 +110,13 @@ def main():
         src.append(g.assign(panel="c", estimator="A3-A1", quantity="inflation"))
     ax.legend(khandles, [f"K = {K}" for K in (2, 3, 4)], loc="upper left", frameon=False,
               handler_map={tuple: HandlerTuple(ndivide=None, pad=0.3)}, handlelength=3.6,
-              fontsize=6.5, borderaxespad=0.2)
+              fontsize=es.FS_MIN, borderaxespad=0.2, labelspacing=0.3)
     ax.set_xticks([5, 15, 30])
     ax.set_xlim(1, 34)
     ax.set_ylim(0, 4.6)
     ax.set_xlabel("Beat-to-beat CV (%)")
-    ax.set_ylabel("Selection inflation E[A3 − A1] (mm)")
-    ax.set_title("A3 minus A1, K = 2 to 4", fontsize=7)
+    ax.set_ylabel("Excess of largest view mean\nover anchor-view mean (mm)")
+    ax.set_title("K = 2 to 4 views", fontsize=es.FS_TITLE)
 
     # ---- d: min-max bias over the 12 view-accuracy combinations
     ax = axd["d"]
@@ -141,22 +143,22 @@ def main():
     ax.set_xlim(centres[0] - 0.55, centres[-1] + 0.55)
     ax.set_ylim(-4.0, 2.8)
     for k, K in enumerate((2, 3, 4)):
-        ax.text(np.mean(centres[3 * k:3 * k + 3]), 2.7, f"K = {K}", ha="center", va="top", fontsize=7)
+        ax.text(np.mean(centres[3 * k:3 * k + 3]), 2.7, f"K = {K}", ha="center", va="top", fontsize=es.FS_MIN)
     for k in (1, 2):
         ax.axvline((centres[3 * k - 1] + centres[3 * k]) / 2, color="0.8", lw=0.5, zorder=0)
     ax.set_xlabel("Beat-to-beat CV (%)")
-    ax.set_ylabel("Bias vs T1, range over 12 scenarios (mm)")
-    ax.set_title("Minimum to maximum bias across view-accuracy scenarios", fontsize=7)
+    ax.set_ylabel("Bias vs true maximal span,\nrange over 12 scenarios (mm)")
+    ax.set_title("Minimum to maximum bias across view-accuracy scenarios", fontsize=es.FS_TITLE)
 
     hs = [Line2D([], [], **kw(e, lw=1.1)) for e in EST4]
     fig.legend(hs, [LABEL[e] for e in EST4], loc="outside upper center", ncol=4, frameon=False,
-               handlelength=2.8, columnspacing=1.8, fontsize=6.5)
-    figstyle.panel_labels([axd["a1"], axd["b1"], axd["c"], axd["d"]], list("abcd"))
+               handlelength=2.8, columnspacing=1.8, fontsize=es.FS_MIN)
+    figstyle.panel_labels([axd["a1"], axd["b1"], axd["c"], axd["d"]], list("abcd"), size=es.FS_LETTER)
 
     paths = figstyle.save_all(fig, str(STEM))
     pd.concat(src, ignore_index=True).to_csv(str(STEM) + "_source.csv", index=False)
     fig.canvas.draw()
-    for d in figqa.report(fig):
+    for d in figqa.report(fig, min_pt=es.FS_MIN):
         print("QA:", d)
     print(figqa.greyscale_and_downscale(str(STEM) + ".png", WIDTH_MM))
     print("font", fam, paths)

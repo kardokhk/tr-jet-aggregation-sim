@@ -1,4 +1,4 @@
-"""Figure 3 (final numbering; formerly Figure 4): beat acceptance windows (experiment E2).
+"""Figure 2 (v04 numbering, 2026-09-19; Figure 3 in v03, Figure 4 in v01): beat-consistency windows (experiment E2).
 
 Rows: (a) probability that a +-W window is met by the first N beats vs beat CV;
 (b) expected beats acquired to satisfy the window (prospective);
@@ -8,8 +8,8 @@ Rows: (a) probability that a +-W window is met by the first N beats vs beat CV;
 AP axis throughout. AF shown at RR CV 20% (base AF state).
 
 Input: results/2026-09-18_full/analysis/E2_*.csv (from code/03_analyse_e2.py).
-Output: figures/fig3_beat_rules.{pdf,png,tif} and figures/fig3_beat_rules_source.csv.
-Run: /project/home/p201509/envs/duomax-sim/bin/python code/figures/fig3_beat_rules.py
+Output: figures/fig2_beat_rules.{pdf,png,tif} and figures/fig2_beat_rules_source.csv.
+Run: /project/home/p201509/envs/duomax-sim/bin/python code/figures/fig2_beat_rules.py
 """
 import sys
 from pathlib import Path
@@ -18,14 +18,15 @@ sys.path.insert(0, "/home/users/u104629/.claude/academic/assets")
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import figstyle  # noqa: E402  (sets Agg backend)
 import figqa  # noqa: E402
+import estimator_style as es  # noqa: E402  shared text sizes (8 pt floor)
 import matplotlib.pyplot as plt  # noqa: E402
 import pandas as pd  # noqa: E402
 from matplotlib.lines import Line2D  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
 AN = ROOT / "results" / "2026-09-18_full" / "analysis"
-STEM = str(ROOT / "figures" / "fig3_beat_rules")
-WIDTH_MM, HEIGHT_MM = 183.0, 165.0
+STEM = str(ROOT / "figures" / "fig2_beat_rules")
+WIDTH_MM, HEIGHT_MM = 183.0, 170.0
 
 from estimator_style import COLOR, MARKER  # noqa: E402  fixed estimator colours and markers
 
@@ -51,6 +52,7 @@ def sel(t, **kw):
 
 def main():
     fam = figstyle.use_print_style()
+    es.use_journal_text()
     met = pd.read_csv(AN / "E2_window_met.csv")
     beats = pd.read_csv(AN / "E2_beats_acquired.csv")
     lim = pd.read_csv(AN / "E2_limited.csv")
@@ -64,7 +66,7 @@ def main():
     specs = [
         (0, met, "prospective", "Window met by\nfirst N beats (%)", (0, 100)),
         (1, beats, "prospective", "Mean beats acquired\nper view (beats)", None),
-        (3, lim, "retrospective", "Views flagged 'limited\nsampling' (%)", (0, 100)),
+        (3, lim, "retrospective", "Views flagged\n'limited sampling'\n(%)", (0, 100)),
     ]
     for row, tab, mode, ylab, ylim in specs:
         for col, N in enumerate([3, 5]):
@@ -102,7 +104,7 @@ def main():
             ax.set_xlabel("Beat-to-beat CV (%)")
             if col == 0:
                 ax.set_ylabel(ylab)
-            ax.set_title(f"{MODE_T[mode]}, N = {N}", fontsize=7, pad=2)
+            ax.set_title(f"{MODE_T[mode]}, N = {N}", fontsize=es.FS_TITLE, pad=2)
             if row == 1:
                 # own scale per column so the N = 3 curves are not compressed; see caption
                 ax.set_ylim(0, 6.5 if N == 3 else 13)
@@ -127,18 +129,21 @@ def main():
         ax.set_ylim(1.5, 3.0)
         ax.set_xlabel("Beats averaged per view, N")
         if col == 0:
-            ax.set_ylabel("RMSE vs true maximal\nspan T1 (mm)")
+            ax.set_ylabel("RMSE vs true maximal\nspan (mm)")
         ax.set_title("Prospective, " + RHY_LABEL[rs][0].lower() + RHY_LABEL[rs][1:] + ", beat CV 15%"
                      if rs == "sinus" else "Prospective, " + RHY_LABEL[rs] + ", beat CV 15%",
-                     fontsize=7, pad=2)
-    hc = [Line2D([], [], color=EST["A1"]["color"], marker="o", ms=4, ls="-", label="A1 anchor mean, no window"),
-          Line2D([], [], color=EST["A1"]["color"], marker="o", ms=4, mfc="white", ls="--",
-                 label="A1 anchor mean, ±15% window"),
-          Line2D([], [], color=EST["A6"]["color"], marker="P", ms=4, ls="-", label="A6 index beat, no window"),
-          Line2D([], [], color=EST["A6"]["color"], marker="P", ms=4, mfc="white", ls="--",
-                 label="A6 index beat, ±15% window")]
-    axs[2, 0].legend(handles=hc, loc="upper right", ncol=2, frameon=False, fontsize=6,
-                     handlelength=2.6, columnspacing=1.0, borderaxespad=0.2)
+                     fontsize=es.FS_TITLE, pad=2)
+    # Legend split by encoding (estimator = colour and marker; window = line style and marker fill), so the
+    # entries stay short enough to sit between the curves at 8 pt (v05, 2026-09-19).
+    hc = [Line2D([], [], color=EST["A1"]["color"], marker="o", ms=4, ls="-", label="Anchor-view mean"),
+          Line2D([], [], color=EST["A6"]["color"], marker="P", ms=4, ls="-", label="Index beat"),
+          Line2D([], [], color="#6e6e6e", marker="o", ms=4, ls="-", label="No window (filled)"),
+          Line2D([], [], color="#6e6e6e", marker="o", ms=4, mfc="white", ls="--",
+                 label="±15% window (open)")]
+    # estimators keyed in the sinus panel, window in the AF panel, each in the gap between the curves
+    for ax, hh in ((axs[2, 0], hc[:2]), (axs[2, 1], hc[2:])):
+        ax.legend(handles=hh, loc="center right", bbox_to_anchor=(1.0, 0.45), ncol=1, frameon=False,
+                  fontsize=es.FS_MIN, handlelength=2.6, borderaxespad=0.2, labelspacing=0.3)
 
     # ---- shared legend for rows a, b, d
     # Window levels as colour swatches, rhythm as line style in neutral mid-grey,
@@ -149,13 +154,13 @@ def main():
            Line2D([], [], color="#6e6e6e", ls="-", lw=0.9, marker="o", ms=3, label="Sinus (filled)"),
            Line2D([], [], color="#6e6e6e", ls="--", lw=0.9, marker="o", ms=3, mfc="white",
                   label="AF, RR CV 20% (open)")]
-    fig.legend(handles=hw, loc="outside upper center", ncol=7, frameon=False, fontsize=6,
-               title="Rows a, b, d: acceptance window W and rhythm", title_fontsize=6, handlelength=2.6)
+    fig.legend(handles=hw, loc="outside upper center", ncol=7, frameon=False, fontsize=es.FS_MIN,
+               title="Rows a, b, d: beat-consistency window W and rhythm", title_fontsize=es.FS_MIN, handlelength=2.6)
 
-    figstyle.panel_labels([axs[0, 0], axs[1, 0], axs[2, 0], axs[3, 0]], list("abcd"), dx=-0.22, dy=1.02)
+    figstyle.panel_labels([axs[0, 0], axs[1, 0], axs[2, 0], axs[3, 0]], list("abcd"), dx=-0.22, dy=1.02, size=es.FS_LETTER)
 
     fig.canvas.draw()
-    issues = figqa.report(fig)
+    issues = figqa.report(fig, min_pt=es.FS_MIN)
     print("font:", fam)
     print("figqa:", issues if issues else "clean")
     paths = figstyle.save_all(fig, STEM)
