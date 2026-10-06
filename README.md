@@ -5,7 +5,7 @@ multi-view echocardiographic measurement rules for tricuspid regurgitant jet dim
 reference standards built from them change the apparent performance of artificial intelligence (AI)
 models.
 
-Author: Kardokh Kakabra (RCSI / CVRI Dublin). Archived releases (all versions): https://doi.org/10.5281/zenodo.22833343 (see `CITATION.cff` for the current version). Funding: Disruptive Technologies Innovation Fund (DTIF),
+Author: Kardokh Kakabra (RCSI / CVRI Dublin). Archived releases (all versions): https://doi.org/10.5281/zenodo.22833343 (version 0.5.0: https://doi.org/10.5281/zenodo.23189369). Funding: Disruptive Technologies Innovation Fund (DTIF),
 Enterprise Ireland, grant DT20240543A; the funder had no role in the study.
 
 ## Protocol stages
