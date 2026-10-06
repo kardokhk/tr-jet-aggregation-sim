@@ -1,0 +1,24 @@
+statement,view,numerator_mm,denominator_mm,percent,status,note
+biplane below 3D average (Table 3 mean difference / mean 3D average),4CH,3.09,12.91,23.93493416,"percentage reported by the authors (24, 19, 25); reproduced",
+biplane below 3D average (difference of Table 2 means),4CH,3.1,12.91,24.01239349,derived,
+single plane below 3D maximum (Table 3 mean difference / mean 3D maximum),4CH,8.11,16.82,48.21640904,"derived (mm difference reported, percentage not)",
+single plane below 3D minimum (Table 3 mean difference / mean 3D minimum),4CH,0.29,8.99,3.225806452,derived,
+orthogonal plane below 3D maximum (difference of Table 2 means),4CH,5.9,16.82,35.07728894,derived; no paired statistic published,
+orthogonal plane below 3D minimum (difference of Table 2 means),4CH,-1.93,8.99,-21.46829811,derived; no paired statistic published,
+linear factor by which the 2D pair is shorter than any orthogonal pair of central chords of the mean ellipse,4CH,,,14.17757321,derived (means only),factor 0.8582
+biplane below 3D average (Table 3 mean difference / mean 3D average),inflow,2.42,12.91,18.74515879,"percentage reported by the authors (24, 19, 25); reproduced",
+biplane below 3D average (difference of Table 2 means),inflow,2.42,12.91,18.74515879,derived,
+single plane below 3D maximum (Table 3 mean difference / mean 3D maximum),inflow,5.18,16.82,30.79667063,"derived (mm difference reported, percentage not)",
+single plane below 3D minimum (Table 3 mean difference / mean 3D minimum),inflow,-2.64,8.99,-29.36596218,derived,
+orthogonal plane below 3D maximum (difference of Table 2 means),inflow,7.49,16.82,44.53032105,derived; no paired statistic published,
+orthogonal plane below 3D minimum (difference of Table 2 means),inflow,-0.34,8.99,-3.781979978,derived; no paired statistic published,
+linear factor by which the 2D pair is shorter than any orthogonal pair of central chords of the mean ellipse,inflow,,,8.179972931,derived (means only),factor 0.9182
+biplane below 3D average (Table 3 mean difference / mean 3D average),mBC,3.17,12.91,24.55460883,"percentage reported by the authors (24, 19, 25); reproduced",
+biplane below 3D average (difference of Table 2 means),mBC,3.17,12.91,24.55460883,derived,
+single plane below 3D maximum (Table 3 mean difference / mean 3D maximum),mBC,8.29,16.82,49.28656361,"derived (mm difference reported, percentage not)",
+single plane below 3D minimum (Table 3 mean difference / mean 3D minimum),mBC,0.47,8.99,5.228031146,derived,
+orthogonal plane below 3D maximum (difference of Table 2 means),mBC,5.87,16.82,34.89892985,derived; no paired statistic published,
+orthogonal plane below 3D minimum (difference of Table 2 means),mBC,-1.96,8.99,-21.80200222,derived; no paired statistic published,
+linear factor by which the 2D pair is shorter than any orthogonal pair of central chords of the mean ellipse,mBC,,,15.12712557,derived (means only),factor 0.8487
+"three-view mean, biplane below 3D average",all,2.893333333,12.91,22.41156726,derived,
+minor below major diameter (ellipticity alone),3D,7.83,16.82,46.55172414,derived,

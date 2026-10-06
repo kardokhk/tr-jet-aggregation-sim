@@ -1,0 +1,26 @@
+date: 2026-10-05T18:08:09+02:00
+host: mel0429
+slurm_job_id: 5301599
+python: Python 3.11.16
+numpy 2.4.6 scipy 1.17.1 pandas 3.0.5 pyarrow 25.0.0
+git_commit: 57371d33737904059ed8272d53aa3933bf9ad985 (new amendment-3 files are untracked at run time)
+sha256:
+b5d5b8f6a800f71a84a41454ed6056ccd66967df0932b21881d8493b4f8331c4  code/lib/duomaxsim/config.py
+7ef0e5dbe7da7d082e81fe9001fa67add68d312203148c4d6d660c45d66ba5df  code/lib/duomaxsim/estimators.py
+ffefc475f5d36448278db381065347cb32ce09491bdd9875c90c33a7668eac04  code/lib/duomaxsim/experiments.py
+78d971d1a0b921d035fcb56c7501c828618720f7b9141828fbc6ca37316438ae  code/lib/duomaxsim/__init__.py
+1a05fea2b14141b1cd978b85f80a1a02eb75ec7dbb6c157cc6389399b927fbbe  code/lib/duomaxsim/metrics.py
+d882497e4be358fb9b9672b011f697fcfd794191a65bfbb45516ab8b4d9c84a2  code/lib/duomaxsim/model.py
+79a6ad8902efe8a3bd7d75f60033c0d5de2515b5ae9821e2cad6946be314bae5  code/lib/duomaxsim/osrev_beats.py
+9e19bfb0a16109247dbbadfe8757c8f700823adac6ff37443dd50d0a0a6472c6  code/lib/duomaxsim/osrev_thresholds.py
+1ad2f6f97a1fe7ee83deb5e1204206156b05021581072f8c9b440c6ce7b49e7a  code/lib/duomaxsim/osrev_views.py
+4476d3a78e8e1fe0b057138a12490ab379cb8bcd59cfc41541aa6774d16d2b87  code/lib/duomaxsim/rules.py
+74c5a7c1669ceb6eeda2068b3e04789155dafcfd8864e8a14e93e8a99ac67538  code/20_osrev_views_run.py
+bc6e87a95e040435be655808608b914e04b1a7cb11774d170a81b1ec6cf35426  code/configs/osrev_views.yaml
+81a0db26a212cf8700708e6b1281006b2ca289efb747c68504e2a07bf986e9f5  code/configs/amend2_2026-09-18.yaml
+67ad42d11eeed605bd9fa9405c536879f01135867f51049d26ffd751999d647a  code/configs/base.yaml
+fc389eb36e16f9b26c2647c15347d719136a5e144645c6e3d5852a325a2bfa31  code/slurm/osrev_views.sh
+d6aa7ba4c8ee34643a5c61c72d28cf1858024c73504bc3642b22dac0404efab0  tests/test_osrev_views.py
+analysis: 2026-10-05T18:18:38+02:00 on login02.meluxina.lxp.lu (login node), code/21_osrev_views_analyse.py
+07ec13d862ecd0f889c2cf275a711f2b09c76226916ef8f8edb42a297e74610d  code/21_osrev_views_analyse.py
+slurm accounting (sacct -j 5301599): State COMPLETED, Elapsed 00:02:24, AllocCPUS 256 (hardware threads; 128 physical cores), CPUTimeRAW 36864 s, TotalCPU 01:30:32, MaxRSS 17045856K, node mel0429

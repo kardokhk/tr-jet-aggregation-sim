@@ -1,0 +1,4 @@
+cell_id,p_beat_cv,p_view_over,n_studies,n_per_study,seed,inherited_intercept_mm,inherited_slope,calib_n,sigma_rb_mm,sigma_cal_mm
+base_cv15,0.15,True,2000,200,"SeedSequence(20261005, spawn_key=(75, 1, 0))",0.4534092459051762,0.9952216375691776,20000,0.75,1.0
+cv05,0.05,True,2000,200,"SeedSequence(20261005, spawn_key=(75, 1, 1))",0.49871006810678514,0.9612567035593118,20000,0.75,1.0
+cv30,0.3,True,2000,200,"SeedSequence(20261005, spawn_key=(75, 1, 2))",0.4458648080864095,1.0594220998817003,20000,0.75,1.0

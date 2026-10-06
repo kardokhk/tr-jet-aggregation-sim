@@ -1,0 +1,20 @@
+date: 2026-10-06T09:57:25+02:00
+host: mel0495
+slurm_job_id: 5306853
+python: Python 3.11.16
+numpy 2.4.6 scipy 1.17.1 pandas 3.0.5 pyyaml 6.0.3
+git_commit: 57371d33737904059ed8272d53aa3933bf9ad985 (third-amendment files are untracked at run time)
+sha256:
+b5d5b8f6a800f71a84a41454ed6056ccd66967df0932b21881d8493b4f8331c4  code/lib/duomaxsim/config.py
+d882497e4be358fb9b9672b011f697fcfd794191a65bfbb45516ab8b4d9c84a2  code/lib/duomaxsim/model.py
+4476d3a78e8e1fe0b057138a12490ab379cb8bcd59cfc41541aa6774d16d2b87  code/lib/duomaxsim/rules.py
+ffefc475f5d36448278db381065347cb32ce09491bdd9875c90c33a7668eac04  code/lib/duomaxsim/experiments.py
+b12e3eff16ef87668885b15626b97ff828e26e9bfe790330e18a6f1481c21ee5  code/lib/duomaxsim/osrev_triggers.py
+c9a4ccbc80f94c8bd0dbf9c0b6499821d108b28686118ff1bb7d0ea2d183a5cd  code/23_osrev_fig4_clustered_se.py
+1400668d892f25f1a1bf7f3ef4d347103bcd040cf459f4b5683851874404161e  code/configs/osrev_triggers.yaml
+67ad42d11eeed605bd9fa9405c536879f01135867f51049d26ffd751999d647a  code/configs/base.yaml
+e5d947adc9fb8240ce5bdade0e79f34e8b527522d17a8d7a4bc31f1118ec5e99  code/slurm/osrev_fig4_clustered.sh
+ae9c23ed723c43a3c3aa474f3a2a56dbe0d134e8834332160f0beae57156caef  results/2026-09-18_full/analysis/E4_operating.csv
+cells [np.int64(181), np.int64(187), np.int64(193), np.int64(199), np.int64(205), np.int64(211)]; rows 90; all counts identical to E4_operating.csv
+base cell 193, 5 mm PPV 0.6967 (1835/2634), clustered 95% MCI 0.6788 to 0.7146, design effect 1.039
+design effect range, PPV: 0.999 1.2

@@ -1,0 +1,62 @@
+# Protocol amendment 3, package A3-3 (thresholds). Post hoc reporting detail requested by the
+# senior author on 2026-10-05 (comment C201). Not a pre-specified analysis; the generative model,
+# the rules and the estimand of experiment E3 are unchanged.
+# Parameters of every scenario are those of the stored E3 grid cell named in `published` (or of
+# `params_from` when there is no stored cell), plus `overrides`. The cut-offs are illustrative
+# values on the simulated span scale and are not clinical eligibility criteria.
+
+meta:
+  amendment: A3-3
+  seed_entropy: 20261005          # numpy SeedSequence entropy of the amendment-3 replicates
+  spawn_prefix: [73, 1]           # spawn key = (73, 1, replicate); the SAME key is used for every
+                                  # scenario, so scenarios share case mix, latent error drivers,
+                                  # beats, reader bias and caliper errors (common random numbers)
+  n_patients: 100000              # patients per replicate (as in every published E3 cell)
+  n_replicates: 100               # pooled: 10,000,000 patients per scenario
+  chunk_size: 20000               # as in base.yaml (results depend on it)
+
+analysis:
+  cutoffs_mm: [7.0, 10.0, 13.0]   # as in base.yaml (cutoffs_mm)
+  rules: [A1, A2, A3, A4]         # anchor-view mean, mean across views, largest view mean,
+                                  # largest view mean after review
+  comparator: A1                  # anchor-view mean
+  band_half_widths_mm: [1.0, 2.0]
+  distance_bin_mm: 0.5
+  distance_max_mm: 5.0
+  hist_bin_mm: 0.25
+  hist_max_mm: 60.0
+
+# `published`: stored cell with identical parameters, rerun with its ORIGINAL seed
+# (SeedSequence(master_seed of that config, spawn_key (3, cell))) to rebuild the published patients.
+# u_scale lists the half-normal scale per view (anchor first); only the first K = 3 entries are used,
+# and the mean underestimation of a view is 0.798 times its scale.
+scenarios:
+  base:
+    label: "Pre-specified base case (anchor 4.8%, long-axis 20%)"
+    published: {config: code/configs/base.yaml, cell: 29, results: results/2026-09-18_full}
+    overrides: {}
+  low8:
+    label: "8% long-axis setting (anchor 2.4%, long-axis 8%); also the most accurate view-accuracy scenario"
+    published: {config: code/configs/base.yaml, cell: 77, results: results/2026-09-18_full}
+    overrides: {}
+  acc_2p4_8:
+    label: "View-accuracy extreme, most accurate (anchor 2.4%, long-axis 8%); same parameters as low8, amendment-2 seed"
+    published: {config: code/configs/amend2_2026-09-18.yaml, cell: 0, results: results/2026-09-18_amend2}
+    overrides: {}
+    replicate_alias: low8          # identical parameters at K = 3: not rerun in the pooled replicates
+  acc_20_40:
+    label: "View-accuracy extreme, least accurate (anchor 20%, long-axis 40%)"
+    published: {config: code/configs/amend2_2026-09-18.yaml, cell: 11, results: results/2026-09-18_amend2}
+    overrides: {}
+  acc_2p4_40:
+    label: "View-accuracy corner (anchor 2.4%, long-axis 40%)"
+    published: {config: code/configs/amend2_2026-09-18.yaml, cell: 2, results: results/2026-09-18_amend2}
+    overrides: {}
+  acc_20_8:
+    label: "View-accuracy corner (anchor 20%, long-axis 8%)"
+    published: {config: code/configs/amend2_2026-09-18.yaml, cell: 9, results: results/2026-09-18_amend2}
+    overrides: {}
+  base_median13:
+    label: "Base case with median true AP span 13 mm (sensitivity population; no stored E3 cell)"
+    params_from: {config: code/configs/base.yaml, cell: 29}
+    overrides: {S_median_mm: 13.0}

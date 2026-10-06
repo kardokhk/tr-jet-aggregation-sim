@@ -1,0 +1,104 @@
+# Protocol amendment 3, package A3-6 (calibration against a matched estimand). Post hoc sensitivity
+# analysis requested by the senior author on 2026-10-05 (notes/protocol-amendment-3-2026-10-05.md,
+# comments C176 and C175). Label: amendment 3.
+# Model parameters are NOT copied here: they are read from `parameters_from`, so the base case
+# cannot drift. Published targets (Singh et al. 2026, doi:10.21037/acs-2025-1-72-tvd, Tables 2
+# and 3) are stored in code/lib/duomaxsim/osrev_calibration.py (SINGH).
+# Runner: code/20_osrev_calibration_run.py; analysis: code/21_osrev_calibration_analyse.py.
+
+meta:
+  config_version: osrev-calibration-2026-10-05-v01
+  parameters_from: code/configs/amend2_2026-09-18.yaml
+  master_seed: 20261005        # numpy SeedSequence entropy for all NEW simulations
+  spawn_prefix: 76             # spawn keys (76, family, ...), listed per family below
+  chunk_size: 20000            # patients per RNG chunk in the view-rule model, as published
+  n_patients: 100000
+
+# ---- (a) geometric matched-estimand calibration ----------------------------------------------
+geometry:
+  n_fit: 200000                # fitting sample, spawn key (76, 0, 0); shared by all variants
+  n_eval: 100000               # evaluation sample, spawn key (76, 1, 0); shared by all variants
+  delta_max: 0.95              # cap on the relative plane offset
+  # Primary variant ind15: each plane misses the centre of the orifice by its own relative offset
+  # (same scale), plane angle SD 15 degrees. The midpoint variants follow the acquisition described
+  # by Singh et al. (orthogonal plane placed through the centre of the jet seen in the primary
+  # plane) but need a large share of primary planes at the offset cap; both families are reported.
+  primary_variant: ind15
+  scenario_variants: [ind15, mid15]     # variants whose values define view-rule scenarios in (b)
+  variants:                    # sigma_theta_deg: between-patient SD of the plane angle
+    ind15:    {mechanism: offset, offset_rule: independent, orientation: fixed,   sigma_theta_deg: 15}
+    ind00:    {mechanism: offset, offset_rule: independent, orientation: fixed,   sigma_theta_deg: 0}
+    ind30:    {mechanism: offset, offset_rule: independent, orientation: fixed,   sigma_theta_deg: 30}
+    ind15c80: {mechanism: offset, offset_rule: independent, orientation: fixed,   sigma_theta_deg: 15, delta_max: 0.80}
+    mid15:    {mechanism: offset, offset_rule: midpoint,    orientation: fixed,   sigma_theta_deg: 15}
+    mid00:    {mechanism: offset, offset_rule: midpoint,    orientation: fixed,   sigma_theta_deg: 0}
+    mid30:    {mechanism: offset, offset_rule: midpoint,    orientation: fixed,   sigma_theta_deg: 30}
+    scale15:  {mechanism: scale,  offset_rule: independent, orientation: fixed,   sigma_theta_deg: 15}
+    random:   {mechanism: offset, offset_rule: independent, orientation: uniform, sigma_theta_deg: 0}
+  bootstrap:
+    # Sampling uncertainty of the eight published means (3D maximal and minimal diameter, primary
+    # and orthogonal width of three views): each mean drawn independently from N(mean, SE^2), SE
+    # from the published 95% CI; orifice SDs kept fixed; full refit per replicate on the first
+    # n_fit_boot patients of the fitting sample. Target draws: spawn key (76, 3, replicate),
+    # common to all variants.
+    replicates: 500
+    per_task: 20
+    n_fit_boot: 50000
+    variants: [ind15, mid15, ind00, scale15]
+
+# ---- library-model matched estimand ----------------------------------------------------------
+library_match:
+  # Biplane width (mean of AP and SL widths in one long-axis view, one beat, one reader) against
+  # the mean of the true AP and SL spans, ratio of means; spawn key (76, 4, 0), common random
+  # numbers across L and across overestimation on and off.
+  n: 100000
+  grid_L: [0.10, 0.25, 0.50]
+  targets: {inflow: 0.187, mean_three_views: 0.224, "4CH": 0.239, mBC: 0.246}
+  view_over: [true, false]
+
+# ---- (b) view rules under matched view accuracy ----------------------------------------------
+view_rules:
+  # Three views, three beats, no window, beat CV 15%, overestimation on, median span 10 mm, rho 0.3,
+  # sinus rhythm, prospective (the 'no window, otherwise base' family of the manuscript).
+  # Every scenario uses spawn key (76, 2, 0): common random numbers across all scenarios.
+  fixed: {K: 3, beat_cv: 0.15, view_over: true, window: null, S_median_mm: 10.0, rho: 0.3,
+          N_beats: 3, rhythm: sinus, data_mode: prospective}
+  u_anchor: [0.03, 0.06, 0.125, 0.25]
+  u_long_published: [0.10, 0.25, 0.50]
+  base_scenario: {u_anchor: 0.06, u_long: 0.25}
+  # Stored cells reproduced with their ORIGINAL seeds (results/2026-09-18_amend2, E1b; entropy
+  # 20260920, spawn key (1, cell)) before any new number is reported.
+  repro_config: code/configs/amend2_2026-09-18.yaml
+  repro_select: {K: 3, beat_cv: 0.15, view_over: true, window: null, S_median_mm: 10.0}
+
+# ---- follow-up of 2026-10-06 (audit items 5.2 to 5.4) ----------------------------------------
+# Everything above is unchanged; this section is read only by stages C and D.
+followup:
+  # Stage C: the geometric calibration repeated with the SD of the 3D maximal diameter taken from
+  # the lower half-width of its printed confidence interval (14.68 to 19.96 about 16.82; stage A
+  # choice, SD 5.73 mm, repeated as a check), from half the full width (7.07 mm) and from the
+  # upper half-width (8.41 mm). Fitting and evaluation samples as in stage A.
+  sd_variants: [ind15, mid15, ind00]
+  sd_sides: [lower, both, upper]
+  # Stage D: view-rule scenarios. For each entry: the four stage B definitions (half-normal with
+  # the mean of reading 1 or 2; constant rotation plus chord offset; chord offset) and five with
+  # the patient-level geometric draw (u_geom). ind00 carries the lowest calibrated off-centre
+  # value (about 6%), which stage B did not run.
+  # Primary patient-level design, fixed before the run: offsets from the library's latent normals
+  # (between-view correlation 0.3, as in every other scenario), ellipticity drawn from the
+  # calibrated orifice distribution independently of the true span and shared by the views of a
+  # patient, plane angle drawn independently per view and axis. Sensitivity designs: offsets
+  # independent between views (_indoff); ellipticity linked to the true AP span (_spanq).
+  scenario_variants:
+    ind15:        {variant: ind15, sd_side: lower}
+    mid15:        {variant: mid15, sd_side: lower}
+    ind00:        {variant: ind00, sd_side: lower}
+    ind15_sd707:  {variant: ind15, sd_side: both}     # SD of the 3D maximal diameter 7.07 mm
+    mid15_sd707:  {variant: mid15, sd_side: both}
+    ind00_sd707:  {variant: ind00, sd_side: both}
+  seeds:
+    # replicate 0: library draws on the stage B stream (common random numbers with the 56 stored
+    # scenarios); additional geometric normals on (76, 5, 0)
+    - {main: [2, 0], geometry: [5, 0]}
+    # replicate 1: independent repetition on new streams
+    - {main: [5, 1], geometry: [5, 2]}

@@ -119,3 +119,12 @@ Pilot plausibility: at lambda 0 the shared AI equals the independent AI (paired 
 - Figures relabelled with plain rule names (anchor-view mean, mean across views, largest view mean, largest view mean after review, median across views, index beat, offset-corrected mean) instead of A1 to A7; main Figures 2 and 3 swapped numbers (fig2_beat_rules, fig3_view_accuracy); Figure 1 and the graphical abstract redrawn with less text; figure text raised to at least 8 pt for EHJ-CVI.
 - No simulation, analysis result or plotted value changed: every figure source CSV and every file under results/ is identical to release 0.3.1.
 
+
+## 2026-10-05 and 2026-10-06: third amendment (post hoc sensitivity analyses) and release 0.5.0
+
+- A third protocol amendment was written on 5 October 2026 (17:55 CEST) before any of its analyses were coded or run. It specifies post hoc sensitivity analyses in six packages: beat rules, view rules, cut-offs, triggers and review, AI reference and reference sets, and calibration of long-axis underestimation. None replaces a planned analysis.
+- Extensions live in new modules (code/lib/duomaxsim/osrev_*.py); no existing library file was changed. Each package first reproduced the stored results of 18 September 2026 exactly and was then recomputed in a separate audit. Seeds: entropy 20261005 with spawn-key prefixes 71 to 76 (packages), 131 and 191 (checks), 971 to 977 (audits).
+- Deviation: the sentinel variance test was calibrated with an unpaired permutation test, because sentinel and AI-assisted reads are of different cases; the amendment had named a paired calibration.
+- A follow-up calibration run of 6 October added a patient-level geometric draw (default off); with it off, stored values are reproduced.
+- Outputs, job numbers and costs: results/2026-10-05_osrev/README.md and environment.md. Full test log: tests/logs/pytest-2026-10-06.log (211 tests).
+- No file under results/2026-09-18_* changed.

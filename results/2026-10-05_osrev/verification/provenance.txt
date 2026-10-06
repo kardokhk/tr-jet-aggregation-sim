@@ -1,0 +1,29 @@
+2026-10-05T18:03:44+02:00
+mel0503
+Python 3.11.16
+57371d33737904059ed8272d53aa3933bf9ad985
+ M code/13_schematic_figures.py
+?? code/14_prepare_tee_example.py
+?? code/configs/osrev_beats.yaml
+?? code/lib/duomaxsim/osrev_beats.py
+?? code/lib/duomaxsim/osrev_views.py
+?? code/osrev_verification.py
+?? code/slurm/osrev_verification.sh
+b5d5b8f6a800f71a84a41454ed6056ccd66967df0932b21881d8493b4f8331c4  code/lib/duomaxsim/config.py
+7ef0e5dbe7da7d082e81fe9001fa67add68d312203148c4d6d660c45d66ba5df  code/lib/duomaxsim/estimators.py
+ffefc475f5d36448278db381065347cb32ce09491bdd9875c90c33a7668eac04  code/lib/duomaxsim/experiments.py
+78d971d1a0b921d035fcb56c7501c828618720f7b9141828fbc6ca37316438ae  code/lib/duomaxsim/__init__.py
+1a05fea2b14141b1cd978b85f80a1a02eb75ec7dbb6c157cc6389399b927fbbe  code/lib/duomaxsim/metrics.py
+d882497e4be358fb9b9672b011f697fcfd794191a65bfbb45516ab8b4d9c84a2  code/lib/duomaxsim/model.py
+79a6ad8902efe8a3bd7d75f60033c0d5de2515b5ae9821e2cad6946be314bae5  code/lib/duomaxsim/osrev_beats.py
+1ad2f6f97a1fe7ee83deb5e1204206156b05021581072f8c9b440c6ce7b49e7a  code/lib/duomaxsim/osrev_views.py
+4476d3a78e8e1fe0b057138a12490ab379cb8bcd59cfc41541aa6774d16d2b87  code/lib/duomaxsim/rules.py
+61611ff403e6c6dd7cf81c75e63062b15159bd6ba9b4c15905b04420f14553fe  code/osrev_verification.py
+82a7a70a9e3714ea0b91fbe7ec136b5c80b2cead7f2ecc0ba11f88b19288c83a  tests/independent/indep_check_amend2.py
+b675e78849ad41cb69dc69fdefd572c6694bc45fb89f4ed3c1aaeec35ce4b7a7  tests/independent/indep_check_e1.py
+40d1f138d29e56fd089db0aa3d7e091685ae38b967476026a6d7ecf968d07c47  tests/independent/indep_check_e2.py
+c37077183c29a4f9e0dca93169a7c49524414a31bc36621f1c03e48949d27b2b  tests/fixtures/config_v01.yaml
+67ad42d11eeed605bd9fa9405c536879f01135867f51049d26ffd751999d647a  code/configs/base.yaml
+81a0db26a212cf8700708e6b1281006b2ca289efb747c68504e2a07bf986e9f5  code/configs/amend2_2026-09-18.yaml
+c32dc057a01affeb1616dc74ce04598cc48bcca67b9382366024231609aace8d  environment-explicit.txt
+e619996d732558e1731d82cd665c704dc13ee7e2f1f32599de049ada3da01b54  requirements.txt

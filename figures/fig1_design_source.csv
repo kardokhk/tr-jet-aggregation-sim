@@ -1,5 +1,5 @@
-figure,panel,view,beat,span_mm,caliper_error_bar_mm,kept,kept_mean_mm,window,window_lo_mm,window_hi_mm,note
-fig1_design,b,View 2,1,8.9,0.8,True,8.533,0.15,7.253,9.813,"illustrative values, not simulation output"
-fig1_design,b,View 2,2,6.6,0.8,False,8.533,0.15,7.253,9.813,"illustrative values, not simulation output"
-fig1_design,b,View 2,3,8.5,0.8,True,8.533,0.15,7.253,9.813,"illustrative values, not simulation output"
-fig1_design,b,View 2,4,8.2,0.8,True,8.533,0.15,7.253,9.813,"illustrative values, not simulation output"
+figure,panel,view,beat,span_mm,caliper_error_bar_mm,kept,kept_mean_mm,window,window_lo_mm,window_hi_mm,stop_after_beat,note
+fig1_design,b,one view,1,8.9,0.8,True,8.533,0.15,7.253,9.813,4,"illustrative values, not simulation output"
+fig1_design,b,one view,2,6.2,0.8,False,8.533,0.15,7.253,9.813,4,"illustrative values, not simulation output"
+fig1_design,b,one view,3,8.5,0.8,True,8.533,0.15,7.253,9.813,4,"illustrative values, not simulation output"
+fig1_design,b,one view,4,8.2,0.8,True,8.533,0.15,7.253,9.813,4,"illustrative values, not simulation output"

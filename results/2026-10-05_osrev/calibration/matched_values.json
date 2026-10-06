@@ -1,0 +1,36 @@
+{
+ "geom": {
+  "ind15": {
+   "delta_max": 0.95,
+   "ap_view": "inflow",
+   "ap_total": 0.2951215139,
+   "ap_rotation": 0.2307890871,
+   "ap_off_centre": 0.0835604493,
+   "ap_s": 0.3844257914,
+   "sl_view": "4CH",
+   "sl_total": 0.02398555999,
+   "sl_rotation": -0.1390124244,
+   "sl_off_centre": 0.1429973603,
+   "sl_s": 0.5058149598
+  },
+  "mid15": {
+   "delta_max": 0.95,
+   "ap_view": "inflow",
+   "ap_total": 0.3001062382,
+   "ap_rotation": 0.1425083852,
+   "ap_off_centre": 0.1836941103,
+   "ap_s": 0.5878637683,
+   "sl_view": "4CH",
+   "sl_total": 0.01456927094,
+   "sl_rotation": -0.2552164441,
+   "sl_off_centre": 0.2147864505,
+   "sl_s": 0.6541614583
+  }
+ },
+ "lib_L": {
+  "inflow": 0.283485159,
+  "mean_three_views": 0.3298540886,
+  "4CH": 0.3489583964,
+  "mBC": 0.3579615874
+ }
+}

@@ -1,0 +1,51 @@
+# Provenance: amendment 3, package A3-3 (thresholds)
+written: 2026-10-05T18:15:32+02:00
+host (login node; published-seed rebuild, analysis, figure, tests): login02.meluxina.lxp.lu
+host (replicates, Slurm job 5301601): mel0146
+Python 3.11.16
+numpy 2.4.6 scipy 1.17.1 pandas 3.0.5 pyarrow 25.0.0 matplotlib 3.11.2 pyyaml 6.0.3 pytest 9.1.1
+git commit (HEAD; all amendment-3 files are untracked additions on top of it): 57371d33737904059ed8272d53aa3933bf9ad985
+git status of own files:
+?? code/20_osrev_thresholds_run.py
+?? code/21_osrev_thresholds_analyse.py
+?? code/configs/osrev_thresholds.yaml
+?? code/figures/figS6_true_span_distribution.py
+?? code/lib/duomaxsim/osrev_thresholds.py
+?? code/slurm/osrev_thresholds.sh
+?? tests/test_osrev_thresholds.py
+sha256:
+b5d5b8f6a800f71a84a41454ed6056ccd66967df0932b21881d8493b4f8331c4  code/lib/duomaxsim/config.py
+7ef0e5dbe7da7d082e81fe9001fa67add68d312203148c4d6d660c45d66ba5df  code/lib/duomaxsim/estimators.py
+ffefc475f5d36448278db381065347cb32ce09491bdd9875c90c33a7668eac04  code/lib/duomaxsim/experiments.py
+1a05fea2b14141b1cd978b85f80a1a02eb75ec7dbb6c157cc6389399b927fbbe  code/lib/duomaxsim/metrics.py
+d882497e4be358fb9b9672b011f697fcfd794191a65bfbb45516ab8b4d9c84a2  code/lib/duomaxsim/model.py
+4476d3a78e8e1fe0b057138a12490ab379cb8bcd59cfc41541aa6774d16d2b87  code/lib/duomaxsim/rules.py
+78d971d1a0b921d035fcb56c7501c828618720f7b9141828fbc6ca37316438ae  code/lib/duomaxsim/__init__.py
+9e19bfb0a16109247dbbadfe8757c8f700823adac6ff37443dd50d0a0a6472c6  code/lib/duomaxsim/osrev_thresholds.py
+a7d3e69bfb2692957da600d237c3102166ebed8753127dbd7ebbb3105b94a115  code/20_osrev_thresholds_run.py
+7bf4a1f00e840013277e4142ffa3378df591c6569931a65a7e703ad71be71ed9  code/21_osrev_thresholds_analyse.py
+4a867b6f4dbc05f49871a689e14f2e754e28e89fca479f0f82538303d1bcebf4  code/configs/osrev_thresholds.yaml
+67ad42d11eeed605bd9fa9405c536879f01135867f51049d26ffd751999d647a  code/configs/base.yaml
+81a0db26a212cf8700708e6b1281006b2ca289efb747c68504e2a07bf986e9f5  code/configs/amend2_2026-09-18.yaml
+96370f36edb8d342e6314eb92c44b2b4098fda7aa67f9b844cec7cda788b6f11  code/slurm/osrev_thresholds.sh
+ba358c563af212fe4a5bd5836a09f6eddda9c191d589b2ccf5a76d49a8675777  code/figures/figS6_true_span_distribution.py
+0d7b6d1955b68c7288776870f3057cafc1db7a2e4c1cb380d0e6e921277a5d03  code/figures/estimator_style.py
+fd237341f83584f404cc3952d540cb93d59b909f149c5fc7b0eab261199603c8  tests/test_osrev_thresholds.py
+1b7e51bbfc412b6bad910cd0b7650c16ffb32673cf6cc14b4118fe216a8573fe  results/2026-10-05_osrev/thresholds/raw/published_band.parquet
+347eb7d47356fd558920a1dc2704c4c3ab598f639301268702b3104907675cba  results/2026-10-05_osrev/thresholds/raw/published_bins.parquet
+be24b022a1b9981a366683f71416acab3edf82012b27f12e78ac5a7a2505edfd  results/2026-10-05_osrev/thresholds/raw/published_hist.parquet
+ec51e8434b34c40671aca6e4cda83a0fe8a0e2a9a78e01641b1d4c79cda70086  results/2026-10-05_osrev/thresholds/raw/published_overall.parquet
+0528718b3c65528d7ec615e7f27a159441aef9e0d45c85088ea6bd5a0ffd75ce  results/2026-10-05_osrev/thresholds/raw/replicates_band.parquet
+bf31fa7ef049d903d82fbf3202727f4fc868544138930a90a0492de0655fe703  results/2026-10-05_osrev/thresholds/raw/replicates_bins.parquet
+ec37a86d466632683345ed7504e0dc62e0ae2136fd1836d214b965abf8ef132b  results/2026-10-05_osrev/thresholds/raw/replicates_hist.parquet
+9d9c733da815fc00b1f5c68d467fc9156e0e4fbbdb097a18a8f0868f606d1333  results/2026-10-05_osrev/thresholds/raw/replicates_overall.parquet
+d0d58a1548f83abca17ace770e1848fa598740c62e4e13e9541013fe473cf0e5  results/2026-10-05_osrev/thresholds/thresholds_2x2.csv
+17ef70999894bdb22ad5177786677a7cc1f8f21ed59fa6850d4dbbb0249cf444  results/2026-10-05_osrev/thresholds/thresholds_by_distance.csv
+3be6bb56182d3e34edbf6ccdfc361b04609565705cffd24f65a34b5526c74a18  results/2026-10-05_osrev/thresholds/thresholds_near_band.csv
+72eb41649a0e5de038bbbaed05eeeae9dbe931af4867f5f83db82eb54f920531  results/2026-10-05_osrev/thresholds/thresholds_replicate_check.csv
+4a2cf0ac42421c918bcd0c877da0d97c832134adf56cba9d83897e04fe776b9f  results/2026-10-05_osrev/thresholds/thresholds_reproduction.csv
+13d75b371f5b03ec1b99dab283c863dca99db7649e4a3d4abe1c18a5a1e45869  results/2026-10-05_osrev/thresholds/thresholds_true_span_density.csv
+a58ca8f37751cda52dfd7cba4e471383d2e101d4704cae754cd6fdf8129abd47  results/2026-10-05_osrev/thresholds/thresholds_true_span_distribution.csv
+seeds: published-seed sample = SeedSequence(20260918, (3, 29)), (20260918, (3, 77)), (20260920, (3, 0)), (20260920, (3, 11)), (20260920, (3, 2)), (20260920, (3, 9)); amendment-3 replicates = SeedSequence(20261005, (73, 1, r)), r = 0..99, same key for every scenario; chunk size 20000
+slurm: job 5301601, osrev_thresholds, COMPLETED, elapsed 00:00:36, 1 node (128 cores, 256 CPUs with SMT), CPUTimeRAW 9216 CPU-s = 1.28 core-hours (0.01 node-hours), TotalCPU 29:28.6
+note: provenance_replicates.txt was written by the Slurm job before tests/test_osrev_thresholds.py had content (its sha256 there is that of an empty file); the library, run script and configuration hashes there equal those above.

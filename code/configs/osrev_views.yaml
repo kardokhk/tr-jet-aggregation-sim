@@ -1,0 +1,73 @@
+# Protocol amendment 3, package A3-2 (view rules). Post hoc sensitivity analyses requested by the
+# senior author on 2026-10-05 (notes/protocol-amendment-3-2026-10-05.md). Label: amendment 3.
+# Parameter values are NOT copied here: they are read from `parameters_from` (identical parameter
+# block to code/configs/base.yaml, config base-2026-09-18-v02), so the base case cannot drift.
+# Runner: code/20_osrev_views_run.py; analysis: code/21_osrev_views_analyse.py.
+
+meta:
+  config_version: osrev-views-2026-10-05-v01
+  parameters_from: code/configs/amend2_2026-09-18.yaml
+  main_config: code/configs/base.yaml
+  master_seed: 20261005          # numpy SeedSequence entropy for all NEW simulations
+  spawn_prefix: 72               # spawn key = (72, family code, cell index); see each family
+  chunk_size: 20000              # patients per RNG chunk, as in the published runs
+  n_patients: 100000
+  jackknife_groups: 50           # delete-a-group jackknife: 50 consecutive blocks of 2,000 patients
+
+# Fixed for every new-seed family (the manuscript's E1b family): rho 0.3, three beats per view,
+# sinus rhythm unless varied, prospective acquisition.
+fixed: {rho: 0.3, N_beats: 3, rhythm: sinus, data_mode: prospective}
+
+# The 12 view-accuracy scenarios: half-normal scales [anchor, L, L, 1.2 L]; mean underestimation
+# is 0.798 x scale (anchor 2.4, 4.8, 10, 20%; long axis 8, 20, 40%).
+u_anchor: [0.03, 0.06, 0.125, 0.25]
+u_long: [0.10, 0.25, 0.50]
+
+families:
+  repro_e1b:
+    # Exact re-simulation of all 864 stored E1b cells (results/2026-09-18_amend2) with the
+    # ORIGINAL seeds (entropy 20260920, spawn key (1, cell)); adds MAE and error quantiles to the
+    # stored bias and RMSE. 864 = 12 scenarios x 72 conditions (K 2, 3, 4; beat CV 5, 15, 30%;
+    # overestimation off, on; window none, +-15%; median true AP span 10, 13 mm).
+    seed: original
+    config: code/configs/amend2_2026-09-18.yaml
+    experiment: E1
+  repro_main:
+    # Exact re-simulation of the two pre-specified E1 cells of Table 1 and Supplementary Table S2
+    # panel A (results/2026-09-18_full; entropy 20260918, spawn key (1, cell)).
+    seed: original
+    config: code/configs/base.yaml
+    experiment: E1
+    select: {K: 3, beat_cv: 0.15, view_over: true, rho: 0.3, N_beats: 3}
+  zero_under:
+    # NEW. Underestimation switched off in every view (view_under false, u_v = 0).
+    # spawn key (72, 1, cell); cell order = product of the lists below, last varying fastest.
+    code: 1
+    fixed: {view_under: false, S_median_mm: 10.0}
+    vary:
+      view_over: [true, false]
+      K: [2, 3, 4]
+      beat_cv: [0.05, 0.15, 0.30]
+      window: [null, 0.15]
+  decomp:
+    # NEW. Four counterfactual arms on common random numbers, no window, beat CV 15%, median span
+    # 10 mm. spawn key (72, 4, 3 * scenario + K index): the two overestimation settings share the
+    # seed (the model draws the overestimation variables whether or not they are used), so they
+    # are also on common random numbers.
+    code: 4
+    fixed: {beat_cv: 0.15, window: null, S_median_mm: 10.0}
+    K: [2, 3, 4]
+    view_over: [true, false]
+  cond:
+    # NEW. Conditional error quantiles by true span and rhythm. spawn key (72, 5, cell);
+    # cell order = product (view accuracy, window, rhythm), last varying fastest.
+    code: 5
+    fixed: {K: 3, beat_cv: 0.15, view_over: true, S_median_mm: 10.0}
+    view_accuracy:
+      - {u_anchor: 0.06, u_long: 0.25}    # base view accuracy (4.8% / 20%)
+      - {u_anchor: 0.03, u_long: 0.10}    # most accurate corner (2.4% / 8%)
+      - {u_anchor: 0.25, u_long: 0.50}    # least accurate corner (20% / 40%)
+    window: [0.15, null]
+    rhythm:
+      - {rhythm: sinus}
+      - {rhythm: AF, rr_cv_af: 0.20}

@@ -1,0 +1,18 @@
+quantity,axis,stored_metric,stored_value,stored_n,rerun_value,rerun_n,abs_diff,identical
+pairs with a true view error > 2 mm,AP,p_error_event_pair,0.06920666666666667,300000,0.06920666666666667,300000,0.0,True
+"false-positive rate, 5 mm",AP,false_alarm_adj_pair,0.002861358411104506,279238,0.002861358411104506,279238,0.0,True
+"1 - sensitivity, 5 mm",AP,miss_adj_pair,0.9116173779019362,20762,0.9116173779019362,20762,0.0,True
+"patients with any trigger, 5 mm",AP,p_any_adj,0.02447,100000,0.02447,100000,0.0,True
+"false-positive rate, 3 mm",AP,false_alarm_trigger_pair,0.02179144672286723,279238,0.02179144672286723,279238,0.0,True
+"1 - sensitivity, 3 mm",AP,miss_trigger_pair,0.784413832964069,20762,0.784413832964069,20762,0.0,True
+"patients with any trigger, 3 mm",AP,p_any_trigger,0.09269,100000,0.09269,100000,0.0,True
+pairs with a true view error > 2 mm,SL,p_error_event_pair,0.023916666666666666,300000,0.023916666666666666,300000,0.0,True
+"false-positive rate, 5 mm",SL,false_alarm_adj_pair,0.0007547169811320754,292825,0.0007547169811320754,292825,0.0,True
+"1 - sensitivity, 5 mm",SL,miss_adj_pair,0.9332404181184669,7175,0.9332404181184669,7175,0.0,True
+"patients with any trigger, 5 mm",SL,p_any_adj,0.0067,100000,0.0067,100000,0.0,True
+"false-positive rate, 3 mm",SL,false_alarm_trigger_pair,0.010405532314522325,292825,0.010405532314522325,292825,0.0,True
+"1 - sensitivity, 3 mm",SL,miss_trigger_pair,0.7874564459930313,7175,0.7874564459930313,7175,0.0,True
+"patients with any trigger, 3 mm",SL,p_any_trigger,0.04169,100000,0.04169,100000,0.0,True
+measured anchor |AP - SL| >= 3 mm,AP-SL,p_anchor_axis_diff_ge_twarn,0.56457,100000,0.56457,100000,0.0,True
+measured anchor |AP - SL| >= 5 mm,AP-SL,p_anchor_axis_diff_ge_tadj,0.26521,100000,0.26521,100000,0.0,True
+true |AP - SL| >= 3 mm (this cell; the manuscript pools 144 cells),AP-SL,p_true_axis_diff_ge_twarn,0.62318,100000,0.62318,100000,0.0,True

@@ -1,0 +1,5 @@
+grid,condition,seed_entropy,seed_spawn_key,axis,N,W,budget,n_views,n_accepted_contiguous,n_accepted_exhaustive,n_accept_decision_differs,n_beats_acquired_differs,n_value_differs,estimand,d_rmse_mm_contiguous_minus_exhaustive,d_rmse_mcse,d_bias_mm_contiguous_minus_exhaustive,d_bias_mcse
+check_exhaustive,exhaustive_sinus_cv15,20261005,"71,5,0",AP,3,0.15,10,100000,99985,99985,0,0,0,Tv,0.0,1.8848643661548969e-10,-2.8266278206956486e-18,3.5323829050456044e-18
+check_exhaustive,exhaustive_sinus_cv15,20261005,"71,5,0",SL,3,0.15,10,100000,99704,99704,0,0,0,Tv,0.0,0.0,-3.693712002927896e-18,2.4144085243612964e-18
+check_exhaustive,exhaustive_sinus_cv15,20261005,"71,5,0",AP,5,0.15,10,100000,96494,96507,13,106,142,Tv,0.00011176959368985884,0.00012136448702509228,5.0361654021636965e-05,0.00011034846732459549
+check_exhaustive,exhaustive_sinus_cv15,20261005,"71,5,0",SL,5,0.15,10,100000,86953,86977,24,98,147,Tv,-5.585754552805966e-05,9.254434372834682e-05,7.234364164910113e-05,9.552654893835412e-05

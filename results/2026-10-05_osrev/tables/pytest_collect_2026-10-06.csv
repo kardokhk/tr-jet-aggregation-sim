@@ -1,0 +1,10 @@
+tests/test_amend2.py,17
+tests/test_edge_cases.py,17
+tests/test_known_answers.py,23
+tests/test_osrev_ai_reference.py,22
+tests/test_osrev_beats.py,30
+tests/test_osrev_calibration.py,42
+tests/test_osrev_thresholds.py,19
+tests/test_osrev_triggers.py,27
+tests/test_osrev_views.py,13
+tests/test_regression.py,1

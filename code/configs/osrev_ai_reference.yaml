@@ -1,0 +1,66 @@
+# Protocol amendment 3, package A3-5 (AI validation and reference sets). Post hoc sensitivity
+# analyses requested by the senior author on 2026-10-05 (comments C189, C209, C321, C399).
+# Not a pre-specified analysis. Model parameters come from code/configs/amend2_2026-09-18.yaml
+# (the configuration behind the published E5b and E6b numbers); nothing there is changed.
+# Extensions are in code/lib/duomaxsim/osrev_ai_reference.py and are off unless listed here.
+
+meta:
+  amendment: A3-5
+  base_config: code/configs/amend2_2026-09-18.yaml
+  main_config: code/configs/base.yaml          # used only for the exact-reproduction check of the main run
+  seed_entropy: 20261005                       # numpy SeedSequence entropy
+  spawn_prefix: 75                             # spawn key = (75, stream, index); streams listed below
+  chunk_size: 20000                            # as in the published runs
+
+streams:   # second element of the spawn key
+  e5_validation: 1        # (75, 1, cell): AI-validation studies (reads, AI noise z and z2)
+  e5_matching: 2          # (75, 2, cell): separate calibration sample used only to match own-error SDs
+  loa_nested: 3           # (75, 3, scenario, block): reader pairs reading repeated case samples
+  loa_multireader: 4      # (75, 4, block): panels of six readers
+  sentinel_data: 5        # (75, 5, cell): production sets (manual reads and AI drafts)
+  sentinel_perm: 6        # (75, 6, cell): permutations of the calibrated test
+  bootstrap: 7            # (75, 7, k): pair-level bootstrap for Monte Carlo SEs of variance components
+
+reproduction:             # stored seeds; compared with the stored parquet values (must agree exactly)
+  - {id: amend2_E5_cell9,  config: base_config, results: results/2026-09-18_amend2, experiment: E5, cell: 9}
+  - {id: amend2_E6_cell22, config: base_config, results: results/2026-09-18_amend2, experiment: E6, cell: 22}
+  - {id: main_E5_base,     config: main_config, results: results/2026-09-18_full,   experiment: E5, match: {beat_cv: 0.15, view_over: true}}
+  - {id: main_E6_base,     config: main_config, results: results/2026-09-18_full,   experiment: E6, match: {beat_cv: 0.15, sigma_rb_mm: 0.75, ai_draft_sigma_mm: 2.0}}
+
+e5:
+  n_studies: 2000                 # validation studies of n_val = 200 patients
+  n_matching_studies: 2000        # calibration sample (400,000 patients) for own-error matching
+  cells:                          # index = third element of the spawn key; base first
+    - {id: base_cv15, overrides: {beat_cv: 0.15, view_over: true}}
+    - {id: cv05,      overrides: {beat_cv: 0.05, view_over: true}}
+    - {id: cv30,      overrides: {beat_cv: 0.30, view_over: true}}
+  lambdas: [0.25, 0.5, 0.75, 1.0]
+  sigma_reference_mm: 2.0         # own-error SD of the independent comparator; its true MAE is the matching target
+  sigma_independent_mm: [1.0, 2.0, 3.0]
+  adj_tol_mm: [1.0, 2.0, 3.0]
+  jackknife_blocks: 50
+
+loa_nested:
+  sizes: [25, 50, 100, 200]       # number of double-read cases (prefixes of each 200-case sample)
+  n_cases: 200
+  n_rep: 50                       # independent case samples per reader pair
+  pairs_per_block: 5
+  scenarios:                      # E6b base cell (beat CV 0.15) with the reader-offset SD below
+    - {id: rb075, sigma_rb_mm: 0.75, n_pairs: 1000}
+    - {id: rb000, sigma_rb_mm: 0.0,  n_pairs: 200}     # in-situ check: no between-pair component
+  n_boot: 1000
+
+loa_multireader:
+  n_studies: 2000
+  studies_per_block: 20
+  n_readers_max: 6
+  readers: [2, 3, 4, 6]
+  total_reads: 400                # as two readers reading 200 cases
+  n_cases_drawn: 200
+  sigma_rb_mm: 0.75
+
+sentinel:
+  n_studies: 2000
+  n_perm: 999
+  cells: all                      # the 54 E6b cells (beat CV x reader-offset SD x AI-draft SD)
+  level: 0.05

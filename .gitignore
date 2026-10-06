@@ -24,3 +24,8 @@ figures/superseded/
 __pycache__/
 *.pyc
 .pytest_cache/
+
+# clinical TEE example (patient image): manuscript Figure 1 only, never public
+figures/fig1_design_tee*
+code/14_prepare_tee_example.py
+figures/fig1_design_alt.png

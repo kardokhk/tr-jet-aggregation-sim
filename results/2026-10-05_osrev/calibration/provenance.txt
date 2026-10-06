@@ -1,0 +1,64 @@
+date: 2026-10-05T18:24:27+02:00
+host: mel0315
+slurm_job_id: 5301947
+Python 3.11.16
+numpy 2.4.6 scipy 1.17.1 pandas 3.0.5
+git_commit: 57371d33737904059ed8272d53aa3933bf9ad985 (new files of this package are untracked; checksums below)
+seeds: SeedSequence entropy 20261005, spawn keys (76, family, index); see code/configs/osrev_calibration.yaml
+b5d5b8f6a800f71a84a41454ed6056ccd66967df0932b21881d8493b4f8331c4  code/lib/duomaxsim/config.py
+7ef0e5dbe7da7d082e81fe9001fa67add68d312203148c4d6d660c45d66ba5df  code/lib/duomaxsim/estimators.py
+ffefc475f5d36448278db381065347cb32ce09491bdd9875c90c33a7668eac04  code/lib/duomaxsim/experiments.py
+78d971d1a0b921d035fcb56c7501c828618720f7b9141828fbc6ca37316438ae  code/lib/duomaxsim/__init__.py
+1a05fea2b14141b1cd978b85f80a1a02eb75ec7dbb6c157cc6389399b927fbbe  code/lib/duomaxsim/metrics.py
+d882497e4be358fb9b9672b011f697fcfd794191a65bfbb45516ab8b4d9c84a2  code/lib/duomaxsim/model.py
+fccdefb3d74294fec55bdd4ed136eb7f90f4c0b8963058ae5ddeb341639e6e77  code/lib/duomaxsim/osrev_ai_reference.py
+79a6ad8902efe8a3bd7d75f60033c0d5de2515b5ae9821e2cad6946be314bae5  code/lib/duomaxsim/osrev_beats.py
+18e24df5ced3ca48584adec86b4f84415e6e98e9a8f7d40222832e4289c7e6db  code/lib/duomaxsim/osrev_calibration.py
+9e19bfb0a16109247dbbadfe8757c8f700823adac6ff37443dd50d0a0a6472c6  code/lib/duomaxsim/osrev_thresholds.py
+b12e3eff16ef87668885b15626b97ff828e26e9bfe790330e18a6f1481c21ee5  code/lib/duomaxsim/osrev_triggers.py
+1ad2f6f97a1fe7ee83deb5e1204206156b05021581072f8c9b440c6ce7b49e7a  code/lib/duomaxsim/osrev_views.py
+4476d3a78e8e1fe0b057138a12490ab379cb8bcd59cfc41541aa6774d16d2b87  code/lib/duomaxsim/rules.py
+b029ddbbe85236b0e582e39620c063a15ae259101318ece0bede382200879cdd  code/20_osrev_calibration_run.py
+cdff55e95e27af4824d36c02a7a86852b582b44badd5209484e644c3b1e4d89e  code/21_osrev_calibration_analyse.py
+bd94447afbc3497c1bd45482786387e79d48471bb247fb6b61992e29d8f64f3e  code/configs/osrev_calibration.yaml
+81a0db26a212cf8700708e6b1281006b2ca289efb747c68504e2a07bf986e9f5  code/configs/amend2_2026-09-18.yaml
+872cd4941b67371d45199fb39af50fbbd4244c06c13d401e5ec1922629735135  code/slurm/osrev_calibration.sh
+46a07ff85d4eddb0f0bdd1ba57f9fce3eda771307587805cfa6f90977b55d714  tests/test_osrev_calibration.py
+
+post-job step: 2026-10-05T18:28:32+02:00 on login02.meluxina.lxp.lu: code/21_osrev_calibration_analyse.py rerun on the login node (deterministic, no random numbers) after a one-line change to read repro_e1b_resimulated.csv with float_precision=round_trip; simulation outputs of job 5301947 untouched
+320829ab3349d46f75d332572331152a42d9c29b1535e7a7eac4a1dbb245bf55  code/21_osrev_calibration_analyse.py
+
+---- follow-up run (stages C D); stage A and B outputs above are not regenerated ----
+date: 2026-10-06T10:08:28+02:00
+host: mel0398
+slurm_job_id: 5306863
+stages: C D
+Python 3.11.16
+numpy 2.4.6 scipy 1.17.1 pandas 3.0.5
+git_commit: 57371d33737904059ed8272d53aa3933bf9ad985 (new files of this package are untracked; checksums below)
+seeds: SeedSequence entropy 20261005, spawn keys (76, family, index); see code/configs/osrev_calibration.yaml
+b5d5b8f6a800f71a84a41454ed6056ccd66967df0932b21881d8493b4f8331c4  code/lib/duomaxsim/config.py
+7ef0e5dbe7da7d082e81fe9001fa67add68d312203148c4d6d660c45d66ba5df  code/lib/duomaxsim/estimators.py
+ffefc475f5d36448278db381065347cb32ce09491bdd9875c90c33a7668eac04  code/lib/duomaxsim/experiments.py
+78d971d1a0b921d035fcb56c7501c828618720f7b9141828fbc6ca37316438ae  code/lib/duomaxsim/__init__.py
+1a05fea2b14141b1cd978b85f80a1a02eb75ec7dbb6c157cc6389399b927fbbe  code/lib/duomaxsim/metrics.py
+d882497e4be358fb9b9672b011f697fcfd794191a65bfbb45516ab8b4d9c84a2  code/lib/duomaxsim/model.py
+fccdefb3d74294fec55bdd4ed136eb7f90f4c0b8963058ae5ddeb341639e6e77  code/lib/duomaxsim/osrev_ai_reference.py
+79a6ad8902efe8a3bd7d75f60033c0d5de2515b5ae9821e2cad6946be314bae5  code/lib/duomaxsim/osrev_beats.py
+f52a7b82ba84773495c3c88d2b301d455b92a52b40234ba2aa440d921252e65f  code/lib/duomaxsim/osrev_calibration.py
+9e19bfb0a16109247dbbadfe8757c8f700823adac6ff37443dd50d0a0a6472c6  code/lib/duomaxsim/osrev_thresholds.py
+b12e3eff16ef87668885b15626b97ff828e26e9bfe790330e18a6f1481c21ee5  code/lib/duomaxsim/osrev_triggers.py
+1ad2f6f97a1fe7ee83deb5e1204206156b05021581072f8c9b440c6ce7b49e7a  code/lib/duomaxsim/osrev_views.py
+4476d3a78e8e1fe0b057138a12490ab379cb8bcd59cfc41541aa6774d16d2b87  code/lib/duomaxsim/rules.py
+815aa78d6c844f112e090c31ae45868239a188a368a53cd90223d0d2c943d2ec  code/20_osrev_calibration_run.py
+1a2ee80f98933e5e9a432940b54e8445c9e91256bab881a2f02cefe7c17aeb54  code/21_osrev_calibration_analyse.py
+b3d3074971e72800306364cd68c2257d36e7eb815531eba23e3cfb17ae2090ad  code/configs/osrev_calibration.yaml
+81a0db26a212cf8700708e6b1281006b2ca289efb747c68504e2a07bf986e9f5  code/configs/amend2_2026-09-18.yaml
+9c7f3cfa9ce718bae139034e8f7fc62d509ce0293b0052c3542b1c32c58195b4  code/slurm/osrev_calibration.sh
+1a70312ae96611a676f3bd6540959233f5889f1d5b89569186bb1be125ce6899  tests/test_osrev_calibration.py
+
+post-job step: 2026-10-06T10:10:53+02:00 on login02.meluxina.lxp.lu: code/21_osrev_calibration_analyse.py --followup rerun on the login node (deterministic, no random numbers) after adding the column 'core' to calibration_table_s25.csv; simulation outputs of job 5306863 untouched
+e6615e1f50e2db93cf062564de7493f1004aae8b0c812ba775e41db7a0d66dda  code/21_osrev_calibration_analyse.py
+note: job 5306860 (2026-10-06, stages C D, 00:00:58 on mel0398) is superseded: its simulations completed but the analysis step stopped on a missing key (stored cells carry no MAE), and it lacked the scenario variants mid15_sd707 and ind00_sd707. Job 5306863 (00:00:55 on mel0398) regenerated every followup_* file. log_stage_C.txt and log_stage_D.txt hold the task lines of both jobs.
+note: tests/test_osrev_calibration.py now collects 42 tests (30 before the follow-up, 12 added); tests/test_regression.py 1 test. All passed on the login node on 2026-10-06 with the code checksummed above.
+sha256 of the stage A and B outputs was unchanged by the follow-up (all 21 files other than this one compared before and after).

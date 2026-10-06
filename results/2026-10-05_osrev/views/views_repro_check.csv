@@ -1,0 +1,19 @@
+family,stored_run,metric,n_values_resimulated,n_values_in_stored_run,n_value_bit_identical,n_mcse_bit_identical,max_abs_diff_value
+repro_e1b,2026-09-18_amend2,bias_mm,6912,6912,6912,6912.0,0.0
+repro_e1b,2026-09-18_amend2,p_limited_anchor,1728,1728,1728,1728.0,0.0
+repro_e1b,2026-09-18_amend2,relbias_pct,6912,6912,6912,6912.0,0.0
+repro_e1b,2026-09-18_amend2,rmse_mm,6912,6912,6912,6912.0,0.0
+repro_e1b,2026-09-18_amend2,sd_err_mm,6912,6912,6912,6912.0,0.0
+repro_e1b,2026-09-18_amend2,selection_inflation_mm,1728,1728,1728,1728.0,0.0
+repro_main,2026-09-18_full,bias_mm,16,16,16,16.0,0.0
+repro_main,2026-09-18_full,p_limited_anchor,4,4,4,4.0,0.0
+repro_main,2026-09-18_full,relbias_pct,16,16,16,16.0,0.0
+repro_main,2026-09-18_full,rmse_mm,16,16,16,16.0,0.0
+repro_main,2026-09-18_full,sd_err_mm,16,16,16,16.0,0.0
+repro_main,2026-09-18_full,selection_inflation_mm,4,0,0,0.0,
+repro_e1b,per-patient arrays vs library accumulator,bias_mm,6912,6912,4470,,1.3322676295501878e-15
+repro_e1b,per-patient arrays vs library accumulator,rmse_mm,6912,6912,5499,,8.881784197001252e-16
+repro_e1b,per-patient arrays vs library accumulator,sd_err_mm,6912,6912,4429,,1.3322676295501878e-15
+repro_main,per-patient arrays vs library accumulator,bias_mm,16,16,9,,2.220446049250313e-16
+repro_main,per-patient arrays vs library accumulator,rmse_mm,16,16,14,,4.440892098500626e-16
+repro_main,per-patient arrays vs library accumulator,sd_err_mm,16,16,12,,4.440892098500626e-16

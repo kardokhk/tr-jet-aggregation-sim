@@ -1,0 +1,112 @@
+# Full test suite: pytest -q tests
+date: 2026-10-06T15:22:20+02:00
+host: mel0395   slurm job: 5307911
+git commit (HEAD): 57371d33737904059ed8272d53aa3933bf9ad985
+git describe: v0.4.0-dirty
+python: Python 3.11.16
+numpy: 2.4.6
+scipy: 1.17.1   pandas: 3.0.5   pytest: pytest 9.1.1
+git status --short, summary (working tree relative to HEAD; untracked directories collapsed):
+  modified tracked files: 47
+  untracked entries: 68
+git status --short code tests (the files the tests exercise):
+   M code/13_schematic_figures.py
+   M code/README.md
+   M code/figures/fig4_triggers.py
+   M code/figures/fig5_reference.py
+   M code/figures/figS5_face_validity.py
+  ?? code/20_osrev_ai_reference_run.py
+  ?? code/20_osrev_beats_run.py
+  ?? code/20_osrev_calibration_run.py
+  ?? code/20_osrev_thresholds_run.py
+  ?? code/20_osrev_triggers_run.py
+  ?? code/20_osrev_views_run.py
+  ?? code/21_osrev_ai_reference_analyse.py
+  ?? code/21_osrev_beats_tables.py
+  ?? code/21_osrev_calibration_analyse.py
+  ?? code/21_osrev_thresholds_analyse.py
+  ?? code/21_osrev_triggers_tables.py
+  ?? code/21_osrev_views_analyse.py
+  ?? code/22_osrev_ai_reference_checks.py
+  ?? code/23_make_tables_v06.py
+  ?? code/23_osrev_fig4_clustered_se.py
+  ?? code/configs/osrev_ai_reference.yaml
+  ?? code/configs/osrev_beats.yaml
+  ?? code/configs/osrev_calibration.yaml
+  ?? code/configs/osrev_thresholds.yaml
+  ?? code/configs/osrev_triggers.yaml
+  ?? code/configs/osrev_views.yaml
+  ?? code/figures/figS6_true_span_distribution.py
+  ?? code/figures/figS7_beats_matched.py
+  ?? code/figures/figS8_error_distribution.py
+  ?? code/lib/duomaxsim/osrev_ai_reference.py
+  ?? code/lib/duomaxsim/osrev_beats.py
+  ?? code/lib/duomaxsim/osrev_calibration.py
+  ?? code/lib/duomaxsim/osrev_thresholds.py
+  ?? code/lib/duomaxsim/osrev_triggers.py
+  ?? code/lib/duomaxsim/osrev_views.py
+  ?? code/osrev_verification.py
+  ?? code/slurm/osrev_ai_reference.sh
+  ?? code/slurm/osrev_beats.sh
+  ?? code/slurm/osrev_calibration.sh
+  ?? code/slurm/osrev_fig4_clustered.sh
+  ?? code/slurm/osrev_thresholds.sh
+  ?? code/slurm/osrev_triggers.sh
+  ?? code/slurm/osrev_verification.sh
+  ?? code/slurm/osrev_views.sh
+  ?? code/slurm/pytest_full.sh
+  ?? code/tools/slurm_job_table.py
+  ?? code/tools/wordcount_ehjci.py
+  ?? tests/logs/
+  ?? tests/test_osrev_ai_reference.py
+  ?? tests/test_osrev_beats.py
+  ?? tests/test_osrev_calibration.py
+  ?? tests/test_osrev_thresholds.py
+  ?? tests/test_osrev_triggers.py
+  ?? tests/test_osrev_views.py
+sha256 of the library and test files:
+  b5d5b8f6a800f71a84a41454ed6056ccd66967df0932b21881d8493b4f8331c4  code/lib/duomaxsim/config.py
+  7ef0e5dbe7da7d082e81fe9001fa67add68d312203148c4d6d660c45d66ba5df  code/lib/duomaxsim/estimators.py
+  ffefc475f5d36448278db381065347cb32ce09491bdd9875c90c33a7668eac04  code/lib/duomaxsim/experiments.py
+  78d971d1a0b921d035fcb56c7501c828618720f7b9141828fbc6ca37316438ae  code/lib/duomaxsim/__init__.py
+  1a05fea2b14141b1cd978b85f80a1a02eb75ec7dbb6c157cc6389399b927fbbe  code/lib/duomaxsim/metrics.py
+  d882497e4be358fb9b9672b011f697fcfd794191a65bfbb45516ab8b4d9c84a2  code/lib/duomaxsim/model.py
+  fccdefb3d74294fec55bdd4ed136eb7f90f4c0b8963058ae5ddeb341639e6e77  code/lib/duomaxsim/osrev_ai_reference.py
+  79a6ad8902efe8a3bd7d75f60033c0d5de2515b5ae9821e2cad6946be314bae5  code/lib/duomaxsim/osrev_beats.py
+  f52a7b82ba84773495c3c88d2b301d455b92a52b40234ba2aa440d921252e65f  code/lib/duomaxsim/osrev_calibration.py
+  9e19bfb0a16109247dbbadfe8757c8f700823adac6ff37443dd50d0a0a6472c6  code/lib/duomaxsim/osrev_thresholds.py
+  b12e3eff16ef87668885b15626b97ff828e26e9bfe790330e18a6f1481c21ee5  code/lib/duomaxsim/osrev_triggers.py
+  1ad2f6f97a1fe7ee83deb5e1204206156b05021581072f8c9b440c6ce7b49e7a  code/lib/duomaxsim/osrev_views.py
+  4476d3a78e8e1fe0b057138a12490ab379cb8bcd59cfc41541aa6774d16d2b87  code/lib/duomaxsim/rules.py
+  4acbf1fd93066f43441f523d757b6595100c0730dee9320d8027034a1943a8d1  tests/conftest.py
+  404bfd484a78e06c0be2b3c0e4a75cbca94f3c3f7cf1efebb80b2a3ddf7cc25b  tests/make_fixture.py
+  2c39b17236d1456d04173f728005c190f6799d7657b8da5d99f582fd3cdf3328  tests/test_amend2.py
+  040ea8f69f0ad9bb72fa78a21d8bf5208151a4090239e7da344bf526a1a80eaf  tests/test_edge_cases.py
+  7c799914d3d513cd11c7f9a33311afed30d72ffcb75bcdba0940672fc900d7bd  tests/test_known_answers.py
+  81d41d5d9ae62fed43a78026ac9fa9bead405d2bf20a7c97355b1d0fd1f1faaa  tests/test_osrev_ai_reference.py
+  de8742a77bdf73d18a51da533e5fcc3a61d42ccf7683ec4ff8c893d2d11cbd3b  tests/test_osrev_beats.py
+  1a70312ae96611a676f3bd6540959233f5889f1d5b89569186bb1be125ce6899  tests/test_osrev_calibration.py
+  fd237341f83584f404cc3952d540cb93d59b909f149c5fc7b0eab261199603c8  tests/test_osrev_thresholds.py
+  b37e3bd38611880d25c0e286daff4b278a0f942c1b77bd901f2c4b3798f9f1c6  tests/test_osrev_triggers.py
+  d6aa7ba4c8ee34643a5c61c72d28cf1858024c73504bc3642b22dac0404efab0  tests/test_osrev_views.py
+  3d053148825bf9d67b0a14bb78fa7bb61e8e2a6bc652473c4bf2c7f6cb0f9a55  tests/test_regression.py
+  82a7a70a9e3714ea0b91fbe7ec136b5c80b2cead7f2ecc0ba11f88b19288c83a  tests/independent/indep_check_amend2.py
+  b675e78849ad41cb69dc69fdefd572c6694bc45fb89f4ed3c1aaeec35ce4b7a7  tests/independent/indep_check_e1.py
+  40d1f138d29e56fd089db0aa3d7e091685ae38b967476026a6d7ecf968d07c47  tests/independent/indep_check_e2.py
+tests collected per file:
+       17 tests/test_amend2.py
+       17 tests/test_edge_cases.py
+       23 tests/test_known_answers.py
+       22 tests/test_osrev_ai_reference.py
+       30 tests/test_osrev_beats.py
+       42 tests/test_osrev_calibration.py
+       19 tests/test_osrev_thresholds.py
+       27 tests/test_osrev_triggers.py
+       13 tests/test_osrev_views.py
+        1 tests/test_regression.py
+# ---- pytest output ----
+........................................................................ [ 34%]
+........................................................................ [ 68%]
+...................................................................      [100%]
+211 passed in 70.96s (0:01:10)
+# pytest exit status: 0   finished: 2026-10-06T15:24:14+02:00

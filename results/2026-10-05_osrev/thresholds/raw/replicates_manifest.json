@@ -1,0 +1,122 @@
+{
+ "mode": "replicates",
+ "config": {
+  "meta": {
+   "amendment": "A3-3",
+   "seed_entropy": 20261005,
+   "spawn_prefix": [
+    73,
+    1
+   ],
+   "n_patients": 100000,
+   "n_replicates": 100,
+   "chunk_size": 20000
+  },
+  "analysis": {
+   "cutoffs_mm": [
+    7.0,
+    10.0,
+    13.0
+   ],
+   "rules": [
+    "A1",
+    "A2",
+    "A3",
+    "A4"
+   ],
+   "comparator": "A1",
+   "band_half_widths_mm": [
+    1.0,
+    2.0
+   ],
+   "distance_bin_mm": 0.5,
+   "distance_max_mm": 5.0,
+   "hist_bin_mm": 0.25,
+   "hist_max_mm": 60.0
+  },
+  "scenarios": {
+   "base": {
+    "label": "Pre-specified base case (anchor 4.8%, long-axis 20%)",
+    "published": {
+     "config": "code/configs/base.yaml",
+     "cell": 29,
+     "results": "results/2026-09-18_full"
+    },
+    "overrides": {}
+   },
+   "low8": {
+    "label": "8% long-axis setting (anchor 2.4%, long-axis 8%); also the most accurate view-accuracy scenario",
+    "published": {
+     "config": "code/configs/base.yaml",
+     "cell": 77,
+     "results": "results/2026-09-18_full"
+    },
+    "overrides": {}
+   },
+   "acc_2p4_8": {
+    "label": "View-accuracy extreme, most accurate (anchor 2.4%, long-axis 8%); same parameters as low8, amendment-2 seed",
+    "published": {
+     "config": "code/configs/amend2_2026-09-18.yaml",
+     "cell": 0,
+     "results": "results/2026-09-18_amend2"
+    },
+    "overrides": {},
+    "replicate_alias": "low8"
+   },
+   "acc_20_40": {
+    "label": "View-accuracy extreme, least accurate (anchor 20%, long-axis 40%)",
+    "published": {
+     "config": "code/configs/amend2_2026-09-18.yaml",
+     "cell": 11,
+     "results": "results/2026-09-18_amend2"
+    },
+    "overrides": {}
+   },
+   "acc_2p4_40": {
+    "label": "View-accuracy corner (anchor 2.4%, long-axis 40%)",
+    "published": {
+     "config": "code/configs/amend2_2026-09-18.yaml",
+     "cell": 2,
+     "results": "results/2026-09-18_amend2"
+    },
+    "overrides": {}
+   },
+   "acc_20_8": {
+    "label": "View-accuracy corner (anchor 20%, long-axis 8%)",
+    "published": {
+     "config": "code/configs/amend2_2026-09-18.yaml",
+     "cell": 9,
+     "results": "results/2026-09-18_amend2"
+    },
+    "overrides": {}
+   },
+   "base_median13": {
+    "label": "Base case with median true AP span 13 mm (sensitivity population; no stored E3 cell)",
+    "params_from": {
+     "config": "code/configs/base.yaml",
+     "cell": 29
+    },
+    "overrides": {
+     "S_median_mm": 13.0
+    }
+   }
+  }
+ },
+ "n_replicates": 100,
+ "n_patients": 100000,
+ "workers": 120,
+ "cpu_s_workers": 1754.9464689760002,
+ "wall_s": 16.295041793957353,
+ "python": "3.11.16",
+ "numpy": "2.4.6",
+ "pandas": "3.0.5",
+ "host": "mel0146",
+ "date": "2026-10-05T18:09:14+0200",
+ "command": "code/20_osrev_thresholds_run.py replicates --workers 120",
+ "rows": {
+  "overall": 14400,
+  "band": 28800,
+  "bins": 288000,
+  "hist": 289200
+ }
+}

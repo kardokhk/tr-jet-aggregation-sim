@@ -1,0 +1,7 @@
+scenario,config,cell,seed_entropy,seed_spawn_key,n_patients,rows_compared,bit_identical,max_abs_diff_value,cpu_s
+base,code/configs/base.yaml,29,20260918,"3,29",100000,294,True,0.0,1.4640383799999999
+low8,code/configs/base.yaml,77,20260918,"3,77",100000,294,True,0.0,1.4543298100000008
+acc_2p4_8,code/configs/amend2_2026-09-18.yaml,0,20260920,"3,0",100000,294,True,0.0,1.4310203329999993
+acc_20_40,code/configs/amend2_2026-09-18.yaml,11,20260920,"3,11",100000,294,True,0.0,1.530979405
+acc_2p4_40,code/configs/amend2_2026-09-18.yaml,2,20260920,"3,2",100000,294,True,0.0,1.5349607990000003
+acc_20_8,code/configs/amend2_2026-09-18.yaml,9,20260920,"3,9",100000,294,True,0.0,1.4357490500000019

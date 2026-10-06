@@ -1,0 +1,25 @@
+date: 2026-10-05T18:18:14+02:00
+host: mel0487
+slurm_job_id: 5301795
+python: Python 3.11.16
+numpy 2.4.6 scipy 1.17.1 pandas 3.0.5 pyarrow 25.0.0 pyyaml 6.0.3
+git_commit: 57371d33737904059ed8272d53aa3933bf9ad985 (amendment-3 files are untracked at run time)
+sha256:
+78d971d1a0b921d035fcb56c7501c828618720f7b9141828fbc6ca37316438ae  code/lib/duomaxsim/__init__.py
+b5d5b8f6a800f71a84a41454ed6056ccd66967df0932b21881d8493b4f8331c4  code/lib/duomaxsim/config.py
+d882497e4be358fb9b9672b011f697fcfd794191a65bfbb45516ab8b4d9c84a2  code/lib/duomaxsim/model.py
+4476d3a78e8e1fe0b057138a12490ab379cb8bcd59cfc41541aa6774d16d2b87  code/lib/duomaxsim/rules.py
+7ef0e5dbe7da7d082e81fe9001fa67add68d312203148c4d6d660c45d66ba5df  code/lib/duomaxsim/estimators.py
+1a05fea2b14141b1cd978b85f80a1a02eb75ec7dbb6c157cc6389399b927fbbe  code/lib/duomaxsim/metrics.py
+ffefc475f5d36448278db381065347cb32ce09491bdd9875c90c33a7668eac04  code/lib/duomaxsim/experiments.py
+b12e3eff16ef87668885b15626b97ff828e26e9bfe790330e18a6f1481c21ee5  code/lib/duomaxsim/osrev_triggers.py
+5e1908d149b734e360fff4054b2d0ea550d076e6d43dbc028021dc09ab65c57b  code/20_osrev_triggers_run.py
+dd80e9fee42cba43d789d7a444f75b3fe61cc3b85b9e22c57642ae19ec8d638b  code/21_osrev_triggers_tables.py
+1400668d892f25f1a1bf7f3ef4d347103bcd040cf459f4b5683851874404161e  code/configs/osrev_triggers.yaml
+67ad42d11eeed605bd9fa9405c536879f01135867f51049d26ffd751999d647a  code/configs/base.yaml
+81a0db26a212cf8700708e6b1281006b2ca289efb747c68504e2a07bf986e9f5  code/configs/amend2_2026-09-18.yaml
+6cbaf2b76456495e54a545a5c5031c3af2be0529f670426bcf4f2c6653c7f3cb  code/slurm/osrev_triggers.sh
+b37e3bd38611880d25c0e286daff4b278a0f942c1b77bd901f2c4b3798f9f1c6  tests/test_osrev_triggers.py
+pytest (tests/test_osrev_triggers.py tests/test_regression.py), 2026-10-05T18:19:19+02:00:
+............................                                             [100%]
+28 passed in 11.57s

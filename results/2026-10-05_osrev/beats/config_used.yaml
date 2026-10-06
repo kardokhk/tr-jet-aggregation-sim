@@ -1,0 +1,79 @@
+# Protocol amendment 3, package A3-1 (beat rules). Post hoc sensitivity analyses requested by the
+# senior author on 2026-10-05 (comments C185, C196, C324). Not a pre-specified analysis.
+# Parameters come from code/configs/base.yaml (config_version base-2026-09-18-v02); `fixed` and each
+# condition's `overrides` are applied on top. Extension parameters (beat_ar1_rho, resp_*, cal_*) are
+# defined in code/lib/duomaxsim/osrev_beats.py and are off unless listed here.
+
+meta:
+  amendment: A3-1
+  base_config: code/configs/base.yaml
+  seed_entropy: 20261005           # numpy SeedSequence entropy
+  spawn_prefix: 71                 # spawn key = (71, grid, condition, chunk, stream)
+  n_patients: 100000
+  chunk_size: 20000
+  n_boot: 2000                     # patient-level bootstrap resamples (conditions with bootstrap: true)
+
+# K = 1 as in the pre-specified experiment E2 (the source of every published beat-rule number); the
+# anchor view's distribution does not depend on K (condition base_K3 checks this).
+# window 0.15 with prospective acquisition makes the generator produce max_beats_prosp = 30 beats.
+fixed: {K: 1, window: 0.15, data_mode: prospective, N_beats: 3}
+
+rule:
+  W: 0.15
+  N: [3, 5]
+  budgets: [3, 4, 5, 6, 8, 10, 13, 30]          # 30 = prospective acquisition cap (published rule)
+  plain_n: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
+
+grids:
+  1:   # equal-budget comparison: rhythm x beat variation
+    name: budget
+    conditions:
+      - {id: sinus_cv05, bootstrap: false, overrides: {rhythm: sinus, beat_cv: 0.05}}
+      - {id: sinus_cv15, bootstrap: true,  overrides: {rhythm: sinus, beat_cv: 0.15}}
+      - {id: sinus_cv30, bootstrap: false, overrides: {rhythm: sinus, beat_cv: 0.30}}
+      - {id: af_cv05,    bootstrap: false, overrides: {rhythm: AF, rr_cv_af: 0.20, beat_cv: 0.05}}
+      - {id: af_cv15,    bootstrap: true,  overrides: {rhythm: AF, rr_cv_af: 0.20, beat_cv: 0.15}}
+      - {id: af_cv30,    bootstrap: false, overrides: {rhythm: AF, rr_cv_af: 0.20, beat_cv: 0.30}}
+  2:   # sensitivity extensions at beat variation 15%, sinus rhythm and AF (RR CV 20%)
+    name: sens
+    rhythms:
+      sinus: {rhythm: sinus}
+      af: {rhythm: AF, rr_cv_af: 0.20}
+    conditions:
+      - {id: ref,           family: reference, overrides: {}}
+      - {id: ar1_0.3,       family: ar1,  overrides: {beat_ar1_rho: 0.3}}
+      - {id: ar1_0.6,       family: ar1,  overrides: {beat_ar1_rho: 0.6}}
+      - {id: ar1_0.9,       family: ar1,  overrides: {beat_ar1_rho: 0.9}}
+      - {id: resp_add_0.05, family: resp, overrides: {resp_amp: 0.05, resp_mode: add}}
+      - {id: resp_add_0.10, family: resp, overrides: {resp_amp: 0.10, resp_mode: add}}
+      - {id: resp_pres_0.05, family: resp, overrides: {resp_amp: 0.05, resp_mode: preserve}}
+      - {id: resp_pres_0.10, family: resp, overrides: {resp_amp: 0.10, resp_mode: preserve}}
+      - {id: cal_prop,      family: caliper, overrides: {cal_noise_mode: proportional}}
+      - {id: cal_mixed,     family: caliper, overrides: {cal_noise_mode: mixed, cal_const_frac: 0.5}}
+      - {id: combined,      family: combined, overrides: {beat_ar1_rho: 0.6, resp_amp: 0.10, resp_mode: add, cal_noise_mode: mixed, cal_const_frac: 0.5}}
+  3:   # retrospective availability: denominators of limited sampling
+    name: retro
+    conditions:
+      - {id: retro_sinus_cv15, overrides: {rhythm: sinus, beat_cv: 0.15, data_mode: retrospective}}
+      - {id: retro_af_cv15,    overrides: {rhythm: AF, rr_cv_af: 0.20, beat_cv: 0.15, data_mode: retrospective}}
+  4:   # check: three views (manuscript base case), anchor view analysed
+    name: check_K3
+    conditions:
+      - {id: base_K3, bootstrap: false, overrides: {rhythm: sinus, beat_cv: 0.15, K: 3}}
+  5:   # check: contiguous-block search (library) against every N-subset, budget 10
+    name: check_exhaustive
+    budget: 10
+    conditions:
+      - {id: exhaustive_sinus_cv15, overrides: {rhythm: sinus, beat_cv: 0.15}}
+
+# Grid 0 (no entry needed): the published E2 cells are re-run with the unchanged library, config
+# code/configs/base.yaml and their original seeds (entropy 20260918) and compared with
+# results/2026-09-18_full/E2_cells_*.parquet.
+reproduce:
+  rhythm_states:
+    sinus: {rhythm: sinus}
+    AF_rr0.2: {rhythm: AF, rr_cv_af: 0.20}
+  beat_cv: [0.15]
+  window: [null, 0.15]
+  N_beats: [3, 5]
+  data_mode: [prospective, retrospective]

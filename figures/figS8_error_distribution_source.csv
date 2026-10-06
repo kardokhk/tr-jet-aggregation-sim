@@ -1,0 +1,77 @@
+panel,rule,scenario_anchor_long_pct,span_band,x_rmse_mm,x_mcse,y_q95_abs_err_mm,y_mcse,ratio,n,table,q2_5_err_mm,q2_5_mcse,q50_err_mm,q97_5_err_mm,q97_5_mcse,rmse_mm,bias_mm
+a,Anchor-view mean,2.4/8,,1.90998,0.00653163,3.80229,0.0122948,1.99075,100000,views_a_12scenarios.csv cell 36,,,,,,,
+a,Anchor-view mean,2.4/20,,1.90058,0.00615824,3.78537,0.0119125,1.99169,100000,views_a_12scenarios.csv cell 108,,,,,,,
+a,Anchor-view mean,2.4/40,,1.90616,0.0072836,3.76649,0.0148052,1.97595,100000,views_a_12scenarios.csv cell 180,,,,,,,
+a,Anchor-view mean,4.8/8,,1.93023,0.00641891,3.82851,0.0147073,1.98344,100000,views_a_12scenarios.csv cell 252,,,,,,,
+a,Anchor-view mean,4.8/20,,1.9358,0.00654554,3.84404,0.0141786,1.98576,100000,views_a_12scenarios.csv cell 324,,,,,,,
+a,Anchor-view mean,4.8/40,,1.93339,0.00649262,3.82915,0.0137619,1.98054,100000,views_a_12scenarios.csv cell 396,,,,,,,
+a,Anchor-view mean,10/8,,2.20597,0.00937173,4.37984,0.016435,1.98545,100000,views_a_12scenarios.csv cell 468,,,,,,,
+a,Anchor-view mean,10/20,,2.20413,0.00656026,4.41048,0.0147962,2.001,100000,views_a_12scenarios.csv cell 540,,,,,,,
+a,Anchor-view mean,10/40,,2.20873,0.00652889,4.39261,0.0133098,1.98875,100000,views_a_12scenarios.csv cell 612,,,,,,,
+a,Anchor-view mean,20/8,,3.22094,0.00993885,6.49251,0.0311658,2.01572,100000,views_a_12scenarios.csv cell 684,,,,,,,
+a,Anchor-view mean,20/20,,3.22487,0.0100975,6.47407,0.0258491,2.00754,100000,views_a_12scenarios.csv cell 756,,,,,,,
+a,Anchor-view mean,20/40,,3.23293,0.0100464,6.49627,0.0377892,2.0094,100000,views_a_12scenarios.csv cell 828,,,,,,,
+a,Mean across views,2.4/8,,1.67277,0.00501266,3.34941,0.0152262,2.00231,100000,views_a_12scenarios.csv cell 36,,,,,,,
+a,Mean across views,2.4/20,,2.15258,0.00616492,4.28675,0.0176811,1.99144,100000,views_a_12scenarios.csv cell 108,,,,,,,
+a,Mean across views,2.4/40,,3.41693,0.00902102,6.64758,0.0136402,1.94548,100000,views_a_12scenarios.csv cell 180,,,,,,,
+a,Mean across views,4.8/8,,1.68245,0.00485291,3.34353,0.0151151,1.9873,100000,views_a_12scenarios.csv cell 252,,,,,,,
+a,Mean across views,4.8/20,,2.22007,0.00633717,4.41176,0.0224393,1.98721,100000,views_a_12scenarios.csv cell 324,,,,,,,
+a,Mean across views,4.8/40,,3.50207,0.00906455,6.8013,0.0236628,1.94208,100000,views_a_12scenarios.csv cell 396,,,,,,,
+a,Mean across views,10/8,,1.74359,0.0054329,3.46162,0.0125316,1.98534,100000,views_a_12scenarios.csv cell 468,,,,,,,
+a,Mean across views,10/20,,2.36142,0.00666874,4.66181,0.018304,1.97416,100000,views_a_12scenarios.csv cell 540,,,,,,,
+a,Mean across views,10/40,,3.70764,0.00956301,7.17471,0.041686,1.93512,100000,views_a_12scenarios.csv cell 612,,,,,,,
+a,Mean across views,20/8,,1.96824,0.0056491,3.93543,0.0122419,1.99947,100000,views_a_12scenarios.csv cell 684,,,,,,,
+a,Mean across views,20/20,,2.67332,0.00746029,5.21434,0.0167158,1.95051,100000,views_a_12scenarios.csv cell 756,,,,,,,
+a,Mean across views,20/40,,4.06436,0.0102796,7.78635,0.0310196,1.91576,100000,views_a_12scenarios.csv cell 828,,,,,,,
+a,Largest view mean,2.4/8,,2.20858,0.00924189,4.44056,0.028191,2.0106,100000,views_a_12scenarios.csv cell 36,,,,,,,
+a,Largest view mean,2.4/20,,2.02588,0.00756499,4.03468,0.0147557,1.99157,100000,views_a_12scenarios.csv cell 108,,,,,,,
+a,Largest view mean,2.4/40,,1.97688,0.00841744,3.89789,0.0126196,1.97174,100000,views_a_12scenarios.csv cell 180,,,,,,,
+a,Largest view mean,4.8/8,,2.15966,0.00878229,4.32156,0.0193448,2.00103,100000,views_a_12scenarios.csv cell 252,,,,,,,
+a,Largest view mean,4.8/20,,2.02633,0.0102617,4.0006,0.0251306,1.97431,100000,views_a_12scenarios.csv cell 324,,,,,,,
+a,Largest view mean,4.8/40,,1.96196,0.00732698,3.87345,0.0210318,1.97427,100000,views_a_12scenarios.csv cell 396,,,,,,,
+a,Largest view mean,10/8,,2.12147,0.0110933,4.24095,0.0238589,1.99907,100000,views_a_12scenarios.csv cell 468,,,,,,,
+a,Largest view mean,10/20,,2.03168,0.00778419,4.03611,0.0188223,1.98658,100000,views_a_12scenarios.csv cell 540,,,,,,,
+a,Largest view mean,10/40,,2.07542,0.00722699,4.14187,0.0160586,1.99568,100000,views_a_12scenarios.csv cell 612,,,,,,,
+a,Largest view mean,20/8,,2.10927,0.00847423,4.21699,0.0214172,1.99926,100000,views_a_12scenarios.csv cell 684,,,,,,,
+a,Largest view mean,20/20,,2.13166,0.0079115,4.25151,0.013671,1.99446,100000,views_a_12scenarios.csv cell 756,,,,,,,
+a,Largest view mean,20/40,,2.43847,0.00837938,4.90084,0.0200583,2.0098,100000,views_a_12scenarios.csv cell 828,,,,,,,
+a,Largest view mean after review,2.4/8,,2.01936,0.00760574,4.03636,0.0132454,1.99883,100000,views_a_12scenarios.csv cell 36,,,,,,,
+a,Largest view mean after review,2.4/20,,1.93128,0.00669198,3.84841,0.013107,1.99267,100000,views_a_12scenarios.csv cell 108,,,,,,,
+a,Largest view mean after review,2.4/40,,1.91792,0.00765874,3.79474,0.0121025,1.97857,100000,views_a_12scenarios.csv cell 180,,,,,,,
+a,Largest view mean after review,4.8/8,,1.97168,0.0074349,3.93733,0.0156971,1.99694,100000,views_a_12scenarios.csv cell 252,,,,,,,
+a,Largest view mean after review,4.8/20,,1.91381,0.0070819,3.80663,0.0164009,1.98904,100000,views_a_12scenarios.csv cell 324,,,,,,,
+a,Largest view mean after review,4.8/40,,1.90603,0.00669861,3.77575,0.0142366,1.98095,100000,views_a_12scenarios.csv cell 396,,,,,,,
+a,Largest view mean after review,10/8,,1.93082,0.0102073,3.84534,0.0184387,1.99156,100000,views_a_12scenarios.csv cell 468,,,,,,,
+a,Largest view mean after review,10/20,,1.94443,0.0067302,3.86597,0.0138741,1.98822,100000,views_a_12scenarios.csv cell 540,,,,,,,
+a,Largest view mean after review,10/40,,2.03423,0.00659359,4.06414,0.0109843,1.99788,100000,views_a_12scenarios.csv cell 612,,,,,,,
+a,Largest view mean after review,20/8,,1.97671,0.00751647,3.93553,0.0188011,1.99095,100000,views_a_12scenarios.csv cell 684,,,,,,,
+a,Largest view mean after review,20/20,,2.14707,0.00761585,4.31151,0.0183813,2.00809,100000,views_a_12scenarios.csv cell 756,,,,,,,
+a,Largest view mean after review,20/40,,2.50893,0.00861764,5.06961,0.0231737,2.02062,100000,views_a_12scenarios.csv cell 828,,,,,,,
+b,Anchor-view mean,4.8/20,0 to 5,,,2.34209,,,4144,views_e_conditional_quantiles.csv cell 0,-2.31149,0.0396158,0.044496,2.38534,0.0632636,1.18621,0.0300025
+b,Anchor-view mean,4.8/20,5 to 7,,,2.64318,,,14463,views_e_conditional_quantiles.csv cell 0,-2.56358,0.0519243,-0.0775034,2.71772,0.0330317,1.35194,-0.0312382
+b,Anchor-view mean,4.8/20,7 to 10,,,3.16144,,,31367,views_e_conditional_quantiles.csv cell 0,-3.11544,0.0178335,-0.191151,3.22042,0.0376489,1.61691,-0.134062
+b,Anchor-view mean,4.8/20,10 to 13,,,3.88388,,,24610,views_e_conditional_quantiles.csv cell 0,-3.8579,0.0184967,-0.349542,3.92201,0.0262752,2.0095,-0.241491
+b,Anchor-view mean,4.8/20,13 to 16,,,4.64389,,,13360,views_e_conditional_quantiles.csv cell 0,-4.54135,0.0587746,-0.504341,4.78142,0.12056,2.39303,-0.34845
+b,Anchor-view mean,4.8/20,>= 16,,,6.2838,,,12056,views_e_conditional_quantiles.csv cell 0,-6.22188,0.0450174,-0.675926,6.37148,0.104979,3.25501,-0.467908
+b,Anchor-view mean,4.8/20,all,,,4.04262,,,100000,views_e_conditional_quantiles.csv cell 0,-4.08705,0.0169516,-0.258784,3.9752,0.0195762,2.04424,-0.207721
+b,Mean across views,4.8/20,0 to 5,,,2.02247,,,4144,views_e_conditional_quantiles.csv cell 0,-2.21096,0.072388,-0.347962,1.62407,0.0728368,1.05462,-0.342207
+b,Mean across views,4.8/20,5 to 7,,,2.5073,,,14463,views_e_conditional_quantiles.csv cell 0,-2.7916,0.0196195,-0.614345,1.72352,0.0194397,1.29536,-0.579676
+b,Mean across views,4.8/20,7 to 10,,,3.21567,,,31367,views_e_conditional_quantiles.csv cell 0,-3.59708,0.029032,-0.919607,1.91332,0.0250619,1.66541,-0.900519
+b,Mean across views,4.8/20,10 to 13,,,4.10142,,,24610,views_e_conditional_quantiles.csv cell 0,-4.58301,0.0151076,-1.32511,2.31682,0.034041,2.16596,-1.27447
+b,Mean across views,4.8/20,13 to 16,,,5.05824,,,13360,views_e_conditional_quantiles.csv cell 0,-5.58714,0.0627762,-1.72529,2.77685,0.0524331,2.67595,-1.64084
+b,Mean across views,4.8/20,>= 16,,,7.00537,,,12056,views_e_conditional_quantiles.csv cell 0,-7.96058,0.0843926,-2.33169,3.53994,0.120083,3.71114,-2.31282
+b,Mean across views,4.8/20,all,,,4.43219,,,100000,views_e_conditional_quantiles.csv cell 0,-5.24621,0.0294454,-1.09071,2.25994,0.0183753,2.22045,-1.19218
+b,Largest view mean,4.8/20,0 to 5,,,2.39223,,,4144,views_e_conditional_quantiles.csv cell 0,-1.57574,0.0210407,0.482171,2.79126,0.0552608,1.23074,0.5075
+b,Largest view mean,4.8/20,5 to 7,,,2.77947,,,14463,views_e_conditional_quantiles.csv cell 0,-1.9003,0.0105382,0.455415,3.19363,0.0173975,1.3987,0.500021
+b,Largest view mean,4.8/20,7 to 10,,,3.29666,,,31367,views_e_conditional_quantiles.csv cell 0,-2.39637,0.0210074,0.402002,3.83588,0.0406334,1.66916,0.488262
+b,Largest view mean,4.8/20,10 to 13,,,4.053,,,24610,views_e_conditional_quantiles.csv cell 0,-3.02252,0.0214877,0.393255,4.79224,0.0479755,2.06243,0.512582
+b,Largest view mean,4.8/20,13 to 16,,,4.98383,,,13360,views_e_conditional_quantiles.csv cell 0,-3.6482,0.0267012,0.369436,5.94498,0.0657966,2.49396,0.558787
+b,Largest view mean,4.8/20,>= 16,,,6.76413,,,12056,views_e_conditional_quantiles.csv cell 0,-4.99238,0.116424,0.437741,8.01868,0.164386,3.38216,0.730084
+b,Largest view mean,4.8/20,all,,,4.20405,,,100000,views_e_conditional_quantiles.csv cell 0,-3.14335,0.0169129,0.416115,5.02522,0.0530069,2.11578,0.535321
+b,Largest view mean after review,4.8/20,0 to 5,,,2.38278,,,4144,views_e_conditional_quantiles.csv cell 0,-1.57805,0.0191794,0.476127,2.76257,0.0939041,1.22311,0.499476
+b,Largest view mean after review,4.8/20,5 to 7,,,2.71863,,,14463,views_e_conditional_quantiles.csv cell 0,-1.92569,0.0191935,0.429077,3.0884,0.0436278,1.36976,0.466569
+b,Largest view mean after review,4.8/20,7 to 10,,,3.15983,,,31367,views_e_conditional_quantiles.csv cell 0,-2.43138,0.0227794,0.352214,3.62851,0.027099,1.6031,0.417986
+b,Largest view mean after review,4.8/20,10 to 13,,,3.85779,,,24610,views_e_conditional_quantiles.csv cell 0,-3.12503,0.0343561,0.284057,4.42196,0.0583674,1.96495,0.380818
+b,Largest view mean after review,4.8/20,13 to 16,,,4.64916,,,13360,views_e_conditional_quantiles.csv cell 0,-3.75106,0.0578599,0.233085,5.46183,0.0788445,2.35294,0.369063
+b,Largest view mean after review,4.8/20,>= 16,,,6.23295,,,12056,views_e_conditional_quantiles.csv cell 0,-5.27182,0.0495765,0.176638,7.17798,0.156603,3.17306,0.390031
+b,Largest view mean after review,4.8/20,all,,,3.98876,,,100000,views_e_conditional_quantiles.csv cell 0,-3.28189,0.0192776,0.335563,4.55614,0.0407591,2.01076,0.409336

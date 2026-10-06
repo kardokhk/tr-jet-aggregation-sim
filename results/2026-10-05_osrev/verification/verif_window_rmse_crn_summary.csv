@@ -1,0 +1,3 @@
+estimand,replicates,n_per_replicate,mean_paired_diff,se_of_mean_paired_diff,empirical_sd_paired_diff,mean_analytic_mcse_paired,empirical_sd_independent_diff,mean_analytic_mcse_independent,rel_se_of_empirical_sd,coverage_paired_95,coverage_independent_formula_on_paired,mean_corr_sq_err
+T1,100,100000,0.104750672,0.000443395462,0.00443395462,0.004252677713,0.009261635955,0.009113221078,0.07106690545,0.94,1,0.7826772037
+Tv,100,100000,0.1608326174,0.0004106795136,0.004106795136,0.003705988521,0.005309018575,0.005660178753,0.07106690545,0.95,1,0.5746351381

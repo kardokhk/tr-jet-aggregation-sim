@@ -6,7 +6,12 @@
     (biplane), vs Hauptmann 2026 and Singh 2026.
 (c) Single long-axis view mean minus T1 and biplane mean minus the mean of
     the true AP and SL spans (% of mean truth) vs long-axis underestimation
-    scale L, vs Singh 2026 bands.
+    scale L, vs Singh 2026. v06 (2026-10-06, calibration audit of the third amendment): the hatched band
+    "31% to 49% below the 3D maximum" is removed, because 48% and 49% compare planes near the short axis
+    with the maximal diameter (ellipticity alone gives 47%) and are not long-axis underestimation. The
+    one like-axis value (inflow plane 30.8% below the 3D maximal diameter, derived from reported means)
+    is drawn as a dashed line; the biplane band (18.7% to 24.6% below the 3D average) is unchanged and is
+    comparable only with the biplane series. No plotted simulation value changed.
 (d) CV of measured beat values (AP, long-axis view, 5 beats) vs the beat-CV
     parameter, with and without caliper error, series with a mean >= 3 mm, vs Moraldo 2013.
     Wong 1987 (14% to 22%) is a CV of jet AREA, a different construct from a linear-span CV, so it is
@@ -126,8 +131,10 @@ def main():
                columnspacing=1.0, labelspacing=0.25, borderaxespad=0.1)
 
     # ---------------- (c) view minus truth
-    axc.axhspan(-49, -31, **BAND)
-    axc.axhspan(-25, -19, facecolor="#f0f0f0", edgecolor="#8c8c8c", hatch="....", lw=0.5)
+    SINGH_LIKE_AXIS = -100 * 5.18 / 16.82      # inflow plane minus 3D maximal diameter, % (derived)
+    assert abs(SINGH_LIKE_AXIS + 30.8) < 0.05
+    axc.axhline(SINGH_LIKE_AXIS, color="#000000", lw=0.8, ls=(0, (4, 2)))
+    axc.axhspan(-24.6, -18.7, facecolor="#f0f0f0", edgecolor="#8c8c8c", hatch="....", lw=0.5)
     # the bands are keyed in the legend (no text boxes over the bands, no labels crossing the lines)
     series_c = {"long-axis view mean, AP, vs T1 AP": dict(color="#000000", marker="o", mfc="#000000", ls="-",
                                                           label="Single view (AP) vs true maximal span"),
@@ -154,8 +161,9 @@ def main():
     axc.set_xlabel("Long-axis underestimation scale L (mean underestimation)")
     axc.set_ylabel("View value minus truth\n(% of mean truth)")
     hc, lc = axc.get_legend_handles_labels()
-    hc += [Patch(**BAND), Patch(facecolor="#f0f0f0", edgecolor="#8c8c8c", hatch="....", lw=0.5)]
-    lc += ["Singh 2026: single plane vs 3D maximum", "Singh 2026: biplane vs 3D average"]
+    hc += [Line2D([], [], color="#000000", lw=0.8, ls=(0, (4, 2))),
+           Patch(facecolor="#f0f0f0", edgecolor="#8c8c8c", hatch="....", lw=0.5)]
+    lc += ["Singh 2026: inflow plane vs 3D maximum", "Singh 2026: biplane vs 3D average"]
     axc.legend(hc, lc, loc="upper right", frameon=False, handletextpad=0.4, borderaxespad=0.1,
                handlelength=2.2, labelspacing=0.2)
 

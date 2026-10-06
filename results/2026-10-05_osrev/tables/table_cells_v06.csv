@@ -1,0 +1,1599 @@
+table,label,file,value,decimals,scale,printed
+Table 1,A1 bias,results/2026-09-18_full/analysis/E1E3_e1_headline.csv,-0.2054573046291033,2,1.0,−0.21
+Table 1,A1 bias lo,results/2026-09-18_full/analysis/E1E3_e1_headline.csv,-0.2180237208441227,2,1.0,−0.22
+Table 1,A1 bias hi,results/2026-09-18_full/analysis/E1E3_e1_headline.csv,-0.1928908884140838,2,1.0,−0.19
+Table 1,A1 rmse,results/2026-09-18_full/analysis/E1E3_e1_headline.csv,2.037884894854243,2,1.0,2.04
+Table 1,A1 mae,results/2026-10-05_osrev/views/views_c_table1_s2.csv,1.5515902310209122,2,1.0,1.55
+Table 1,A1 q95abs,results/2026-10-05_osrev/views/views_c_table1_s2.csv,4.0445969371554265,2,1.0,4.04
+Table 1,A1 bias min,results/2026-09-18_amend2/analysis/E1bE3b_e1_worstcase.csv,-1.9274649101480417,2,1.0,−1.93
+Table 1,A1 bias max,results/2026-09-18_amend2/analysis/E1bE3b_e1_worstcase.csv,0.0161557929905983,2,1.0,0.02
+Table 1,A1 rmse min,results/2026-10-05_osrev/views/views_a_variant_ranges.csv,1.9005831972452771,2,1.0,1.90
+Table 1,A1 rmse max,results/2026-10-05_osrev/views/views_a_variant_ranges.csv,3.2329342524023925,2,1.0,3.23
+Table 1,A1 sens,results/2026-09-18_full/analysis/E1E3_e3_base.csv,0.7868605235683075,1,100.0,78.7
+Table 1,A1 spec,results/2026-09-18_full/analysis/E1E3_e3_base.csv,0.9353241883489122,1,100.0,93.5
+Table 1,A2 bias,results/2026-09-18_full/analysis/E1E3_e1_headline.csv,-1.1818644834460097,2,1.0,−1.18
+Table 1,A2 bias lo,results/2026-09-18_full/analysis/E1E3_e1_headline.csv,-1.1933985664347044,2,1.0,−1.19
+Table 1,A2 bias hi,results/2026-09-18_full/analysis/E1E3_e1_headline.csv,-1.170330400457315,2,1.0,−1.17
+Table 1,A2 rmse,results/2026-09-18_full/analysis/E1E3_e1_headline.csv,2.2045199655308463,2,1.0,2.20
+Table 1,A2 mae,results/2026-10-05_osrev/views/views_c_table1_s2.csv,1.6929191882673087,2,1.0,1.69
+Table 1,A2 q95abs,results/2026-10-05_osrev/views/views_c_table1_s2.csv,4.391321116977284,2,1.0,4.39
+Table 1,A2 bias min,results/2026-09-18_amend2/analysis/E1bE3b_e1_worstcase.csv,-3.1609321231952983,2,1.0,−3.16
+Table 1,A2 bias max,results/2026-09-18_amend2/analysis/E1bE3b_e1_worstcase.csv,-0.2750493415395879,2,1.0,−0.28
+Table 1,A2 rmse min,results/2026-10-05_osrev/views/views_a_variant_ranges.csv,1.672772226008007,2,1.0,1.67
+Table 1,A2 rmse max,results/2026-10-05_osrev/views/views_a_variant_ranges.csv,4.064358104441602,2,1.0,4.06
+Table 1,A2 sens,results/2026-09-18_full/analysis/E1E3_e3_base.csv,0.6435559336452573,1,100.0,64.4
+Table 1,A2 spec,results/2026-09-18_full/analysis/E1E3_e3_base.csv,0.9761663901590256,1,100.0,97.6
+Table 1,A3 bias,results/2026-09-18_full/analysis/E1E3_e1_headline.csv,0.5389543142012205,2,1.0,0.54
+Table 1,A3 bias lo,results/2026-09-18_full/analysis/E1E3_e1_headline.csv,0.5263011665067456,2,1.0,0.53
+Table 1,A3 bias hi,results/2026-09-18_full/analysis/E1E3_e1_headline.csv,0.5516074618956954,2,1.0,0.55
+Table 1,A3 rmse,results/2026-09-18_full/analysis/E1E3_e1_headline.csv,2.1114387068080065,2,1.0,2.11
+Table 1,A3 mae,results/2026-10-05_osrev/views/views_c_table1_s2.csv,1.5640519737251573,2,1.0,1.56
+Table 1,A3 q95abs,results/2026-10-05_osrev/views/views_c_table1_s2.csv,4.221403765586376,2,1.0,4.22
+Table 1,A3 bias min,results/2026-09-18_amend2/analysis/E1bE3b_e1_worstcase.csv,-0.7675215473108369,2,1.0,−0.77
+Table 1,A3 bias max,results/2026-09-18_amend2/analysis/E1bE3b_e1_worstcase.csv,0.9197770079649944,2,1.0,0.92
+Table 1,A3 rmse min,results/2026-10-05_osrev/views/views_a_variant_ranges.csv,1.9619603533642456,2,1.0,1.96
+Table 1,A3 rmse max,results/2026-10-05_osrev/views/views_a_variant_ranges.csv,2.438468168927459,2,1.0,2.44
+Table 1,A3 sens,results/2026-09-18_full/analysis/E1E3_e3_base.csv,0.8708093267855072,1,100.0,87.1
+Table 1,A3 spec,results/2026-09-18_full/analysis/E1E3_e3_base.csv,0.8964782368254225,1,100.0,89.6
+Table 1,A4 bias,results/2026-09-18_full/analysis/E1E3_e1_headline.csv,0.4137415331361144,2,1.0,0.41
+Table 1,A4 bias lo,results/2026-09-18_full/analysis/E1E3_e1_headline.csv,0.4015659669590186,2,1.0,0.40
+Table 1,A4 bias hi,results/2026-09-18_full/analysis/E1E3_e1_headline.csv,0.4259170993132103,2,1.0,0.43
+Table 1,A4 rmse,results/2026-09-18_full/analysis/E1E3_e1_headline.csv,2.0075380187067022,2,1.0,2.01
+Table 1,A4 mae,results/2026-10-05_osrev/views/views_c_table1_s2.csv,1.50685354767158,2,1.0,1.51
+Table 1,A4 q95abs,results/2026-10-05_osrev/views/views_c_table1_s2.csv,4.004678713548936,2,1.0,4.00
+Table 1,A4 bias min,results/2026-09-18_amend2/analysis/E1bE3b_e1_worstcase.csv,-0.9722003195820828,2,1.0,−0.97
+Table 1,A4 bias max,results/2026-09-18_amend2/analysis/E1bE3b_e1_worstcase.csv,0.762640753204349,2,1.0,0.76
+Table 1,A4 rmse min,results/2026-10-05_osrev/views/views_a_variant_ranges.csv,1.906027253409716,2,1.0,1.91
+Table 1,A4 rmse max,results/2026-10-05_osrev/views/views_a_variant_ranges.csv,2.508929979600089,2,1.0,2.51
+Table 1,A4 sens,results/2026-09-18_full/analysis/E1E3_e3_base.csv,0.8596728664784811,1,100.0,86.0
+Table 1,A4 spec,results/2026-09-18_full/analysis/E1E3_e3_base.csv,0.9062436774167444,1,100.0,90.6
+S26,E1 comparisons,results/2026-10-05_osrev/verification/verif_e1_indep_vs_library.csv,240.0,0,1.0,240
+S26,E1 max z,results/2026-10-05_osrev/verification/verif_e1_indep_vs_library.csv,2.0267908,2,1.0,2.03
+S26,E5b comparisons,results/2026-10-05_osrev/verification/verif_amend2_indep_vs_stored.csv,22.0,0,1.0,22
+S26,E5b max z,results/2026-10-05_osrev/verification/verif_amend2_indep_vs_stored.csv,1.6547407,2,1.0,1.65
+S26,E6b comparisons,results/2026-10-05_osrev/verification/verif_amend2_indep_vs_stored.csv,48.0,0,1.0,48
+S26,E6b max z,results/2026-10-05_osrev/verification/verif_amend2_indep_vs_stored.csv,1.8639923,2,1.0,1.86
+S2,rmse min base,results/2026-09-18_full/analysis/E1E3_e1_headline.csv,2.0075380187067022,2,1.0,2.01
+S2,rmse max base,results/2026-09-18_full/analysis/E1E3_e1_headline.csv,2.2045199655308463,2,1.0,2.20
+S2,rmse min both,results/2026-09-18_full/analysis/E1E3_e1_headline.csv,1.6990765995853612,2,1.0,1.70
+S2,rmse max both,results/2026-09-18_full/analysis/E1E3_e1_headline.csv,2.337814074965784,2,1.0,2.34
+S2,254 A1 AP bias,results/2026-10-05_osrev/views/views_c_table1_s2.csv,-0.2047135394964648,2,1.0,−0.20
+S2,254 A1 AP rmse,results/2026-10-05_osrev/views/views_c_table1_s2.csv,2.0426039778215217,2,1.0,2.04
+S2,254 A1 SL bias,results/2026-10-05_osrev/views/views_c_table1_s2.csv,-0.0657891319138792,2,1.0,−0.07
+S2,254 A1 SL rmse,results/2026-10-05_osrev/views/views_c_table1_s2.csv,1.5058959412321784,2,1.0,1.51
+S2,254 A2 AP bias,results/2026-10-05_osrev/views/views_c_table1_s2.csv,-0.3184533884802868,2,1.0,−0.32
+S2,254 A2 AP rmse,results/2026-10-05_osrev/views/views_c_table1_s2.csv,1.7100308588261648,2,1.0,1.71
+S2,254 A2 SL bias,results/2026-10-05_osrev/views/views_c_table1_s2.csv,-0.1334908894507565,2,1.0,−0.13
+S2,254 A2 SL rmse,results/2026-10-05_osrev/views/views_c_table1_s2.csv,1.259137875447773,2,1.0,1.26
+S2,254 A3 AP bias,results/2026-10-05_osrev/views/views_c_table1_s2.csv,0.9968709966056638,2,1.0,1.00
+S2,254 A3 AP rmse,results/2026-10-05_osrev/views/views_c_table1_s2.csv,2.2810634240840484,2,1.0,2.28
+S2,254 A3 SL bias,results/2026-10-05_osrev/views/views_c_table1_s2.csv,0.8223121188809417,2,1.0,0.82
+S2,254 A3 SL rmse,results/2026-10-05_osrev/views/views_c_table1_s2.csv,1.6840695962624872,2,1.0,1.68
+S2,254 A4 AP bias,results/2026-10-05_osrev/views/views_c_table1_s2.csv,0.7948313887197908,2,1.0,0.79
+S2,254 A4 AP rmse,results/2026-10-05_osrev/views/views_c_table1_s2.csv,2.089282648120171,2,1.0,2.09
+S2,254 A4 SL bias,results/2026-10-05_osrev/views/views_c_table1_s2.csv,0.7421258273789182,2,1.0,0.74
+S2,254 A4 SL rmse,results/2026-10-05_osrev/views/views_c_table1_s2.csv,1.5944257846566676,2,1.0,1.59
+S4,F above by MCI,results/2026-09-18_full/analysis/E5E6_E6_size_check.csv,176.0,0,1.0,176
+S4,BF min size,results/2026-09-18_amend2/analysis/E5bE6b_E6b_size_check.csv,0.024,3,1.0,0.024
+S4,BF max size,results/2026-09-18_amend2/analysis/E5bE6b_E6b_size_check.csv,0.057,3,1.0,0.057
+S5,Singh inflow vs 3D max,results/2026-10-05_osrev/calibration/singh_reproduction.csv,30.79667063,1,1.0,30.8
+S5,Singh cross lo,results/2026-10-05_osrev/calibration/singh_reproduction.csv,48.21640904,1,1.0,48.2
+S5,Singh cross hi,results/2026-10-05_osrev/calibration/singh_reproduction.csv,49.28656361,1,1.0,49.3
+S5,ellipticity alone,results/2026-10-05_osrev/calibration/singh_reproduction.csv,46.55172414,1,1.0,46.6
+S5,Singh biplane lo,results/2026-10-05_osrev/calibration/singh_reproduction.csv,18.74515879,1,1.0,18.7
+S5,Singh biplane hi,results/2026-10-05_osrev/calibration/singh_reproduction.csv,24.55460883,1,1.0,24.6
+S5,"base-case biplane shortfall, one beat, no window",results/2026-10-05_osrev/calibration/calibration_table_s25.csv,15.9997,1,1.0,16.0
+S10,sinus_cv15 planned diff,results/2026-10-05_osrev/beats/beats_table_rmse_difference_published_vs_paired.csv,0.0983770897202949,2,1.0,0.10
+S10,sinus_cv15 planned lo,results/2026-10-05_osrev/beats/beats_table_rmse_difference_published_vs_paired.csv,0.0806063770667896,2,1.0,0.08
+S10,sinus_cv15 planned hi,results/2026-10-05_osrev/beats/beats_table_rmse_difference_published_vs_paired.csv,0.1161478023738002,2,1.0,0.12
+S10,sinus_cv15 paired diff,results/2026-10-05_osrev/beats/beats_table_rmse_difference_published_vs_paired.csv,0.1024343830042298,2,1.0,0.10
+S10,sinus_cv15 paired lo,results/2026-10-05_osrev/beats/beats_table_rmse_difference_published_vs_paired.csv,0.0941192659633748,2,1.0,0.09
+S10,sinus_cv15 paired hi,results/2026-10-05_osrev/beats/beats_table_rmse_difference_published_vs_paired.csv,0.1107495000450847,2,1.0,0.11
+S10,sinus_cv15 selection_window_minus_same_acquired,results/2026-10-05_osrev/beats/beats_table_equal_expected_beats.csv,0.1660245828823148,2,1.0,0.17
+S10,sinus_cv15 window_minus_plain_same_count_distribution,results/2026-10-05_osrev/beats/beats_table_equal_expected_beats.csv,0.1690057646048028,2,1.0,0.17
+S10,sinus_cv15 acquisition_same_acquired_minus_plain_first_N,results/2026-10-05_osrev/beats/beats_table_equal_expected_beats.csv,-0.063590199878085,2,1.0,−0.06
+S10,sinus_cv15 beats acquired,results/2026-10-05_osrev/beats/beats_table_equal_expected_beats.csv,3.90351,2,1.0,3.90
+S10,af_cv15 planned diff,results/2026-10-05_osrev/beats/beats_table_rmse_difference_published_vs_paired.csv,0.1214114416877176,2,1.0,0.12
+S10,af_cv15 planned lo,results/2026-10-05_osrev/beats/beats_table_rmse_difference_published_vs_paired.csv,0.1031312003033504,2,1.0,0.10
+S10,af_cv15 planned hi,results/2026-10-05_osrev/beats/beats_table_rmse_difference_published_vs_paired.csv,0.1396916830720848,2,1.0,0.14
+S10,af_cv15 paired diff,results/2026-10-05_osrev/beats/beats_table_rmse_difference_published_vs_paired.csv,0.1196389304185918,2,1.0,0.12
+S10,af_cv15 paired lo,results/2026-10-05_osrev/beats/beats_table_rmse_difference_published_vs_paired.csv,0.1104519126015836,2,1.0,0.11
+S10,af_cv15 paired hi,results/2026-10-05_osrev/beats/beats_table_rmse_difference_published_vs_paired.csv,0.1288259482355999,2,1.0,0.13
+S10,af_cv15 selection_window_minus_same_acquired,results/2026-10-05_osrev/beats/beats_table_equal_expected_beats.csv,0.1974914592410841,2,1.0,0.20
+S10,af_cv15 window_minus_plain_same_count_distribution,results/2026-10-05_osrev/beats/beats_table_equal_expected_beats.csv,0.1962950117681079,2,1.0,0.20
+S10,af_cv15 acquisition_same_acquired_minus_plain_first_N,results/2026-10-05_osrev/beats/beats_table_equal_expected_beats.csv,-0.0778525288224922,2,1.0,−0.08
+S10,af_cv15 beats acquired,results/2026-10-05_osrev/beats/beats_table_equal_expected_beats.csv,3.99416,2,1.0,3.99
+S10,B4 beats,results/2026-10-05_osrev/beats/beats_table_equal_budget.csv,3.58541,2,1.0,3.59
+S10,B4 win-all,results/2026-10-05_osrev/beats/beats_table_equal_budget.csv,0.1134352882760993,3,1.0,0.113
+S10,B5 beats,results/2026-10-05_osrev/beats/beats_table_equal_budget.csv,3.82522,2,1.0,3.83
+S10,B5 win-all,results/2026-10-05_osrev/beats/beats_table_equal_budget.csv,0.2297710387244993,3,1.0,0.230
+S10,B6 beats,results/2026-10-05_osrev/beats/beats_table_equal_budget.csv,3.8855,2,1.0,3.89
+S10,B6 win-all,results/2026-10-05_osrev/beats/beats_table_equal_budget.csv,0.279586620166232,3,1.0,0.280
+S10,B8 beats,results/2026-10-05_osrev/beats/beats_table_equal_budget.csv,3.90211,2,1.0,3.90
+S10,B8 win-all,results/2026-10-05_osrev/beats/beats_table_equal_budget.csv,0.331492404213501,3,1.0,0.331
+S10,B10 beats,results/2026-10-05_osrev/beats/beats_table_equal_budget.csv,3.90327,2,1.0,3.90
+S10,B10 win-all,results/2026-10-05_osrev/beats/beats_table_equal_budget.csv,0.361623383042958,3,1.0,0.362
+S10,B13 beats,results/2026-10-05_osrev/beats/beats_table_equal_budget.csv,3.90349,2,1.0,3.90
+S10,B13 win-all,results/2026-10-05_osrev/beats/beats_table_equal_budget.csv,0.3889961355633422,3,1.0,0.389
+S10,pub Si N3 none limited,results/2026-10-05_osrev/beats/beats_table_limited_denominators.csv,22440.0,0,1.0,22440
+S10,pub Si N5 none limited,results/2026-10-05_osrev/beats/beats_table_limited_denominators.csv,62278.0,0,1.0,62278
+S10,pub Si N3 +-0.15 limited,results/2026-10-05_osrev/beats/beats_table_limited_denominators.csv,40168.0,0,1.0,40168
+S10,pub Si N5 +-0.15 limited,results/2026-10-05_osrev/beats/beats_table_limited_denominators.csv,84709.0,0,1.0,84709
+S10,pub At N3 none limited,results/2026-10-05_osrev/beats/beats_table_limited_denominators.csv,22442.0,0,1.0,22442
+S10,pub At N5 none limited,results/2026-10-05_osrev/beats/beats_table_limited_denominators.csv,62459.0,0,1.0,62459
+S10,pub At N3 +-0.15 limited,results/2026-10-05_osrev/beats/beats_table_limited_denominators.csv,41822.0,0,1.0,41822
+S10,pub At N5 +-0.15 limited,results/2026-10-05_osrev/beats/beats_table_limited_denominators.csv,86067.0,0,1.0,86067
+S10,a3 Si N3 none limited,results/2026-10-05_osrev/beats/beats_table_limited_denominators.csv,22356.0,0,1.0,22356
+S10,a3 Si N3 +-0.15 limited,results/2026-10-05_osrev/beats/beats_table_limited_denominators.csv,40089.0,0,1.0,40089
+S10,a3 Si N5 none limited,results/2026-10-05_osrev/beats/beats_table_limited_denominators.csv,62177.0,0,1.0,62177
+S10,a3 Si N5 +-0.15 limited,results/2026-10-05_osrev/beats/beats_table_limited_denominators.csv,84725.0,0,1.0,84725
+S10,a3 At N3 none limited,results/2026-10-05_osrev/beats/beats_table_limited_denominators.csv,22282.0,0,1.0,22282
+S10,a3 At N3 +-0.15 limited,results/2026-10-05_osrev/beats/beats_table_limited_denominators.csv,41463.0,0,1.0,41463
+S10,a3 At N5 none limited,results/2026-10-05_osrev/beats/beats_table_limited_denominators.csv,62229.0,0,1.0,62229
+S10,a3 At N5 +-0.15 limited,results/2026-10-05_osrev/beats/beats_table_limited_denominators.csv,86164.0,0,1.0,86164
+S11,sinus ref met3,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,41378.0,0,1.0,41378
+S11,sinus ref plain3 rmse,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,1.933972419436648,2,1.0,1.93
+S11,sinus ref win3 effect,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,0.1061551749705174,3,1.0,0.106
+S11,sinus ref relbias shift,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,0.8122733268629024,2,1.0,0.81
+S11,sinus ar1_0.3 met3,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,46974.0,0,1.0,46974
+S11,sinus ar1_0.3 plain3 rmse,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,2.052793056509384,2,1.0,2.05
+S11,sinus ar1_0.3 win3 effect,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,0.0584732227445838,3,1.0,0.058
+S11,sinus ar1_0.3 relbias shift,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,0.8627374026521444,2,1.0,0.86
+S11,sinus ar1_0.6 met3,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,55927.0,0,1.0,55927
+S11,sinus ar1_0.6 plain3 rmse,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,2.1845612611009138,2,1.0,2.18
+S11,sinus ar1_0.6 win3 effect,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,0.0296290735895117,3,1.0,0.030
+S11,sinus ar1_0.6 relbias shift,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,0.8970463824469668,2,1.0,0.90
+S11,sinus ar1_0.9 met3,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,69755.0,0,1.0,69755
+S11,sinus ar1_0.9 plain3 rmse,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,2.3318528183618934,2,1.0,2.33
+S11,sinus ar1_0.9 win3 effect,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,0.004066347785812,3,1.0,0.004
+S11,sinus ar1_0.9 relbias shift,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,0.721590548808997,2,1.0,0.72
+S11,sinus resp_add_0.05 met3,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,40103.0,0,1.0,40103
+S11,sinus resp_add_0.05 plain3 rmse,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,1.9467831428821032,2,1.0,1.95
+S11,sinus resp_add_0.05 win3 effect,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,0.1000383080458078,3,1.0,0.100
+S11,sinus resp_add_0.05 relbias shift,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,0.745780894313433,2,1.0,0.75
+S11,sinus resp_add_0.10 met3,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,36930.0,0,1.0,36930
+S11,sinus resp_add_0.10 plain3 rmse,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,1.9847413214096108,2,1.0,1.98
+S11,sinus resp_add_0.10 win3 effect,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,0.1143422662736501,3,1.0,0.114
+S11,sinus resp_add_0.10 relbias shift,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,0.7044281529783956,2,1.0,0.70
+S11,sinus resp_pres_0.05 met3,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,40977.0,0,1.0,40977
+S11,sinus resp_pres_0.05 plain3 rmse,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,1.923121172244256,2,1.0,1.92
+S11,sinus resp_pres_0.05 win3 effect,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,0.1034990854919557,3,1.0,0.103
+S11,sinus resp_pres_0.05 relbias shift,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,0.7414278685887168,2,1.0,0.74
+S11,sinus resp_pres_0.10 met3,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,40875.0,0,1.0,40875
+S11,sinus resp_pres_0.10 plain3 rmse,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,1.923582596181779,2,1.0,1.92
+S11,sinus resp_pres_0.10 win3 effect,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,0.1079780484935908,3,1.0,0.108
+S11,sinus resp_pres_0.10 relbias shift,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,0.8716904343121017,2,1.0,0.87
+S11,sinus cal_prop met3,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,44972.0,0,1.0,44972
+S11,sinus cal_prop plain3 rmse,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,1.952492394290733,2,1.0,1.95
+S11,sinus cal_prop win3 effect,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,0.1282768374441352,3,1.0,0.128
+S11,sinus cal_prop relbias shift,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,-0.4241302381529493,2,1.0,−0.42
+S11,sinus cal_mixed met3,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,43025.0,0,1.0,43025
+S11,sinus cal_mixed plain3 rmse,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,1.9327845715755856,2,1.0,1.93
+S11,sinus cal_mixed win3 effect,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,0.1251509418421263,3,1.0,0.125
+S11,sinus cal_mixed relbias shift,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,0.1469312536858604,2,1.0,0.15
+S11,sinus combined met3,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,49929.0,0,1.0,49929
+S11,sinus combined plain3 rmse,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,2.230783609250511,2,1.0,2.23
+S11,sinus combined win3 effect,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,0.0608890525781378,3,1.0,0.061
+S11,sinus combined relbias shift,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,0.3290705730139401,2,1.0,0.33
+S11,af ref met3,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,37902.0,0,1.0,37902
+S11,af ref plain3 rmse,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,1.977465008713114,2,1.0,1.98
+S11,af ref win3 effect,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,0.1315884732303318,3,1.0,0.132
+S11,af ref relbias shift,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,0.7374843286228265,2,1.0,0.74
+S11,af ar1_0.3 met3,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,43134.0,0,1.0,43134
+S11,af ar1_0.3 plain3 rmse,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,2.113015870780328,2,1.0,2.11
+S11,af ar1_0.3 win3 effect,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,0.0638630627255318,3,1.0,0.064
+S11,af ar1_0.3 relbias shift,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,0.8251247290618908,2,1.0,0.83
+S11,af ar1_0.6 met3,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,51623.0,0,1.0,51623
+S11,af ar1_0.6 plain3 rmse,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,2.2482128914371606,2,1.0,2.25
+S11,af ar1_0.6 win3 effect,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,0.0468030334900975,3,1.0,0.047
+S11,af ar1_0.6 relbias shift,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,0.8710940050089684,2,1.0,0.87
+S11,af ar1_0.9 met3,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,65949.0,0,1.0,65949
+S11,af ar1_0.9 plain3 rmse,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,2.4209310041803485,2,1.0,2.42
+S11,af ar1_0.9 win3 effect,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,0.0105460893291517,3,1.0,0.011
+S11,af ar1_0.9 relbias shift,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,0.7812670431001945,2,1.0,0.78
+S11,af resp_add_0.05 met3,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,36710.0,0,1.0,36710
+S11,af resp_add_0.05 plain3 rmse,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,2.001131918359748,2,1.0,2.00
+S11,af resp_add_0.05 win3 effect,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,0.121616455502608,3,1.0,0.122
+S11,af resp_add_0.05 relbias shift,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,0.7164839678809201,2,1.0,0.72
+S11,af resp_add_0.10 met3,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,34300.0,0,1.0,34300
+S11,af resp_add_0.10 plain3 rmse,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,2.0116102384422216,2,1.0,2.01
+S11,af resp_add_0.10 win3 effect,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,0.1364164473362654,3,1.0,0.136
+S11,af resp_add_0.10 relbias shift,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,0.6890641694656937,2,1.0,0.69
+S11,af resp_pres_0.05 met3,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,37852.0,0,1.0,37852
+S11,af resp_pres_0.05 plain3 rmse,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,1.9708511663039527,2,1.0,1.97
+S11,af resp_pres_0.05 win3 effect,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,0.1179873221172889,3,1.0,0.118
+S11,af resp_pres_0.05 relbias shift,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,0.7520830948122134,2,1.0,0.75
+S11,af resp_pres_0.10 met3,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,37366.0,0,1.0,37366
+S11,af resp_pres_0.10 plain3 rmse,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,1.983747868903672,2,1.0,1.98
+S11,af resp_pres_0.10 win3 effect,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,0.1113962141611362,3,1.0,0.111
+S11,af resp_pres_0.10 relbias shift,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,0.7658883047935617,2,1.0,0.77
+S11,af cal_prop met3,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,41133.0,0,1.0,41133
+S11,af cal_prop plain3 rmse,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,2.000193208709286,2,1.0,2.00
+S11,af cal_prop win3 effect,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,0.1487237166796373,3,1.0,0.149
+S11,af cal_prop relbias shift,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,-0.5532494773672966,2,1.0,−0.55
+S11,af cal_mixed met3,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,39540.0,0,1.0,39540
+S11,af cal_mixed plain3 rmse,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,1.983799755006134,2,1.0,1.98
+S11,af cal_mixed win3 effect,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,0.135247859491294,3,1.0,0.135
+S11,af cal_mixed relbias shift,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,0.0614203810115677,2,1.0,0.06
+S11,af combined met3,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,47001.0,0,1.0,47001
+S11,af combined plain3 rmse,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,2.2980085112711146,2,1.0,2.30
+S11,af combined win3 effect,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,0.0498001624445412,3,1.0,0.050
+S11,af combined relbias shift,results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,0.2648435065522029,2,1.0,0.26
+S11,"three-beat effect above zero, both axes",results/2026-10-05_osrev/beats/beats_table_sensitivity.csv,44.0,0,1.0,44
+S12,2.4/8 A1 bias,results/2026-10-05_osrev/views/views_a_12scenarios.csv,0.0096144703077617,2,1.0,0.01
+S12,2.4/8 A1 rmse,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.9099830029045628,2,1.0,1.91
+S12,2.4/8 A1 mae,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.4444550213143614,2,1.0,1.44
+S12,2.4/8 A1 q95abs,results/2026-10-05_osrev/views/views_a_12scenarios.csv,3.8022930467841616,2,1.0,3.80
+S12,2.4/8 A2 bias,results/2026-10-05_osrev/views/views_a_12scenarios.csv,-0.2750493415395879,2,1.0,−0.28
+S12,2.4/8 A2 rmse,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.672772226008007,2,1.0,1.67
+S12,2.4/8 A2 mae,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.2792809824303144,2,1.0,1.28
+S12,2.4/8 A2 q95abs,results/2026-10-05_osrev/views/views_a_12scenarios.csv,3.349414078190084,2,1.0,3.35
+S12,2.4/8 A3 bias,results/2026-10-05_osrev/views/views_a_12scenarios.csv,0.9197770079649944,2,1.0,0.92
+S12,2.4/8 A3 rmse,results/2026-10-05_osrev/views/views_a_12scenarios.csv,2.208577571999442,2,1.0,2.21
+S12,2.4/8 A3 mae,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.6019486808966426,2,1.0,1.60
+S12,2.4/8 A3 q95abs,results/2026-10-05_osrev/views/views_a_12scenarios.csv,4.440555459712583,2,1.0,4.44
+S12,2.4/8 A4 bias,results/2026-10-05_osrev/views/views_a_12scenarios.csv,0.762640753204349,2,1.0,0.76
+S12,2.4/8 A4 rmse,results/2026-10-05_osrev/views/views_a_12scenarios.csv,2.019362380137504,2,1.0,2.02
+S12,2.4/8 A4 mae,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.5034003429030016,2,1.0,1.50
+S12,2.4/8 A4 q95abs,results/2026-10-05_osrev/views/views_a_12scenarios.csv,4.036361585267471,2,1.0,4.04
+S12,2.4/20 A1 bias,results/2026-10-05_osrev/views/views_a_12scenarios.csv,0.0048963291643955,2,1.0,0.00
+S12,2.4/20 A1 rmse,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.9005831972452771,2,1.0,1.90
+S12,2.4/20 A1 mae,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.4362799639090482,2,1.0,1.44
+S12,2.4/20 A1 q95abs,results/2026-10-05_osrev/views/views_a_12scenarios.csv,3.7853710594222414,2,1.0,3.79
+S12,2.4/20 A2 bias,results/2026-10-05_osrev/views/views_a_12scenarios.csv,-1.1582414482249794,2,1.0,−1.16
+S12,2.4/20 A2 rmse,results/2026-10-05_osrev/views/views_a_12scenarios.csv,2.1525848128710114,2,1.0,2.15
+S12,2.4/20 A2 mae,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.657048119036042,2,1.0,1.66
+S12,2.4/20 A2 q95abs,results/2026-10-05_osrev/views/views_a_12scenarios.csv,4.286747207107363,2,1.0,4.29
+S12,2.4/20 A3 bias,results/2026-10-05_osrev/views/views_a_12scenarios.csv,0.5466747792374969,2,1.0,0.55
+S12,2.4/20 A3 rmse,results/2026-10-05_osrev/views/views_a_12scenarios.csv,2.02587598682525,2,1.0,2.03
+S12,2.4/20 A3 mae,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.490750729181735,2,1.0,1.49
+S12,2.4/20 A3 q95abs,results/2026-10-05_osrev/views/views_a_12scenarios.csv,4.034681906968536,2,1.0,4.03
+S12,2.4/20 A4 bias,results/2026-10-05_osrev/views/views_a_12scenarios.csv,0.4557504081050999,2,1.0,0.46
+S12,2.4/20 A4 rmse,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.9312781206916976,2,1.0,1.93
+S12,2.4/20 A4 mae,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.4421748204832372,2,1.0,1.44
+S12,2.4/20 A4 q95abs,results/2026-10-05_osrev/views/views_a_12scenarios.csv,3.8484090281254586,2,1.0,3.85
+S12,2.4/40 A1 bias,results/2026-10-05_osrev/views/views_a_12scenarios.csv,0.0161557929905983,2,1.0,0.02
+S12,2.4/40 A1 rmse,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.906164986870848,2,1.0,1.91
+S12,2.4/40 A1 mae,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.4367439176087742,2,1.0,1.44
+S12,2.4/40 A1 q95abs,results/2026-10-05_osrev/views/views_a_12scenarios.csv,3.766494560246609,2,1.0,3.77
+S12,2.4/40 A2 bias,results/2026-10-05_osrev/views/views_a_12scenarios.csv,-2.500462572699595,2,1.0,−2.50
+S12,2.4/40 A2 rmse,results/2026-10-05_osrev/views/views_a_12scenarios.csv,3.4169290146794262,2,1.0,3.42
+S12,2.4/40 A2 mae,results/2026-10-05_osrev/views/views_a_12scenarios.csv,2.7040555781252777,2,1.0,2.70
+S12,2.4/40 A2 q95abs,results/2026-10-05_osrev/views/views_a_12scenarios.csv,6.647583296381858,2,1.0,6.65
+S12,2.4/40 A3 bias,results/2026-10-05_osrev/views/views_a_12scenarios.csv,0.3242900756709765,2,1.0,0.32
+S12,2.4/40 A3 rmse,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.976883224111334,2,1.0,1.98
+S12,2.4/40 A3 mae,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.4627775388946342,2,1.0,1.46
+S12,2.4/40 A3 q95abs,results/2026-10-05_osrev/views/views_a_12scenarios.csv,3.8978938738322886,2,1.0,3.90
+S12,2.4/40 A4 bias,results/2026-10-05_osrev/views/views_a_12scenarios.csv,0.2703029505162365,2,1.0,0.27
+S12,2.4/40 A4 rmse,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.9179161971862693,2,1.0,1.92
+S12,2.4/40 A4 mae,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.4348359070543593,2,1.0,1.43
+S12,2.4/40 A4 q95abs,results/2026-10-05_osrev/views/views_a_12scenarios.csv,3.794740121225399,2,1.0,3.79
+S12,4.8/8 A1 bias,results/2026-10-05_osrev/views/views_a_12scenarios.csv,-0.2485066081735715,2,1.0,−0.25
+S12,4.8/8 A1 rmse,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.9302312399722237,2,1.0,1.93
+S12,4.8/8 A1 mae,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.4695024773952876,2,1.0,1.47
+S12,4.8/8 A1 q95abs,results/2026-10-05_osrev/views/views_a_12scenarios.csv,3.828506980231817,2,1.0,3.83
+S12,4.8/8 A2 bias,results/2026-10-05_osrev/views/views_a_12scenarios.csv,-0.361264682598026,2,1.0,−0.36
+S12,4.8/8 A2 rmse,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.6824477799245818,2,1.0,1.68
+S12,4.8/8 A2 mae,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.292952441701981,2,1.0,1.29
+S12,4.8/8 A2 q95abs,results/2026-10-05_osrev/views/views_a_12scenarios.csv,3.3435323537872086,2,1.0,3.34
+S12,4.8/8 A3 bias,results/2026-10-05_osrev/views/views_a_12scenarios.csv,0.821609259082777,2,1.0,0.82
+S12,4.8/8 A3 rmse,results/2026-10-05_osrev/views/views_a_12scenarios.csv,2.1596645244618653,2,1.0,2.16
+S12,4.8/8 A3 mae,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.5719985776847,2,1.0,1.57
+S12,4.8/8 A3 q95abs,results/2026-10-05_osrev/views/views_a_12scenarios.csv,4.321562237662077,2,1.0,4.32
+S12,4.8/8 A4 bias,results/2026-10-05_osrev/views/views_a_12scenarios.csv,0.6422000197978917,2,1.0,0.64
+S12,4.8/8 A4 rmse,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.971680865416086,2,1.0,1.97
+S12,4.8/8 A4 mae,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.469883557881281,2,1.0,1.47
+S12,4.8/8 A4 q95abs,results/2026-10-05_osrev/views/views_a_12scenarios.csv,3.937331558950087,2,1.0,3.94
+S12,4.8/20 A1 bias,results/2026-10-05_osrev/views/views_a_12scenarios.csv,-0.2557310402631477,2,1.0,−0.26
+S12,4.8/20 A1 rmse,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.935800554139888,2,1.0,1.94
+S12,4.8/20 A1 mae,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.4718860526927868,2,1.0,1.47
+S12,4.8/20 A1 q95abs,results/2026-10-05_osrev/views/views_a_12scenarios.csv,3.844037526841344,2,1.0,3.84
+S12,4.8/20 A2 bias,results/2026-10-05_osrev/views/views_a_12scenarios.csv,-1.247259830426618,2,1.0,−1.25
+S12,4.8/20 A2 rmse,results/2026-10-05_osrev/views/views_a_12scenarios.csv,2.2200719726935554,2,1.0,2.22
+S12,4.8/20 A2 mae,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.71505723795794,2,1.0,1.72
+S12,4.8/20 A2 q95abs,results/2026-10-05_osrev/views/views_a_12scenarios.csv,4.411759296483156,2,1.0,4.41
+S12,4.8/20 A3 bias,results/2026-10-05_osrev/views/views_a_12scenarios.csv,0.3928242775734282,2,1.0,0.39
+S12,4.8/20 A3 rmse,results/2026-10-05_osrev/views/views_a_12scenarios.csv,2.0263324440039168,2,1.0,2.03
+S12,4.8/20 A3 mae,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.4844806139057334,2,1.0,1.48
+S12,4.8/20 A3 q95abs,results/2026-10-05_osrev/views/views_a_12scenarios.csv,4.000599801451093,2,1.0,4.00
+S12,4.8/20 A4 bias,results/2026-10-05_osrev/views/views_a_12scenarios.csv,0.2796832928444759,2,1.0,0.28
+S12,4.8/20 A4 rmse,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.9138058268152451,2,1.0,1.91
+S12,4.8/20 A4 mae,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.4315668042374443,2,1.0,1.43
+S12,4.8/20 A4 q95abs,results/2026-10-05_osrev/views/views_a_12scenarios.csv,3.8066271207630975,2,1.0,3.81
+S12,4.8/40 A1 bias,results/2026-10-05_osrev/views/views_a_12scenarios.csv,-0.2504873963566946,2,1.0,−0.25
+S12,4.8/40 A1 rmse,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.9333877988298327,2,1.0,1.93
+S12,4.8/40 A1 mae,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.4680725824215943,2,1.0,1.47
+S12,4.8/40 A1 q95abs,results/2026-10-05_osrev/views/views_a_12scenarios.csv,3.82915379082078,2,1.0,3.83
+S12,4.8/40 A2 bias,results/2026-10-05_osrev/views/views_a_12scenarios.csv,-2.596490516268318,2,1.0,−2.60
+S12,4.8/40 A2 rmse,results/2026-10-05_osrev/views/views_a_12scenarios.csv,3.502074186699059,2,1.0,3.50
+S12,4.8/40 A2 mae,results/2026-10-05_osrev/views/views_a_12scenarios.csv,2.779230352850133,2,1.0,2.78
+S12,4.8/40 A2 q95abs,results/2026-10-05_osrev/views/views_a_12scenarios.csv,6.80130451431973,2,1.0,6.80
+S12,4.8/40 A3 bias,results/2026-10-05_osrev/views/views_a_12scenarios.csv,0.1198050124261282,2,1.0,0.12
+S12,4.8/40 A3 rmse,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.9619603533642456,2,1.0,1.96
+S12,4.8/40 A3 mae,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.4619114805698936,2,1.0,1.46
+S12,4.8/40 A3 q95abs,results/2026-10-05_osrev/views/views_a_12scenarios.csv,3.8734458406893646,2,1.0,3.87
+S12,4.8/40 A4 bias,results/2026-10-05_osrev/views/views_a_12scenarios.csv,0.0560447283943255,2,1.0,0.06
+S12,4.8/40 A4 rmse,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.906027253409716,2,1.0,1.91
+S12,4.8/40 A4 mae,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.4344051594045526,2,1.0,1.43
+S12,4.8/40 A4 q95abs,results/2026-10-05_osrev/views/views_a_12scenarios.csv,3.775745342730735,2,1.0,3.78
+S12,10/8 A1 bias,results/2026-10-05_osrev/views/views_a_12scenarios.csv,-0.8225351343563676,2,1.0,−0.82
+S12,10/8 A1 rmse,results/2026-10-05_osrev/views/views_a_12scenarios.csv,2.205966912478777,2,1.0,2.21
+S12,10/8 A1 mae,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.6871476258097462,2,1.0,1.69
+S12,10/8 A1 q95abs,results/2026-10-05_osrev/views/views_a_12scenarios.csv,4.379844531043734,2,1.0,4.38
+S12,10/8 A2 bias,results/2026-10-05_osrev/views/views_a_12scenarios.csv,-0.553079374251373,2,1.0,−0.55
+S12,10/8 A2 rmse,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.743592551196418,2,1.0,1.74
+S12,10/8 A2 mae,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.3399629460433835,2,1.0,1.34
+S12,10/8 A2 q95abs,results/2026-10-05_osrev/views/views_a_12scenarios.csv,3.461621093619554,2,1.0,3.46
+S12,10/8 A3 bias,results/2026-10-05_osrev/views/views_a_12scenarios.csv,0.6792338101101266,2,1.0,0.68
+S12,10/8 A3 rmse,results/2026-10-05_osrev/views/views_a_12scenarios.csv,2.121465721511341,2,1.0,2.12
+S12,10/8 A3 mae,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.5405655669013598,2,1.0,1.54
+S12,10/8 A3 q95abs,results/2026-10-05_osrev/views/views_a_12scenarios.csv,4.2409520834480725,2,1.0,4.24
+S12,10/8 A4 bias,results/2026-10-05_osrev/views/views_a_12scenarios.csv,0.4390675614241449,2,1.0,0.44
+S12,10/8 A4 rmse,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.9308170215548488,2,1.0,1.93
+S12,10/8 A4 mae,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.438572415246921,2,1.0,1.44
+S12,10/8 A4 q95abs,results/2026-10-05_osrev/views/views_a_12scenarios.csv,3.845338414805188,2,1.0,3.85
+S12,10/20 A1 bias,results/2026-10-05_osrev/views/views_a_12scenarios.csv,-0.8312202133579867,2,1.0,−0.83
+S12,10/20 A1 rmse,results/2026-10-05_osrev/views/views_a_12scenarios.csv,2.204134193220986,2,1.0,2.20
+S12,10/20 A1 mae,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.6869433126417115,2,1.0,1.69
+S12,10/20 A1 q95abs,results/2026-10-05_osrev/views/views_a_12scenarios.csv,4.410478779235828,2,1.0,4.41
+S12,10/20 A2 bias,results/2026-10-05_osrev/views/views_a_12scenarios.csv,-1.4400372109750528,2,1.0,−1.44
+S12,10/20 A2 rmse,results/2026-10-05_osrev/views/views_a_12scenarios.csv,2.3614223389705207,2,1.0,2.36
+S12,10/20 A2 mae,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.830369836249684,2,1.0,1.83
+S12,10/20 A2 q95abs,results/2026-10-05_osrev/views/views_a_12scenarios.csv,4.661814425567157,2,1.0,4.66
+S12,10/20 A3 bias,results/2026-10-05_osrev/views/views_a_12scenarios.csv,0.1266045228459219,2,1.0,0.13
+S12,10/20 A3 rmse,results/2026-10-05_osrev/views/views_a_12scenarios.csv,2.031684636434953,2,1.0,2.03
+S12,10/20 A3 mae,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.5065637508798937,2,1.0,1.51
+S12,10/20 A3 q95abs,results/2026-10-05_osrev/views/views_a_12scenarios.csv,4.036106670645777,2,1.0,4.04
+S12,10/20 A4 bias,results/2026-10-05_osrev/views/views_a_12scenarios.csv,-0.0305572844668763,2,1.0,−0.03
+S12,10/20 A4 rmse,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.9444335747730213,2,1.0,1.94
+S12,10/20 A4 mae,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.4616834920644175,2,1.0,1.46
+S12,10/20 A4 q95abs,results/2026-10-05_osrev/views/views_a_12scenarios.csv,3.8659706682662343,2,1.0,3.87
+S12,10/40 A1 bias,results/2026-10-05_osrev/views/views_a_12scenarios.csv,-0.8379931707659044,2,1.0,−0.84
+S12,10/40 A1 rmse,results/2026-10-05_osrev/views/views_a_12scenarios.csv,2.208731433883294,2,1.0,2.21
+S12,10/40 A1 mae,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.692473315609585,2,1.0,1.69
+S12,10/40 A1 q95abs,results/2026-10-05_osrev/views/views_a_12scenarios.csv,4.392606029730862,2,1.0,4.39
+S12,10/40 A2 bias,results/2026-10-05_osrev/views/views_a_12scenarios.csv,-2.804032295033413,2,1.0,−2.80
+S12,10/40 A2 rmse,results/2026-10-05_osrev/views/views_a_12scenarios.csv,3.707637591937413,2,1.0,3.71
+S12,10/40 A2 mae,results/2026-10-05_osrev/views/views_a_12scenarios.csv,2.960354765478089,2,1.0,2.96
+S12,10/40 A2 q95abs,results/2026-10-05_osrev/views/views_a_12scenarios.csv,7.174707635669525,2,1.0,7.17
+S12,10/40 A3 bias,results/2026-10-05_osrev/views/views_a_12scenarios.csv,-0.2606304698398241,2,1.0,−0.26
+S12,10/40 A3 rmse,results/2026-10-05_osrev/views/views_a_12scenarios.csv,2.0754159164777035,2,1.0,2.08
+S12,10/40 A3 mae,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.5561323538451792,2,1.0,1.56
+S12,10/40 A3 q95abs,results/2026-10-05_osrev/views/views_a_12scenarios.csv,4.1418748825511,2,1.0,4.14
+S12,10/40 A4 bias,results/2026-10-05_osrev/views/views_a_12scenarios.csv,-0.3644926762194715,2,1.0,−0.36
+S12,10/40 A4 rmse,results/2026-10-05_osrev/views/views_a_12scenarios.csv,2.034227399160438,2,1.0,2.03
+S12,10/40 A4 mae,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.5376115639289576,2,1.0,1.54
+S12,10/40 A4 q95abs,results/2026-10-05_osrev/views/views_a_12scenarios.csv,4.064139975053259,2,1.0,4.06
+S12,20/8 A1 bias,results/2026-10-05_osrev/views/views_a_12scenarios.csv,-1.922365500179698,2,1.0,−1.92
+S12,20/8 A1 rmse,results/2026-10-05_osrev/views/views_a_12scenarios.csv,3.2209379210854348,2,1.0,3.22
+S12,20/8 A1 mae,results/2026-10-05_osrev/views/views_a_12scenarios.csv,2.4393313311554934,2,1.0,2.44
+S12,20/8 A1 q95abs,results/2026-10-05_osrev/views/views_a_12scenarios.csv,6.492507040431664,2,1.0,6.49
+S12,20/8 A2 bias,results/2026-10-05_osrev/views/views_a_12scenarios.csv,-0.9203523747745824,2,1.0,−0.92
+S12,20/8 A2 rmse,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.968237945408314,2,1.0,1.97
+S12,20/8 A2 mae,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.5158717579657794,2,1.0,1.52
+S12,20/8 A2 q95abs,results/2026-10-05_osrev/views/views_a_12scenarios.csv,3.9354334095042898,2,1.0,3.94
+S12,20/8 A3 bias,results/2026-10-05_osrev/views/views_a_12scenarios.csv,0.555850782457942,2,1.0,0.56
+S12,20/8 A3 rmse,results/2026-10-05_osrev/views/views_a_12scenarios.csv,2.109273321402172,2,1.0,2.11
+S12,20/8 A3 mae,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.535204695630662,2,1.0,1.54
+S12,20/8 A3 q95abs,results/2026-10-05_osrev/views/views_a_12scenarios.csv,4.216993636022494,2,1.0,4.22
+S12,20/8 A4 bias,results/2026-10-05_osrev/views/views_a_12scenarios.csv,0.1888156210145119,2,1.0,0.19
+S12,20/8 A4 rmse,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.9767065884137465,2,1.0,1.98
+S12,20/8 A4 mae,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.4615361542905765,2,1.0,1.46
+S12,20/8 A4 q95abs,results/2026-10-05_osrev/views/views_a_12scenarios.csv,3.935525139896114,2,1.0,3.94
+S12,20/20 A1 bias,results/2026-10-05_osrev/views/views_a_12scenarios.csv,-1.9274649101480417,2,1.0,−1.93
+S12,20/20 A1 rmse,results/2026-10-05_osrev/views/views_a_12scenarios.csv,3.224870609441521,2,1.0,3.22
+S12,20/20 A1 mae,results/2026-10-05_osrev/views/views_a_12scenarios.csv,2.4416589765356744,2,1.0,2.44
+S12,20/20 A1 q95abs,results/2026-10-05_osrev/views/views_a_12scenarios.csv,6.474069970762982,2,1.0,6.47
+S12,20/20 A2 bias,results/2026-10-05_osrev/views/views_a_12scenarios.csv,-1.797076527652661,2,1.0,−1.80
+S12,20/20 A2 rmse,results/2026-10-05_osrev/views/views_a_12scenarios.csv,2.673324548646894,2,1.0,2.67
+S12,20/20 A2 mae,results/2026-10-05_osrev/views/views_a_12scenarios.csv,2.090375525222313,2,1.0,2.09
+S12,20/20 A2 q95abs,results/2026-10-05_osrev/views/views_a_12scenarios.csv,5.214341440521166,2,1.0,5.21
+S12,20/20 A3 bias,results/2026-10-05_osrev/views/views_a_12scenarios.csv,-0.145825227154324,2,1.0,−0.15
+S12,20/20 A3 rmse,results/2026-10-05_osrev/views/views_a_12scenarios.csv,2.131664042311756,2,1.0,2.13
+S12,20/20 A3 mae,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.5835568636061204,2,1.0,1.58
+S12,20/20 A3 q95abs,results/2026-10-05_osrev/views/views_a_12scenarios.csv,4.251514308076985,2,1.0,4.25
+S12,20/20 A4 bias,results/2026-10-05_osrev/views/views_a_12scenarios.csv,-0.4393848196118114,2,1.0,−0.44
+S12,20/20 A4 rmse,results/2026-10-05_osrev/views/views_a_12scenarios.csv,2.1470711056760656,2,1.0,2.15
+S12,20/20 A4 mae,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.5966224596688288,2,1.0,1.60
+S12,20/20 A4 q95abs,results/2026-10-05_osrev/views/views_a_12scenarios.csv,4.311513665677005,2,1.0,4.31
+S12,20/40 A1 bias,results/2026-10-05_osrev/views/views_a_12scenarios.csv,-1.9266419917428068,2,1.0,−1.93
+S12,20/40 A1 rmse,results/2026-10-05_osrev/views/views_a_12scenarios.csv,3.2329342524023925,2,1.0,3.23
+S12,20/40 A1 mae,results/2026-10-05_osrev/views/views_a_12scenarios.csv,2.446913708128414,2,1.0,2.45
+S12,20/40 A1 q95abs,results/2026-10-05_osrev/views/views_a_12scenarios.csv,6.49627073195057,2,1.0,6.50
+S12,20/40 A2 bias,results/2026-10-05_osrev/views/views_a_12scenarios.csv,-3.1609321231952983,2,1.0,−3.16
+S12,20/40 A2 rmse,results/2026-10-05_osrev/views/views_a_12scenarios.csv,4.064358104441602,2,1.0,4.06
+S12,20/40 A2 mae,results/2026-10-05_osrev/views/views_a_12scenarios.csv,3.2786451840096245,2,1.0,3.28
+S12,20/40 A2 q95abs,results/2026-10-05_osrev/views/views_a_12scenarios.csv,7.786354217542899,2,1.0,7.79
+S12,20/40 A3 bias,results/2026-10-05_osrev/views/views_a_12scenarios.csv,-0.7675215473108369,2,1.0,−0.77
+S12,20/40 A3 rmse,results/2026-10-05_osrev/views/views_a_12scenarios.csv,2.438468168927459,2,1.0,2.44
+S12,20/40 A3 mae,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.8156200201042785,2,1.0,1.82
+S12,20/40 A3 q95abs,results/2026-10-05_osrev/views/views_a_12scenarios.csv,4.900841650623682,2,1.0,4.90
+S12,20/40 A4 bias,results/2026-10-05_osrev/views/views_a_12scenarios.csv,-0.9722003195820832,2,1.0,−0.97
+S12,20/40 A4 rmse,results/2026-10-05_osrev/views/views_a_12scenarios.csv,2.508929979600089,2,1.0,2.51
+S12,20/40 A4 mae,results/2026-10-05_osrev/views/views_a_12scenarios.csv,1.858589889145076,2,1.0,1.86
+S12,20/40 A4 q95abs,results/2026-10-05_osrev/views/views_a_12scenarios.csv,5.069606122045984,2,1.0,5.07
+S12,zero True A1 rmse,results/2026-10-05_osrev/views/views_a_added_scenarios.csv,1.9495747383240645,2,1.0,1.95
+S12,zero True A2 rmse,results/2026-10-05_osrev/views/views_a_added_scenarios.csv,1.7229918828778228,2,1.0,1.72
+S12,zero True A3 rmse,results/2026-10-05_osrev/views/views_a_added_scenarios.csv,2.587148566061652,2,1.0,2.59
+S12,zero True A4 rmse,results/2026-10-05_osrev/views/views_a_added_scenarios.csv,2.326319394881919,2,1.0,2.33
+S12,zero False A1 rmse,results/2026-10-05_osrev/views/views_a_added_scenarios.csv,1.854623067033053,2,1.0,1.85
+S12,zero False A2 rmse,results/2026-10-05_osrev/views/views_a_added_scenarios.csv,1.5824566244834228,2,1.0,1.58
+S12,zero False A3 rmse,results/2026-10-05_osrev/views/views_a_added_scenarios.csv,2.128727548849407,2,1.0,2.13
+S12,zero False A4 rmse,results/2026-10-05_osrev/views/views_a_added_scenarios.csv,2.116092476944818,2,1.0,2.12
+S13,worst_abs_bias 72 conditions n_win_A1,results/2026-10-05_osrev/views/views_b_tally.csv,10.0,0,1.0,10
+S13,worst_abs_bias 72 conditions n_win_A2,results/2026-10-05_osrev/views/views_b_tally.csv,0.0,0,1.0,0
+S13,worst_abs_bias 72 conditions n_win_A3,results/2026-10-05_osrev/views/views_b_tally.csv,40.0,0,1.0,40
+S13,worst_abs_bias 72 conditions n_win_A4,results/2026-10-05_osrev/views/views_b_tally.csv,22.0,0,1.0,22
+S13,worst_abs_bias 72 conditions n_win_largest_view_rule,results/2026-10-05_osrev/views/views_b_tally.csv,62.0,0,1.0,62
+S13,worst_abs_bias 72 conditions n_not_clear,results/2026-10-05_osrev/views/views_b_tally.csv,2.0,0,1.0,2
+S13,worst_abs_bias beat CV 5% n_win_A1,results/2026-10-05_osrev/views/views_b_tally.csv,0.0,0,1.0,0
+S13,worst_abs_bias beat CV 5% n_win_A2,results/2026-10-05_osrev/views/views_b_tally.csv,0.0,0,1.0,0
+S13,worst_abs_bias beat CV 5% n_win_A3,results/2026-10-05_osrev/views/views_b_tally.csv,24.0,0,1.0,24
+S13,worst_abs_bias beat CV 5% n_win_A4,results/2026-10-05_osrev/views/views_b_tally.csv,0.0,0,1.0,0
+S13,worst_abs_bias beat CV 5% n_win_largest_view_rule,results/2026-10-05_osrev/views/views_b_tally.csv,24.0,0,1.0,24
+S13,worst_abs_bias beat CV 5% n_not_clear,results/2026-10-05_osrev/views/views_b_tally.csv,1.0,0,1.0,1
+S13,worst_abs_bias beat CV 15% n_win_A1,results/2026-10-05_osrev/views/views_b_tally.csv,0.0,0,1.0,0
+S13,worst_abs_bias beat CV 15% n_win_A2,results/2026-10-05_osrev/views/views_b_tally.csv,0.0,0,1.0,0
+S13,worst_abs_bias beat CV 15% n_win_A3,results/2026-10-05_osrev/views/views_b_tally.csv,16.0,0,1.0,16
+S13,worst_abs_bias beat CV 15% n_win_A4,results/2026-10-05_osrev/views/views_b_tally.csv,8.0,0,1.0,8
+S13,worst_abs_bias beat CV 15% n_win_largest_view_rule,results/2026-10-05_osrev/views/views_b_tally.csv,24.0,0,1.0,24
+S13,worst_abs_bias beat CV 15% n_not_clear,results/2026-10-05_osrev/views/views_b_tally.csv,0.0,0,1.0,0
+S13,worst_abs_bias beat CV 30% n_win_A1,results/2026-10-05_osrev/views/views_b_tally.csv,10.0,0,1.0,10
+S13,worst_abs_bias beat CV 30% n_win_A2,results/2026-10-05_osrev/views/views_b_tally.csv,0.0,0,1.0,0
+S13,worst_abs_bias beat CV 30% n_win_A3,results/2026-10-05_osrev/views/views_b_tally.csv,0.0,0,1.0,0
+S13,worst_abs_bias beat CV 30% n_win_A4,results/2026-10-05_osrev/views/views_b_tally.csv,14.0,0,1.0,14
+S13,worst_abs_bias beat CV 30% n_win_largest_view_rule,results/2026-10-05_osrev/views/views_b_tally.csv,14.0,0,1.0,14
+S13,worst_abs_bias beat CV 30% n_not_clear,results/2026-10-05_osrev/views/views_b_tally.csv,1.0,0,1.0,1
+S13,worst_rmse 72 conditions n_win_A1,results/2026-10-05_osrev/views/views_b_tally.csv,0.0,0,1.0,0
+S13,worst_rmse 72 conditions n_win_A2,results/2026-10-05_osrev/views/views_b_tally.csv,0.0,0,1.0,0
+S13,worst_rmse 72 conditions n_win_A3,results/2026-10-05_osrev/views/views_b_tally.csv,52.0,0,1.0,52
+S13,worst_rmse 72 conditions n_win_A4,results/2026-10-05_osrev/views/views_b_tally.csv,20.0,0,1.0,20
+S13,worst_rmse 72 conditions n_win_largest_view_rule,results/2026-10-05_osrev/views/views_b_tally.csv,72.0,0,1.0,72
+S13,worst_rmse 72 conditions n_not_clear,results/2026-10-05_osrev/views/views_b_tally.csv,4.0,0,1.0,4
+S13,worst_rmse beat CV 5% n_win_A1,results/2026-10-05_osrev/views/views_b_tally.csv,0.0,0,1.0,0
+S13,worst_rmse beat CV 5% n_win_A2,results/2026-10-05_osrev/views/views_b_tally.csv,0.0,0,1.0,0
+S13,worst_rmse beat CV 5% n_win_A3,results/2026-10-05_osrev/views/views_b_tally.csv,24.0,0,1.0,24
+S13,worst_rmse beat CV 5% n_win_A4,results/2026-10-05_osrev/views/views_b_tally.csv,0.0,0,1.0,0
+S13,worst_rmse beat CV 5% n_win_largest_view_rule,results/2026-10-05_osrev/views/views_b_tally.csv,24.0,0,1.0,24
+S13,worst_rmse beat CV 5% n_not_clear,results/2026-10-05_osrev/views/views_b_tally.csv,0.0,0,1.0,0
+S13,worst_rmse beat CV 15% n_win_A1,results/2026-10-05_osrev/views/views_b_tally.csv,0.0,0,1.0,0
+S13,worst_rmse beat CV 15% n_win_A2,results/2026-10-05_osrev/views/views_b_tally.csv,0.0,0,1.0,0
+S13,worst_rmse beat CV 15% n_win_A3,results/2026-10-05_osrev/views/views_b_tally.csv,21.0,0,1.0,21
+S13,worst_rmse beat CV 15% n_win_A4,results/2026-10-05_osrev/views/views_b_tally.csv,3.0,0,1.0,3
+S13,worst_rmse beat CV 15% n_win_largest_view_rule,results/2026-10-05_osrev/views/views_b_tally.csv,24.0,0,1.0,24
+S13,worst_rmse beat CV 15% n_not_clear,results/2026-10-05_osrev/views/views_b_tally.csv,1.0,0,1.0,1
+S13,worst_rmse beat CV 30% n_win_A1,results/2026-10-05_osrev/views/views_b_tally.csv,0.0,0,1.0,0
+S13,worst_rmse beat CV 30% n_win_A2,results/2026-10-05_osrev/views/views_b_tally.csv,0.0,0,1.0,0
+S13,worst_rmse beat CV 30% n_win_A3,results/2026-10-05_osrev/views/views_b_tally.csv,7.0,0,1.0,7
+S13,worst_rmse beat CV 30% n_win_A4,results/2026-10-05_osrev/views/views_b_tally.csv,17.0,0,1.0,17
+S13,worst_rmse beat CV 30% n_win_largest_view_rule,results/2026-10-05_osrev/views/views_b_tally.csv,24.0,0,1.0,24
+S13,worst_rmse beat CV 30% n_not_clear,results/2026-10-05_osrev/views/views_b_tally.csv,3.0,0,1.0,3
+S13,worst_mae 72 conditions n_win_A1,results/2026-10-05_osrev/views/views_b_tally.csv,0.0,0,1.0,0
+S13,worst_mae 72 conditions n_win_A2,results/2026-10-05_osrev/views/views_b_tally.csv,0.0,0,1.0,0
+S13,worst_mae 72 conditions n_win_A3,results/2026-10-05_osrev/views/views_b_tally.csv,54.0,0,1.0,54
+S13,worst_mae 72 conditions n_win_A4,results/2026-10-05_osrev/views/views_b_tally.csv,18.0,0,1.0,18
+S13,worst_mae 72 conditions n_win_largest_view_rule,results/2026-10-05_osrev/views/views_b_tally.csv,72.0,0,1.0,72
+S13,worst_mae 72 conditions n_not_clear,results/2026-10-05_osrev/views/views_b_tally.csv,1.0,0,1.0,1
+S13,worst_mae beat CV 5% n_win_A1,results/2026-10-05_osrev/views/views_b_tally.csv,0.0,0,1.0,0
+S13,worst_mae beat CV 5% n_win_A2,results/2026-10-05_osrev/views/views_b_tally.csv,0.0,0,1.0,0
+S13,worst_mae beat CV 5% n_win_A3,results/2026-10-05_osrev/views/views_b_tally.csv,24.0,0,1.0,24
+S13,worst_mae beat CV 5% n_win_A4,results/2026-10-05_osrev/views/views_b_tally.csv,0.0,0,1.0,0
+S13,worst_mae beat CV 5% n_win_largest_view_rule,results/2026-10-05_osrev/views/views_b_tally.csv,24.0,0,1.0,24
+S13,worst_mae beat CV 5% n_not_clear,results/2026-10-05_osrev/views/views_b_tally.csv,0.0,0,1.0,0
+S13,worst_mae beat CV 15% n_win_A1,results/2026-10-05_osrev/views/views_b_tally.csv,0.0,0,1.0,0
+S13,worst_mae beat CV 15% n_win_A2,results/2026-10-05_osrev/views/views_b_tally.csv,0.0,0,1.0,0
+S13,worst_mae beat CV 15% n_win_A3,results/2026-10-05_osrev/views/views_b_tally.csv,22.0,0,1.0,22
+S13,worst_mae beat CV 15% n_win_A4,results/2026-10-05_osrev/views/views_b_tally.csv,2.0,0,1.0,2
+S13,worst_mae beat CV 15% n_win_largest_view_rule,results/2026-10-05_osrev/views/views_b_tally.csv,24.0,0,1.0,24
+S13,worst_mae beat CV 15% n_not_clear,results/2026-10-05_osrev/views/views_b_tally.csv,1.0,0,1.0,1
+S13,worst_mae beat CV 30% n_win_A1,results/2026-10-05_osrev/views/views_b_tally.csv,0.0,0,1.0,0
+S13,worst_mae beat CV 30% n_win_A2,results/2026-10-05_osrev/views/views_b_tally.csv,0.0,0,1.0,0
+S13,worst_mae beat CV 30% n_win_A3,results/2026-10-05_osrev/views/views_b_tally.csv,8.0,0,1.0,8
+S13,worst_mae beat CV 30% n_win_A4,results/2026-10-05_osrev/views/views_b_tally.csv,16.0,0,1.0,16
+S13,worst_mae beat CV 30% n_win_largest_view_rule,results/2026-10-05_osrev/views/views_b_tally.csv,24.0,0,1.0,24
+S13,worst_mae beat CV 30% n_not_clear,results/2026-10-05_osrev/views/views_b_tally.csv,0.0,0,1.0,0
+S13,worst_q95abs 72 conditions n_win_A1,results/2026-10-05_osrev/views/views_b_tally.csv,0.0,0,1.0,0
+S13,worst_q95abs 72 conditions n_win_A2,results/2026-10-05_osrev/views/views_b_tally.csv,0.0,0,1.0,0
+S13,worst_q95abs 72 conditions n_win_A3,results/2026-10-05_osrev/views/views_b_tally.csv,51.0,0,1.0,51
+S13,worst_q95abs 72 conditions n_win_A4,results/2026-10-05_osrev/views/views_b_tally.csv,21.0,0,1.0,21
+S13,worst_q95abs 72 conditions n_win_largest_view_rule,results/2026-10-05_osrev/views/views_b_tally.csv,72.0,0,1.0,72
+S13,worst_q95abs 72 conditions n_not_clear,results/2026-10-05_osrev/views/views_b_tally.csv,4.0,0,1.0,4
+S13,worst_q95abs beat CV 5% n_win_A1,results/2026-10-05_osrev/views/views_b_tally.csv,0.0,0,1.0,0
+S13,worst_q95abs beat CV 5% n_win_A2,results/2026-10-05_osrev/views/views_b_tally.csv,0.0,0,1.0,0
+S13,worst_q95abs beat CV 5% n_win_A3,results/2026-10-05_osrev/views/views_b_tally.csv,24.0,0,1.0,24
+S13,worst_q95abs beat CV 5% n_win_A4,results/2026-10-05_osrev/views/views_b_tally.csv,0.0,0,1.0,0
+S13,worst_q95abs beat CV 5% n_win_largest_view_rule,results/2026-10-05_osrev/views/views_b_tally.csv,24.0,0,1.0,24
+S13,worst_q95abs beat CV 5% n_not_clear,results/2026-10-05_osrev/views/views_b_tally.csv,0.0,0,1.0,0
+S13,worst_q95abs beat CV 15% n_win_A1,results/2026-10-05_osrev/views/views_b_tally.csv,0.0,0,1.0,0
+S13,worst_q95abs beat CV 15% n_win_A2,results/2026-10-05_osrev/views/views_b_tally.csv,0.0,0,1.0,0
+S13,worst_q95abs beat CV 15% n_win_A3,results/2026-10-05_osrev/views/views_b_tally.csv,21.0,0,1.0,21
+S13,worst_q95abs beat CV 15% n_win_A4,results/2026-10-05_osrev/views/views_b_tally.csv,3.0,0,1.0,3
+S13,worst_q95abs beat CV 15% n_win_largest_view_rule,results/2026-10-05_osrev/views/views_b_tally.csv,24.0,0,1.0,24
+S13,worst_q95abs beat CV 15% n_not_clear,results/2026-10-05_osrev/views/views_b_tally.csv,1.0,0,1.0,1
+S13,worst_q95abs beat CV 30% n_win_A1,results/2026-10-05_osrev/views/views_b_tally.csv,0.0,0,1.0,0
+S13,worst_q95abs beat CV 30% n_win_A2,results/2026-10-05_osrev/views/views_b_tally.csv,0.0,0,1.0,0
+S13,worst_q95abs beat CV 30% n_win_A3,results/2026-10-05_osrev/views/views_b_tally.csv,6.0,0,1.0,6
+S13,worst_q95abs beat CV 30% n_win_A4,results/2026-10-05_osrev/views/views_b_tally.csv,18.0,0,1.0,18
+S13,worst_q95abs beat CV 30% n_win_largest_view_rule,results/2026-10-05_osrev/views/views_b_tally.csv,24.0,0,1.0,24
+S13,worst_q95abs beat CV 30% n_not_clear,results/2026-10-05_osrev/views/views_b_tally.csv,3.0,0,1.0,3
+S13,mean_rmse 72 conditions n_win_A1,results/2026-10-05_osrev/views/views_b_tally.csv,0.0,0,1.0,0
+S13,mean_rmse 72 conditions n_win_A2,results/2026-10-05_osrev/views/views_b_tally.csv,17.0,0,1.0,17
+S13,mean_rmse 72 conditions n_win_A3,results/2026-10-05_osrev/views/views_b_tally.csv,31.0,0,1.0,31
+S13,mean_rmse 72 conditions n_win_A4,results/2026-10-05_osrev/views/views_b_tally.csv,24.0,0,1.0,24
+S13,mean_rmse 72 conditions n_win_largest_view_rule,results/2026-10-05_osrev/views/views_b_tally.csv,55.0,0,1.0,55
+S13,mean_rmse 72 conditions n_not_clear,results/2026-10-05_osrev/views/views_b_tally.csv,0.0,0,1.0,0
+S13,mean_rmse beat CV 5% n_win_A1,results/2026-10-05_osrev/views/views_b_tally.csv,0.0,0,1.0,0
+S13,mean_rmse beat CV 5% n_win_A2,results/2026-10-05_osrev/views/views_b_tally.csv,0.0,0,1.0,0
+S13,mean_rmse beat CV 5% n_win_A3,results/2026-10-05_osrev/views/views_b_tally.csv,16.0,0,1.0,16
+S13,mean_rmse beat CV 5% n_win_A4,results/2026-10-05_osrev/views/views_b_tally.csv,8.0,0,1.0,8
+S13,mean_rmse beat CV 5% n_win_largest_view_rule,results/2026-10-05_osrev/views/views_b_tally.csv,24.0,0,1.0,24
+S13,mean_rmse beat CV 5% n_not_clear,results/2026-10-05_osrev/views/views_b_tally.csv,0.0,0,1.0,0
+S13,mean_rmse beat CV 15% n_win_A1,results/2026-10-05_osrev/views/views_b_tally.csv,0.0,0,1.0,0
+S13,mean_rmse beat CV 15% n_win_A2,results/2026-10-05_osrev/views/views_b_tally.csv,0.0,0,1.0,0
+S13,mean_rmse beat CV 15% n_win_A3,results/2026-10-05_osrev/views/views_b_tally.csv,12.0,0,1.0,12
+S13,mean_rmse beat CV 15% n_win_A4,results/2026-10-05_osrev/views/views_b_tally.csv,12.0,0,1.0,12
+S13,mean_rmse beat CV 15% n_win_largest_view_rule,results/2026-10-05_osrev/views/views_b_tally.csv,24.0,0,1.0,24
+S13,mean_rmse beat CV 15% n_not_clear,results/2026-10-05_osrev/views/views_b_tally.csv,0.0,0,1.0,0
+S13,mean_rmse beat CV 30% n_win_A1,results/2026-10-05_osrev/views/views_b_tally.csv,0.0,0,1.0,0
+S13,mean_rmse beat CV 30% n_win_A2,results/2026-10-05_osrev/views/views_b_tally.csv,17.0,0,1.0,17
+S13,mean_rmse beat CV 30% n_win_A3,results/2026-10-05_osrev/views/views_b_tally.csv,3.0,0,1.0,3
+S13,mean_rmse beat CV 30% n_win_A4,results/2026-10-05_osrev/views/views_b_tally.csv,4.0,0,1.0,4
+S13,mean_rmse beat CV 30% n_win_largest_view_rule,results/2026-10-05_osrev/views/views_b_tally.csv,7.0,0,1.0,7
+S13,mean_rmse beat CV 30% n_not_clear,results/2026-10-05_osrev/views/views_b_tally.csv,0.0,0,1.0,0
+S13,base A1 worst_abs_bias,results/2026-10-05_osrev/views/views_b_worstcase.csv,1.9274649101480417,2,1.0,1.93
+S13,base A1 worst_rmse,results/2026-10-05_osrev/views/views_b_worstcase.csv,3.2329342524023925,2,1.0,3.23
+S13,base A1 worst_mae,results/2026-10-05_osrev/views/views_b_worstcase.csv,2.446913708128414,2,1.0,2.45
+S13,base A1 worst_q95abs,results/2026-10-05_osrev/views/views_b_worstcase.csv,6.49627073195057,2,1.0,6.50
+S13,base A2 worst_abs_bias,results/2026-10-05_osrev/views/views_b_worstcase.csv,3.1609321231952983,2,1.0,3.16
+S13,base A2 worst_rmse,results/2026-10-05_osrev/views/views_b_worstcase.csv,4.064358104441602,2,1.0,4.06
+S13,base A2 worst_mae,results/2026-10-05_osrev/views/views_b_worstcase.csv,3.2786451840096245,2,1.0,3.28
+S13,base A2 worst_q95abs,results/2026-10-05_osrev/views/views_b_worstcase.csv,7.786354217542899,2,1.0,7.79
+S13,base A3 worst_abs_bias,results/2026-10-05_osrev/views/views_b_worstcase.csv,0.9197770079649944,2,1.0,0.92
+S13,base A3 worst_rmse,results/2026-10-05_osrev/views/views_b_worstcase.csv,2.438468168927459,2,1.0,2.44
+S13,base A3 worst_mae,results/2026-10-05_osrev/views/views_b_worstcase.csv,1.8156200201042785,2,1.0,1.82
+S13,base A3 worst_q95abs,results/2026-10-05_osrev/views/views_b_worstcase.csv,4.900841650623682,2,1.0,4.90
+S13,base A4 worst_abs_bias,results/2026-10-05_osrev/views/views_b_worstcase.csv,0.9722003195820832,2,1.0,0.97
+S13,base A4 worst_rmse,results/2026-10-05_osrev/views/views_b_worstcase.csv,2.508929979600089,2,1.0,2.51
+S13,base A4 worst_mae,results/2026-10-05_osrev/views/views_b_worstcase.csv,1.858589889145076,2,1.0,1.86
+S13,base A4 worst_q95abs,results/2026-10-05_osrev/views/views_b_worstcase.csv,5.069606122045984,2,1.0,5.07
+S14,2.4/8 full,results/2026-10-05_osrev/views/views_d_decomposition.csv,0.9078913968994216,2,1.0,0.91
+S14,2.4/8 variability only,results/2026-10-05_osrev/views/views_d_decomposition.csv,0.9576313254804052,2,1.0,0.96
+S14,2.4/8 offsets only,results/2026-10-05_osrev/views/views_d_decomposition.csv,0.3786911843686013,2,1.0,0.38
+S14,2.4/8 interaction,results/2026-10-05_osrev/views/views_d_decomposition.csv,-0.4284311129495853,2,1.0,−0.43
+S14,2.4/20 full,results/2026-10-05_osrev/views/views_d_decomposition.csv,0.5481361276512349,2,1.0,0.55
+S14,2.4/20 variability only,results/2026-10-05_osrev/views/views_d_decomposition.csv,0.9615566302385132,2,1.0,0.96
+S14,2.4/20 offsets only,results/2026-10-05_osrev/views/views_d_decomposition.csv,0.213637562787784,2,1.0,0.21
+S14,2.4/20 interaction,results/2026-10-05_osrev/views/views_d_decomposition.csv,-0.6270580653750623,2,1.0,−0.63
+S14,2.4/40 full,results/2026-10-05_osrev/views/views_d_decomposition.csv,0.3093492413478701,2,1.0,0.31
+S14,2.4/40 variability only,results/2026-10-05_osrev/views/views_d_decomposition.csv,0.955905322537068,2,1.0,0.96
+S14,2.4/40 offsets only,results/2026-10-05_osrev/views/views_d_decomposition.csv,0.1121333515979835,2,1.0,0.11
+S14,2.4/40 interaction,results/2026-10-05_osrev/views/views_d_decomposition.csv,-0.7586894327871813,2,1.0,−0.76
+S14,4.8/8 full,results/2026-10-05_osrev/views/views_d_decomposition.csv,1.0744074051421335,2,1.0,1.07
+S14,4.8/8 variability only,results/2026-10-05_osrev/views/views_d_decomposition.csv,0.9378499251920648,2,1.0,0.94
+S14,4.8/8 offsets only,results/2026-10-05_osrev/views/views_d_decomposition.csv,0.5504341766835517,2,1.0,0.55
+S14,4.8/8 interaction,results/2026-10-05_osrev/views/views_d_decomposition.csv,-0.4138766967334826,2,1.0,−0.41
+S14,4.8/20 full,results/2026-10-05_osrev/views/views_d_decomposition.csv,0.6434459257714449,2,1.0,0.64
+S14,4.8/20 variability only,results/2026-10-05_osrev/views/views_d_decomposition.csv,0.9289607422071104,2,1.0,0.93
+S14,4.8/20 offsets only,results/2026-10-05_osrev/views/views_d_decomposition.csv,0.303295007734452,2,1.0,0.30
+S14,4.8/20 interaction,results/2026-10-05_osrev/views/views_d_decomposition.csv,-0.5888098241701176,2,1.0,−0.59
+S14,4.8/40 full,results/2026-10-05_osrev/views/views_d_decomposition.csv,0.3779488243395454,2,1.0,0.38
+S14,4.8/40 variability only,results/2026-10-05_osrev/views/views_d_decomposition.csv,0.946040368993659,2,1.0,0.95
+S14,4.8/40 offsets only,results/2026-10-05_osrev/views/views_d_decomposition.csv,0.1692135139963856,2,1.0,0.17
+S14,4.8/40 interaction,results/2026-10-05_osrev/views/views_d_decomposition.csv,-0.7373050586504992,2,1.0,−0.74
+S14,10/8 full,results/2026-10-05_osrev/views/views_d_decomposition.csv,1.504679799545089,2,1.0,1.50
+S14,10/8 variability only,results/2026-10-05_osrev/views/views_d_decomposition.csv,0.9079388186910164,2,1.0,0.91
+S14,10/8 offsets only,results/2026-10-05_osrev/views/views_d_decomposition.csv,1.016318519239655,2,1.0,1.02
+S14,10/8 interaction,results/2026-10-05_osrev/views/views_d_decomposition.csv,-0.4195775383855825,2,1.0,−0.42
+S14,10/20 full,results/2026-10-05_osrev/views/views_d_decomposition.csv,0.955126770630474,2,1.0,0.96
+S14,10/20 variability only,results/2026-10-05_osrev/views/views_d_decomposition.csv,0.8970222032525286,2,1.0,0.90
+S14,10/20 offsets only,results/2026-10-05_osrev/views/views_d_decomposition.csv,0.6198523129137495,2,1.0,0.62
+S14,10/20 interaction,results/2026-10-05_osrev/views/views_d_decomposition.csv,-0.5617477455358039,2,1.0,−0.56
+S14,10/40 full,results/2026-10-05_osrev/views/views_d_decomposition.csv,0.5733195524167917,2,1.0,0.57
+S14,10/40 variability only,results/2026-10-05_osrev/views/views_d_decomposition.csv,0.9059021017883678,2,1.0,0.91
+S14,10/40 offsets only,results/2026-10-05_osrev/views/views_d_decomposition.csv,0.3620107674289762,2,1.0,0.36
+S14,10/40 interaction,results/2026-10-05_osrev/views/views_d_decomposition.csv,-0.6945933168005523,2,1.0,−0.69
+S14,20/8 full,results/2026-10-05_osrev/views/views_d_decomposition.csv,2.490215292765696,2,1.0,2.49
+S14,20/8 variability only,results/2026-10-05_osrev/views/views_d_decomposition.csv,0.8386077339034786,2,1.0,0.84
+S14,20/8 offsets only,results/2026-10-05_osrev/views/views_d_decomposition.csv,2.058074366182751,2,1.0,2.06
+S14,20/8 interaction,results/2026-10-05_osrev/views/views_d_decomposition.csv,-0.4064668073205332,2,1.0,−0.41
+S14,20/20 full,results/2026-10-05_osrev/views/views_d_decomposition.csv,1.787180134248769,2,1.0,1.79
+S14,20/20 variability only,results/2026-10-05_osrev/views/views_d_decomposition.csv,0.8449183841486724,2,1.0,0.84
+S14,20/20 offsets only,results/2026-10-05_osrev/views/views_d_decomposition.csv,1.4776446758250412,2,1.0,1.48
+S14,20/20 interaction,results/2026-10-05_osrev/views/views_d_decomposition.csv,-0.5353829257249443,2,1.0,−0.54
+S14,20/40 full,results/2026-10-05_osrev/views/views_d_decomposition.csv,1.1549172576140243,2,1.0,1.15
+S14,20/40 variability only,results/2026-10-05_osrev/views/views_d_decomposition.csv,0.8478455858795575,2,1.0,0.85
+S14,20/40 offsets only,results/2026-10-05_osrev/views/views_d_decomposition.csv,0.9478506743876784,2,1.0,0.95
+S14,20/40 interaction,results/2026-10-05_osrev/views/views_d_decomposition.csv,-0.6407790026532113,2,1.0,−0.64
+S14,stored excess min,results/2026-09-18_amend2/analysis/E1bE3b_e1_sensitivity.csv,0.308134282680378,2,1.0,0.31
+S14,stored excess max,results/2026-09-18_amend2/analysis/E1bE3b_e1_sensitivity.csv,2.47821628263764,2,1.0,2.48
+S15,0 to 5 A1 rmse,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,1.1862134320043771,2,1.0,1.19
+S15,0 to 5 A1 q2.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,-2.311490437014065,2,1.0,−2.31
+S15,0 to 5 A1 q97.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,2.385336011280532,2,1.0,2.39
+S15,0 to 5 A2 rmse,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,1.0546203376947267,2,1.0,1.05
+S15,0 to 5 A2 q2.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,-2.2109569547367816,2,1.0,−2.21
+S15,0 to 5 A2 q97.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,1.62407468243056,2,1.0,1.62
+S15,0 to 5 A3 rmse,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,1.2307403885032246,2,1.0,1.23
+S15,0 to 5 A3 q2.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,-1.575742014845069,2,1.0,−1.58
+S15,0 to 5 A3 q97.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,2.7912568445684003,2,1.0,2.79
+S15,0 to 5 A4 rmse,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,1.2231087726970336,2,1.0,1.22
+S15,0 to 5 A4 q2.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,-1.578045150830744,2,1.0,−1.58
+S15,0 to 5 A4 q97.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,2.762569827846892,2,1.0,2.76
+S15,5 to 7 A1 rmse,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,1.3519352926069252,2,1.0,1.35
+S15,5 to 7 A1 q2.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,-2.5635848663838816,2,1.0,−2.56
+S15,5 to 7 A1 q97.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,2.717717728697043,2,1.0,2.72
+S15,5 to 7 A2 rmse,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,1.2953567387869545,2,1.0,1.30
+S15,5 to 7 A2 q2.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,-2.7916024328406643,2,1.0,−2.79
+S15,5 to 7 A2 q97.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,1.7235185829522257,2,1.0,1.72
+S15,5 to 7 A3 rmse,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,1.398695227668511,2,1.0,1.40
+S15,5 to 7 A3 q2.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,-1.900295721569824,2,1.0,−1.90
+S15,5 to 7 A3 q97.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,3.1936339457359058,2,1.0,3.19
+S15,5 to 7 A4 rmse,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,1.369755226032215,2,1.0,1.37
+S15,5 to 7 A4 q2.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,-1.9256937230488609,2,1.0,−1.93
+S15,5 to 7 A4 q97.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,3.088399144179072,2,1.0,3.09
+S15,7 to 10 A1 rmse,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,1.6169083972735965,2,1.0,1.62
+S15,7 to 10 A1 q2.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,-3.1154365785191818,2,1.0,−3.12
+S15,7 to 10 A1 q97.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,3.2204159294645853,2,1.0,3.22
+S15,7 to 10 A2 rmse,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,1.6654087592618187,2,1.0,1.67
+S15,7 to 10 A2 q2.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,-3.597081565852275,2,1.0,−3.60
+S15,7 to 10 A2 q97.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,1.913321038052084,2,1.0,1.91
+S15,7 to 10 A3 rmse,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,1.669159252837089,2,1.0,1.67
+S15,7 to 10 A3 q2.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,-2.3963669994869576,2,1.0,−2.40
+S15,7 to 10 A3 q97.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,3.8358832689436575,2,1.0,3.84
+S15,7 to 10 A4 rmse,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,1.6031048414965603,2,1.0,1.60
+S15,7 to 10 A4 q2.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,-2.431383223015992,2,1.0,−2.43
+S15,7 to 10 A4 q97.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,3.6285146335003073,2,1.0,3.63
+S15,10 to 13 A1 rmse,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,2.0094962462147974,2,1.0,2.01
+S15,10 to 13 A1 q2.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,-3.8578970321276,2,1.0,−3.86
+S15,10 to 13 A1 q97.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,3.92201126274246,2,1.0,3.92
+S15,10 to 13 A2 rmse,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,2.165960990529276,2,1.0,2.17
+S15,10 to 13 A2 q2.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,-4.583011349919095,2,1.0,−4.58
+S15,10 to 13 A2 q97.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,2.3168222070021467,2,1.0,2.32
+S15,10 to 13 A3 rmse,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,2.062426395070005,2,1.0,2.06
+S15,10 to 13 A3 q2.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,-3.0225196561515566,2,1.0,−3.02
+S15,10 to 13 A3 q97.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,4.792238549445239,2,1.0,4.79
+S15,10 to 13 A4 rmse,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,1.964954475604335,2,1.0,1.96
+S15,10 to 13 A4 q2.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,-3.125032114223113,2,1.0,−3.13
+S15,10 to 13 A4 q97.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,4.421962305800848,2,1.0,4.42
+S15,13 to 16 A1 rmse,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,2.3930348706103977,2,1.0,2.39
+S15,13 to 16 A1 q2.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,-4.541347489836258,2,1.0,−4.54
+S15,13 to 16 A1 q97.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,4.781421039087958,2,1.0,4.78
+S15,13 to 16 A2 rmse,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,2.6759484543080254,2,1.0,2.68
+S15,13 to 16 A2 q2.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,-5.587139330316316,2,1.0,−5.59
+S15,13 to 16 A2 q97.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,2.7768521571475784,2,1.0,2.78
+S15,13 to 16 A3 rmse,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,2.4939648745260423,2,1.0,2.49
+S15,13 to 16 A3 q2.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,-3.648199355765704,2,1.0,−3.65
+S15,13 to 16 A3 q97.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,5.944981590946591,2,1.0,5.94
+S15,13 to 16 A4 rmse,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,2.352939970063107,2,1.0,2.35
+S15,13 to 16 A4 q2.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,-3.7510598959708754,2,1.0,−3.75
+S15,13 to 16 A4 q97.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,5.46182630008042,2,1.0,5.46
+S15,>= 16 A1 rmse,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,3.255005511546945,2,1.0,3.26
+S15,>= 16 A1 q2.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,-6.221875896936757,2,1.0,−6.22
+S15,>= 16 A1 q97.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,6.371479624445312,2,1.0,6.37
+S15,>= 16 A2 rmse,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,3.7111403414632007,2,1.0,3.71
+S15,>= 16 A2 q2.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,-7.960583290568931,2,1.0,−7.96
+S15,>= 16 A2 q97.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,3.539936956861556,2,1.0,3.54
+S15,>= 16 A3 rmse,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,3.382163127589711,2,1.0,3.38
+S15,>= 16 A3 q2.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,-4.992377838934248,2,1.0,−4.99
+S15,>= 16 A3 q97.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,8.018678086546247,2,1.0,8.02
+S15,>= 16 A4 rmse,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,3.173062255221038,2,1.0,3.17
+S15,>= 16 A4 q2.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,-5.271821337945326,2,1.0,−5.27
+S15,>= 16 A4 q97.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,7.177980502492769,2,1.0,7.18
+S15,all A1 rmse,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,2.04423532628846,2,1.0,2.04
+S15,all A1 q2.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,-4.087051713891198,2,1.0,−4.09
+S15,all A1 q97.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,3.975195757847391,2,1.0,3.98
+S15,all A2 rmse,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,2.2204511250203,2,1.0,2.22
+S15,all A2 q2.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,-5.246210864764112,2,1.0,−5.25
+S15,all A2 q97.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,2.259940402172309,2,1.0,2.26
+S15,all A3 rmse,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,2.115775168159461,2,1.0,2.12
+S15,all A3 q2.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,-3.143353773938266,2,1.0,−3.14
+S15,all A3 q97.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,5.025221202355625,2,1.0,5.03
+S15,all A4 rmse,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,2.010761446561858,2,1.0,2.01
+S15,all A4 q2.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,-3.281894962243509,2,1.0,−3.28
+S15,all A4 q97.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,4.556142149413859,2,1.0,4.56
+S15,ratio min A1,results/2026-10-05_osrev/views/views_e_ratio_summary.csv,1.960458944750037,2,1.0,1.96
+S15,ratio max A1,results/2026-10-05_osrev/views/views_e_ratio_summary.csv,2.029245202718348,2,1.0,2.03
+S15,ratio min A2,results/2026-10-05_osrev/views/views_e_ratio_summary.csv,1.8436507289008883,2,1.0,1.84
+S15,ratio max A2,results/2026-10-05_osrev/views/views_e_ratio_summary.csv,2.022799163842409,2,1.0,2.02
+S15,ratio min A3,results/2026-10-05_osrev/views/views_e_ratio_summary.csv,1.9577226038585007,2,1.0,1.96
+S15,ratio max A3,results/2026-10-05_osrev/views/views_e_ratio_summary.csv,2.066180953264659,2,1.0,2.07
+S15,ratio min A4,results/2026-10-05_osrev/views/views_e_ratio_summary.csv,1.9626232226222915,2,1.0,1.96
+S15,ratio max A4,results/2026-10-05_osrev/views/views_e_ratio_summary.csv,2.0629531705423947,2,1.0,2.06
+S15,AF 0 to 5 A1 rmse,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,1.1889267547557194,2,1.0,1.19
+S15,AF 0 to 5 A1 q2.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,-2.188280363228872,2,1.0,−2.19
+S15,AF 0 to 5 A1 q97.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,2.53239836199464,2,1.0,2.53
+S15,AF 0 to 5 A2 rmse,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,1.045372053170465,2,1.0,1.05
+S15,AF 0 to 5 A2 q2.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,-2.192180344411564,2,1.0,−2.19
+S15,AF 0 to 5 A2 q97.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,1.765285195535102,2,1.0,1.77
+S15,AF 0 to 5 A3 rmse,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,1.2442866770572285,2,1.0,1.24
+S15,AF 0 to 5 A3 q2.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,-1.5337643127336935,2,1.0,−1.53
+S15,AF 0 to 5 A3 q97.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,2.873883741639181,2,1.0,2.87
+S15,AF 0 to 5 A4 rmse,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,1.237465813438016,2,1.0,1.24
+S15,AF 0 to 5 A4 q2.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,-1.5380784670544398,2,1.0,−1.54
+S15,AF 0 to 5 A4 q97.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,2.861695608180987,2,1.0,2.86
+S15,AF 5 to 7 A1 rmse,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,1.3754725743378275,2,1.0,1.38
+S15,AF 5 to 7 A1 q2.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,-2.620954580622296,2,1.0,−2.62
+S15,AF 5 to 7 A1 q97.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,2.778729614772451,2,1.0,2.78
+S15,AF 5 to 7 A2 rmse,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,1.3018030087034715,2,1.0,1.30
+S15,AF 5 to 7 A2 q2.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,-2.783844181678496,2,1.0,−2.78
+S15,AF 5 to 7 A2 q97.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,1.76932383369305,2,1.0,1.77
+S15,AF 5 to 7 A3 rmse,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,1.4206641888314369,2,1.0,1.42
+S15,AF 5 to 7 A3 q2.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,-1.9339425617331405,2,1.0,−1.93
+S15,AF 5 to 7 A3 q97.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,3.27082200921888,2,1.0,3.27
+S15,AF 5 to 7 A4 rmse,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,1.3908185682943006,2,1.0,1.39
+S15,AF 5 to 7 A4 q2.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,-1.947700532838298,2,1.0,−1.95
+S15,AF 5 to 7 A4 q97.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,3.152910629316189,2,1.0,3.15
+S15,AF 7 to 10 A1 rmse,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,1.656796228649322,2,1.0,1.66
+S15,AF 7 to 10 A1 q2.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,-3.173389100125074,2,1.0,−3.17
+S15,AF 7 to 10 A1 q97.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,3.321353509212868,2,1.0,3.32
+S15,AF 7 to 10 A2 rmse,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,1.6826663948882032,2,1.0,1.68
+S15,AF 7 to 10 A2 q2.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,-3.621579485066409,2,1.0,−3.62
+S15,AF 7 to 10 A2 q97.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,1.9847421273882877,2,1.0,1.98
+S15,AF 7 to 10 A3 rmse,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,1.7163509266087909,2,1.0,1.72
+S15,AF 7 to 10 A3 q2.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,-2.416891703754,2,1.0,−2.42
+S15,AF 7 to 10 A3 q97.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,3.959539715246892,2,1.0,3.96
+S15,AF 7 to 10 A4 rmse,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,1.6457744016743414,2,1.0,1.65
+S15,AF 7 to 10 A4 q2.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,-2.4652951563751544,2,1.0,−2.47
+S15,AF 7 to 10 A4 q97.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,3.731545724954126,2,1.0,3.73
+S15,AF 10 to 13 A1 rmse,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,2.048270245911654,2,1.0,2.05
+S15,AF 10 to 13 A1 q2.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,-3.9380577518064728,2,1.0,−3.94
+S15,AF 10 to 13 A1 q97.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,4.092517838791134,2,1.0,4.09
+S15,AF 10 to 13 A2 rmse,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,2.165618636830934,2,1.0,2.17
+S15,AF 10 to 13 A2 q2.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,-4.601173891566648,2,1.0,−4.60
+S15,AF 10 to 13 A2 q97.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,2.376276931869636,2,1.0,2.38
+S15,AF 10 to 13 A3 rmse,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,2.1256045827563512,2,1.0,2.13
+S15,AF 10 to 13 A3 q2.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,-3.0564815376598427,2,1.0,−3.06
+S15,AF 10 to 13 A3 q97.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,4.961122744925464,2,1.0,4.96
+S15,AF 10 to 13 A4 rmse,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,2.020927265069816,2,1.0,2.02
+S15,AF 10 to 13 A4 q2.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,-3.1699364573590345,2,1.0,−3.17
+S15,AF 10 to 13 A4 q97.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,4.576279778770792,2,1.0,4.58
+S15,AF 13 to 16 A1 rmse,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,2.472935959198568,2,1.0,2.47
+S15,AF 13 to 16 A1 q2.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,-4.681191184717577,2,1.0,−4.68
+S15,AF 13 to 16 A1 q97.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,4.885034474117846,2,1.0,4.89
+S15,AF 13 to 16 A2 rmse,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,2.666356655903805,2,1.0,2.67
+S15,AF 13 to 16 A2 q2.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,-5.586712602848575,2,1.0,−5.59
+S15,AF 13 to 16 A2 q97.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,2.786975869903673,2,1.0,2.79
+S15,AF 13 to 16 A3 rmse,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,2.570037431166881,2,1.0,2.57
+S15,AF 13 to 16 A3 q2.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,-3.6267697869515967,2,1.0,−3.63
+S15,AF 13 to 16 A3 q97.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,6.119642197871821,2,1.0,6.12
+S15,AF 13 to 16 A4 rmse,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,2.4261142013811656,2,1.0,2.43
+S15,AF 13 to 16 A4 q2.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,-3.781010559015547,2,1.0,−3.78
+S15,AF 13 to 16 A4 q97.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,5.511659691184041,2,1.0,5.51
+S15,AF >= 16 A1 rmse,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,3.342953687328826,2,1.0,3.34
+S15,AF >= 16 A1 q2.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,-6.3424327245372165,2,1.0,−6.34
+S15,AF >= 16 A1 q97.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,6.711016474170244,2,1.0,6.71
+S15,AF >= 16 A2 rmse,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,3.6629626769828825,2,1.0,3.66
+S15,AF >= 16 A2 q2.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,-7.929190299399858,2,1.0,−7.93
+S15,AF >= 16 A2 q97.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,3.539942224578753,2,1.0,3.54
+S15,AF >= 16 A3 rmse,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,3.472316059910034,2,1.0,3.47
+S15,AF >= 16 A3 q2.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,-4.949756284951675,2,1.0,−4.95
+S15,AF >= 16 A3 q97.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,8.23749665558581,2,1.0,8.24
+S15,AF >= 16 A4 rmse,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,3.2780158161817194,2,1.0,3.28
+S15,AF >= 16 A4 q2.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,-5.226175569331311,2,1.0,−5.23
+S15,AF >= 16 A4 q97.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,7.506193017316994,2,1.0,7.51
+S15,AF all A1 rmse,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,2.0957653672247494,2,1.0,2.10
+S15,AF all A1 q2.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,-4.188795356772159,2,1.0,−4.19
+S15,AF all A1 q97.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,4.139252692153186,2,1.0,4.14
+S15,AF all A2 rmse,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,2.214278370470781,2,1.0,2.21
+S15,AF all A2 q2.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,-5.195290469730398,2,1.0,−5.20
+S15,AF all A2 q97.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,2.2854525495394085,2,1.0,2.29
+S15,AF all A3 rmse,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,2.1749783417547555,2,1.0,2.17
+S15,AF all A3 q2.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,-3.183666487358061,2,1.0,−3.18
+S15,AF all A3 q97.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,5.197649501112161,2,1.0,5.20
+S15,AF all A4 rmse,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,2.069234182698894,2,1.0,2.07
+S15,AF all A4 q2.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,-3.3208732308798328,2,1.0,−3.32
+S15,AF all A4 q97.5,results/2026-10-05_osrev/views/views_e_conditional_quantiles.csv,4.74230559353072,2,1.0,4.74
+S16,youden 7 A2,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,0.0494958927027271,1,100.0,4.9
+S16,netcorrect 7 A2,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,-28.759999999999994,1,1.0,−28.8
+S16,youden 7 A3,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,-0.0558865831610541,1,100.0,−5.6
+S16,netcorrect 7 A3,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,16.279999999999998,1,1.0,16.3
+S16,youden 7 A4,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,-0.0517654464964642,1,100.0,−5.2
+S16,netcorrect 7 A4,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,15.7,1,1.0,15.7
+S16,youden 10 A2,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,-0.0388065854773751,1,100.0,−3.9
+S16,netcorrect 10 A2,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,-19.95,1,1.0,−20.0
+S16,youden 10 A3,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,0.0058688550144432,1,100.0,0.6
+S16,netcorrect 10 A3,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,3.3199999999999967,1,1.0,3.3
+S16,youden 10 A4,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,0.0088024784915504,1,100.0,0.9
+S16,netcorrect 10 A4,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,4.740000000000001,1,1.0,4.7
+S16,youden 13 A2,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,-0.1024623881129367,1,100.0,−10.2
+S16,netcorrect 13 A2,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,-6.780000000000001,1,1.0,−6.8
+S16,youden 13 A3,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,0.0451028516937099,1,100.0,4.5
+S16,netcorrect 13 A3,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,-7.089999999999999,1,1.0,−7.1
+S16,youden 13 A4,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,0.0437318319780056,1,100.0,4.4
+S16,netcorrect 13 A4,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,-2.73,1,1.0,−2.7
+S16,base 7 A1 tp,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,74006.0,0,1.0,74006
+S16,base 7 A1 fp,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,3795.0,0,1.0,3795
+S16,base 7 A1 fn,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,7570.0,0,1.0,7570
+S16,base 7 A1 tn,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,14629.0,0,1.0,14629
+S16,base 7 A2 tp,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,69113.0,0,1.0,69113
+S16,base 7 A2 fp,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,1778.0,0,1.0,1778
+S16,base 7 A2 fn,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,12463.0,0,1.0,12463
+S16,base 7 A2 tn,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,16646.0,0,1.0,16646
+S16,base 7 A3 tp,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,77439.0,0,1.0,77439
+S16,base 7 A3 fp,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,5600.0,0,1.0,5600
+S16,base 7 A3 fn,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,4137.0,0,1.0,4137
+S16,base 7 A3 tn,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,12824.0,0,1.0,12824
+S16,base 7 A4 tp,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,77266.0,0,1.0,77266
+S16,base 7 A4 fp,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,5485.0,0,1.0,5485
+S16,base 7 A4 fn,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,4310.0,0,1.0,4310
+S16,base 7 A4 tn,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,12939.0,0,1.0,12939
+S16,base 10 A1 tp,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,42210.0,0,1.0,42210
+S16,base 10 A1 fp,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,5716.0,0,1.0,5716
+S16,base 10 A1 fn,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,8096.0,0,1.0,8096
+S16,base 10 A1 tn,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,43978.0,0,1.0,43978
+S16,base 10 A2 tp,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,36740.0,0,1.0,36740
+S16,base 10 A2 fp,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,2241.0,0,1.0,2241
+S16,base 10 A2 fn,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,13566.0,0,1.0,13566
+S16,base 10 A2 tn,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,47453.0,0,1.0,47453
+S16,base 10 A3 tp,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,45527.0,0,1.0,45527
+S16,base 10 A3 fp,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,8701.0,0,1.0,8701
+S16,base 10 A3 fn,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,4779.0,0,1.0,4779
+S16,base 10 A3 tn,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,40993.0,0,1.0,40993
+S16,base 10 A4 tp,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,45216.0,0,1.0,45216
+S16,base 10 A4 fp,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,8248.0,0,1.0,8248
+S16,base 10 A4 fn,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,5090.0,0,1.0,5090
+S16,base 10 A4 tn,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,41446.0,0,1.0,41446
+S16,base 13 A1 tp,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,20349.0,0,1.0,20349
+S16,base 13 A1 fp,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,4795.0,0,1.0,4795
+S16,base 13 A1 fn,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,5512.0,0,1.0,5512
+S16,base 13 A1 tn,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,69344.0,0,1.0,69344
+S16,base 13 A2 tp,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,16643.0,0,1.0,16643
+S16,base 13 A2 fp,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,1767.0,0,1.0,1767
+S16,base 13 A2 fn,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,9218.0,0,1.0,9218
+S16,base 13 A2 tn,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,72372.0,0,1.0,72372
+S16,base 13 A3 tp,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,22520.0,0,1.0,22520
+S16,base 13 A3 fp,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,7675.0,0,1.0,7675
+S16,base 13 A3 fn,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,3341.0,0,1.0,3341
+S16,base 13 A3 tn,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,66464.0,0,1.0,66464
+S16,base 13 A4 tp,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,22232.0,0,1.0,22232
+S16,base 13 A4 fp,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,6951.0,0,1.0,6951
+S16,base 13 A4 fn,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,3629.0,0,1.0,3629
+S16,base 13 A4 tn,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,67188.0,0,1.0,67188
+S16,low8 7 A1 tp,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,74968.0,0,1.0,74968
+S16,low8 7 A1 fp,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,4278.0,0,1.0,4278
+S16,low8 7 A1 fn,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,6379.0,0,1.0,6379
+S16,low8 7 A1 tn,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,14375.0,0,1.0,14375
+S16,low8 7 A2 tp,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,75038.0,0,1.0,75038
+S16,low8 7 A2 fp,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,3279.0,0,1.0,3279
+S16,low8 7 A2 fn,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,6309.0,0,1.0,6309
+S16,low8 7 A2 tn,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,15374.0,0,1.0,15374
+S16,low8 7 A3 tp,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,78955.0,0,1.0,78955
+S16,low8 7 A3 fp,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,6989.0,0,1.0,6989
+S16,low8 7 A3 fn,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,2392.0,0,1.0,2392
+S16,low8 7 A3 tn,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,11664.0,0,1.0,11664
+S16,low8 7 A4 tp,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,78796.0,0,1.0,78796
+S16,low8 7 A4 fp,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,6854.0,0,1.0,6854
+S16,low8 7 A4 fn,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,2551.0,0,1.0,2551
+S16,low8 7 A4 tn,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,11799.0,0,1.0,11799
+S16,low8 10 A1 tp,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,43147.0,0,1.0,43147
+S16,low8 10 A1 fp,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,6724.0,0,1.0,6724
+S16,low8 10 A1 fn,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,6782.0,0,1.0,6782
+S16,low8 10 A1 tn,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,43347.0,0,1.0,43347
+S16,low8 10 A2 tp,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,42794.0,0,1.0,42794
+S16,low8 10 A2 fp,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,4609.0,0,1.0,4609
+S16,low8 10 A2 fn,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,7135.0,0,1.0,7135
+S16,low8 10 A2 tn,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,45462.0,0,1.0,45462
+S16,low8 10 A3 tp,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,47053.0,0,1.0,47053
+S16,low8 10 A3 fp,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,11342.0,0,1.0,11342
+S16,low8 10 A3 fn,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,2876.0,0,1.0,2876
+S16,low8 10 A3 tn,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,38729.0,0,1.0,38729
+S16,low8 10 A4 tp,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,46764.0,0,1.0,46764
+S16,low8 10 A4 fp,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,10737.0,0,1.0,10737
+S16,low8 10 A4 fn,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,3165.0,0,1.0,3165
+S16,low8 10 A4 tn,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,39334.0,0,1.0,39334
+S16,low8 13 A1 tp,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,21156.0,0,1.0,21156
+S16,low8 13 A1 fp,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,5710.0,0,1.0,5710
+S16,low8 13 A1 fn,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,4587.0,0,1.0,4587
+S16,low8 13 A1 tn,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,68547.0,0,1.0,68547
+S16,low8 13 A2 tp,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,20792.0,0,1.0,20792
+S16,low8 13 A2 fp,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,3802.0,0,1.0,3802
+S16,low8 13 A2 fn,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,4951.0,0,1.0,4951
+S16,low8 13 A2 tn,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,70455.0,0,1.0,70455
+S16,low8 13 A3 tp,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,23722.0,0,1.0,23722
+S16,low8 13 A3 fp,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,10202.0,0,1.0,10202
+S16,low8 13 A3 fn,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,2021.0,0,1.0,2021
+S16,low8 13 A3 tn,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,64055.0,0,1.0,64055
+S16,low8 13 A4 tp,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,23451.0,0,1.0,23451
+S16,low8 13 A4 fp,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,9151.0,0,1.0,9151
+S16,low8 13 A4 fn,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,2292.0,0,1.0,2292
+S16,low8 13 A4 tn,results/2026-10-05_osrev/thresholds/thresholds_2x2.csv,65106.0,0,1.0,65106
+S17,7 1 A1 mis/1000 band,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,376.93590241289206,1,1.0,376.9
+S17,7 1 A1 fp/1000 all,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,29.2255,1,1.0,29.2
+S17,7 1 A1 fn/1000 all,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,41.5582,1,1.0,41.6
+S17,7 1 A2 mis/1000 band,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,401.2836877506496,1,1.0,401.3
+S17,7 1 A2 fp/1000 all,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,15.1615,1,1.0,15.2
+S17,7 1 A2 fn/1000 all,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,60.1944,1,1.0,60.2
+S17,7 1 A3 mis/1000 band,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,361.1749688876392,1,1.0,361.2
+S17,7 1 A3 fp/1000 all,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,41.4761,1,1.0,41.5
+S17,7 1 A3 fn/1000 all,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,26.3479,1,1.0,26.3
+S17,7 1 A4 mis/1000 band,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,361.6947063988953,1,1.0,361.7
+S17,7 1 A4 fp/1000 all,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,40.8113,1,1.0,40.8
+S17,7 1 A4 fn/1000 all,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,27.1103,1,1.0,27.1
+S17,7 2 A1 mis/1000 band,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,283.60727507421643,1,1.0,283.6
+S17,7 2 A1 fp/1000 all,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,37.0041,1,1.0,37.0
+S17,7 2 A1 fn/1000 all,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,63.5357,1,1.0,63.5
+S17,7 2 A2 mis/1000 band,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,323.9058785298654,1,1.0,323.9
+S17,7 2 A2 fp/1000 all,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,17.7437,1,1.0,17.7
+S17,7 2 A2 fn/1000 all,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,97.0821,1,1.0,97.1
+S17,7 2 A3 mis/1000 band,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,257.6509801310903,1,1.0,257.7
+S17,7 2 A3 fp/1000 all,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,54.1631,1,1.0,54.2
+S17,7 2 A3 fn/1000 all,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,37.1751,1,1.0,37.2
+S17,7 2 A4 mis/1000 band,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,258.5403928197062,1,1.0,258.5
+S17,7 2 A4 fp/1000 all,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,53.1718,1,1.0,53.2
+S17,7 2 A4 fn/1000 all,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,38.4817,1,1.0,38.5
+S17,10 1 A1 mis/1000 band,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,392.8234202274143,1,1.0,392.8
+S17,10 1 A1 fp/1000 all,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,34.6326,1,1.0,34.6
+S17,10 1 A1 fn/1000 all,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,43.1222,1,1.0,43.1
+S17,10 1 A2 mis/1000 band,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,399.1364985957745,1,1.0,399.1
+S17,10 1 A2 fp/1000 all,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,16.3429,1,1.0,16.3
+S17,10 1 A2 fn/1000 all,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,62.6615,1,1.0,62.7
+S17,10 1 A3 mis/1000 band,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,395.3322828376317,1,1.0,395.3
+S17,10 1 A3 fp/1000 all,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,49.2502,1,1.0,49.3
+S17,10 1 A3 fn/1000 all,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,29.0012,1,1.0,29.0
+S17,10 1 A4 mis/1000 band,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,393.8510131692552,1,1.0,393.9
+S17,10 1 A4 fp/1000 all,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,47.4901,1,1.0,47.5
+S17,10 1 A4 fn/1000 all,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,30.4681,1,1.0,30.5
+S17,10 2 A1 mis/1000 band,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,302.2794080993104,1,1.0,302.3
+S17,10 2 A1 fp/1000 all,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,51.4393,1,1.0,51.4
+S17,10 2 A1 fn/1000 all,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,65.5931,1,1.0,65.6
+S17,10 2 A2 mis/1000 band,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,316.1416683218555,1,1.0,316.1
+S17,10 2 A2 fp/1000 all,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,21.7996,1,1.0,21.8
+S17,10 2 A2 fn/1000 all,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,100.5998,1,1.0,100.6
+S17,10 2 A3 mis/1000 band,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,304.287589079938,1,1.0,304.3
+S17,10 2 A3 fp/1000 all,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,76.2355,1,1.0,76.2
+S17,10 2 A3 fn/1000 all,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,41.5744,1,1.0,41.6
+S17,10 2 A4 mis/1000 band,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,301.8361877053866,1,1.0,301.8
+S17,10 2 A4 fp/1000 all,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,72.9208,1,1.0,72.9
+S17,10 2 A4 fn/1000 all,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,43.94,1,1.0,43.9
+S17,13 1 A1 mis/1000 band,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,404.78840929671,1,1.0,404.8
+S17,13 1 A1 fp/1000 all,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,22.824,1,1.0,22.8
+S17,13 1 A1 fn/1000 all,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,27.4659,1,1.0,27.5
+S17,13 1 A2 mis/1000 band,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,402.3680450749572,1,1.0,402.4
+S17,13 1 A2 fp/1000 all,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,10.3798,1,1.0,10.4
+S17,13 1 A2 fn/1000 all,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,39.6094,1,1.0,39.6
+S17,13 1 A3 mis/1000 band,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,414.71697353858536,1,1.0,414.7
+S17,13 1 A3 fp/1000 all,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,32.4641,1,1.0,32.5
+S17,13 1 A3 fn/1000 all,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,19.0593,1,1.0,19.1
+S17,13 1 A4 mis/1000 band,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,411.09326894053726,1,1.0,411.1
+S17,13 1 A4 fp/1000 all,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,30.7443,1,1.0,30.7
+S17,13 1 A4 fn/1000 all,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,20.3289,1,1.0,20.3
+S17,13 2 A1 mis/1000 band,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,319.7357344897609,1,1.0,319.7
+S17,13 2 A1 fp/1000 all,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,37.8292,1,1.0,37.8
+S17,13 2 A1 fn/1000 all,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,42.3148,1,1.0,42.3
+S17,13 2 A2 mis/1000 band,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,316.5756392201295,1,1.0,316.6
+S17,13 2 A2 fp/1000 all,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,15.3819,1,1.0,15.4
+S17,13 2 A2 fn/1000 all,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,63.97,1,1.0,64.0
+S17,13 2 A3 mis/1000 band,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,335.2066768532297,1,1.0,335.2
+S17,13 2 A3 fp/1000 all,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,56.1053,1,1.0,56.1
+S17,13 2 A3 fn/1000 all,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,27.9166,1,1.0,27.9
+S17,13 2 A4 mis/1000 band,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,328.97026614058257,1,1.0,329.0
+S17,13 2 A4 fp/1000 all,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,52.4731,1,1.0,52.5
+S17,13 2 A4 fn/1000 all,results/2026-10-05_osrev/thresholds/thresholds_near_band.csv,29.9856,1,1.0,30.0
+S17,dist -5 A1,results/2026-10-05_osrev/thresholds/thresholds_by_distance.csv,0.0032717038513159,1,100.0,0.3
+S17,dist -5 A2,results/2026-10-05_osrev/thresholds/thresholds_by_distance.csv,0.0001821744189937,1,100.0,0.0
+S17,dist -5 A3,results/2026-10-05_osrev/thresholds/thresholds_by_distance.csv,0.0085064300134214,1,100.0,0.9
+S17,dist -5 A4,results/2026-10-05_osrev/thresholds/thresholds_by_distance.csv,0.005571191160451,1,100.0,0.6
+S17,dist -3 A1,results/2026-10-05_osrev/thresholds/thresholds_by_distance.csv,0.0596706377014716,1,100.0,6.0
+S17,dist -3 A2,results/2026-10-05_osrev/thresholds/thresholds_by_distance.csv,0.011389587369636,1,100.0,1.1
+S17,dist -3 A3,results/2026-10-05_osrev/thresholds/thresholds_by_distance.csv,0.1100230842161672,1,100.0,11.0
+S17,dist -3 A4,results/2026-10-05_osrev/thresholds/thresholds_by_distance.csv,0.0943876499443505,1,100.0,9.4
+S17,dist -2.5 A1,results/2026-10-05_osrev/thresholds/thresholds_by_distance.csv,0.0993912890607831,1,100.0,9.9
+S17,dist -2.5 A2,results/2026-10-05_osrev/thresholds/thresholds_by_distance.csv,0.0245659912978508,1,100.0,2.5
+S17,dist -2.5 A3,results/2026-10-05_osrev/thresholds/thresholds_by_distance.csv,0.1715092515272711,1,100.0,17.2
+S17,dist -2.5 A4,results/2026-10-05_osrev/thresholds/thresholds_by_distance.csv,0.1522678328132554,1,100.0,15.2
+S17,dist -2 A1,results/2026-10-05_osrev/thresholds/thresholds_by_distance.csv,0.1522328999434709,1,100.0,15.2
+S17,dist -2 A2,results/2026-10-05_osrev/thresholds/thresholds_by_distance.csv,0.0456142830224232,1,100.0,4.6
+S17,dist -2 A3,results/2026-10-05_osrev/thresholds/thresholds_by_distance.csv,0.2478730921424533,1,100.0,24.8
+S17,dist -2 A4,results/2026-10-05_osrev/thresholds/thresholds_by_distance.csv,0.2254051253061993,1,100.0,22.5
+S17,dist -1.5 A1,results/2026-10-05_osrev/thresholds/thresholds_by_distance.csv,0.2179337371222133,1,100.0,21.8
+S17,dist -1.5 A2,results/2026-10-05_osrev/thresholds/thresholds_by_distance.csv,0.078210708399455,1,100.0,7.8
+S17,dist -1.5 A3,results/2026-10-05_osrev/thresholds/thresholds_by_distance.csv,0.334669374467412,1,100.0,33.5
+S17,dist -1.5 A4,results/2026-10-05_osrev/thresholds/thresholds_by_distance.csv,0.3102149742061568,1,100.0,31.0
+S17,dist -1 A1,results/2026-10-05_osrev/thresholds/thresholds_by_distance.csv,0.2947322180532122,1,100.0,29.5
+S17,dist -1 A2,results/2026-10-05_osrev/thresholds/thresholds_by_distance.csv,0.123883950430751,1,100.0,12.4
+S17,dist -1 A3,results/2026-10-05_osrev/thresholds/thresholds_by_distance.csv,0.429416422541753,1,100.0,42.9
+S17,dist -1 A4,results/2026-10-05_osrev/thresholds/thresholds_by_distance.csv,0.4040246335328302,1,100.0,40.4
+S17,dist -0.5 A1,results/2026-10-05_osrev/thresholds/thresholds_by_distance.csv,0.3771442073413977,1,100.0,37.7
+S17,dist -0.5 A2,results/2026-10-05_osrev/thresholds/thresholds_by_distance.csv,0.1826511762070468,1,100.0,18.3
+S17,dist -0.5 A3,results/2026-10-05_osrev/thresholds/thresholds_by_distance.csv,0.5252517813414836,1,100.0,52.5
+S17,dist -0.5 A4,results/2026-10-05_osrev/thresholds/thresholds_by_distance.csv,0.5003252751029527,1,100.0,50.0
+S17,dist 0 A1,results/2026-10-05_osrev/thresholds/thresholds_by_distance.csv,0.5314996409085184,1,100.0,53.1
+S17,dist 0 A2,results/2026-10-05_osrev/thresholds/thresholds_by_distance.csv,0.7461546578079422,1,100.0,74.6
+S17,dist 0 A3,results/2026-10-05_osrev/thresholds/thresholds_by_distance.csv,0.3802183140059292,1,100.0,38.0
+S17,dist 0 A4,results/2026-10-05_osrev/thresholds/thresholds_by_distance.csv,0.403908140654942,1,100.0,40.4
+S17,dist 0.5 A1,results/2026-10-05_osrev/thresholds/thresholds_by_distance.csv,0.4466850859966604,1,100.0,44.7
+S17,dist 0.5 A2,results/2026-10-05_osrev/thresholds/thresholds_by_distance.csv,0.6666993339640634,1,100.0,66.7
+S17,dist 0.5 A3,results/2026-10-05_osrev/thresholds/thresholds_by_distance.csv,0.2973452795127044,1,100.0,29.7
+S17,dist 0.5 A4,results/2026-10-05_osrev/thresholds/thresholds_by_distance.csv,0.3189660046513206,1,100.0,31.9
+S17,dist 1 A1,results/2026-10-05_osrev/thresholds/thresholds_by_distance.csv,0.3649014025097543,1,100.0,36.5
+S17,dist 1 A2,results/2026-10-05_osrev/thresholds/thresholds_by_distance.csv,0.5815332700622166,1,100.0,58.2
+S17,dist 1 A3,results/2026-10-05_osrev/thresholds/thresholds_by_distance.csv,0.2241906569650954,1,100.0,22.4
+S17,dist 1 A4,results/2026-10-05_osrev/thresholds/thresholds_by_distance.csv,0.2432436992512917,1,100.0,24.3
+S17,dist 1.5 A1,results/2026-10-05_osrev/thresholds/thresholds_by_distance.csv,0.2942936098686647,1,100.0,29.4
+S17,dist 1.5 A2,results/2026-10-05_osrev/thresholds/thresholds_by_distance.csv,0.5020702164230839,1,100.0,50.2
+S17,dist 1.5 A3,results/2026-10-05_osrev/thresholds/thresholds_by_distance.csv,0.1681955879699533,1,100.0,16.8
+S17,dist 1.5 A4,results/2026-10-05_osrev/thresholds/thresholds_by_distance.csv,0.1847050891237666,1,100.0,18.5
+S17,dist 2 A1,results/2026-10-05_osrev/thresholds/thresholds_by_distance.csv,0.2301106602925771,1,100.0,23.0
+S17,dist 2 A2,results/2026-10-05_osrev/thresholds/thresholds_by_distance.csv,0.4220831361371528,1,100.0,42.2
+S17,dist 2 A3,results/2026-10-05_osrev/thresholds/thresholds_by_distance.csv,0.1213540863479976,1,100.0,12.1
+S17,dist 2 A4,results/2026-10-05_osrev/thresholds/thresholds_by_distance.csv,0.1350470346125826,1,100.0,13.5
+S17,dist 2.5 A1,results/2026-10-05_osrev/thresholds/thresholds_by_distance.csv,0.1780526061776061,1,100.0,17.8
+S17,dist 2.5 A2,results/2026-10-05_osrev/thresholds/thresholds_by_distance.csv,0.3486305501930501,1,100.0,34.9
+S17,dist 2.5 A3,results/2026-10-05_osrev/thresholds/thresholds_by_distance.csv,0.0867579633204633,1,100.0,8.7
+S17,dist 2.5 A4,results/2026-10-05_osrev/thresholds/thresholds_by_distance.csv,0.0975567084942085,1,100.0,9.8
+S17,dist 4.5 A1,results/2026-10-05_osrev/thresholds/thresholds_by_distance.csv,0.0501066098081023,1,100.0,5.0
+S17,dist 4.5 A2,results/2026-10-05_osrev/thresholds/thresholds_by_distance.csv,0.1383137715959587,1,100.0,13.8
+S17,dist 4.5 A3,results/2026-10-05_osrev/thresholds/thresholds_by_distance.csv,0.0172867305661279,1,100.0,1.7
+S17,dist 4.5 A4,results/2026-10-05_osrev/thresholds/thresholds_by_distance.csv,0.0210629097503138,1,100.0,2.1
+S18,published 3 TP,results/2026-10-05_osrev/triggers/triggers_pair_2x2_counts.csv,4476.0,0,1.0,4476
+S18,published 3 FP,results/2026-10-05_osrev/triggers/triggers_pair_2x2_counts.csv,6085.0,0,1.0,6085
+S18,published 3 sensitivity,results/2026-10-05_osrev/triggers/triggers_pair_rates.csv,0.215586167035931,1,100.0,21.6
+S18,published 3 false_positive_rate,results/2026-10-05_osrev/triggers/triggers_pair_rates.csv,0.0217914467228672,2,100.0,2.18
+S18,published 3 ppv,results/2026-10-05_osrev/triggers/triggers_pair_rates.csv,0.423823501562352,1,100.0,42.4
+S18,published 5 TP,results/2026-10-05_osrev/triggers/triggers_pair_2x2_counts.csv,1835.0,0,1.0,1835
+S18,published 5 FP,results/2026-10-05_osrev/triggers/triggers_pair_2x2_counts.csv,799.0,0,1.0,799
+S18,published 5 sensitivity,results/2026-10-05_osrev/triggers/triggers_pair_rates.csv,0.0883826220980637,1,100.0,8.8
+S18,published 5 false_positive_rate,results/2026-10-05_osrev/triggers/triggers_pair_rates.csv,0.0028613584111045,2,100.0,0.29
+S18,published 5 ppv,results/2026-10-05_osrev/triggers/triggers_pair_rates.csv,0.6966590736522399,1,100.0,69.7
+S18,new_pooled 3 TP,results/2026-10-05_osrev/triggers/triggers_pair_2x2_counts.csv,44427.0,0,1.0,44427
+S18,new_pooled 3 FP,results/2026-10-05_osrev/triggers/triggers_pair_2x2_counts.csv,61504.0,0,1.0,61504
+S18,new_pooled 3 sensitivity,results/2026-10-05_osrev/triggers/triggers_pair_rates.csv,0.2156660954664828,1,100.0,21.6
+S18,new_pooled 3 false_positive_rate,results/2026-10-05_osrev/triggers/triggers_pair_rates.csv,0.0220128768744177,2,100.0,2.20
+S18,new_pooled 3 ppv,results/2026-10-05_osrev/triggers/triggers_pair_rates.csv,0.4193956443345196,1,100.0,41.9
+S18,new_pooled 5 TP,results/2026-10-05_osrev/triggers/triggers_pair_2x2_counts.csv,17728.0,0,1.0,17728
+S18,new_pooled 5 FP,results/2026-10-05_osrev/triggers/triggers_pair_2x2_counts.csv,8464.0,0,1.0,8464
+S18,new_pooled 5 sensitivity,results/2026-10-05_osrev/triggers/triggers_pair_rates.csv,0.0860586701877193,1,100.0,8.6
+S18,new_pooled 5 false_positive_rate,results/2026-10-05_osrev/triggers/triggers_pair_rates.csv,0.0030293475199185,2,100.0,0.30
+S18,new_pooled 5 ppv,results/2026-10-05_osrev/triggers/triggers_pair_rates.csv,0.6768478924862553,1,100.0,67.7
+S18,patient any_pair:D0_published 3 TP,results/2026-10-05_osrev/triggers/triggers_patient_2x2.csv,4577.0,0,1.0,4577
+S18,patient any_pair:D0_published 3 sens,results/2026-10-05_osrev/triggers/triggers_patient_2x2.csv,0.2982924921793535,1,100.0,29.8
+S18,patient any_pair:D0_published 5 TP,results/2026-10-05_osrev/triggers/triggers_patient_2x2.csv,1845.0,0,1.0,1845
+S18,patient any_pair:D0_published 5 sens,results/2026-10-05_osrev/triggers/triggers_patient_2x2.csv,0.1202424400417101,1,100.0,12.0
+S18,patient reported_wrong:A3_largest 3 TP,results/2026-10-05_osrev/triggers/triggers_patient_2x2.csv,5971.0,0,1.0,5971
+S18,patient reported_wrong:A3_largest 3 sens,results/2026-10-05_osrev/triggers/triggers_patient_2x2.csv,0.2037466730362383,1,100.0,20.4
+S18,patient reported_wrong:A3_largest 5 TP,results/2026-10-05_osrev/triggers/triggers_patient_2x2.csv,2119.0,0,1.0,2119
+S18,patient reported_wrong:A3_largest 5 sens,results/2026-10-05_osrev/triggers/triggers_patient_2x2.csv,0.0723060124206647,1,100.0,7.2
+S18,patient reported_wrong:A1_anchor 3 TP,results/2026-10-05_osrev/triggers/triggers_patient_2x2.csv,4280.0,0,1.0,4280
+S18,patient reported_wrong:A1_anchor 3 sens,results/2026-10-05_osrev/triggers/triggers_patient_2x2.csv,0.1505557900661319,1,100.0,15.1
+S18,patient reported_wrong:A1_anchor 5 TP,results/2026-10-05_osrev/triggers/triggers_patient_2x2.csv,1273.0,0,1.0,1273
+S18,patient reported_wrong:A1_anchor 5 sens,results/2026-10-05_osrev/triggers/triggers_patient_2x2.csv,0.044779794568735,1,100.0,4.5
+S18,"published binomial, pairs independent lo",results/2026-10-05_osrev/triggers/triggers_interval_methods.csv,0.6791034661551463,1,100.0,67.9
+S18,"published binomial, pairs independent hi",results/2026-10-05_osrev/triggers/triggers_interval_methods.csv,0.7142146811493335,1,100.0,71.4
+S18,published 'conservative' lo,results/2026-10-05_osrev/triggers/triggers_interval_methods.csv,0.6662518695095367,1,100.0,66.6
+S18,published 'conservative' hi,results/2026-10-05_osrev/triggers/triggers_interval_methods.csv,0.727066277794943,1,100.0,72.7
+S18,published patient-level linearization lo,results/2026-10-05_osrev/triggers/triggers_interval_methods.csv,0.6787619311671105,1,100.0,67.9
+S18,published patient-level linearization hi,results/2026-10-05_osrev/triggers/triggers_interval_methods.csv,0.7145562161373693,1,100.0,71.5
+S18,published patient-level (cluster) bootstrap lo,results/2026-10-05_osrev/triggers/triggers_interval_methods.csv,0.6787361291389699,1,100.0,67.9
+S18,published patient-level (cluster) bootstrap hi,results/2026-10-05_osrev/triggers/triggers_interval_methods.csv,0.7144509235007225,1,100.0,71.4
+S18,"new_pooled binomial, pairs independent lo",results/2026-10-05_osrev/triggers/triggers_interval_methods.csv,0.6711840286997184,1,100.0,67.1
+S18,"new_pooled binomial, pairs independent hi",results/2026-10-05_osrev/triggers/triggers_interval_methods.csv,0.6825117562727923,1,100.0,68.3
+S18,new_pooled 'conservative' lo,results/2026-10-05_osrev/triggers/triggers_interval_methods.csv,0.6670377926408239,1,100.0,66.7
+S18,new_pooled 'conservative' hi,results/2026-10-05_osrev/triggers/triggers_interval_methods.csv,0.6866579923316868,1,100.0,68.7
+S18,new_pooled patient-level linearization lo,results/2026-10-05_osrev/triggers/triggers_interval_methods.csv,0.6710214149977988,1,100.0,67.1
+S18,new_pooled patient-level linearization hi,results/2026-10-05_osrev/triggers/triggers_interval_methods.csv,0.6826743699747119,1,100.0,68.3
+S18,new_pooled patient-level (cluster) bootstrap lo,results/2026-10-05_osrev/triggers/triggers_interval_methods.csv,0.6709485320924262,1,100.0,67.1
+S18,new_pooled patient-level (cluster) bootstrap hi,results/2026-10-05_osrev/triggers/triggers_interval_methods.csv,0.6826382201586975,1,100.0,68.3
+S19,D0_published error pairs,results/2026-10-05_osrev/triggers/triggers_error_definitions.csv,20762.0,0,1.0,20762
+S19,D0_published fired error pairs 5mm,results/2026-10-05_osrev/triggers/triggers_error_definitions.csv,1835.0,0,1.0,1835
+S19,D0a_other_over error pairs,results/2026-10-05_osrev/triggers/triggers_error_definitions.csv,16404.0,0,1.0,16404
+S19,D0a_other_over fired error pairs 5mm,results/2026-10-05_osrev/triggers/triggers_error_definitions.csv,1684.0,0,1.0,1684
+S19,D0b_anchor_under error pairs,results/2026-10-05_osrev/triggers/triggers_error_definitions.csv,4929.0,0,1.0,4929
+S19,D0b_anchor_under fired error pairs 5mm,results/2026-10-05_osrev/triggers/triggers_error_definitions.csv,289.0,0,1.0,289
+S19,D1_plus_other_under error pairs,results/2026-10-05_osrev/triggers/triggers_error_definitions.csv,140353.0,0,1.0,140353
+S19,D1_plus_other_under fired error pairs 5mm,results/2026-10-05_osrev/triggers/triggers_error_definitions.csv,1905.0,0,1.0,1905
+S19,D2_net_either_view error pairs,results/2026-10-05_osrev/triggers/triggers_error_definitions.csv,126250.0,0,1.0,126250
+S19,D2_net_either_view fired error pairs 5mm,results/2026-10-05_osrev/triggers/triggers_error_definitions.csv,1468.0,0,1.0,1468
+S19,D3_total_either_view error pairs,results/2026-10-05_osrev/triggers/triggers_error_definitions.csv,142636.0,0,1.0,142636
+S19,D3_total_either_view fired error pairs 5mm,results/2026-10-05_osrev/triggers/triggers_error_definitions.csv,1776.0,0,1.0,1776
+S19,D5_shared_total error pairs,results/2026-10-05_osrev/triggers/triggers_error_definitions.csv,23791.0,0,1.0,23791
+S19,D5_shared_total fired error pairs 5mm,results/2026-10-05_osrev/triggers/triggers_error_definitions.csv,312.0,0,1.0,312
+S19,D5n_shared_net error pairs,results/2026-10-05_osrev/triggers/triggers_error_definitions.csv,3431.0,0,1.0,3431
+S19,D5n_shared_net fired error pairs 5mm,results/2026-10-05_osrev/triggers/triggers_error_definitions.csv,42.0,0,1.0,42
+S19,total all low,results/2026-10-05_osrev/triggers/triggers_exam_offsets.csv,5555.0,0,1.0,5555
+S19,net all low,results/2026-10-05_osrev/triggers/triggers_exam_offsets.csv,579.0,0,1.0,579
+S20,base s0 f0,results/2026-10-05_osrev/triggers/review_grid_wide.csv,0.0,3,1.0,0.000
+S20,base s0 f0.1,results/2026-10-05_osrev/triggers/review_grid_wide.csv,-0.0014029996965567,3,1.0,−0.001
+S20,base s0 f0.3,results/2026-10-05_osrev/triggers/review_grid_wide.csv,-0.0029938395802262,3,1.0,−0.003
+S20,base s0 f0.5,results/2026-10-05_osrev/triggers/review_grid_wide.csv,-0.0046734072603333,3,1.0,−0.005
+S20,base s0.2 f0,results/2026-10-05_osrev/triggers/review_grid_wide.csv,-0.0260033684496696,3,1.0,−0.026
+S20,base s0.2 f0.1,results/2026-10-05_osrev/triggers/review_grid_wide.csv,-0.0274235126363437,3,1.0,−0.027
+S20,base s0.2 f0.3,results/2026-10-05_osrev/triggers/review_grid_wide.csv,-0.029042342792156,3,1.0,−0.029
+S20,base s0.2 f0.5,results/2026-10-05_osrev/triggers/review_grid_wide.csv,-0.0304958555112975,3,1.0,−0.030
+S20,base s0.5 f0,results/2026-10-05_osrev/triggers/review_grid_wide.csv,-0.0683358787540973,3,1.0,−0.068
+S20,base s0.5 f0.1,results/2026-10-05_osrev/triggers/review_grid_wide.csv,-0.0697613634348521,3,1.0,−0.070
+S20,base s0.5 f0.3,results/2026-10-05_osrev/triggers/review_grid_wide.csv,-0.0714654271987136,3,1.0,−0.071
+S20,base s0.5 f0.5,results/2026-10-05_osrev/triggers/review_grid_wide.csv,-0.0725874005376501,3,1.0,−0.073
+S20,base s0.8 f0,results/2026-10-05_osrev/triggers/review_grid_wide.csv,-0.1069798373052308,3,1.0,−0.107
+S20,base s0.8 f0.1,results/2026-10-05_osrev/triggers/review_grid_wide.csv,-0.1083192615052355,3,1.0,−0.108
+S20,base s0.8 f0.3,results/2026-10-05_osrev/triggers/review_grid_wide.csv,-0.1100035350611348,3,1.0,−0.110
+S20,base s0.8 f0.5,results/2026-10-05_osrev/triggers/review_grid_wide.csv,-0.110902500902196,3,1.0,−0.111
+S20,base s1 f0,results/2026-10-05_osrev/triggers/review_grid_wide.csv,-0.1325155130670083,3,1.0,−0.133
+S20,base s1 f0.1,results/2026-10-05_osrev/triggers/review_grid_wide.csv,-0.1338649446941626,3,1.0,−0.134
+S20,base s1 f0.3,results/2026-10-05_osrev/triggers/review_grid_wide.csv,-0.1354037930087408,3,1.0,−0.135
+S20,base s1 f0.5,results/2026-10-05_osrev/triggers/review_grid_wide.csv,-0.1363871192918331,3,1.0,−0.136
+S20,long_axis_8pct s0 f0,results/2026-10-05_osrev/triggers/review_grid_wide.csv,0.0,3,1.0,0.000
+S20,long_axis_8pct s0 f0.1,results/2026-10-05_osrev/triggers/review_grid_wide.csv,-0.0052648265084163,3,1.0,−0.005
+S20,long_axis_8pct s0 f0.3,results/2026-10-05_osrev/triggers/review_grid_wide.csv,-0.0138361797677286,3,1.0,−0.014
+S20,long_axis_8pct s0 f0.5,results/2026-10-05_osrev/triggers/review_grid_wide.csv,-0.022016249161767,3,1.0,−0.022
+S20,long_axis_8pct s0.2 f0,results/2026-10-05_osrev/triggers/review_grid_wide.csv,-0.0430304711160629,3,1.0,−0.043
+S20,long_axis_8pct s0.2 f0.1,results/2026-10-05_osrev/triggers/review_grid_wide.csv,-0.048415724121273,3,1.0,−0.048
+S20,long_axis_8pct s0.2 f0.3,results/2026-10-05_osrev/triggers/review_grid_wide.csv,-0.0570091316205974,3,1.0,−0.057
+S20,long_axis_8pct s0.2 f0.5,results/2026-10-05_osrev/triggers/review_grid_wide.csv,-0.0652910051786586,3,1.0,−0.065
+S20,long_axis_8pct s0.5 f0,results/2026-10-05_osrev/triggers/review_grid_wide.csv,-0.1122089002357005,3,1.0,−0.112
+S20,long_axis_8pct s0.5 f0.1,results/2026-10-05_osrev/triggers/review_grid_wide.csv,-0.117735261106135,3,1.0,−0.118
+S20,long_axis_8pct s0.5 f0.3,results/2026-10-05_osrev/triggers/review_grid_wide.csv,-0.1270275025600473,3,1.0,−0.127
+S20,long_axis_8pct s0.5 f0.5,results/2026-10-05_osrev/triggers/review_grid_wide.csv,-0.1353401677870267,3,1.0,−0.135
+S20,long_axis_8pct s0.8 f0,results/2026-10-05_osrev/triggers/review_grid_wide.csv,-0.1777447616457625,3,1.0,−0.178
+S20,long_axis_8pct s0.8 f0.1,results/2026-10-05_osrev/triggers/review_grid_wide.csv,-0.1832637376236818,3,1.0,−0.183
+S20,long_axis_8pct s0.8 f0.3,results/2026-10-05_osrev/triggers/review_grid_wide.csv,-0.192750066628224,3,1.0,−0.193
+S20,long_axis_8pct s0.8 f0.5,results/2026-10-05_osrev/triggers/review_grid_wide.csv,-0.2012002480651271,3,1.0,−0.201
+S20,long_axis_8pct s1 f0,results/2026-10-05_osrev/triggers/review_grid_wide.csv,-0.2218942859743422,3,1.0,−0.222
+S20,long_axis_8pct s1 f0.1,results/2026-10-05_osrev/triggers/review_grid_wide.csv,-0.2275033754281739,3,1.0,−0.228
+S20,long_axis_8pct s1 f0.3,results/2026-10-05_osrev/triggers/review_grid_wide.csv,-0.2371532849614008,3,1.0,−0.237
+S20,long_axis_8pct s1 f0.5,results/2026-10-05_osrev/triggers/review_grid_wide.csv,-0.2458911679977928,3,1.0,−0.246
+S20,extreme_inaccurate s0 f0,results/2026-10-05_osrev/triggers/review_grid_wide.csv,0.0,3,1.0,0.000
+S20,extreme_inaccurate s0 f0.1,results/2026-10-05_osrev/triggers/review_grid_wide.csv,0.0329367285755983,3,1.0,0.033
+S20,extreme_inaccurate s0 f0.3,results/2026-10-05_osrev/triggers/review_grid_wide.csv,0.1021328051168382,3,1.0,0.102
+S20,extreme_inaccurate s0 f0.5,results/2026-10-05_osrev/triggers/review_grid_wide.csv,0.1760137774914798,3,1.0,0.176
+S20,extreme_inaccurate s0.2 f0,results/2026-10-05_osrev/triggers/review_grid_wide.csv,0.0073579102801084,3,1.0,0.007
+S20,extreme_inaccurate s0.2 f0.1,results/2026-10-05_osrev/triggers/review_grid_wide.csv,0.0410093093034489,3,1.0,0.041
+S20,extreme_inaccurate s0.2 f0.3,results/2026-10-05_osrev/triggers/review_grid_wide.csv,0.1123563036711332,3,1.0,0.112
+S20,extreme_inaccurate s0.2 f0.5,results/2026-10-05_osrev/triggers/review_grid_wide.csv,0.1878937182894002,3,1.0,0.188
+S20,extreme_inaccurate s0.5 f0,results/2026-10-05_osrev/triggers/review_grid_wide.csv,0.0191993552734794,3,1.0,0.019
+S20,extreme_inaccurate s0.5 f0.1,results/2026-10-05_osrev/triggers/review_grid_wide.csv,0.0536403376310388,3,1.0,0.054
+S20,extreme_inaccurate s0.5 f0.3,results/2026-10-05_osrev/triggers/review_grid_wide.csv,0.1275029540245693,3,1.0,0.128
+S20,extreme_inaccurate s0.5 f0.5,results/2026-10-05_osrev/triggers/review_grid_wide.csv,0.204525012045273,3,1.0,0.205
+S20,extreme_inaccurate s0.8 f0,results/2026-10-05_osrev/triggers/review_grid_wide.csv,0.0310572437572762,3,1.0,0.031
+S20,extreme_inaccurate s0.8 f0.1,results/2026-10-05_osrev/triggers/review_grid_wide.csv,0.0669423479698427,3,1.0,0.067
+S20,extreme_inaccurate s0.8 f0.3,results/2026-10-05_osrev/triggers/review_grid_wide.csv,0.143167867830436,3,1.0,0.143
+S20,extreme_inaccurate s0.8 f0.5,results/2026-10-05_osrev/triggers/review_grid_wide.csv,0.2232841793355682,3,1.0,0.223
+S20,extreme_inaccurate s1 f0,results/2026-10-05_osrev/triggers/review_grid_wide.csv,0.0414539648856999,3,1.0,0.041
+S20,extreme_inaccurate s1 f0.1,results/2026-10-05_osrev/triggers/review_grid_wide.csv,0.0781036446631149,3,1.0,0.078
+S20,extreme_inaccurate s1 f0.3,results/2026-10-05_osrev/triggers/review_grid_wide.csv,0.1562422628906756,3,1.0,0.156
+S20,extreme_inaccurate s1 f0.5,results/2026-10-05_osrev/triggers/review_grid_wide.csv,0.2380195192963166,3,1.0,0.238
+S20,"Table 1 RMSE difference, A3 minus A4 (rounded values)",results/2026-09-18_full/analysis/E1E3_e1_headline.csv,0.10000000000000009,2,1.0,0.10
+S21,coded_base true ge3,results/2026-10-05_osrev/triggers/axes_scenarios.csv,62469.0,0,1.0,62469
+S21,coded_base measured ge3,results/2026-10-05_osrev/triggers/axes_scenarios.csv,56357.0,0,1.0,56357
+S21,coded_r053 true ge3,results/2026-10-05_osrev/triggers/axes_scenarios.csv,83403.0,0,1.0,83403
+S21,coded_r053 measured ge3,results/2026-10-05_osrev/triggers/axes_scenarios.csv,73091.0,0,1.0,73091
+S21,beta_diff2_coded true ge3,results/2026-10-05_osrev/triggers/axes_scenarios.csv,18477.0,0,1.0,18477
+S21,beta_diff2_coded measured ge3,results/2026-10-05_osrev/triggers/axes_scenarios.csv,28779.0,0,1.0,28779
+S21,beta_diff2_high_variability true ge3,results/2026-10-05_osrev/triggers/axes_scenarios.csv,24554.0,0,1.0,24554
+S21,beta_diff2_high_variability measured ge3,results/2026-10-05_osrev/triggers/axes_scenarios.csv,31648.0,0,1.0,31648
+S21,beta_diff2_low_variability true ge3,results/2026-10-05_osrev/triggers/axes_scenarios.csv,13844.0,0,1.0,13844
+S21,beta_diff2_low_variability measured ge3,results/2026-10-05_osrev/triggers/axes_scenarios.csv,27166.0,0,1.0,27166
+S21,beta_diff3.9_coded true ge3,results/2026-10-05_osrev/triggers/axes_scenarios.csv,62475.0,0,1.0,62475
+S21,beta_diff3.9_coded measured ge3,results/2026-10-05_osrev/triggers/axes_scenarios.csv,56358.0,0,1.0,56358
+S21,beta_diff3.9_high_variability true ge3,results/2026-10-05_osrev/triggers/axes_scenarios.csv,58447.0,0,1.0,58447
+S21,beta_diff3.9_high_variability measured ge3,results/2026-10-05_osrev/triggers/axes_scenarios.csv,55858.0,0,1.0,55858
+S21,beta_diff3.9_low_variability true ge3,results/2026-10-05_osrev/triggers/axes_scenarios.csv,65804.0,0,1.0,65804
+S21,beta_diff3.9_low_variability measured ge3,results/2026-10-05_osrev/triggers/axes_scenarios.csv,56993.0,0,1.0,56993
+S21,beta_diff6_coded true ge3,results/2026-10-05_osrev/triggers/axes_scenarios.csv,92690.0,0,1.0,92690
+S21,beta_diff6_coded measured ge3,results/2026-10-05_osrev/triggers/axes_scenarios.csv,83068.0,0,1.0,83068
+S21,beta_diff6_high_variability true ge3,results/2026-10-05_osrev/triggers/axes_scenarios.csv,90482.0,0,1.0,90482
+S21,beta_diff6_high_variability measured ge3,results/2026-10-05_osrev/triggers/axes_scenarios.csv,81996.0,0,1.0,81996
+S21,beta_diff6_low_variability true ge3,results/2026-10-05_osrev/triggers/axes_scenarios.csv,93419.0,0,1.0,93419
+S21,beta_diff6_low_variability measured ge3,results/2026-10-05_osrev/triggers/axes_scenarios.csv,83462.0,0,1.0,83462
+S21,lognormal_diff2_high_correlation true ge3,results/2026-10-05_osrev/triggers/axes_scenarios.csv,15977.0,0,1.0,15977
+S21,lognormal_diff2_high_correlation measured ge3,results/2026-10-05_osrev/triggers/axes_scenarios.csv,27803.0,0,1.0,27803
+S21,lognormal_diff2_low_correlation true ge3,results/2026-10-05_osrev/triggers/axes_scenarios.csv,49183.0,0,1.0,49183
+S21,lognormal_diff2_low_correlation measured ge3,results/2026-10-05_osrev/triggers/axes_scenarios.csv,49645.0,0,1.0,49645
+S21,lognormal_diff2_mid_correlation true ge3,results/2026-10-05_osrev/triggers/axes_scenarios.csv,27246.0,0,1.0,27246
+S21,lognormal_diff2_mid_correlation measured ge3,results/2026-10-05_osrev/triggers/axes_scenarios.csv,33853.0,0,1.0,33853
+S21,lognormal_diff3.9_high_correlation true ge3,results/2026-10-05_osrev/triggers/axes_scenarios.csv,65757.0,0,1.0,65757
+S21,lognormal_diff3.9_high_correlation measured ge3,results/2026-10-05_osrev/triggers/axes_scenarios.csv,57004.0,0,1.0,57004
+S21,lognormal_diff3.9_low_correlation true ge3,results/2026-10-05_osrev/triggers/axes_scenarios.csv,63747.0,0,1.0,63747
+S21,lognormal_diff3.9_low_correlation measured ge3,results/2026-10-05_osrev/triggers/axes_scenarios.csv,60795.0,0,1.0,60795
+S21,lognormal_diff3.9_mid_correlation true ge3,results/2026-10-05_osrev/triggers/axes_scenarios.csv,61778.0,0,1.0,61778
+S21,lognormal_diff3.9_mid_correlation measured ge3,results/2026-10-05_osrev/triggers/axes_scenarios.csv,56557.0,0,1.0,56557
+S21,lognormal_diff6_high_correlation true ge3,results/2026-10-05_osrev/triggers/axes_scenarios.csv,93285.0,0,1.0,93285
+S21,lognormal_diff6_high_correlation measured ge3,results/2026-10-05_osrev/triggers/axes_scenarios.csv,83338.0,0,1.0,83338
+S21,lognormal_diff6_low_correlation true ge3,results/2026-10-05_osrev/triggers/axes_scenarios.csv,85115.0,0,1.0,85115
+S21,lognormal_diff6_low_correlation measured ge3,results/2026-10-05_osrev/triggers/axes_scenarios.csv,78924.0,0,1.0,78924
+S21,lognormal_diff6_mid_correlation true ge3,results/2026-10-05_osrev/triggers/axes_scenarios.csv,91329.0,0,1.0,91329
+S21,lognormal_diff6_mid_correlation measured ge3,results/2026-10-05_osrev/triggers/axes_scenarios.csv,82097.0,0,1.0,82097
+S21,near_circular_beta_r090 true ge3,results/2026-10-05_osrev/triggers/axes_scenarios.csv,4915.0,0,1.0,4915
+S21,near_circular_beta_r090 measured ge3,results/2026-10-05_osrev/triggers/axes_scenarios.csv,18927.0,0,1.0,18927
+S21,near_circular_lognormal true ge3,results/2026-10-05_osrev/triggers/axes_scenarios.csv,2386.0,0,1.0,2386
+S21,near_circular_lognormal measured ge3,results/2026-10-05_osrev/triggers/axes_scenarios.csv,17507.0,0,1.0,17507
+S21,circular_exact true ge3,results/2026-10-05_osrev/triggers/axes_scenarios.csv,0.0,0,1.0,0
+S21,circular_exact measured ge3,results/2026-10-05_osrev/triggers/axes_scenarios.csv,13188.0,0,1.0,13188
+S21,"planned run, true AP and SL differ by 3 mm or more",results/2026-09-18_full/analysis/E4_ellipticity_truth.csv,0.6243195138888888,1,100.0,62.4
+S21,"true ge3 min, mean difference 2 to 6 mm",results/2026-10-05_osrev/triggers/axes_scenarios.csv,0.13844,0,100.0,14
+S21,"true ge3 max, mean difference 2 to 6 mm",results/2026-10-05_osrev/triggers/axes_scenarios.csv,0.93419,0,100.0,93
+S22,share_lam0.25 eqmae n better,results/2026-10-05_osrev/ai_reference/ai_ranking_matched.csv,1766.0,0,1.0,1766
+S22,share_lam0.25 eqmae diff mae,results/2026-10-05_osrev/ai_reference/ai_ranking_matched.csv,-0.1803918874176984,2,1.0,−0.18
+S22,share_lam0.5 eqmae n better,results/2026-10-05_osrev/ai_reference/ai_ranking_matched.csv,1986.0,0,1.0,1986
+S22,share_lam0.5 eqmae diff mae,results/2026-10-05_osrev/ai_reference/ai_ranking_matched.csv,-0.388033216312364,2,1.0,−0.39
+S22,share_lam0.75 eqmae n better,results/2026-10-05_osrev/ai_reference/ai_ranking_matched.csv,2000.0,0,1.0,2000
+S22,share_lam0.75 eqmae diff mae,results/2026-10-05_osrev/ai_reference/ai_ranking_matched.csv,-0.6180671759370743,2,1.0,−0.62
+S22,share_lam1 eqmae n better,results/2026-10-05_osrev/ai_reference/ai_ranking_matched.csv,2000.0,0,1.0,2000
+S22,share_lam1 eqmae diff mae,results/2026-10-05_osrev/ai_reference/ai_ranking_matched.csv,-0.8653950518870244,2,1.0,−0.87
+S22,inherit eqmae n better,results/2026-10-05_osrev/ai_reference/ai_ranking_matched.csv,1234.0,0,1.0,1234
+S22,inherit eqmae diff mae,results/2026-10-05_osrev/ai_reference/ai_ranking_matched.csv,-0.0420433884729331,2,1.0,−0.04
+S22,share_lam0.25 eqsd n better,results/2026-10-05_osrev/ai_reference/ai_ranking_matched.csv,1686.0,0,1.0,1686
+S22,share_lam0.25 eqsd diff mae,results/2026-10-05_osrev/ai_reference/ai_ranking_matched.csv,-0.1515234282979099,2,1.0,−0.15
+S22,share_lam0.5 eqsd n better,results/2026-10-05_osrev/ai_reference/ai_ranking_matched.csv,1901.0,0,1.0,1901
+S22,share_lam0.5 eqsd diff mae,results/2026-10-05_osrev/ai_reference/ai_ranking_matched.csv,-0.2647092050741311,2,1.0,−0.26
+S22,share_lam0.75 eqsd n better,results/2026-10-05_osrev/ai_reference/ai_ranking_matched.csv,1962.0,0,1.0,1962
+S22,share_lam0.75 eqsd diff mae,results/2026-10-05_osrev/ai_reference/ai_ranking_matched.csv,-0.3277992878088758,2,1.0,−0.33
+S22,share_lam1 eqsd n better,results/2026-10-05_osrev/ai_reference/ai_ranking_matched.csv,1952.0,0,1.0,1952
+S22,share_lam1 eqsd diff mae,results/2026-10-05_osrev/ai_reference/ai_ranking_matched.csv,-0.331107621527259,2,1.0,−0.33
+S22,inherit eqsd n better,results/2026-10-05_osrev/ai_reference/ai_ranking_matched.csv,1119.0,0,1.0,1119
+S22,inherit eqsd diff mae,results/2026-10-05_osrev/ai_reference/ai_ranking_matched.csv,-0.0185720707304459,2,1.0,−0.02
+S22,inherit eqsd ind single,results/2026-10-05_osrev/ai_reference/ai_ranking_matched.csv,1119.0,0,1.0,1119
+S22,inherit eqmae ind single,results/2026-10-05_osrev/ai_reference/ai_ranking_matched.csv,1234.0,0,1.0,1234
+S22,inherit eqsd crn single,results/2026-10-05_osrev/ai_reference/ai_ranking_matched.csv,1286.0,0,1.0,1286
+S22,inherit eqsd ind mean2,results/2026-10-05_osrev/ai_reference/ai_ranking_matched.csv,1113.0,0,1.0,1113
+S22,inherit eqmae ind mean2,results/2026-10-05_osrev/ai_reference/ai_ranking_matched.csv,1262.0,0,1.0,1262
+S22,inherit eqsd crn mean2,results/2026-10-05_osrev/ai_reference/ai_ranking_matched.csv,1289.0,0,1.0,1289
+S22,inherit eqsd ind adj_tol1,results/2026-10-05_osrev/ai_reference/ai_ranking_matched.csv,1135.0,0,1.0,1135
+S22,inherit eqmae ind adj_tol1,results/2026-10-05_osrev/ai_reference/ai_ranking_matched.csv,1244.0,0,1.0,1244
+S22,inherit eqsd crn adj_tol1,results/2026-10-05_osrev/ai_reference/ai_ranking_matched.csv,1308.0,0,1.0,1308
+S22,inherit eqsd ind adj_tol2,results/2026-10-05_osrev/ai_reference/ai_ranking_matched.csv,1115.0,0,1.0,1115
+S22,inherit eqmae ind adj_tol2,results/2026-10-05_osrev/ai_reference/ai_ranking_matched.csv,1248.0,0,1.0,1248
+S22,inherit eqsd crn adj_tol2,results/2026-10-05_osrev/ai_reference/ai_ranking_matched.csv,1282.0,0,1.0,1282
+S22,inherit eqsd ind adj_tol3,results/2026-10-05_osrev/ai_reference/ai_ranking_matched.csv,1112.0,0,1.0,1112
+S22,inherit eqmae ind adj_tol3,results/2026-10-05_osrev/ai_reference/ai_ranking_matched.csv,1250.0,0,1.0,1250
+S22,inherit eqsd crn adj_tol3,results/2026-10-05_osrev/ai_reference/ai_ranking_matched.csv,1284.0,0,1.0,1284
+S22,var img,results/2026-10-05_osrev/ai_reference/ai_reference_error_components.csv,3.1061931102338445,2,1.0,3.11
+S22,var ref,results/2026-10-05_osrev/ai_reference/ai_reference_error_components.csv,3.88515112304408,2,1.0,3.89
+S23,conventional_two_reader 2 rmse,results/2026-10-05_osrev/ai_reference/loa_multireader_designs.csv,1.3121217631480988,2,1.0,1.31
+S23,crossed 2 rmse,results/2026-10-05_osrev/ai_reference/loa_multireader_designs.csv,0.7771492219593115,2,1.0,0.78
+S23,crossed 3 rmse,results/2026-10-05_osrev/ai_reference/loa_multireader_designs.csv,0.5950073533725938,2,1.0,0.60
+S23,crossed 4 rmse,results/2026-10-05_osrev/ai_reference/loa_multireader_designs.csv,0.5176816187078032,2,1.0,0.52
+S23,crossed 6 rmse,results/2026-10-05_osrev/ai_reference/loa_multireader_designs.csv,0.4442248059574011,2,1.0,0.44
+S23,rotating 3 rmse,results/2026-10-05_osrev/ai_reference/loa_multireader_designs.csv,0.6024102853470927,2,1.0,0.60
+S23,rotating 4 rmse,results/2026-10-05_osrev/ai_reference/loa_multireader_designs.csv,0.5217195581375804,2,1.0,0.52
+S23,rotating 6 rmse,results/2026-10-05_osrev/ai_reference/loa_multireader_designs.csv,0.4370717378756136,2,1.0,0.44
+S23,rb075 25 sd cond,results/2026-10-05_osrev/ai_reference/loa_conditional_vs_marginal.csv,0.6796202403423253,2,1.0,0.68
+S23,rb075 25 sd between,results/2026-10-05_osrev/ai_reference/loa_conditional_vs_marginal.csv,1.0837729389159738,2,1.0,1.08
+S23,rb075 25 sd marg,results/2026-10-05_osrev/ai_reference/loa_conditional_vs_marginal.csv,1.2792370594262532,2,1.0,1.28
+S23,rb075 25 cov cond,results/2026-10-05_osrev/ai_reference/loa_conditional_vs_marginal.csv,41592.0,0,1.0,41592
+S23,rb075 50 sd cond,results/2026-10-05_osrev/ai_reference/loa_conditional_vs_marginal.csv,0.4991387253282692,2,1.0,0.50
+S23,rb075 50 sd between,results/2026-10-05_osrev/ai_reference/loa_conditional_vs_marginal.csv,1.0845554204703522,2,1.0,1.08
+S23,rb075 50 sd marg,results/2026-10-05_osrev/ai_reference/loa_conditional_vs_marginal.csv,1.193901137948177,2,1.0,1.19
+S23,rb075 50 cov cond,results/2026-10-05_osrev/ai_reference/loa_conditional_vs_marginal.csv,40973.0,0,1.0,40973
+S23,rb075 100 sd cond,results/2026-10-05_osrev/ai_reference/loa_conditional_vs_marginal.csv,0.3657691426129578,2,1.0,0.37
+S23,rb075 100 sd between,results/2026-10-05_osrev/ai_reference/loa_conditional_vs_marginal.csv,1.085166490551886,2,1.0,1.09
+S23,rb075 100 sd marg,results/2026-10-05_osrev/ai_reference/loa_conditional_vs_marginal.csv,1.1451521199842905,2,1.0,1.15
+S23,rb075 100 cov cond,results/2026-10-05_osrev/ai_reference/loa_conditional_vs_marginal.csv,40145.0,0,1.0,40145
+S23,rb075 200 sd cond,results/2026-10-05_osrev/ai_reference/loa_conditional_vs_marginal.csv,0.2663639069654789,2,1.0,0.27
+S23,rb075 200 sd between,results/2026-10-05_osrev/ai_reference/loa_conditional_vs_marginal.csv,1.0861699034913768,2,1.0,1.09
+S23,rb075 200 sd marg,results/2026-10-05_osrev/ai_reference/loa_conditional_vs_marginal.csv,1.118353606952819,2,1.0,1.12
+S23,rb075 200 cov cond,results/2026-10-05_osrev/ai_reference/loa_conditional_vs_marginal.csv,39485.0,0,1.0,39485
+S23,rb000 25 sd cond,results/2026-10-05_osrev/ai_reference/loa_conditional_vs_marginal.csv,0.6736155357927198,2,1.0,0.67
+S23,rb000 25 sd between,results/2026-10-05_osrev/ai_reference/loa_conditional_vs_marginal.csv,0.0,2,1.0,0.00
+S23,rb000 25 sd marg,results/2026-10-05_osrev/ai_reference/loa_conditional_vs_marginal.csv,0.6732803484092927,2,1.0,0.67
+S23,rb000 25 cov cond,results/2026-10-05_osrev/ai_reference/loa_conditional_vs_marginal.csv,8377.0,0,1.0,8377
+S23,rb000 50 sd cond,results/2026-10-05_osrev/ai_reference/loa_conditional_vs_marginal.csv,0.4992485207683815,2,1.0,0.50
+S23,rb000 50 sd between,results/2026-10-05_osrev/ai_reference/loa_conditional_vs_marginal.csv,0.0112795575157347,2,1.0,0.01
+S23,rb000 50 sd marg,results/2026-10-05_osrev/ai_reference/loa_conditional_vs_marginal.csv,0.4993759244368593,2,1.0,0.50
+S23,rb000 50 cov cond,results/2026-10-05_osrev/ai_reference/loa_conditional_vs_marginal.csv,8197.0,0,1.0,8197
+S23,rb000 100 sd cond,results/2026-10-05_osrev/ai_reference/loa_conditional_vs_marginal.csv,0.3610476929064528,2,1.0,0.36
+S23,rb000 100 sd between,results/2026-10-05_osrev/ai_reference/loa_conditional_vs_marginal.csv,0.0,2,1.0,0.00
+S23,rb000 100 sd marg,results/2026-10-05_osrev/ai_reference/loa_conditional_vs_marginal.csv,0.360329954175192,2,1.0,0.36
+S23,rb000 100 cov cond,results/2026-10-05_osrev/ai_reference/loa_conditional_vs_marginal.csv,8048.0,0,1.0,8048
+S23,rb000 200 sd cond,results/2026-10-05_osrev/ai_reference/loa_conditional_vs_marginal.csv,0.2724109995209255,2,1.0,0.27
+S23,rb000 200 sd between,results/2026-10-05_osrev/ai_reference/loa_conditional_vs_marginal.csv,0.0,2,1.0,0.00
+S23,rb000 200 sd marg,results/2026-10-05_osrev/ai_reference/loa_conditional_vs_marginal.csv,0.2719540067633316,2,1.0,0.27
+S23,rb000 200 cov cond,results/2026-10-05_osrev/ai_reference/loa_conditional_vs_marginal.csv,7840.0,0,1.0,7840
+S24,f_onesided all min,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.048,3,1.0,0.048
+S24,f_onesided all median,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.07825,3,1.0,0.078
+S24,f_onesided all max,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.1385,3,1.0,0.139
+S24,f_onesided all n above,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,176.0,0,1.0,176
+S24,f_onesided all n below,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.0,0,1.0,0
+S24,welch_mean all min,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.033,3,1.0,0.033
+S24,welch_mean all median,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.0505,3,1.0,0.051
+S24,welch_mean all max,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.064,3,1.0,0.064
+S24,welch_mean all n above,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,9.0,0,1.0,9
+S24,welch_mean all n below,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,8.0,0,1.0,8
+S24,bf_onesided all min,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.0265,3,1.0,0.027
+S24,bf_onesided all median,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.0415,3,1.0,0.042
+S24,bf_onesided all max,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.0605,3,1.0,0.061
+S24,bf_onesided all n above,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,1.0,0,1.0,1
+S24,bf_onesided all n below,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,103.0,0,1.0,103
+S24,bf_twosided all min,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.0315,3,1.0,0.032
+S24,bf_twosided all median,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.048,3,1.0,0.048
+S24,bf_twosided all max,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.0635,3,1.0,0.064
+S24,bf_twosided all n above,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,1.0,0,1.0,1
+S24,bf_twosided all n below,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,18.0,0,1.0,18
+S24,perm_var_ratio_onesided all min,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.0365,3,1.0,0.037
+S24,perm_var_ratio_onesided all median,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.0505,3,1.0,0.051
+S24,perm_var_ratio_onesided all max,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.0655,3,1.0,0.066
+S24,perm_var_ratio_onesided all n above,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,10.0,0,1.0,10
+S24,perm_var_ratio_onesided all n below,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,6.0,0,1.0,6
+S24,f_onesided 10 min,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.048,3,1.0,0.048
+S24,f_onesided 10 median,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.06775,3,1.0,0.068
+S24,f_onesided 10 max,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.104,3,1.0,0.104
+S24,f_onesided 10 n above,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,39.0,0,1.0,39
+S24,f_onesided 10 n below,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.0,0,1.0,0
+S24,bf_onesided 10 min,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.0265,3,1.0,0.027
+S24,bf_onesided 10 median,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.036,3,1.0,0.036
+S24,bf_onesided 10 max,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.051,3,1.0,0.051
+S24,bf_onesided 10 n above,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.0,0,1.0,0
+S24,bf_onesided 10 n below,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,44.0,0,1.0,44
+S24,perm_var_ratio_onesided 10 min,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.039,3,1.0,0.039
+S24,perm_var_ratio_onesided 10 median,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.0495,3,1.0,0.050
+S24,perm_var_ratio_onesided 10 max,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.0655,3,1.0,0.066
+S24,perm_var_ratio_onesided 10 n above,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,3.0,0,1.0,3
+S24,perm_var_ratio_onesided 10 n below,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,2.0,0,1.0,2
+S24,f_onesided 25 min,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.049,3,1.0,0.049
+S24,f_onesided 25 median,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.07825,3,1.0,0.078
+S24,f_onesided 25 max,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.1265,3,1.0,0.127
+S24,f_onesided 25 n above,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,45.0,0,1.0,45
+S24,f_onesided 25 n below,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.0,0,1.0,0
+S24,bf_onesided 25 min,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.0305,3,1.0,0.031
+S24,bf_onesided 25 median,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.04,3,1.0,0.040
+S24,bf_onesided 25 max,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.052,3,1.0,0.052
+S24,bf_onesided 25 n above,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.0,0,1.0,0
+S24,bf_onesided 25 n below,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,36.0,0,1.0,36
+S24,perm_var_ratio_onesided 25 min,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.0395,3,1.0,0.040
+S24,perm_var_ratio_onesided 25 median,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.05125,3,1.0,0.051
+S24,perm_var_ratio_onesided 25 max,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.065,3,1.0,0.065
+S24,perm_var_ratio_onesided 25 n above,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,3.0,0,1.0,3
+S24,perm_var_ratio_onesided 25 n below,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,1.0,0,1.0,1
+S24,f_onesided 50 min,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.0515,3,1.0,0.052
+S24,f_onesided 50 median,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.08475,3,1.0,0.085
+S24,f_onesided 50 max,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.1355,3,1.0,0.136
+S24,f_onesided 50 n above,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,46.0,0,1.0,46
+S24,f_onesided 50 n below,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.0,0,1.0,0
+S24,bf_onesided 50 min,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.033,3,1.0,0.033
+S24,bf_onesided 50 median,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.0435,3,1.0,0.044
+S24,bf_onesided 50 max,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.0565,3,1.0,0.057
+S24,bf_onesided 50 n above,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.0,0,1.0,0
+S24,bf_onesided 50 n below,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,15.0,0,1.0,15
+S24,perm_var_ratio_onesided 50 min,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.0405,3,1.0,0.041
+S24,perm_var_ratio_onesided 50 median,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.0505,3,1.0,0.051
+S24,perm_var_ratio_onesided 50 max,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.0635,3,1.0,0.064
+S24,perm_var_ratio_onesided 50 n above,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,3.0,0,1.0,3
+S24,perm_var_ratio_onesided 50 n below,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,1.0,0,1.0,1
+S24,f_onesided 100 min,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.0505,3,1.0,0.051
+S24,f_onesided 100 median,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.089,3,1.0,0.089
+S24,f_onesided 100 max,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.1385,3,1.0,0.139
+S24,f_onesided 100 n above,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,46.0,0,1.0,46
+S24,f_onesided 100 n below,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.0,0,1.0,0
+S24,bf_onesided 100 min,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.0335,3,1.0,0.034
+S24,bf_onesided 100 median,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.04725,3,1.0,0.047
+S24,bf_onesided 100 max,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.0605,3,1.0,0.061
+S24,bf_onesided 100 n above,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,1.0,0,1.0,1
+S24,bf_onesided 100 n below,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,8.0,0,1.0,8
+S24,perm_var_ratio_onesided 100 min,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.0365,3,1.0,0.037
+S24,perm_var_ratio_onesided 100 median,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.05,3,1.0,0.050
+S24,perm_var_ratio_onesided 100 max,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,0.0625,3,1.0,0.063
+S24,perm_var_ratio_onesided 100 n above,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,1.0,0,1.0,1
+S24,perm_var_ratio_onesided 100 n below,results/2026-10-05_osrev/ai_reference/sentinel_size_summary.csv,2.0,0,1.0,2
+S24,base bf_onesided w0 n10,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,69.0,0,1.0,69
+S24,base bf_onesided w0 n25,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,95.0,0,1.0,95
+S24,base bf_onesided w0 n50,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,96.0,0,1.0,96
+S24,base bf_onesided w0 n100,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,96.0,0,1.0,96
+S24,base perm_var_ratio_onesided w0 n10,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,92.0,0,1.0,92
+S24,base perm_var_ratio_onesided w0 n25,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,106.0,0,1.0,106
+S24,base perm_var_ratio_onesided w0 n50,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,110.0,0,1.0,110
+S24,base perm_var_ratio_onesided w0 n100,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,112.0,0,1.0,112
+S24,base f_onesided w0 n10,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,132.0,0,1.0,132
+S24,base f_onesided w0 n25,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,149.0,0,1.0,149
+S24,base f_onesided w0 n50,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,175.0,0,1.0,175
+S24,base f_onesided w0 n100,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,164.0,0,1.0,164
+S24,base bf_onesided w0.1 n10,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,194.0,0,1.0,194
+S24,base bf_onesided w0.1 n25,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,282.0,0,1.0,282
+S24,base bf_onesided w0.1 n50,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,452.0,0,1.0,452
+S24,base bf_onesided w0.1 n100,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,652.0,0,1.0,652
+S24,base perm_var_ratio_onesided w0.1 n10,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,237.0,0,1.0,237
+S24,base perm_var_ratio_onesided w0.1 n25,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,330.0,0,1.0,330
+S24,base perm_var_ratio_onesided w0.1 n50,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,459.0,0,1.0,459
+S24,base perm_var_ratio_onesided w0.1 n100,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,662.0,0,1.0,662
+S24,base f_onesided w0.1 n10,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,278.0,0,1.0,278
+S24,base f_onesided w0.1 n25,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,423.0,0,1.0,423
+S24,base f_onesided w0.1 n50,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,595.0,0,1.0,595
+S24,base f_onesided w0.1 n100,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,817.0,0,1.0,817
+S24,base bf_onesided w0.2 n10,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,390.0,0,1.0,390
+S24,base bf_onesided w0.2 n25,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,735.0,0,1.0,735
+S24,base bf_onesided w0.2 n50,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,1177.0,0,1.0,1177
+S24,base bf_onesided w0.2 n100,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,1590.0,0,1.0,1590
+S24,base perm_var_ratio_onesided w0.2 n10,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,468.0,0,1.0,468
+S24,base perm_var_ratio_onesided w0.2 n25,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,794.0,0,1.0,794
+S24,base perm_var_ratio_onesided w0.2 n50,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,1173.0,0,1.0,1173
+S24,base perm_var_ratio_onesided w0.2 n100,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,1573.0,0,1.0,1573
+S24,base f_onesided w0.2 n10,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,544.0,0,1.0,544
+S24,base f_onesided w0.2 n25,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,933.0,0,1.0,933
+S24,base f_onesided w0.2 n50,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,1325.0,0,1.0,1325
+S24,base f_onesided w0.2 n100,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,1688.0,0,1.0,1688
+S24,base bf_onesided w0.3 n10,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,751.0,0,1.0,751
+S24,base bf_onesided w0.3 n25,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,1347.0,0,1.0,1347
+S24,base bf_onesided w0.3 n50,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,1806.0,0,1.0,1806
+S24,base bf_onesided w0.3 n100,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,1977.0,0,1.0,1977
+S24,base perm_var_ratio_onesided w0.3 n10,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,871.0,0,1.0,871
+S24,base perm_var_ratio_onesided w0.3 n25,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,1367.0,0,1.0,1367
+S24,base perm_var_ratio_onesided w0.3 n50,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,1787.0,0,1.0,1787
+S24,base perm_var_ratio_onesided w0.3 n100,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,1954.0,0,1.0,1954
+S24,base f_onesided w0.3 n10,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,977.0,0,1.0,977
+S24,base f_onesided w0.3 n25,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,1500.0,0,1.0,1500
+S24,base f_onesided w0.3 n50,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,1872.0,0,1.0,1872
+S24,base f_onesided w0.3 n100,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,1986.0,0,1.0,1986
+S24,base bf_onesided w0.5 n10,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,1620.0,0,1.0,1620
+S24,base bf_onesided w0.5 n25,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,1980.0,0,1.0,1980
+S24,base bf_onesided w0.5 n50,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,2000.0,0,1.0,2000
+S24,base bf_onesided w0.5 n100,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,2000.0,0,1.0,2000
+S24,base perm_var_ratio_onesided w0.5 n10,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,1685.0,0,1.0,1685
+S24,base perm_var_ratio_onesided w0.5 n25,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,1974.0,0,1.0,1974
+S24,base perm_var_ratio_onesided w0.5 n50,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,1999.0,0,1.0,1999
+S24,base perm_var_ratio_onesided w0.5 n100,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,2000.0,0,1.0,2000
+S24,base f_onesided w0.5 n10,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,1738.0,0,1.0,1738
+S24,base f_onesided w0.5 n25,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,1991.0,0,1.0,1991
+S24,base f_onesided w0.5 n50,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,2000.0,0,1.0,2000
+S24,base f_onesided w0.5 n100,results/2026-10-05_osrev/ai_reference/sentinel_base_cell.csv,2000.0,0,1.0,2000
+S25,A biplane below 3D average 4CH,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,23.9349,1,1.0,23.9
+S25,A biplane below 3D average inflow,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,18.7452,1,1.0,18.7
+S25,A biplane below 3D average mBC,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,24.5546,1,1.0,24.6
+S25,A single plane below 3D maximum 4CH,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,48.2164,1,1.0,48.2
+S25,A single plane below 3D maximum inflow,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,30.7967,1,1.0,30.8
+S25,A single plane below 3D maximum mBC,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,49.2866,1,1.0,49.3
+S25,A single plane below 3D minimum 4CH,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,3.22581,1,1.0,3.2
+S25,A single plane below 3D minimum inflow,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-29.366,1,1.0,−29.4
+S25,A single plane below 3D minimum mBC,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,5.22803,1,1.0,5.2
+S25,A orthogonal plane below 3D maximum 4CH,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,35.0773,1,1.0,35.1
+S25,A orthogonal plane below 3D maximum inflow,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,44.5303,1,1.0,44.5
+S25,A orthogonal plane below 3D maximum mBC,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,34.8989,1,1.0,34.9
+S25,B shortfall 0.1 on,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,3.86033,1,1.0,3.9
+S25,B shortfall 0.1 off,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,6.46054,1,1.0,6.5
+S25,B shortfall 0.25 on,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,15.9997,1,1.0,16.0
+S25,B shortfall 0.25 off,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,18.5999,1,1.0,18.6
+S25,B shortfall 0.5 on,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,34.7678,1,1.0,34.8
+S25,B shortfall 0.5 off,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,37.368,1,1.0,37.4
+S25,B scale 18.7% (inflow),results/2026-10-05_osrev/calibration/calibration_table_s25.csv,0.283485,3,1.0,0.283
+S25,B scale 22.4% (three-view mean),results/2026-10-05_osrev/calibration/calibration_table_s25.csv,0.329854,3,1.0,0.330
+S25,B scale 23.9% (four-chamber),results/2026-10-05_osrev/calibration/calibration_table_s25.csv,0.348958,3,1.0,0.349
+S25,B scale 24.6% (modified bicaval),results/2026-10-05_osrev/calibration/calibration_table_s25.csv,0.357962,3,1.0,0.358
+S25,"C AP axis, inflow primary plane vs 3D maximum",results/2026-10-05_osrev/calibration/calibration_table_s25.csv,29.5122,1,1.0,29.5
+S25,"C AP axis, inflow primary plane, rotation component",results/2026-10-05_osrev/calibration/calibration_table_s25.csv,23.0789,1,1.0,23.1
+S25,"C AP axis, inflow primary plane, off-centre component",results/2026-10-05_osrev/calibration/calibration_table_s25.csv,8.35604,1,1.0,8.4
+S25,"C AP axis, 4CH orthogonal plane vs 3D maximum",results/2026-10-05_osrev/calibration/calibration_table_s25.csv,33.9327,1,1.0,33.9
+S25,"C AP axis, mBC orthogonal plane vs 3D maximum",results/2026-10-05_osrev/calibration/calibration_table_s25.csv,33.8009,1,1.0,33.8
+S25,"C SL axis, 4CH primary plane vs 3D minimum",results/2026-10-05_osrev/calibration/calibration_table_s25.csv,2.39856,1,1.0,2.4
+S25,"C SL axis, mBC primary plane vs 3D minimum",results/2026-10-05_osrev/calibration/calibration_table_s25.csv,4.38332,1,1.0,4.4
+S25,C cross-plane maximum of the inflow view,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,26.457,1,1.0,26.5
+S25,C cross-plane maximum of the 4CH view,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,29.2368,1,1.0,29.2
+S25,C2 inflow primary plane vs 3D max SD 5.73 mm,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,29.5122,1,1.0,29.5
+S25,C2 inflow primary plane vs 3D max SD 7.07 mm,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,25.7273,1,1.0,25.7
+S25,C2 inflow primary plane vs 3D max SD 8.41 mm,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,21.3712,1,1.0,21.4
+S25,"C2 inflow primary plane, rotation SD 5.73 mm",results/2026-10-05_osrev/calibration/calibration_table_s25.csv,23.0789,1,1.0,23.1
+S25,"C2 inflow primary plane, rotation SD 7.07 mm",results/2026-10-05_osrev/calibration/calibration_table_s25.csv,21.207,1,1.0,21.2
+S25,"C2 inflow primary plane, rotation SD 8.41 mm",results/2026-10-05_osrev/calibration/calibration_table_s25.csv,18.9801,1,1.0,19.0
+S25,"C2 inflow primary plane, off-cent SD 5.73 mm",results/2026-10-05_osrev/calibration/calibration_table_s25.csv,8.35604,1,1.0,8.4
+S25,"C2 inflow primary plane, off-cent SD 7.07 mm",results/2026-10-05_osrev/calibration/calibration_table_s25.csv,5.73607,1,1.0,5.7
+S25,"C2 inflow primary plane, off-cent SD 8.41 mm",results/2026-10-05_osrev/calibration/calibration_table_s25.csv,2.95209,1,1.0,3.0
+S25,C2 4CH orthogonal plane vs 3D max SD 5.73 mm,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,33.9327,1,1.0,33.9
+S25,C2 4CH orthogonal plane vs 3D max SD 7.07 mm,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,30.4374,1,1.0,30.4
+S25,C2 4CH orthogonal plane vs 3D max SD 8.41 mm,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,26.3817,1,1.0,26.4
+S25,C2 mBC orthogonal plane vs 3D max SD 5.73 mm,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,33.8009,1,1.0,33.8
+S25,C2 mBC orthogonal plane vs 3D max SD 7.07 mm,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,30.442,1,1.0,30.4
+S25,C2 mBC orthogonal plane vs 3D max SD 8.41 mm,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,26.5685,1,1.0,26.6
+S25,C2 4CH primary plane vs 3D minimu SD 5.73 mm,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,2.39856,1,1.0,2.4
+S25,C2 4CH primary plane vs 3D minimu SD 7.07 mm,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,2.12681,1,1.0,2.1
+S25,C2 4CH primary plane vs 3D minimu SD 8.41 mm,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,2.01856,1,1.0,2.0
+S25,"C2 4CH primary plane, off-centre  SD 5.73 mm",results/2026-10-05_osrev/calibration/calibration_table_s25.csv,14.2997,1,1.0,14.3
+S25,"C2 4CH primary plane, off-centre  SD 7.07 mm",results/2026-10-05_osrev/calibration/calibration_table_s25.csv,11.8846,1,1.0,11.9
+S25,"C2 4CH primary plane, off-centre  SD 8.41 mm",results/2026-10-05_osrev/calibration/calibration_table_s25.csv,9.3292,1,1.0,9.3
+S25,C2 inflow biplane vs 3D average ( SD 5.73 mm,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,18.9341,1,1.0,18.9
+S25,C2 inflow biplane vs 3D average ( SD 7.07 mm,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,17.446,1,1.0,17.4
+S25,C2 inflow biplane vs 3D average ( SD 8.41 mm,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,15.4571,1,1.0,15.5
+S25,E the 12 view-accuracy scenarios A1 lo,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-1.92746,2,1.0,−1.93
+S25,E the 12 view-accuracy scenarios A1 hi,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,0.0161558,2,1.0,0.02
+S25,E the 12 view-accuracy scenarios A2 lo,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-3.16093,2,1.0,−3.16
+S25,E the 12 view-accuracy scenarios A2 hi,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-0.275049,2,1.0,−0.28
+S25,E the 12 view-accuracy scenarios A3 lo,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-0.767522,2,1.0,−0.77
+S25,E the 12 view-accuracy scenarios A3 hi,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,0.919777,2,1.0,0.92
+S25,E the 12 view-accuracy scenarios A4 lo,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-0.9722,2,1.0,−0.97
+S25,E the 12 view-accuracy scenarios A4 hi,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,0.762641,2,1.0,0.76
+S25,"E half-normal shape at calibrated means, t A1 lo",results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-1.92308,2,1.0,−1.92
+S25,"E half-normal shape at calibrated means, t A1 hi",results/2026-10-05_osrev/calibration/calibration_table_s25.csv,0.00308517,2,1.0,0.00
+S25,"E half-normal shape at calibrated means, t A2 lo",results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-2.52125,2,1.0,−2.52
+S25,"E half-normal shape at calibrated means, t A2 hi",results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-0.308538,2,1.0,−0.31
+S25,"E half-normal shape at calibrated means, t A3 lo",results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-0.516284,2,1.0,−0.52
+S25,"E half-normal shape at calibrated means, t A3 hi",results/2026-10-05_osrev/calibration/calibration_table_s25.csv,0.894387,2,1.0,0.89
+S25,"E half-normal shape at calibrated means, t A4 lo",results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-0.755388,2,1.0,−0.76
+S25,"E half-normal shape at calibrated means, t A4 hi",results/2026-10-05_osrev/calibration/calibration_table_s25.csv,0.747313,2,1.0,0.75
+S25,E half-normal shape at the lowest A1 lo,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-1.92308,2,1.0,−1.92
+S25,E half-normal shape at the lowest A1 hi,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,0.00308517,2,1.0,0.00
+S25,E half-normal shape at the lowest A2 lo,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-0.790658,2,1.0,−0.79
+S25,E half-normal shape at the lowest A2 hi,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-0.148605,2,1.0,−0.15
+S25,E half-normal shape at the lowest A3 lo,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,0.696534,2,1.0,0.70
+S25,E half-normal shape at the lowest A3 hi,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,1.00494,2,1.0,1.00
+S25,E half-normal shape at the lowest A4 lo,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,0.318303,2,1.0,0.32
+S25,E half-normal shape at the lowest A4 hi,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,0.839904,2,1.0,0.84
+S25,"E half-normal shape at calibrated means, a A1 lo",results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-1.92308,2,1.0,−1.92
+S25,"E half-normal shape at calibrated means, a A1 hi",results/2026-10-05_osrev/calibration/calibration_table_s25.csv,0.00308517,2,1.0,0.00
+S25,"E half-normal shape at calibrated means, a A2 lo",results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-2.52125,2,1.0,−2.52
+S25,"E half-normal shape at calibrated means, a A2 hi",results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-0.148605,2,1.0,−0.15
+S25,"E half-normal shape at calibrated means, a A3 lo",results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-0.516284,2,1.0,−0.52
+S25,"E half-normal shape at calibrated means, a A3 hi",results/2026-10-05_osrev/calibration/calibration_table_s25.csv,1.00494,2,1.0,1.00
+S25,"E half-normal shape at calibrated means, a A4 lo",results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-0.755388,2,1.0,−0.76
+S25,"E half-normal shape at calibrated means, a A4 hi",results/2026-10-05_osrev/calibration/calibration_table_s25.csv,0.839904,2,1.0,0.84
+S25,"E patient-level geometric shape, rotation  A1 lo",results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-1.92308,2,1.0,−1.92
+S25,"E patient-level geometric shape, rotation  A1 hi",results/2026-10-05_osrev/calibration/calibration_table_s25.csv,0.00308517,2,1.0,0.00
+S25,"E patient-level geometric shape, rotation  A2 lo",results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-2.53753,2,1.0,−2.54
+S25,"E patient-level geometric shape, rotation  A2 hi",results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-1.83753,2,1.0,−1.84
+S25,"E patient-level geometric shape, rotation  A3 lo",results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-0.835591,2,1.0,−0.84
+S25,"E patient-level geometric shape, rotation  A3 hi",results/2026-10-05_osrev/calibration/calibration_table_s25.csv,0.419897,2,1.0,0.42
+S25,"E patient-level geometric shape, rotation  A4 lo",results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-1.00499,2,1.0,−1.00
+S25,"E patient-level geometric shape, rotation  A4 hi",results/2026-10-05_osrev/calibration/calibration_table_s25.csv,0.348154,2,1.0,0.35
+S25,"E patient-level geometric shape, off-centr A1 lo",results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-1.92308,2,1.0,−1.92
+S25,"E patient-level geometric shape, off-centr A1 hi",results/2026-10-05_osrev/calibration/calibration_table_s25.csv,0.00308517,2,1.0,0.00
+S25,"E patient-level geometric shape, off-centr A2 lo",results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-1.68671,2,1.0,−1.69
+S25,"E patient-level geometric shape, off-centr A2 hi",results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-0.148205,2,1.0,−0.15
+S25,"E patient-level geometric shape, off-centr A3 lo",results/2026-10-05_osrev/calibration/calibration_table_s25.csv,0.286248,2,1.0,0.29
+S25,"E patient-level geometric shape, off-centr A3 hi",results/2026-10-05_osrev/calibration/calibration_table_s25.csv,1.10228,2,1.0,1.10
+S25,"E patient-level geometric shape, off-centr A4 lo",results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-0.0702973,2,1.0,−0.07
+S25,"E patient-level geometric shape, off-centr A4 hi",results/2026-10-05_osrev/calibration/calibration_table_s25.csv,0.922576,2,1.0,0.92
+S25,"E patient-level geometric shape, both read A1 lo",results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-1.92308,2,1.0,−1.92
+S25,"E patient-level geometric shape, both read A1 hi",results/2026-10-05_osrev/calibration/calibration_table_s25.csv,0.00308517,2,1.0,0.00
+S25,"E patient-level geometric shape, both read A2 lo",results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-2.53753,2,1.0,−2.54
+S25,"E patient-level geometric shape, both read A2 hi",results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-0.148205,2,1.0,−0.15
+S25,"E patient-level geometric shape, both read A3 lo",results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-0.835591,2,1.0,−0.84
+S25,"E patient-level geometric shape, both read A3 hi",results/2026-10-05_osrev/calibration/calibration_table_s25.csv,1.10228,2,1.0,1.10
+S25,"E patient-level geometric shape, both read A4 lo",results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-1.00499,2,1.0,−1.00
+S25,"E patient-level geometric shape, both read A4 hi",results/2026-10-05_osrev/calibration/calibration_table_s25.csv,0.922576,2,1.0,0.92
+S25,E half-normal and patient-level geometric  A1 lo,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-1.92308,2,1.0,−1.92
+S25,E half-normal and patient-level geometric  A1 hi,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,0.00308517,2,1.0,0.00
+S25,E half-normal and patient-level geometric  A2 lo,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-2.53753,2,1.0,−2.54
+S25,E half-normal and patient-level geometric  A2 hi,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-0.148205,2,1.0,−0.15
+S25,E half-normal and patient-level geometric  A3 lo,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-0.835591,2,1.0,−0.84
+S25,E half-normal and patient-level geometric  A3 hi,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,1.10228,2,1.0,1.10
+S25,E half-normal and patient-level geometric  A4 lo,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-1.00499,2,1.0,−1.00
+S25,E half-normal and patient-level geometric  A4 hi,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,0.922576,2,1.0,0.92
+S25,E constant rotation plus chord A1 lo,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-1.92308,2,1.0,−1.92
+S25,E constant rotation plus chord A1 hi,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,0.00308517,2,1.0,0.00
+S25,E constant rotation plus chord A2 lo,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-2.53925,2,1.0,−2.54
+S25,E constant rotation plus chord A2 hi,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-1.84634,2,1.0,−1.85
+S25,E constant rotation plus chord A3 lo,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-1.0557,2,1.0,−1.06
+S25,E constant rotation plus chord A3 hi,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,0.250247,2,1.0,0.25
+S25,E constant rotation plus chord A4 lo,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-1.19194,2,1.0,−1.19
+S25,E constant rotation plus chord A4 hi,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,0.207156,2,1.0,0.21
+S25,E sensitivity: patient-level geometric sha A1 lo,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-1.92308,2,1.0,−1.92
+S25,E sensitivity: patient-level geometric sha A1 hi,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,0.00308517,2,1.0,0.00
+S25,E sensitivity: patient-level geometric sha A2 lo,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-2.53651,2,1.0,−2.54
+S25,E sensitivity: patient-level geometric sha A2 hi,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-1.83637,2,1.0,−1.84
+S25,E sensitivity: patient-level geometric sha A3 lo,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-0.82255,2,1.0,−0.82
+S25,E sensitivity: patient-level geometric sha A3 hi,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,0.425535,2,1.0,0.43
+S25,E sensitivity: patient-level geometric sha A4 lo,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-0.993724,2,1.0,−0.99
+S25,E sensitivity: patient-level geometric sha A4 hi,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,0.351629,2,1.0,0.35
+S25,E sensitivity: patient-level geometric sha A1 lo,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-1.92308,2,1.0,−1.92
+S25,E sensitivity: patient-level geometric sha A1 hi,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,0.00308517,2,1.0,0.00
+S25,E sensitivity: patient-level geometric sha A2 lo,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-1.68509,2,1.0,−1.69
+S25,E sensitivity: patient-level geometric sha A2 hi,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-0.146793,2,1.0,−0.15
+S25,E sensitivity: patient-level geometric sha A3 lo,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,0.330465,2,1.0,0.33
+S25,E sensitivity: patient-level geometric sha A3 hi,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,1.10873,2,1.0,1.11
+S25,E sensitivity: patient-level geometric sha A4 lo,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-0.0310347,2,1.0,−0.03
+S25,E sensitivity: patient-level geometric sha A4 hi,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,0.925827,2,1.0,0.93
+S25,E sensitivity: patient-level geometric sha A1 lo,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-1.92308,2,1.0,−1.92
+S25,E sensitivity: patient-level geometric sha A1 hi,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,0.00308517,2,1.0,0.00
+S25,E sensitivity: patient-level geometric sha A2 lo,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-2.62684,2,1.0,−2.63
+S25,E sensitivity: patient-level geometric sha A2 hi,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-1.97551,2,1.0,−1.98
+S25,E sensitivity: patient-level geometric sha A3 lo,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-0.922143,2,1.0,−0.92
+S25,E sensitivity: patient-level geometric sha A3 hi,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,0.403897,2,1.0,0.40
+S25,E sensitivity: patient-level geometric sha A4 lo,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-1.06937,2,1.0,−1.07
+S25,E sensitivity: patient-level geometric sha A4 hi,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,0.338544,2,1.0,0.34
+S25,E SD of the 3D maximal diameter 7.07 mm: h A1 lo,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-1.92308,2,1.0,−1.92
+S25,E SD of the 3D maximal diameter 7.07 mm: h A1 hi,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,0.00308517,2,1.0,0.00
+S25,E SD of the 3D maximal diameter 7.07 mm: h A2 lo,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-2.31264,2,1.0,−2.31
+S25,E SD of the 3D maximal diameter 7.07 mm: h A2 hi,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,0.0401553,2,1.0,0.04
+S25,E SD of the 3D maximal diameter 7.07 mm: h A3 lo,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-0.42152,2,1.0,−0.42
+S25,E SD of the 3D maximal diameter 7.07 mm: h A3 hi,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,1.16371,2,1.0,1.16
+S25,E SD of the 3D maximal diameter 7.07 mm: h A4 lo,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-0.673958,2,1.0,−0.67
+S25,E SD of the 3D maximal diameter 7.07 mm: h A4 hi,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,0.974361,2,1.0,0.97
+S25,E SD of the 3D maximal diameter 7.07 mm: h A1 lo,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-1.92308,2,1.0,−1.92
+S25,E SD of the 3D maximal diameter 7.07 mm: h A1 hi,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,0.00308517,2,1.0,0.00
+S25,E SD of the 3D maximal diameter 7.07 mm: h A2 lo,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-2.31593,2,1.0,−2.32
+S25,E SD of the 3D maximal diameter 7.07 mm: h A2 hi,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,0.040368,2,1.0,0.04
+S25,E SD of the 3D maximal diameter 7.07 mm: h A3 lo,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-0.432304,2,1.0,−0.43
+S25,E SD of the 3D maximal diameter 7.07 mm: h A3 hi,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,1.20598,2,1.0,1.21
+S25,E SD of the 3D maximal diameter 7.07 mm: h A4 lo,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,-0.673958,2,1.0,−0.67
+S25,E SD of the 3D maximal diameter 7.07 mm: h A4 hi,results/2026-10-05_osrev/calibration/calibration_table_s25.csv,1.01105,2,1.0,1.01
+S25,"follow-up half-normal mean, off-centre only",results/2026-10-05_osrev/calibration/followup_viewrules_metrics.csv,0.06156459513,1,100.0,6.2
+S25,"follow-up half-normal mean, rotation counted",results/2026-10-05_osrev/calibration/followup_viewrules_metrics.csv,0.2909280885,1,100.0,29.1
+S25,"SL bias min, rotation counted, main distribution",results/2026-10-05_osrev/calibration/followup_viewrules_metrics.csv,0.7301518449,2,1.0,0.73
+S25,"SL bias max, rotation counted, main distribution",results/2026-10-05_osrev/calibration/followup_viewrules_metrics.csv,0.9508419733,2,1.0,0.95
+S25,"SL bias min, rotation counted, per patient",results/2026-10-05_osrev/calibration/followup_viewrules_metrics.csv,1.06334912,2,1.0,1.06
+S25,"SL bias max, rotation counted, per patient",results/2026-10-05_osrev/calibration/followup_viewrules_metrics.csv,1.950712337,2,1.0,1.95
+S25,"SL bias min, rotation counted",results/2026-10-05_osrev/calibration/followup_viewrules_metrics.csv,0.7301518449,2,1.0,0.73
+S25,"SL bias max, rotation counted",results/2026-10-05_osrev/calibration/followup_viewrules_metrics.csv,1.950712337,2,1.0,1.95

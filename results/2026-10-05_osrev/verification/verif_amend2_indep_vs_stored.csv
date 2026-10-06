@@ -1,0 +1,75 @@
+part,cell,quantity,indep,indep_mcse,lib,lib_mcse,lam,diff,mcse_diff,z
+E5b,9,"apparent MAE vs single read, independent AI",2.2191901,0.0095544394,2.2271219,0.0032384242,0,-0.007931801,0.010088345,-0.78623411
+E5b,9,"apparent MAE vs single read, shared AI",2.2191901,0.0095544394,2.2271219,0.0032384242,0,-0.007931801,0.010088345,-0.78623411
+E5b,9,MAE of R_img vs T1,1.2781331,0.004217835,1.2713049,0.0019776302,0,0.0068282333,0.0046584496,1.4657738
+E5b,10,"apparent MAE vs single read, independent AI",2.2191901,0.0095544394,2.2235934,0.0031225478,0.5,-0.0044033038,0.010051747,-0.43806353
+E5b,10,"apparent MAE vs single read, shared AI",1.9518602,0.0090270238,1.9559422,0.0028432701,0.5,-0.0040819848,0.0094642139,-0.43130733
+E5b,10,MAE of R_img vs T1,1.2781331,0.004217835,1.2728861,0.001932785,0.5,0.0052469548,0.0046395894,1.1309093
+E5b,10,"paired MAE difference, shared minus independent",-0.26732989,0.0029090105,-0.26765121,0.0012737613,0.5,0.00032131895,0.0031756589,0.10118182
+E5b,10,"proportion of studies with lower MAE, shared AI",1,0,1,0,0.5,0,0,
+E5b,11,"apparent MAE vs single read, independent AI",2.2191901,0.0095544394,2.2189334,0.0032068106,1,0.00025668717,0.010078241,0.025469441
+E5b,11,"apparent MAE vs single read, shared AI",1.8843341,0.0085771069,1.8871877,0.0027672266,1,-0.0028536025,0.0090124528,-0.31662885
+E5b,11,MAE of R_img vs T1,1.2781331,0.004217835,1.2704601,0.0019265094,1,0.0076729971,0.0046369786,1.6547407
+E5b,11,"paired MAE difference, shared minus independent",-0.334856,0.0055947817,-0.33174571,0.0024345642,1,-0.0031102897,0.0061015313,-0.50975559
+E5b,11,"proportion of studies with lower MAE, shared AI",1,0,0.9985,0.00086537564,1,0.0015,0.00086537564,1.7333513
+E5b,12,"apparent MAE vs single read, independent AI",2.6685505,0.011974038,2.6736986,0.0042143739,0,-0.0051480928,0.012694036,-0.4055521
+E5b,12,"apparent MAE vs single read, shared AI",2.6685505,0.011974038,2.6736986,0.0042143739,0,-0.0051480928,0.012694036,-0.4055521
+E5b,12,MAE of R_img vs T1,1.8878099,0.0065986732,1.8968522,0.0030093042,0,-0.009042275,0.0072524754,-1.2467847
+E5b,13,"apparent MAE vs single read, independent AI",2.6685505,0.011974038,2.6653971,0.0041077767,0.5,0.0031534091,0.012659045,0.24910323
+E5b,13,"apparent MAE vs single read, shared AI",2.2124015,0.0098091549,2.211953,0.0032638513,0.5,0.00044853999,0.010337903,0.043387907
+E5b,13,MAE of R_img vs T1,1.8878099,0.0065986732,1.8862843,0.0029776109,0.5,0.0015256154,0.0072393822,0.21073834
+E5b,13,"paired MAE difference, shared minus independent",-0.45614896,0.0046367557,-0.45344409,0.0019681336,0.5,-0.0027048691,0.0050371672,-0.53698219
+E5b,13,"proportion of studies with lower MAE, shared AI",1,0,1,0,0.5,0,0,
+E5b,14,"apparent MAE vs single read, independent AI",2.6685505,0.011974038,2.6696896,0.0041065777,1,-0.0011390881,0.012658656,-0.089984913
+E5b,14,"apparent MAE vs single read, shared AI",2.0987009,0.0082343843,2.1109411,0.0030876515,1,-0.012240247,0.0087942411,-1.391848
+E5b,14,MAE of R_img vs T1,1.8878099,0.0065986732,1.8912633,0.0029534944,1,-0.003453371,0.0072294963,-0.47767795
+E5b,14,"paired MAE difference, shared minus independent",-0.56984959,0.0097591061,-0.55874843,0.0037076183,1,-0.011101159,0.010439664,-1.0633636
+E5b,14,"proportion of studies with lower MAE, shared AI",0.9975,0.002496873,0.9995,0.00049987498,1,-0.002,0.0025464191,-0.78541668
+E6b,22,"Brown-Forsythe rejection rate, two-sided, n_s=10, alpha=0.0",0.042,0.0063431853,0.048,0.0047799582,,-0.006,0.0079425437,-0.7554255
+E6b,22,"Brown-Forsythe rejection rate, one-sided, n_s=10, alpha=0.0",0.032,0.0055656087,0.0345,0.0040810385,,-0.0025,0.0069015125,-0.36223944
+E6b,22,"Brown-Forsythe rejection rate, two-sided, n_s=10, alpha=0.2",0.13,0.010634848,0.136,0.0076649853,,-0.006,0.013109233,-0.45769267
+E6b,22,"Brown-Forsythe rejection rate, one-sided, n_s=10, alpha=0.2",0.191,0.012430567,0.1875,0.00872765,,0.0035,0.015188511,0.23043733
+E6b,22,"Brown-Forsythe rejection rate, two-sided, n_s=10, alpha=0.5",0.731,0.014022803,0.751,0.0096695139,,-0.02,0.017033452,-1.1741601
+E6b,22,"Brown-Forsythe rejection rate, one-sided, n_s=10, alpha=0.5",0.787,0.012947239,0.809,0.0087897383,,-0.022,0.015648978,-1.4058426
+E6b,22,"Brown-Forsythe rejection rate, two-sided, n_s=25, alpha=0.0",0.054,0.0071473072,0.053,0.0050095409,,0.001,0.0087280868,0.11457265
+E6b,22,"Brown-Forsythe rejection rate, one-sided, n_s=25, alpha=0.0",0.04,0.0061967734,0.0415,0.0044596945,,-0.0015,0.0076347151,-0.19647098
+E6b,22,"Brown-Forsythe rejection rate, two-sided, n_s=25, alpha=0.2",0.259,0.013853483,0.2735,0.0099673906,,-0.0145,0.017066572,-0.84961409
+E6b,22,"Brown-Forsythe rejection rate, one-sided, n_s=25, alpha=0.2",0.344,0.015022117,0.3745,0.010822425,,-0.0305,0.018514558,-1.6473523
+E6b,22,"Brown-Forsythe rejection rate, two-sided, n_s=25, alpha=0.5",0.98,0.0044271887,0.98,0.0031304952,,0,0.0054221767,0
+E6b,22,"Brown-Forsythe rejection rate, one-sided, n_s=25, alpha=0.5",0.987,0.0035820385,0.9875,0.0024843259,,-0.0005,0.0043592287,-0.11469919
+E6b,22,"Brown-Forsythe rejection rate, two-sided, n_s=50, alpha=0.0",0.05,0.0068920244,0.044,0.0045860659,,0.006,0.0082784056,0.72477724
+E6b,22,"Brown-Forsythe rejection rate, one-sided, n_s=50, alpha=0.0",0.047,0.0066926079,0.0325,0.003965082,,0.0145,0.0077790022,1.8639923
+E6b,22,"Brown-Forsythe rejection rate, two-sided, n_s=50, alpha=0.2",0.461,0.015763217,0.4785,0.011169999,,-0.0175,0.019319624,-0.90581473
+E6b,22,"Brown-Forsythe rejection rate, one-sided, n_s=50, alpha=0.2",0.569,0.015660109,0.6015,0.010947551,,-0.0325,0.019107273,-1.700923
+E6b,22,"Brown-Forsythe rejection rate, two-sided, n_s=50, alpha=0.5",1,0,1,0,,0,0,
+E6b,22,"Brown-Forsythe rejection rate, one-sided, n_s=50, alpha=0.5",1,0,1,0,,0,0,
+E6b,22,"Brown-Forsythe rejection rate, two-sided, n_s=100, alpha=0.0",0.039,0.0061220095,0.041,0.0044339035,,-0.002,0.0075590013,-0.26458522
+E6b,22,"Brown-Forsythe rejection rate, one-sided, n_s=100, alpha=0.0",0.04,0.0061967734,0.04,0.0043817805,,0,0.0075894664,0
+E6b,22,"Brown-Forsythe rejection rate, two-sided, n_s=100, alpha=0.2",0.696,0.014545927,0.7185,0.010056285,,-0.0225,0.01768369,-1.2723589
+E6b,22,"Brown-Forsythe rejection rate, one-sided, n_s=100, alpha=0.2",0.786,0.012969348,0.8015,0.0089190176,,-0.0155,0.015740168,-0.98474174
+E6b,22,"Brown-Forsythe rejection rate, two-sided, n_s=100, alpha=0.5",1,0,1,0,,0,0,
+E6b,22,"Brown-Forsythe rejection rate, one-sided, n_s=100, alpha=0.5",1,0,1,0,,0,0,
+E6b,0,"Brown-Forsythe rejection rate, two-sided, n_s=10, alpha=0.0",0.039,0.0061220095,0.0425,0.004510751,,-0.0035,0.0076043326,-0.46026393
+E6b,0,"Brown-Forsythe rejection rate, one-sided, n_s=10, alpha=0.0",0.029,0.0053065054,0.0375,0.0042481614,,-0.0085,0.0067974903,-1.2504615
+E6b,0,"Brown-Forsythe rejection rate, two-sided, n_s=10, alpha=0.2",0.128,0.010564847,0.1365,0.0076768402,,-0.0085,0.013059475,-0.65086845
+E6b,0,"Brown-Forsythe rejection rate, one-sided, n_s=10, alpha=0.2",0.173,0.011961229,0.1955,0.0088679127,,-0.0225,0.014889959,-1.5110854
+E6b,0,"Brown-Forsythe rejection rate, two-sided, n_s=10, alpha=0.5",0.714,0.014289997,0.7375,0.0098385403,,-0.0235,0.017349377,-1.3545155
+E6b,0,"Brown-Forsythe rejection rate, one-sided, n_s=10, alpha=0.5",0.776,0.013184233,0.786,0.0091707143,,-0.01,0.016060075,-0.62266211
+E6b,0,"Brown-Forsythe rejection rate, two-sided, n_s=25, alpha=0.0",0.044,0.0064856765,0.0485,0.0048035273,,-0.0045,0.0080708039,-0.55756528
+E6b,0,"Brown-Forsythe rejection rate, one-sided, n_s=25, alpha=0.0",0.041,0.0062704864,0.047,0.0047323884,,-0.006,0.0078558577,-0.76376129
+E6b,0,"Brown-Forsythe rejection rate, two-sided, n_s=25, alpha=0.2",0.237,0.013447342,0.261,0.0098203615,,-0.024,0.016651441,-1.4413167
+E6b,0,"Brown-Forsythe rejection rate, one-sided, n_s=25, alpha=0.2",0.335,0.014925649,0.341,0.010599976,,-0.006,0.018306679,-0.32774923
+E6b,0,"Brown-Forsythe rejection rate, two-sided, n_s=25, alpha=0.5",0.977,0.0047403586,0.9725,0.0036567574,,0.0045,0.0059868919,0.7516421
+E6b,0,"Brown-Forsythe rejection rate, one-sided, n_s=25, alpha=0.5",0.987,0.0035820385,0.983,0.0028905882,,0.004,0.0046028795,0.86902122
+E6b,0,"Brown-Forsythe rejection rate, two-sided, n_s=50, alpha=0.0",0.05,0.0068920244,0.0405,0.0044079332,,0.0095,0.0081810681,1.1612176
+E6b,0,"Brown-Forsythe rejection rate, one-sided, n_s=50, alpha=0.0",0.047,0.0066926079,0.0395,0.004355442,,0.0075,0.0079850407,0.93925633
+E6b,0,"Brown-Forsythe rejection rate, two-sided, n_s=50, alpha=0.2",0.432,0.015664482,0.452,0.011128702,,-0.02,0.019215202,-1.0408425
+E6b,0,"Brown-Forsythe rejection rate, one-sided, n_s=50, alpha=0.2",0.545,0.015747222,0.552,0.011119712,,-0.007,0.019277526,-0.36311714
+E6b,0,"Brown-Forsythe rejection rate, two-sided, n_s=50, alpha=0.5",1,0,0.9995,0.00049987498,,0.0005,0.00049987498,1.0002501
+E6b,0,"Brown-Forsythe rejection rate, one-sided, n_s=50, alpha=0.5",1,0,1,0,,0,0,
+E6b,0,"Brown-Forsythe rejection rate, two-sided, n_s=100, alpha=0.0",0.047,0.0066926079,0.0465,0.0047083835,,0.0005,0.0081829014,0.061103022
+E6b,0,"Brown-Forsythe rejection rate, one-sided, n_s=100, alpha=0.0",0.044,0.0064856765,0.0425,0.004510751,,0.0015,0.0079000554,0.18987209
+E6b,0,"Brown-Forsythe rejection rate, two-sided, n_s=100, alpha=0.2",0.656,0.015022117,0.683,0.01040459,,-0.027,0.018273464,-1.4775523
+E6b,0,"Brown-Forsythe rejection rate, one-sided, n_s=100, alpha=0.2",0.757,0.013562854,0.767,0.0094528038,,-0.01,0.016531984,-0.60488807
+E6b,0,"Brown-Forsythe rejection rate, two-sided, n_s=100, alpha=0.5",1,0,1,0,,0,0,
+E6b,0,"Brown-Forsythe rejection rate, one-sided, n_s=100, alpha=0.5",1,0,1,0,,0,0,

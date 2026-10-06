@@ -1,0 +1,66 @@
+# Protocol amendment 3, package A3-4 (triggers and review). Post hoc sensitivity analyses
+# requested by the senior author on 2026-10-05 (comments C49, C186, C188, C324 AP/SL part).
+# Model parameters are NOT restated here: every condition starts from
+# code/configs/base.yaml (config_version base-2026-09-18-v02) or, for the reproduction of
+# amendment-2 cells, code/configs/amend2_2026-09-18.yaml, and applies the overrides below.
+
+meta:
+  amendment: "A3-4"
+  date: "2026-10-05"
+  seed_entropy: 20261005          # numpy SeedSequence entropy for every new run
+  spawn_prefix: 74                # spawn keys (74, block, ...)
+  chunk_size: 20000               # as in the library; results depend on it
+  n_patients: 100000
+  base_config: code/configs/base.yaml
+  amend2_config: code/configs/amend2_2026-09-18.yaml
+  error_threshold_mm: 2.0
+  taus_mm: [2.0, 3.0, 4.0, 5.0, 6.0]
+
+# ---- block 1: pair-level and patient-level trigger tables (parts a, b, c) -------------
+# Four views; the manuscript's trigger base case is cell 193 of experiment E4 in base.yaml.
+triggers:
+  published:                      # exact rerun of the published cohort (library seed)
+    config: base
+    experiment: E4
+    cell: 193                     # SeedSequence(20260918, spawn_key=(4, 193))
+  replicates: 10                  # independent cohorts, SeedSequence(20261005, spawn_key=(74, 1, rep))
+  bootstrap_resamples: 10000      # cluster bootstrap, SeedSequence(20261005, spawn_key=(74, 9))
+
+# ---- block 4: reviewer-performance grid (part d) ---------------------------------------
+# Three views, three beats, beat variation 15% (experiment E1 of base.yaml).
+review:
+  s_det: [0.0, 0.2, 0.5, 0.8, 1.0]          # P(exclude | reviewed view truly overestimated)
+  f_rej: [0.0, 0.1, 0.3, 0.5]               # P(exclude | reviewed view not overestimated)
+  uninformative: [0.1, 0.2, 0.3, 0.5, 0.8, 1.0]   # additional pairs with s_det = f_rej
+  cutoffs_mm: [7.0, 10.0, 13.0]
+  seed_key: [74, 4]               # the same seed for every condition: common random numbers
+  scenarios:
+    base:               {u_scale: [0.06, 0.25, 0.25, 0.30], window: 0.15}
+    long_axis_8pct:     {u_scale: [0.03, 0.10, 0.10, 0.15], window: 0.15}
+    extreme_accurate:   {u_scale: [0.03, 0.10, 0.10, 0.12], window: null}
+    extreme_inaccurate: {u_scale: [0.25, 0.50, 0.50, 0.60], window: null}
+  overestimation:
+    "off":     {view_over: false}
+    "base":    {view_over: true}
+    "doubled": {view_over: true, p_over: [0.10, 0.30, 0.30, 0.40]}    # not a manuscript level; added here
+  fixed: {K: 3, N_beats: 3, beat_cv: 0.15, rho: 0.3}
+  reproduce:                      # published cells rerun with their library seeds
+    - {label: base,               config: base,   experiment: E1, cell: 703}
+    - {label: long_axis_8pct,     config: base,   experiment: E1, cell: 1855}
+    - {label: extreme_accurate,   config: amend2, experiment: E1, cell: 36}
+    - {label: extreme_inaccurate, config: amend2, experiment: E1, cell: 828}
+    - {label: base_E3,            config: base,   experiment: E3, cell: 29}
+
+# ---- block 5: joint AP/SL distribution (part e) ---------------------------------------
+# Four views (E4 cell 193 parameters). Latent state SeedSequence(20261005, spawn_key=(74, 5, 0)),
+# measurement SeedSequence(20261005, spawn_key=(74, 5, 1)); both are shared by every scenario.
+axes:
+  mean_difference_mm: [2.0, 3.9, 6.0]
+  beta_concentration: {low_variability: 32.0, coded: 8.0, high_variability: 2.0}
+  lognormal_log_corr: {high_correlation: 0.98, mid_correlation: 0.90, low_correlation: 0.70}
+  extra:
+    coded_base:              {family: beta, r_mean: 0.64, r_lower: 0.4, r_upper: 1.0, r_concentration: 8.0}
+    coded_r053:              {family: beta, r_mean: 0.53, r_lower: 0.4, r_upper: 1.0, r_concentration: 8.0}
+    near_circular_beta_r090: {family: beta, r_mean: 0.90, r_lower: 0.4, r_upper: 1.0, r_concentration: 8.0}
+    near_circular_lognormal: {family: lognormal, mu_log: 0.0, sd_log: 0.10}
+    circular_exact:          {family: constant, value: 1.0}

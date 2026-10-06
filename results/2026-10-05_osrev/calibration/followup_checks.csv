@@ -1,0 +1,17 @@
+check,n_expected,n_compared,n_identical,max_abs_diff,passed
+"stage B geometric scenarios (ind15, mid15) re-simulated in stage D: stored and new csv values identical",1024,1024,1024,0,True
+"patient-level draw, reading 2, latent offsets equals the chord-distributed offset scenario",1536,1536,1536,0,True
+"stage C, lower half-width, reproduces geom_underestimation.csv of stage A (ind15, mid15, ind00)",108,108,108,0,True
+anchor-view mean identical across scenarios within replicate and anchor level (common random numbers),64,64,64,0,True
+"ind15 r1_patient: realized mean and SD of the AP long-axis fraction (0.2944, 0.1899) against the calibration (0.2951, 0.1904); tolerance 0.003",2,2,0,0.000758061,True
+"ind15 r2_patient: realized mean and SD of the AP long-axis fraction (0.0832, 0.1258) against the calibration (0.0836, 0.1267); tolerance 0.003",2,2,0,0.0009019377,True
+"mid15 r1_patient: realized mean and SD of the AP long-axis fraction (0.2995, 0.2314) against the calibration (0.3001, 0.2311); tolerance 0.003",2,2,0,0.000615145,True
+"mid15 r2_patient: realized mean and SD of the AP long-axis fraction (0.1837, 0.2242) against the calibration (0.1837, 0.2236); tolerance 0.003",2,2,0,0.0006135827,True
+"ind00 r1_patient: realized mean and SD of the AP long-axis fraction (0.2922, 0.1601) against the calibration (0.2933, 0.1604); tolerance 0.003",2,2,0,0.0010925083,True
+"ind00 r2_patient: realized mean and SD of the AP long-axis fraction (0.0614, 0.0951) against the calibration (0.0617, 0.0960); tolerance 0.003",2,2,0,0.0009553304,True
+"ind15_sd707 r1_patient: realized mean and SD of the AP long-axis fraction (0.2558, 0.2235) against the calibration (0.2573, 0.2245); tolerance 0.003",2,2,0,0.001436647,True
+"ind15_sd707 r2_patient: realized mean and SD of the AP long-axis fraction (0.0571, 0.0884) against the calibration (0.0574, 0.0894); tolerance 0.003",2,2,0,0.00096651038,True
+"mid15_sd707 r1_patient: realized mean and SD of the AP long-axis fraction (0.2692, 0.2372) against the calibration (0.2704, 0.2379); tolerance 0.003",2,2,0,0.0011446667,True
+"mid15_sd707 r2_patient: realized mean and SD of the AP long-axis fraction (0.1386, 0.1878) against the calibration (0.1387, 0.1875); tolerance 0.003",2,2,0,0.0002539997,True
+"ind00_sd707 r1_patient: realized mean and SD of the AP long-axis fraction (0.2497, 0.2134) against the calibration (0.2514, 0.2141); tolerance 0.003",2,2,0,0.0017173509,True
+"ind00_sd707 r2_patient: realized mean and SD of the AP long-axis fraction (0.0358, 0.0542) against the calibration (0.0359, 0.0548); tolerance 0.003",2,2,0,0.00052307164,True
