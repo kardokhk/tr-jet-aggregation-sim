@@ -47,9 +47,9 @@ BAND = dict(facecolor="#d9d9d9", edgecolor="#8c8c8c", hatch="////", lw=0.5)
 READS = ["single beat, same beat", "3-beat mean, same beats",
          "single beat, different beats", "3-beat mean, different beats"]
 READ_LAB = ["1 beat,\nsame", "3 beats,\nsame", "1 beat,\ndifferent", "3 beats,\ndifferent"]
-QTY = {"long-axis view, AP width": dict(color="#000000", marker="o", mfc="#000000", label="AP width, n = 50"),
-       "long-axis view, biplane width": dict(color="#6e6e6e", marker="s", mfc="white", label="Biplane width, n = 50")}
-SINGH_Q = dict(color="#6e6e6e", marker="^", mfc="#6e6e6e", label="Biplane width, n = 10")
+QTY = {"long-axis view, AP width": dict(color="#000000", marker="o", mfc="#000000", label="AP jet width, n = 50"),
+       "long-axis view, biplane width": dict(color="#6e6e6e", marker="s", mfc="white", label="Biplane jet width, n = 50")}
+SINGH_Q = dict(color="#6e6e6e", marker="^", mfc="#6e6e6e", label="Biplane jet width, n = 10")
 BASE_A, BASE_L = 0.06, 0.25
 
 
@@ -89,8 +89,10 @@ def main():
                             hi=r.loa_width_p975, what="median and 2.5-97.5 percentile of study LoA width (mm)"))
     axa.set_xticks(range(4), READ_LAB)
     axa.set_xlim(-0.5, 3.5)
-    axa.set_ylim(0, 15)
-    axa.set_ylabel("Inter-reader 95% LoA\nwidth (mm)")
+    # JACC relabel: "jet width" lengthens the legend; head room so it clears the 1-beat-different bar (top 13.0)
+    axa.set_ylim(0, 18)
+    axa.set_yticks([0, 5, 10, 15])
+    axa.set_ylabel("Inter-reader 95% LoA\ninterval width (mm)")
     axa.set_xlabel("Beats per read; same or different beats for the two readers")
     axa.legend(handles=[Line2D([], [], ls="none", ms=3.2, mew=0.8, mec=s["color"], color=s["color"],
                                marker=s["marker"], mfc=s["mfc"], label=s["label"]) for s in QTY.values()],
@@ -127,8 +129,8 @@ def main():
                         for s in list(QTY.values()) + [SINGH_Q]]
                + [Line2D([], [], color="#000000", lw=0.8, ls=(0, (4, 2)), label="Hauptmann 2026, 95% CI shaded"),
                   Line2D([], [], color="#000000", lw=2.4, label="Singh 2026 range (n = 10)")],
-               loc="lower left", frameon=False, handletextpad=0.6, handlelength=2.2, ncol=2,
-               columnspacing=1.0, labelspacing=0.25, borderaxespad=0.1)
+               loc="lower left", frameon=False, handletextpad=0.3, handlelength=1.8, ncol=2,
+               columnspacing=0.5, labelspacing=0.25, borderaxespad=0.1)  # tightened for the longer "jet width" labels
 
     # ---------------- (c) view minus truth
     SINGH_LIKE_AXIS = -100 * 5.18 / 16.82      # inflow plane minus 3D maximal diameter, % (derived)
@@ -137,7 +139,7 @@ def main():
     axc.axhspan(-24.6, -18.7, facecolor="#f0f0f0", edgecolor="#8c8c8c", hatch="....", lw=0.5)
     # the bands are keyed in the legend (no text boxes over the bands, no labels crossing the lines)
     series_c = {"long-axis view mean, AP, vs T1 AP": dict(color="#000000", marker="o", mfc="#000000", ls="-",
-                                                          label="Single view (AP) vs true maximal span"),
+                                                          label="Single view (AP) vs true maximal jet width"),
                 "long-axis view biplane mean vs mean of T1 AP and SL": dict(color="#6e6e6e", marker="s",
                                                                            mfc="white", ls=(0, (4, 1.5)),
                                                                            label="Biplane vs mean of AP, SL")}
@@ -174,7 +176,7 @@ def main():
     for srcname, st in (("measured (with caliper)", dict(color="#000000", marker="o", mfc="#000000", ls="-",
                                                         label="Measured beats (with caliper)")),
                         ("true beat spans (no caliper)", dict(color="#6e6e6e", marker="s", mfc="white",
-                                                             ls=(0, (4, 1.5)), label="True beat spans"))):
+                                                             ls=(0, (4, 1.5)), label="True per-beat jet widths"))):
         s = cs[cs.source == srcname].sort_values("beat_cv_param")
         lab = st.pop("label")
         axd.plot(100 * s.beat_cv_param, s.pooled_cv_ge3_pct, mec=st["color"], ms=3.2, mew=0.8, lw=0.9,
@@ -192,7 +194,7 @@ def main():
     axd.legend(loc="upper left", frameon=False, handletextpad=0.3, bbox_to_anchor=(0, 0.97))
 
     # ---------------- (e) span distributions
-    items = [("T1 AP (true span)", BASE_L, "True\nmaximal\nspan", "#000000", "D", "#000000"),
+    items = [("T1 AP (true span)", BASE_L, "True\nmaximal\njet width", "#000000", "D", "#000000"),
              ("anchor view 3-beat mean", BASE_L, "Anchor view\n3-beat mean", COLOR["A1"], MARKER["A1"], COLOR["A1"]),
              ("long-axis view single beat", BASE_L, "Long-axis\nview single\nbeat", "#6e6e6e", "v", "white"),
              ("long-axis view 3-beat mean", BASE_L, "Long-axis\nview 3-beat\nmean", "#6e6e6e", "s", "#6e6e6e"),
@@ -222,7 +224,7 @@ def main():
     axe.set_xticks(range(x0 + 1), [it[2] for it in items] + ["Sugiura\n2021 VC\nwidth,\nn = 44"])
     axe.set_xlim(-0.5, x0 + 0.5)
     axe.set_ylim(0, 16)
-    axe.set_ylabel("AP span (mm)")
+    axe.set_ylabel("AP jet width (mm)")
     axe.set_xlabel("Quantity (anchor scale 0.06; long-axis scale L 0.25 unless stated)")
     axe.legend(handles=[Line2D([], [], color="#000000", marker="|", ls="none", ms=9, mew=0.8,
                                label="Marker, median; thin bar, IQR"),
@@ -231,7 +233,7 @@ def main():
 
     for ax in (axa, axb, axc, axd, axe):
         ax.grid(False)
-    figstyle.panel_labels([axa, axb, axc, axd, axe], list("abcde"), dx=-0.17, dy=1.01, size=es.FS_LETTER)
+    figstyle.panel_labels([axa, axb, axc, axd, axe], list("ABCDE"), dx=-0.17, dy=1.01, size=es.FS_LETTER)
     axe.texts[-1].set_x(-0.075)
 
     fig.canvas.draw()

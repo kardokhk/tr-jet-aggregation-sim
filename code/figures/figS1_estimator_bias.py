@@ -66,7 +66,7 @@ def main():
         ax.set_ylim(-1.9, 2.2)
         ax.set_xlabel("Beat-to-beat CV (%)")
         if key == "a":
-            ax.set_ylabel("Bias vs true maximal span,\nK = 3 (mm)")
+            ax.set_ylabel("Bias vs true maximal jet width,\nK = 3 (mm)")
         else:
             ax.tick_params(labelleft=False)
 
@@ -112,15 +112,15 @@ def main():
         ax.set_title(SCEN_TITLE[(u, ov)], fontsize=es.FS_TITLE)
         ax.set_xlabel("Beat-to-beat CV (%)")
         if key == "e":
-            ax.set_ylabel("Largest view mean: bias vs\ntrue maximal span (mm)")
+            ax.set_ylabel("Largest view mean: bias vs\ntrue maximal jet width (mm)")
         else:
             ax.tick_params(labelleft=False)
 
     # ---- i: bias vs K at CV 15%, base scenario; j: RMSE vs K; k: RMSE vs CV (K 3)
     b0 = bs[(bs.u == "base") & (bs.view_over)]
-    for key, metric, xvar, ylab in (("i", "bias", "K", "Bias vs true maximal span,\nCV 15% (mm)"),
-                                    ("j", "rmse", "K", "RMSE vs true maximal span,\nCV 15% (mm)"),
-                                    ("k", "rmse", "beat_cv", "RMSE vs true maximal span,\nK = 3 (mm)")):
+    for key, metric, xvar, ylab in (("i", "bias", "K", "Bias vs true maximal jet width,\nCV 15% (mm)"),
+                                    ("j", "rmse", "K", "RMSE vs true maximal jet width,\nCV 15% (mm)"),
+                                    ("k", "rmse", "beat_cv", "RMSE vs true maximal jet width,\nK = 3 (mm)")):
         ax = axd[key]
         if metric == "bias":
             ax.axhline(0, color="0.6", lw=0.5, zorder=0)
@@ -163,7 +163,7 @@ def main():
     ax.set_xticks([0, 0.5, 0.8, 1.0])
     ax.set_xticklabels(["0", "0.5", "0.8", "1"])
     ax.set_xlabel("Detection sensitivity, $s_{det}$")
-    ax.set_ylabel("Largest view mean after review:\nbias vs true maximal span (mm)")
+    ax.set_ylabel("Largest view mean after review:\nbias vs true maximal jet width (mm)")
     ax.set_ylim(0, 1.4)
     h = [Line2D([], [], color=COLOR["A4"], ls=FR_LS[f], lw=0.9) for f in (0.0, 0.1, 0.3)]
     # v05 (8 pt): the three-entry key no longer fits inside the 27 mm wide panel, so it sits in a strip under
@@ -175,7 +175,7 @@ def main():
     hs = [Line2D([], [], **kw(e)) for e in EST]
     fig.legend(hs, [LABEL[e] for e in EST], loc="outside upper center", ncol=4, frameon=False,
                handlelength=2.6, columnspacing=1.0, fontsize=es.FS_MIN)
-    figstyle.panel_labels([axd[k] for k in "abcdefghijkl"], list("abcdefghijkl"), size=es.FS_LETTER)
+    figstyle.panel_labels([axd[k] for k in "abcdefghijkl"], list("ABCDEFGHIJKL"), size=es.FS_LETTER)
 
     # push the right-end K labels apart to at least 1.15 line heights (display units, after layout)
     fig.canvas.draw()

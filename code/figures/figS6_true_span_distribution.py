@@ -30,8 +30,8 @@ STEM = ROOT / "figures" / "figS6_true_span_distribution"
 WIDTH_MM, HEIGHT_MM = 89.0, 112.0
 XMAX = 30.0
 CUTS = (7.0, 10.0, 13.0)
-POP = {"median10": dict(color="#0072B2", ls="-", label="Median AP span 10 mm (base)"),
-       "median13": dict(color="#D55E00", ls=(0, (4.0, 1.5)), label="Median AP span 13 mm (sensitivity)")}
+POP = {"median10": dict(color="#0072B2", ls="-", label="Median AP jet width 10 mm (base)"),
+       "median13": dict(color="#D55E00", ls=(0, (4.0, 1.5)), label="Median AP jet width 13 mm (sensitivity)")}
 AXIS_NAME = {"AP": "Anteroposterior", "SL": "Septolateral"}
 
 
@@ -73,12 +73,12 @@ def main():
     axs[1].set_yticks([0, 0.05, 0.10, 0.15])
     axs[1].set_xticks([0, 5, 7, 10, 13, 15, 20, 25, 30])
     axs[1].set_xticklabels(["0", "", "7", "10", "13", "", "20", "25", "30"])
-    axs[1].set_xlabel("True maximal span (mm)")
+    axs[1].set_xlabel("True maximal jet width (mm)")
     hs = [Line2D([], [], color=st["color"], ls=st["ls"], lw=1.1) for st in POP.values()]
     hs += [Patch(facecolor="0.80", edgecolor="none"), Line2D([], [], color="0.25", lw=0.6, ls=(0, (1.0, 1.5)))]
-    labels = [st["label"] for st in POP.values()] + ["Simulated patients (base)", "Illustrative cut-offs"]
+    labels = [st["label"] for st in POP.values()] + ["Simulated patients (base)", "Illustrative cutoffs"]
     fig.legend(hs, labels, loc="outside lower center", ncol=1, frameon=False, handlelength=2.0, fontsize=es.FS_MIN)
-    figstyle.panel_labels(list(axs), ["a", "b"], dx=-0.17, dy=1.03, size=es.FS_LETTER)
+    figstyle.panel_labels(list(axs), ["A", "B"], dx=-0.17, dy=1.03, size=es.FS_LETTER)
     paths = figstyle.save_all(fig, str(STEM))
     pd.concat(src, ignore_index=True).to_csv(str(STEM) + "_source.csv", index=False)
     fig.canvas.draw()

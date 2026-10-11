@@ -1,4 +1,7 @@
-"""Figure 2 (v04 numbering, 2026-09-19; Figure 3 in v03, Figure 4 in v01): beat-consistency windows (experiment E2).
+"""Figure 2 (JACC: Advances layout, 2026-10-11): beat-consistency windows (experiment E2).
+
+JACC: Advances: 183 mm (7.2 in) wide, all lettering 10 pt at final size, capital bold panel letters,
+American spelling, "jet width" terminology. Plotted values are unchanged from the EHJ-CVI version.
 
 Rows: (a) probability that a +-W window is met by the first N beats vs beat CV;
 (b) expected beats acquired to satisfy the window (prospective);
@@ -18,7 +21,13 @@ sys.path.insert(0, "/home/users/u104629/.claude/academic/assets")
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import figstyle  # noqa: E402  (sets Agg backend)
 import figqa  # noqa: E402
-import estimator_style as es  # noqa: E402  shared text sizes (8 pt floor)
+import estimator_style as es  # noqa: E402  shared text sizes
+
+# JACC: Advances asks for lettering of at least 10 pt at final size. Override the shared (EHJ-CVI)
+# sizes here, before es.use_journal_text() reads them; the shared module itself is not edited.
+es.FS_MIN = 10.0
+es.FS_TITLE = 10.0
+es.FS_LETTER = 12.0
 import matplotlib.pyplot as plt  # noqa: E402
 import pandas as pd  # noqa: E402
 from matplotlib.lines import Line2D  # noqa: E402
@@ -26,7 +35,8 @@ from matplotlib.lines import Line2D  # noqa: E402
 ROOT = Path(__file__).resolve().parents[2]
 AN = ROOT / "results" / "2026-09-18_full" / "analysis"
 STEM = str(ROOT / "figures" / "fig2_beat_rules")
-WIDTH_MM, HEIGHT_MM = 183.0, 170.0
+WIDTH_MM, HEIGHT_MM = 183.0, 230.0  # JACC: Advances, taller so that 10 pt text fits
+LEGEND_FRAC = 0.072  # top strip of the figure reserved for the shared key
 
 from estimator_style import COLOR, MARKER  # noqa: E402  fixed estimator colours and markers
 
@@ -58,8 +68,10 @@ def main():
     lim = pd.read_csv(AN / "E2_limited.csv")
     err = pd.read_csv(AN / "E2_error.csv")
 
-    fig, axs = figstyle.figure_mm(WIDTH_MM, HEIGHT_MM, nrows=4, ncols=2, layout="constrained")
-    fig.get_layout_engine().set(h_pad=2 / 72, w_pad=2 / 72, hspace=0.04, wspace=0.04)
+    fig, axs = figstyle.figure_mm(WIDTH_MM, HEIGHT_MM, max_height_mm=240.0, nrows=4, ncols=2,
+                                  layout="constrained")
+    fig.get_layout_engine().set(h_pad=2 / 72, w_pad=2 / 72, hspace=0.04, wspace=0.04,
+                                rect=(0, 0, 1, 1 - LEGEND_FRAC))
     src = []
 
     # ---- (a) window met by first N beats; (b) beats acquired; (d) limited (retro)
@@ -87,7 +99,7 @@ def main():
                         ax.plot(100 * d["p_beat_cv"], yv, color=c, ls=lsx, lw=1.0)
                     else:
                         ax.plot(100 * d["p_beat_cv"], yv, color=c, ls=lsx, lw=0.9, marker=WMK[W],
-                                ms=2.6, mew=0.7, mec=c, mfc=c if rs == "sinus" else "white",
+                                ms=3.2, mew=0.7, mec=c, mfc=c if rs == "sinus" else "white",
                                 clip_on=False)
                     for _, r in d.iterrows():
                         src.append(dict(panel="abd"[[0, 1, 3].index(row)], column=f"N={N}", rhythm=rs,
@@ -104,7 +116,7 @@ def main():
             ax.set_xlabel("Beat-to-beat CV (%)")
             if col == 0:
                 ax.set_ylabel(ylab)
-            ax.set_title(f"{MODE_T[mode]}, N = {N}", fontsize=es.FS_TITLE, pad=2)
+            ax.set_title(f"{MODE_T[mode]}, N = {N}", fontsize=es.FS_TITLE, pad=3)
             if row == 1:
                 # own scale per column so the N = 3 curves are not compressed; see caption
                 ax.set_ylim(0, 6.5 if N == 3 else 13)
@@ -119,7 +131,7 @@ def main():
                         subset="all", estimand="T1", metric="rmse_mm", p_beat_cv=0.15).sort_values("p_N_beats")
                 st = EST[est]
                 ax.plot(d["p_N_beats"], d["value"], color=st["color"], ls=ls, lw=1.0, marker=st["marker"],
-                        ms=4, mfc=st["color"] if fill else "white", mec=st["color"], mew=0.8)
+                        ms=4.5, mfc=st["color"] if fill else "white", mec=st["color"], mew=0.8)
                 for _, r in d.iterrows():
                     src.append(dict(panel="c", column=rs, rhythm=rs, data_mode="prospective", axis=AXIS, W=W,
                                     beat_cv=0.15, N=r["p_N_beats"], estimator=est, estimand="T1",
@@ -129,35 +141,43 @@ def main():
         ax.set_ylim(1.5, 3.0)
         ax.set_xlabel("Beats averaged per view, N")
         if col == 0:
-            ax.set_ylabel("RMSE vs true maximal\nspan (mm)")
-        ax.set_title("Prospective, " + RHY_LABEL[rs][0].lower() + RHY_LABEL[rs][1:] + ", beat CV 15%"
-                     if rs == "sinus" else "Prospective, " + RHY_LABEL[rs] + ", beat CV 15%",
-                     fontsize=es.FS_TITLE, pad=2)
+            ax.set_ylabel("RMSE vs true maximal\njet width (mm)")
+        ax.set_title("Prospective, sinus rhythm, beat CV 15%" if rs == "sinus"
+                     else "Prospective, AF, beat CV 15%", fontsize=es.FS_TITLE, pad=3)
     # Legend split by encoding (estimator = colour and marker; window = line style and marker fill), so the
     # entries stay short enough to sit between the curves at 8 pt (v05, 2026-09-19).
-    hc = [Line2D([], [], color=EST["A1"]["color"], marker="o", ms=4, ls="-", label="Anchor-view mean"),
-          Line2D([], [], color=EST["A6"]["color"], marker="P", ms=4, ls="-", label="Index beat"),
+    hc = [Line2D([], [], color=EST["A1"]["color"], marker="o", ms=4.5, ls="-", label="Anchor-view mean"),
+          Line2D([], [], color=EST["A6"]["color"], marker="P", ms=4.5, ls="-", label="Index beat"),
           Line2D([], [], color="#6e6e6e", marker="o", ms=4, ls="-", label="No window (filled)"),
           Line2D([], [], color="#6e6e6e", marker="o", ms=4, mfc="white", ls="--",
                  label="±15% window (open)")]
     # estimators keyed in the sinus panel, window in the AF panel, each in the gap between the curves
     for ax, hh in ((axs[2, 0], hc[:2]), (axs[2, 1], hc[2:])):
-        ax.legend(handles=hh, loc="center right", bbox_to_anchor=(1.0, 0.45), ncol=1, frameon=False,
+        ax.legend(handles=hh, loc="center right", bbox_to_anchor=(1.0, 0.47), ncol=1, frameon=False,
                   fontsize=es.FS_MIN, handlelength=2.6, borderaxespad=0.2, labelspacing=0.3)
 
     # ---- shared legend for rows a, b, d
     # Window levels as colour swatches, rhythm as line style in neutral mid-grey,
     # so that no legend glyph encodes two things at once.
-    hw = [Line2D([], [], color=WCOL[w], ls="-", lw=0.9, marker=WMK[w], ms=3,
+    # At 10 pt the seven entries do not fit on one line of a 183 mm figure: window levels on the
+    # first line, rhythm on the second, in a strip reserved above the panels (LEGEND_FRAC).
+    hw = [Line2D([], [], color=WCOL[w], ls="-", lw=0.9, marker=WMK[w], ms=3.6,
                  label=f"W ±{int(round(100 * w))}%") for w in WCOL]
-    hw += [Line2D([], [], color="#000000", ls=":", lw=1.0, label="No window"),
-           Line2D([], [], color="#6e6e6e", ls="-", lw=0.9, marker="o", ms=3, label="Sinus (filled)"),
-           Line2D([], [], color="#6e6e6e", ls="--", lw=0.9, marker="o", ms=3, mfc="white",
-                  label="AF, RR CV 20% (open)")]
-    fig.legend(handles=hw, loc="outside upper center", ncol=7, frameon=False, fontsize=es.FS_MIN,
-               title="Rows a, b, d: beat-consistency window W and rhythm", title_fontsize=es.FS_MIN, handlelength=2.6)
+    hw += [Line2D([], [], color="#000000", ls=":", lw=1.0, label="No window")]
+    hr = [Line2D([], [], color="#6e6e6e", ls="-", lw=0.9, marker="o", ms=3.6, label="Sinus rhythm (filled)"),
+          Line2D([], [], color="#6e6e6e", ls="--", lw=0.9, marker="o", ms=3.6, mfc="white",
+                 label="Atrial fibrillation (AF), RR CV 20% (open)")]
+    lkw = dict(frameon=False, fontsize=es.FS_MIN, handlelength=2.6, columnspacing=1.6, borderaxespad=0.0,
+               borderpad=0.0)
+    line = 1.42 * es.FS_MIN / 72 / fig.get_figheight()  # one text line as a figure fraction
+    top = 1 - 2 / 72 / fig.get_figheight()
+    l1 = fig.legend(handles=hw, loc="upper center", bbox_to_anchor=(0.5, top), ncol=5,
+                    title="Rows A, B, D: beat-consistency window W and rhythm", title_fontsize=es.FS_MIN, **lkw)
+    l2 = fig.legend(handles=hr, loc="upper center", bbox_to_anchor=(0.5, top - 2 * line), ncol=2, **lkw)
+    for lg in (l1, l2):
+        lg.set_in_layout(False)
 
-    figstyle.panel_labels([axs[0, 0], axs[1, 0], axs[2, 0], axs[3, 0]], list("abcd"), dx=-0.22, dy=1.02, size=es.FS_LETTER)
+    figstyle.panel_labels([axs[0, 0], axs[1, 0], axs[2, 0], axs[3, 0]], list("ABCD"), dx=-0.27, dy=1.02, size=es.FS_LETTER)
 
     fig.canvas.draw()
     issues = figqa.report(fig, min_pt=es.FS_MIN)

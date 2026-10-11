@@ -1,11 +1,15 @@
 #!/usr/bin/env python
-"""Figure 3 (v04 numbering, 2026-09-19; was Figure 2 in v03; amendment 2): estimator bias and RMSE across view-accuracy scenarios (E1b).
+"""Figure 3 (JACC: Advances layout, 2026-10-11): estimator bias and RMSE across view-accuracy scenarios (E1b).
+
+JACC: Advances: 183 mm (7.2 in) wide, all lettering 10 pt at final size, capital bold panel letters,
+American spelling, "jet width" terminology. Plotted values are unchanged from the EHJ-CVI version.
+Rows A and B share their x axis and column headings, so tick labels and the x label appear under B only.
 
 Input : results/2026-09-18_amend2/analysis/E1bE3b_e1_long.csv, E1bE3b_e1_inflation.csv,
         E1bE3b_e1_worstcase.csv (from code/08_analyse_amend2_e1e3.py).
 Output: figures/fig3_view_accuracy.{pdf,png,tif}, figures/fig3_view_accuracy_source.csv.
-AP axis, estimand T1. Panels a-c at K 3 (a, b), beat CV 15% (a, b), overestimation on, no beat-consistency
-window, median true AP span 10 mm; rho 0.3, N 3, sinus, prospective; A4 s_det 0.8, f_rej 0.1.
+AP axis, estimand T1. Panels A-C at K 3 (A, B), beat CV 15% (A, B), overestimation on, no beat-consistency
+window, median true AP jet width 10 mm; rho 0.3, N 3, sinus, prospective; A4 s_det 0.8, f_rej 0.1.
 """
 from __future__ import annotations
 
@@ -15,7 +19,13 @@ from pathlib import Path
 sys.path.insert(0, "/home/users/u104629/.claude/academic/assets")
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import figqa  # noqa: E402
-import estimator_style as es  # noqa: E402  shared text sizes (8 pt floor)
+import estimator_style as es  # noqa: E402  shared text sizes
+
+# JACC: Advances asks for lettering of at least 10 pt at final size. Override the shared (EHJ-CVI)
+# sizes here, before es.use_journal_text() reads them; the shared module itself is not edited.
+es.FS_MIN = 10.0
+es.FS_TITLE = 10.0
+es.FS_LETTER = 12.0
 import figstyle  # noqa: E402
 import matplotlib.pyplot as plt  # noqa: E402
 import numpy as np  # noqa: E402
@@ -29,7 +39,7 @@ from estimator_style import COLOR, LABEL, LS, MARKER, kw, mfc  # noqa: E402
 ROOT = Path(__file__).resolve().parents[2]
 AN = ROOT / "results" / "2026-09-18_amend2" / "analysis"
 STEM = ROOT / "figures" / "fig3_view_accuracy"
-WIDTH_MM, HEIGHT_MM = 183.0, 170.0
+WIDTH_MM, HEIGHT_MM = 183.0, 210.0  # JACC: Advances, taller so that 10 pt text fits
 AXIS = "AP"
 EST4 = ["A1", "A2", "A3", "A4"]
 LONG = [8.0, 20.0, 40.0]
@@ -60,7 +70,7 @@ def main():
     # (nested gridspecs rather than subfigures, so that figqa.report sees every axes via fig.axes)
     fig = plt.figure(figsize=figstyle.mm(WIDTH_MM, HEIGHT_MM), layout="constrained")
     fig.get_layout_engine().set(h_pad=0.03, w_pad=0.03, hspace=0.03, wspace=0.03)
-    outer = fig.add_gridspec(2, 1, height_ratios=[2, 1.12])
+    outer = fig.add_gridspec(2, 1, height_ratios=[2, 1.15])
     gt = outer[0].subgridspec(2, 3)
     gb = outer[1].subgridspec(1, 2, width_ratios=[1, 2.1])
     axd = {f"{r}{j + 1}": fig.add_subplot(gt[i, j]) for i, r in enumerate("ab") for j in range(3)}
@@ -68,15 +78,15 @@ def main():
 
     # ---- a, b: bias and RMSE vs anchor underestimation, one panel per long-axis level
     base = lw[base_mask(lw)]
-    for row, metric, ylab, ylim in (("a", "bias", "Bias vs true maximal\nspan (mm)", (-3.4, 1.2)),
-                                    ("b", "rmse", "RMSE vs true maximal\nspan (mm)", (1.5, 4.3))):
+    for row, metric, ylab, ylim in (("a", "bias", "Bias vs true maximal\njet width (mm)", (-3.4, 1.2)),
+                                    ("b", "rmse", "RMSE vs true maximal\njet width (mm)", (1.5, 4.3))):
         for j, L in enumerate(LONG, start=1):
             ax = axd[f"{row}{j}"]
             if metric == "bias":
                 ax.axhline(0, color="0.6", lw=0.5, zorder=0)
             for e in EST4:
                 s = base[(base.long_mean_pct == L) & (base.estimator == e)].sort_values("anchor_mean_pct")
-                ax.plot(s.anchor_mean_pct, s[metric], **kw(e))
+                ax.plot(s.anchor_mean_pct, s[metric], **kw(e, ms=3.6))
                 src.append(s.assign(panel=row, quantity=metric))
             ax.set_xscale("log")
             ax.set_xticks(ANCH)
@@ -84,8 +94,11 @@ def main():
             ax.xaxis.set_minor_locator(plt.NullLocator())
             ax.set_xlim(2.0, 24.0)
             ax.set_ylim(*ylim)
-            ax.set_title(f"Long-axis views {L:g}% underestimated", fontsize=es.FS_TITLE)
-            ax.set_xlabel("Mean anchor-view underestimation\n(%, log scale)")
+            if row == "a":   # column heading once; rows A and B share the x axis
+                ax.set_title(f"Long-axis views\n{L:g}% underestimated", fontsize=es.FS_TITLE)
+                ax.tick_params(labelbottom=False)
+            else:
+                ax.set_xlabel("Anchor-view underestimation\n(mean %, log scale)")
             if j == 1:
                 ax.set_ylabel(ylab)
             else:
@@ -103,9 +116,9 @@ def main():
         ax.vlines(x, rng["min"], rng["max"], color=K_BAR[K], lw=2.2, zorder=1)
         ref = g[(g.anchor_mean_pct == REF_COMBO[0]) & (g.long_mean_pct == REF_COMBO[1])].sort_values("beat_cv")
         ax.plot(100 * ref.beat_cv + off[K], ref.inflation, color="black", ls=K_LS[K],
-                marker=K_MARKER[K], ms=3.4, mfc=K_MFC[K], mec="black", mew=0.8, lw=0.9, zorder=3)
+                marker=K_MARKER[K], ms=4.0, mfc=K_MFC[K], mec="black", mew=0.8, lw=0.9, zorder=3)
         khandles.append((Rectangle((0, 0), 1, 1, fc=K_BAR[K], ec="none"),
-                         Line2D([], [], color="black", ls=K_LS[K], marker=K_MARKER[K], ms=3.4,
+                         Line2D([], [], color="black", ls=K_LS[K], marker=K_MARKER[K], ms=4.0,
                                 mfc=K_MFC[K], mec="black", mew=0.8, lw=0.9)))
         src.append(g.assign(panel="c", estimator="A3-A1", quantity="inflation"))
     ax.legend(khandles, [f"K = {K}" for K in (2, 3, 4)], loc="upper left", frameon=False,
@@ -113,9 +126,10 @@ def main():
               fontsize=es.FS_MIN, borderaxespad=0.2, labelspacing=0.3)
     ax.set_xticks([5, 15, 30])
     ax.set_xlim(1, 34)
-    ax.set_ylim(0, 4.6)
+    ax.set_ylim(0, 5.2)  # headroom so the key clears the range bars at 10 pt
+    ax.set_yticks([0, 1, 2, 3, 4, 5])
     ax.set_xlabel("Beat-to-beat CV (%)")
-    ax.set_ylabel("Excess of largest view mean\nover anchor-view mean (mm)")
+    ax.set_ylabel("Largest view mean minus\nanchor-view mean (mm)")
     ax.set_title("K = 2 to 4 views", fontsize=es.FS_TITLE)
 
     # ---- d: min-max bias over the 12 view-accuracy combinations
@@ -147,13 +161,19 @@ def main():
     for k in (1, 2):
         ax.axvline((centres[3 * k - 1] + centres[3 * k]) / 2, color="0.8", lw=0.5, zorder=0)
     ax.set_xlabel("Beat-to-beat CV (%)")
-    ax.set_ylabel("Bias vs true maximal span,\nrange over 12 scenarios (mm)")
+    ax.set_ylabel("Bias vs true maximal jet width,\nrange over 12 scenarios (mm)")
     ax.set_title("Minimum to maximum bias across view-accuracy scenarios", fontsize=es.FS_TITLE)
 
-    hs = [Line2D([], [], **kw(e, lw=1.1)) for e in EST4]
-    fig.legend(hs, [LABEL[e] for e in EST4], loc="outside upper center", ncol=4, frameon=False,
-               handlelength=2.8, columnspacing=1.8, fontsize=es.FS_MIN)
-    figstyle.panel_labels([axd["a1"], axd["b1"], axd["c"], axd["d"]], list("abcd"), size=es.FS_LETTER)
+    hs = [Line2D([], [], **kw(e, ms=3.6, lw=1.1)) for e in EST4]
+    # two rows of two: the four names do not fit on one 183 mm line at 10 pt
+    order = [0, 2, 1, 3]  # legend fills column by column; this puts A1, A2 on the first line
+    fig.legend([hs[i] for i in order], [LABEL[EST4[i]] for i in order], loc="outside upper center", ncol=2,
+               frameon=False, handlelength=2.8, columnspacing=2.4, fontsize=es.FS_MIN)
+    # panel letters at the same physical offset (14 mm) left of each axes, whatever its width
+    fig.canvas.draw()
+    for key, letter in zip(("a1", "b1", "c", "d"), "ABCD"):
+        w_mm = axd[key].get_position().width * WIDTH_MM
+        figstyle.panel_labels([axd[key]], [letter], dx=-14.0 / w_mm, dy=1.04, size=es.FS_LETTER)
 
     paths = figstyle.save_all(fig, str(STEM))
     pd.concat(src, ignore_index=True).to_csv(str(STEM) + "_source.csv", index=False)

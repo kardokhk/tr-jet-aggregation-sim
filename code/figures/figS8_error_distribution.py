@@ -99,7 +99,7 @@ def main():
     ax2.set_xlim(-0.6, 6.85)
     ax2.set_ylim(-9, 9)
     ax2.set_yticks(range(-8, 9, 4))
-    ax2.set_xlabel("True maximal span (mm)")
+    ax2.set_xlabel("True maximal jet width (mm)")
     ax2.set_ylabel("Error, reported minus true (mm)")
     h = [Line2D([], [], ls="none", marker=es.MARKER[e], ms=3.6, mfc=es.mfc(e), mec=es.COLOR[e], mew=0.8,
                 color=es.COLOR[e], label=es.LABEL[e]) for e in RULES]
@@ -108,7 +108,7 @@ def main():
                         Line2D([], [], color="#4d4d4d", lw=1.4, marker="o", ms=3.4, mfc="#4d4d4d",
                                label="Median and central 95% of error")],
                loc="upper left", frameon=False, handlelength=1.8, borderaxespad=0.2)
-    figstyle.panel_labels([ax1, ax2], ["a", "b"], dx=-0.14, dy=1.03, size=es.FS_LETTER)
+    figstyle.panel_labels([ax1, ax2], ["A", "B"], dx=-0.14, dy=1.03, size=es.FS_LETTER)
     ax2.texts[-1].set_x(-0.10)
 
     fig.canvas.draw()

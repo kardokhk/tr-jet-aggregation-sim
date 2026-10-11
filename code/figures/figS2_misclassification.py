@@ -32,7 +32,7 @@ ROWS = [("base", "Underestimation 20%,\noverestimation on"),
         ("low", "Underestimation 8%,\noverestimation on")]
 COLS = [("sensitivity", "Sensitivity (%)", (60, 100)),
         ("specificity", "Specificity (%)", (60, 100)),
-        ("nri_vs_A1", "NRI vs anchor-view mean\n(percentage points)", (-12, 9))]
+        ("nri_vs_A1", "Difference in Youden index\nfrom anchor-view mean\n(percentage points)", (-12, 9))]
 
 
 def main():
@@ -72,13 +72,13 @@ def main():
             ax.set_ylim(*ylim)
             if metric.startswith("nri"):
                 ax.set_yticks([-10, -5, 0, 5])
-            ax.set_xlabel("Cut-off c (mm)")
+            ax.set_xlabel("Cutoff c (mm)")
             ax.set_ylabel(ylab)
             ax.set_title(utitle, fontsize=es.FS_TITLE)
     hs = [Line2D([], [], **kw(e, lw=0)) for e in EST]
     fig.legend(hs, [LABEL[e] for e in EST], loc="outside upper center", ncol=4, frameon=False,  # 4 columns: plain names
                handlelength=1.2, columnspacing=1.2, fontsize=es.FS_MIN)
-    figstyle.panel_labels([axd[k] for k in "abcdef"], list("abcdef"), size=es.FS_LETTER)
+    figstyle.panel_labels([axd[k] for k in "abcdef"], list("ABCDEF"), size=es.FS_LETTER)
     paths = figstyle.save_all(fig, str(STEM))
     pd.concat(src, ignore_index=True).to_csv(str(STEM) + "_source.csv", index=False)
     fig.canvas.draw()

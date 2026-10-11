@@ -1,5 +1,11 @@
 # Figures
 
+Relabelled on 2026-10-11 (version 0.6.0): the measured quantity is printed as "jet width" (previously "span"),
+spelling is American, panel letters are capitals, and the text of Figures 1 to 5 is at least 10 pt (Figures 2 to 5
+are taller for that reason). Supplementary Figure S2, panels C and F: the axis label now reads "Difference in
+Youden index" (the same quantity as the two-category NRI printed before). No plotted value changed: every
+`_source.csv` is identical to version 0.5.0. File stems are unchanged.
+
 Numbering revised for manuscript v04 (EHJ-CVI) on 2026-09-19; see the renaming history below. Every figure is regenerable from its script with the project
 environment (`/project/home/p201509/envs/duomax-sim/bin/python`, login node). Each stem has a PDF
 master, a 600 dpi PNG, an RGB LZW TIFF, a `_source.csv` holding the plotted values, and the QA

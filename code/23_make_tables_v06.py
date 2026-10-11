@@ -3,7 +3,7 @@
 Modelled on code/15_make_tables_v04.py, which is imported for its formatting helpers and for the bodies of
 Supplementary Tables S3 and S4 (numbers unchanged, wording corrected by asserted replacements) and is not edited.
 Supplementary Table S7 (ADEMP reporting checklist) is appended at build time from
-submission/source/ademp-checklist.md and is not produced here.
+manuscript_build/ademp-checklist.md and is not produced here.
 
 Every number in the output is read from a result file under results/2026-09-18_* or
 results/2026-10-05_osrev/* (or from the two configuration files for the parameter table). Text that describes
@@ -164,7 +164,7 @@ def table1_main():
             "underestimation 4.8%, long-axis underestimation 20%, overestimation present, sinus rhythm, prospective "
             "acquisition. 12 scenarios: no window. Bias: mean of measured minus true span. MCI, Monte Carlo interval; "
             "RMSE, root-mean-square error; MAE, mean absolute error. The 13 mm cut-off is illustrative. 100,000 "
-            "simulated patients per condition. MAE, 95th percentile and RMSE range: post hoc summaries of the same "
+            "simulated patients per condition. MAE, 95th percentile and RMSE range: computed from the same "
             "patients.")
     nfoot = words(foot)
     assert nfoot <= T1_FOOT_MAX, f"Table 1 footnote has {nfoot} words (limit {T1_FOOT_MAX})"
@@ -2491,7 +2491,7 @@ def main():
     s26, tests = tableS26()
     supp = [s1, tableS2(), tableS3(), tableS4(), tableS5(), tableS6(),
             "<!-- Supplementary Table S7 (ADEMP reporting checklist) is appended at build time from "
-            "submission/source/ademp-checklist.md and is not generated here. -->",
+            "manuscript_build/ademp-checklist.md and is not generated here. -->",
             tableS8(), tableS9(), tableS10(), tableS11(), tableS12(), tableS13(), tableS14(), tableS15(), tableS16(),
             tableS17(), tableS18(), tableS19(), tableS20(), tableS21(), tableS22(), tableS23(), tableS24(), tableS25(),
             s26, tableS27()]

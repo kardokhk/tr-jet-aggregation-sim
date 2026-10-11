@@ -128,3 +128,10 @@ Pilot plausibility: at lambda 0 the shared AI equals the independent AI (paired 
 - A follow-up calibration run of 6 October added a patient-level geometric draw (default off); with it off, stored values are reproduced.
 - Outputs, job numbers and costs: results/2026-10-05_osrev/README.md and environment.md. Full test log: tests/logs/pytest-2026-10-06.log (211 tests).
 - No file under results/2026-09-18_* changed.
+
+
+## 2026-10-11: terminology and figure labels, release 0.6.0
+
+- The measured quantity is now called the color Doppler jet width at the leaflet tips ("jet width") in the figures and documentation; it was called the jet span before. Code identifiers, result columns and file names keep "span".
+- Figure scripts relabelled (jet width, American spelling, capital panel letters); text of Figures 1 to 5 raised to at least 10 pt, with taller Figures 2 to 5. Supplementary Figure S2, panels C and F: axis label changed from "NRI vs anchor-view mean" to "Difference in Youden index from anchor-view mean", the same quantity.
+- No simulation, analysis result or plotted value changed: every figure source CSV and every file under results/ is identical to release 0.5.0. No library or test file changed, so the test suite was not rerun.

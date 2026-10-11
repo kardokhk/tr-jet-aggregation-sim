@@ -82,3 +82,6 @@ Accounting read 2026-10-06 10:24.
 
 Job roles: 5223287 planned experiments (`results/2026-09-18_full`); 5223386 post hoc exploratory sensitivity analyses (`_sens`); 5223669 second amendment (`_amend2`); 5301518 software-verification reruns; 5301599 view rules; 5301601 cut-offs; 5301653 beat rules; 5301795 triggers and review; 5301846 calibration (superseded by 5301947: same simulation results, csv precision too low for the bit-level check); 5301894 AI evaluation (failed after 55 s on an unmatched model pair in a sensitivity cell; fixed and resubmitted as 5301941); 5306852 and later `duomax-pytest` jobs full test suite; 5306853 patient-clustered standard errors for Figure 4; `osrev-calibration` jobs of 2026-10-06 the calibration follow-up (stages C and D).
 
+## Figure relabelling for release 0.6.0 (2026-10-11, login node)
+
+- No packages installed in `/project/home/p201509/envs/duomax-sim`; figures regenerated with the same environment (Python 3.11.16, matplotlib 3.11.2) from the stored results. No simulation or analysis was rerun and no batch job was submitted.

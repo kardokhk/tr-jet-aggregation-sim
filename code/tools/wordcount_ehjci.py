@@ -14,7 +14,7 @@ Counted towards the 5,000-word limit ("including references, figure legends and 
 The abstract ('## Abstract' up to the next level-2 heading, Keywords line excluded) has its own 250-word limit.
 Title page, keywords, declarations, alt text and the graphical abstract legend are reported but not counted.
 
-The same functions are imported by submission/source/build_submission_md.py, so the count printed here is the
+The same functions are imported by manuscript_build/build_submission_md.py, so the count printed here is the
 count the build enforces. Exit status: 0 within both limits, 1 above a limit, 2 on a structural error.
 A reference file that does not exist is skipped with a note; a cited key without a verified entry is listed
 and counted as zero words (the build refuses such a draft).

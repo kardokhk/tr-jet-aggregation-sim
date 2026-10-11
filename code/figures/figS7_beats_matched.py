@@ -142,7 +142,7 @@ def main():
     axd["c2"].set_yticks([0, 0.05, 0.10, 0.15])
     axd["c2"].set_xlabel("Serial correlation of consecutive beats")
     fig.align_ylabels([axd["c1"], axd["c2"]])
-    figstyle.panel_labels([axd["a1"], axd["b"], axd["c1"]], ["a", "b", "c"], dx=-0.14, dy=1.03, size=es.FS_LETTER)
+    figstyle.panel_labels([axd["a1"], axd["b"], axd["c1"]], ["A", "B", "C"], dx=-0.14, dy=1.03, size=es.FS_LETTER)
 
     fig.canvas.draw()
     issues = figqa.report(fig, min_pt=es.FS_MIN)

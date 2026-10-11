@@ -58,7 +58,7 @@ case "${1:-analyse}" in
     $PY code/15_make_tables_v04.py      # tables of manuscript v04 (release 0.4.0)
     if [ -d drafts ]; then              # manuscript drafts are kept outside the public repository
       $PY code/23_make_tables_v06.py    # tables of manuscript v06: Table 1, Supplementary Tables S1 to S6, S8 to S27
-      echo "Manuscript and supplement are assembled by 'bash submission/source/build_all.sh' (not public)."
+      echo "Manuscript and supplement are assembled by 'bash manuscript_build/build_all.sh' (not public)."
     fi ;;
   *) echo "usage: bash run_all.sh [simulate|analyse|test]" >&2; exit 2 ;;
 esac

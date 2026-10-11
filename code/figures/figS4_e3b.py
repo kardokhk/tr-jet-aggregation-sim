@@ -84,7 +84,7 @@ def main():
             ax.set_xticks(ticks)
             ax.set_xticklabels([f"{L:g}" for a in ANCH for L in LONG], fontsize=es.FS_MIN)
             if i == 0:
-                ax.set_title(f"Cut-off {cut:g} mm", fontsize=es.FS_TITLE)
+                ax.set_title(f"Cutoff {cut:g} mm", fontsize=es.FS_TITLE)
             if j == 0:
                 ax.set_ylabel(f"{axis} {metric} (%)")
             elif metric == "sensitivity":
@@ -98,7 +98,7 @@ def main():
     hs = [Line2D([], [], **kw(e)) for e in EST4]
     fig.legend(hs, [LABEL[e] for e in EST4], loc="outside upper center", ncol=4, frameon=False,
                handlelength=2.8, columnspacing=1.8, fontsize=es.FS_MIN)
-    figstyle.panel_labels([axs[i, 0] for i in range(4)], list("abcd"), size=es.FS_LETTER)
+    figstyle.panel_labels([axs[i, 0] for i in range(4)], list("ABCD"), size=es.FS_LETTER)
 
     paths = figstyle.save_all(fig, str(STEM))
     pd.concat(src, ignore_index=True).to_csv(str(STEM) + "_source.csv", index=False)

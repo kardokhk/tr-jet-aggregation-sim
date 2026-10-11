@@ -26,6 +26,11 @@ reference with the models of the main text (share of image error reproduced 0% a
 those of the Results (1.60, 2.23, 2.08, 1.89 mm) and the reference is named in the key; panel a names the 12
 scenarios on its axis; no plus signs; all text 10 pt or larger; RMSE spelt out. Figure 1: the colour jet span is
 drawn 0.3 units atrial to the leaflet tips (was 0.5), so it is visibly wider than the coaptation gap.
+v10 (2026-10-11, JACC: Advances): the all-schematic Figure 1 (layout "row", fig1_design.*) is redrawn at 183 x 98 mm
+with all text 10 pt or larger (panel letters 12 pt bold capitals), American spelling and the term "jet width" (was
+"jet span"). The size and geometry overrides are confined to F1_JACC, which fig1("row") switches on; the "tee" and
+"stack" layouts keep their 8 pt geometry and take only the new label wording. The illustrative beat values and the
+source CSV are unchanged.
 
 Run: /project/home/p201509/envs/duomax-sim/bin/python code/13_schematic_figures.py [fig1|fig1alt|fig1tee|ga|all]\n  fig1tee writes figures/fig1_design_tee.* (manuscript Figure 1 since 2026-09-29: clinical TEE example on top); it reads a clinical image, so its outputs are gitignored and it is not part of "all"\n  fig1alt writes figures/fig1_design_alt.png only (alternative layout, not a deliverable).
 """
@@ -111,6 +116,10 @@ C_LINE = "#8C8C8C"      # thin grey box outlines
 C_FILL = "#F2F2F2"      # light box fill
 C_OR = "#555555"        # orientation labels
 R_BOX = 1.0             # corner radius (mm) of every box
+# v10 (2026-10-11): JACC: Advances asks for lettering of 10 pt or larger at final size. fig1("row") sets F1_JACC and
+# these sizes; the drawing functions read the module globals when called, so the other layouts are unaffected.
+F1_JACC = False
+JACC_BODY, JACC_HEAD, JACC_LETTER = 10.0, 10.0, 12.0
 
 
 class MMCanvas:
@@ -146,6 +155,12 @@ class MMCanvas:
         return ax
 
     def heading(self, x, ytop, letter, title):
+        if F1_JACC:
+            # 12 pt letter and 10 pt title on one baseline (cap height of the letter below ytop)
+            yb = ytop - F1_LETTER * 0.73 * 25.4 / 72
+            self.ov.text(x, yb, letter, ha="left", va="baseline", fontsize=F1_LETTER, fontweight="bold")
+            self.ov.text(x + 4.6, yb, title, ha="left", va="baseline", fontsize=F1_HEAD, fontweight="bold")
+            return
         self.ov.text(x, ytop, letter, ha="left", va="top", fontsize=F1_LETTER, fontweight="bold")
         self.ov.text(x + 3.6, ytop, title, ha="left", va="top", fontsize=F1_HEAD,
                      fontweight="bold")
@@ -203,22 +218,26 @@ def draw_sideview(ax):
         cur = ((1 - tt) ** 2)[:, None] * p0 + (2 * (1 - tt) * tt)[:, None] * p1 + (tt ** 2)[:, None] * p2
         ax.plot(cur[:, 0], cur[:, 1], color="black", lw=1.6, solid_capstyle="round", zorder=3)
         ax.plot([sgn * x_hinge], [y_ann], marker="o", ms=2.6, color="black", zorder=4)
-    ax.text(8.7, 5.6, "atrium", ha="right", va="top", fontsize=F1_BODY, color=C_OR)
+    ax.text(ax.get_xlim()[1] - 0.1, 5.6, "atrium", ha="right", va="top", fontsize=F1_BODY, color=C_OR)
     ax.text(-8.7, -4.7, "ventricle", ha="left", va="bottom", fontsize=F1_BODY, color=C_OR)
     # 1. colour-Doppler jet span: just atrial to the leaflet tips (the measured quantity)
     y_s = y_tip + 0.3      # v09: closer to the tips, visibly wider than the coaptation gap
     w_s = float(w_at(y_s))
     assert w_s > gap / 2 > float(w_at(y_neck)), (w_s, gap / 2, float(w_at(y_neck)))
     arrow(ax, (-w_s, y_s), (w_s, y_s), style="<|-|>", lw=1.1, ms=4)
-    ax.text(-8.7, 3.6, "colour jet\nspan", ha="left", va="center", fontsize=F1_BODY, linespacing=1.1)
-    ax.plot([-6.0, -w_s - 0.12], [2.55, y_s + 0.1], color="black", lw=0.5)     # leader
+    ax.text(-8.7, 3.6, "jet width at\nleaflet tips", ha="left", va="center", fontsize=F1_BODY, linespacing=1.1)
+    ax.plot([-6.0, -w_s - 0.12], [2.3 if F1_JACC else 2.55, y_s + 0.1], color="black", lw=0.5)     # leader
     # 2. vena contracta: narrowest neck of the jet
     w_n = float(w_at(y_neck))
     ax.plot([-w_n, w_n], [y_neck, y_neck], color="black", lw=1.1, solid_capstyle="butt", zorder=2)
     for sgn in (-1, 1):
         ax.plot([sgn * w_n] * 2, [y_neck - 0.28, y_neck + 0.28], color="black", lw=0.7, zorder=2)
-    ax.text(4.3, 2.6, "vena\ncontracta", ha="left", va="center", fontsize=F1_BODY, linespacing=1.1)
-    ax.plot([4.2, w_n + 0.12], [2.1, y_neck + 0.1], color="black", lw=0.5)       # leader
+    if F1_JACC:      # two lines; the row layout widens the x-range to the right to hold them
+        ax.text(3.5, 2.75, "vena contracta\nwidth", ha="left", va="center", fontsize=F1_BODY, linespacing=1.1)
+        ax.plot([3.4, w_n + 0.12], [1.9, y_neck + 0.1], color="black", lw=0.5)   # leader
+    else:
+        ax.text(4.3, 2.6, "vena\ncontracta\nwidth", ha="left", va="center", fontsize=F1_BODY, linespacing=1.1)
+        ax.plot([4.2, w_n + 0.12], [2.1, y_neck + 0.1], color="black", lw=0.5)   # leader
     # 3. anatomical coaptation gap: distance between the leaflet edges
     y_g = y_tip - 1.4
     for sgn in (-1, 1):
@@ -293,8 +312,9 @@ def draw_beats(ax, src, panel="c"):
     ax.set_xticks([1, 2, 3, 4])
     ax.set_yticks([5, 7, 9, 11])
     ax.tick_params(labelsize=F1_BODY)
-    ax.set_xlabel("Beat, in order measured", fontsize=F1_BODY)
-    ax.set_ylabel("Jet span (mm)", fontsize=F1_BODY)
+    ax.set_xlabel("Beat, in order\nmeasured" if F1_JACC else "Beat, in order measured", fontsize=F1_BODY,
+                  linespacing=1.1)
+    ax.set_ylabel("Jet width (mm)", fontsize=F1_BODY)
 
 
 def rbox(ax, x, y, w, h, text=None, fc=C_FILL, ec=C_LINE, lw=0.5, bold=False, tx=None, **k):
@@ -317,14 +337,17 @@ def draw_flow(ax, w, h):
     # views
     rw = w - 9.0                       # width of the rule container; the view row matches it
     bh, vg = 6.0, 2.0                  # v06: view gap 2.5 -> 2.0 mm so "Anchor view" clears its box at 8 pt
+    rh, oh, anchor = 6.0, 9.5, "Anchor view"
+    if F1_JACC:                        # v10: 10 pt text needs taller boxes and a two-line anchor label
+        bh, rh, oh, anchor = 10.5, 7.5, 12.0, "Anchor\nview"
     vw = (rw - 2 * vg) / 3
     y = h - bh
     xs_v = [0.5 + i * (vw + vg) for i in range(3)]
-    for x, lab in zip(xs_v, ["Anchor view", "View 2", "View 3"]):
+    for x, lab in zip(xs_v, [anchor, "View 2", "View 3"]):
         rbox(ax, x, y, vw, bh, lab)
     # rules: white rows inside one light container, so an arrow from the container means "each rule"
     pad = 1.6
-    rh, rg = 6.0, 1.4
+    rg = 1.4
     top_rules = y - gap_v
     for x in xs_v:
         arrow(ax, (x + vw / 2, y), (x + vw / 2, top_rules), lw=0.6, ms=AMS)
@@ -340,15 +363,15 @@ def draw_flow(ax, w, h):
     rbox(ax, 0.5, bottom_rules, rw, top_rules - bottom_rules)
     for e, yr in zip(["A1", "A2", "A3", "A4"], rows_y):
         rbox(ax, 0.5 + pad, yr, rw - 2 * pad, rh, fc="white")
-        ax.plot([0.5 + pad + 3.5], [yr + rh / 2], marker=es.MARKER[e], ms=4.5, color=es.COLOR[e],
+        ax.plot([0.5 + pad + (3.0 if F1_JACC else 3.5)], [yr + rh / 2], marker=es.MARKER[e], ms=5.5 if F1_JACC else 4.5, color=es.COLOR[e],
                 mfc=es.mfc(e), mec=es.COLOR[e], mew=0.9, ls="none")
-        ax.text(0.5 + pad + 7.0, yr + rh / 2, es.LABEL[e], ha="left", va="center",
+        ax.text(0.5 + pad + (6.0 if F1_JACC else 7.0), yr + rh / 2, es.LABEL[e], ha="left", va="center",
                 fontsize=F1_BODY)
     # outputs
-    ow, oh = (w - 1.0 - 4.0) / 2, 9.5
+    ow = (w - 1.0 - 4.0) / 2
     xl, xr = 0.5, 0.5 + ow + 4.0
     top_out = bottom_rules - gap_v
-    rbox(ax, xl, top_out - oh, ow, oh, "Accuracy against\nthe true span")
+    rbox(ax, xl, top_out - oh, ow, oh, "Accuracy against\nthe true jet width")
     rbox(ax, xr, top_out - oh, ow, oh, "Reference for\nAI evaluation")
     arrow(ax, (xl + ow / 2, bottom_rules), (xl + ow / 2, top_out), lw=0.6, ms=AMS)
     # the reference is read with the largest view mean after review only: elbow from that row
@@ -440,7 +463,7 @@ def fig1(layout="row"):
         print(f"[fig1_design_tee] image scale {s:.4f} mm/px, effective {25.4 / s:.0f} dpi, "
               f"height {H_MM} mm")
         top = ROW2 - 1.0
-        cv.heading(0.5, top, "b", "Jet span and sources of error")
+        cv.heading(0.5, top, "b", "Jet width and sources of error")
         ax = cv.drawing(0.5, top - 6.5, (-9.6, 9.6), (-5.6, 4.5), 3.0)
         draw_enface(ax)
         ax = cv.drawing(3.0, top - 41.5, (-8.8, 8.8), (-4.9, 5.8), 3.0)
@@ -453,31 +476,34 @@ def fig1(layout="row"):
         low = draw_flow(ax, 70.5, top - 7.0 - 1.5)
         stem = os.path.join(FIG, "fig1_design_tee")
     elif layout == "row":
-        # v06 (8 pt text): 78 -> 82 mm tall, panel c starts 3 mm further left and 3 mm wider; drawings,
-        # plot and flow unchanged in scale
-        W_MM, H_MM = 183, 82
+        # v10 (2026-10-11, JACC: Advances): 10 pt text. 82 -> 98 mm tall; the panel A drawings are drawn at
+        # 3.3 mm per unit (was 3.0) with x-ranges widened for the longer labels; panel B axes taller; panel C
+        # boxes taller (draw_flow). Capital panel letters.
+        global F1_JACC, F1_BODY, F1_HEAD, F1_LETTER
+        F1_JACC, (F1_BODY, F1_HEAD, F1_LETTER) = True, (JACC_BODY, JACC_HEAD, JACC_LETTER)
+        W_MM, H_MM = 183, 98
         cv = MMCanvas(W_MM, H_MM)
         top = H_MM - 1.0
-        # a: 0-60 mm
-        cv.heading(0.5, top, "a", "Jet span and sources of error")
-        ax = cv.drawing(0.5, top - 6.5, (-9.6, 9.6), (-5.6, 4.5), 3.0)
+        # A: 0-64 mm
+        cv.heading(0.5, top, "A", "Jet width and sources of error")
+        ax = cv.drawing(0.5, top - 7.5, (-9.3, 9.9), (-6.3, 4.7), 3.3)
         draw_enface(ax)
-        ax = cv.drawing(3.0, top - 41.5, (-8.8, 8.8), (-4.9, 5.8), 3.0)
+        ax = cv.drawing(0.5, 39.5, (-8.9, 10.3), (-4.9, 5.8), 3.3)
         draw_sideview(ax)
-        # b: 64-107 mm
-        cv.heading(64.0, top, "b", "Beat-consistency window")
-        ax = cv.axes(75.0, 16.0, 31.0, 44.0)
+        # B: 62.5-112 mm
+        cv.heading(62.5, top, "B", "Beat-consistency window")
+        ax = cv.axes(78.0, 21.0, 32.0, 55.0)
         draw_beats(ax, src, panel="b")
-        # c: 112-183 mm
-        cv.heading(112.0, top, "c", "View rules and outputs")
-        ax = cv.axes(112.0, 1.5, 70.5, top - 7.0 - 1.5)
-        low = draw_flow(ax, 70.5, top - 7.0 - 1.5)
+        # C: 113.5-183 mm
+        cv.heading(113.5, top, "C", "View rules and outputs")
+        ax = cv.axes(113.5, 1.0, 69.2, top - 7.5 - 1.0)
+        low = draw_flow(ax, 69.2, top - 7.5 - 1.0)
         stem = os.path.join(FIG, "fig1_design")
     else:
         W_MM, H_MM = 183, 106
         cv = MMCanvas(W_MM, H_MM)
         top = H_MM - 1.0
-        cv.heading(0.5, top, "a", "Jet span and sources of error")
+        cv.heading(0.5, top, "a", "Jet width and sources of error")
         ax = cv.drawing(0.5, top - 6.0, (-9.6, 9.6), (-5.6, 4.5), 2.75)
         draw_enface(ax)
         ax = cv.drawing(55.0, top - 6.0, (-8.8, 8.8), (-4.9, 5.8), 2.75)

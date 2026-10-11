@@ -13,6 +13,10 @@ v07 (2026-10-06, after review): plain-text panel titles (no mathtext subscripts)
 given a small margin beyond its first and last tick so that no marker is drawn across or outside an axis
 (markers were formerly unclipped on the 0% and 100% lines). No plotted value changed. The figure is
 greyscale by design (see the paragraph below).
+v08 (2026-10-11, JACC: Advances): all lettering 10 pt (panel letters 12 pt bold capitals), figure 183 x 150 mm,
+threshold key above the panels and scenario key inside panel B, American spelling and "jet width" for the measured quantity, larger
+markers, two-line y label and three-line x label in panel D. No plotted value changed
+(figures/fig4_triggers_source.csv is identical to the v07 file).
 Output: figures/fig4_triggers.{pdf,png,tif} and figures/fig4_triggers_source.csv.
 Estimators are not plotted here. Six of the seven Okabe-Ito hues (and black) are bound to
 estimators A1 to A7 paper-wide, so reusing any of them for a threshold would give one colour two
@@ -28,7 +32,12 @@ from pathlib import Path
 sys.path.insert(0, "/home/users/u104629/.claude/academic/assets")
 import figqa  # noqa: E402
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-import estimator_style as es  # noqa: E402  shared text sizes (8 pt floor)
+import estimator_style as es  # noqa: E402  shared text sizes
+# JACC: Advances asks for lettering of at least 10 pt at final size. The shared module keeps the 8 pt
+# values of the earlier submission; they are overridden here, for this figure only.
+es.FS_MIN = 10.0
+es.FS_TITLE = 10.0
+es.FS_LETTER = 12.0
 import figstyle  # noqa: E402
 import matplotlib.pyplot as plt  # noqa: E402
 import numpy as np  # noqa: E402
@@ -39,7 +48,8 @@ ROOT = Path(__file__).resolve().parents[2]
 AN = ROOT / "results" / "2026-09-18_full" / "analysis"
 CLUST = ROOT / "results" / "2026-10-05_osrev" / "fig4_clustered" / "fig4_clustered_se.csv"
 STEM = ROOT / "figures" / "fig4_triggers"
-WIDTH_MM, HEIGHT_MM = 183.0, 130.0
+WIDTH_MM, HEIGHT_MM = 183.0, 150.0
+MS = 4.0   # marker size (pt), in proportion to 10 pt lettering
 Z = 1.959964
 AXIS = "AP"
 BASE = dict(u="base", r_mean=0.64, N_beats=3)
@@ -73,6 +83,7 @@ def main():
         assert abs(r.value - value) < 1e-12, (cell, tau, measure, r.value, value)
         return float(r.se_patient_clustered)
 
+    plt.rcParams["lines.markersize"] = MS
     fig, axd = plt.subplot_mosaic([["a", "b", "c"], ["d", "e", "f"]],
                                   figsize=figstyle.mm(WIDTH_MM, HEIGHT_MM), layout="constrained")
     fig.get_layout_engine().set(h_pad=2 / 72, w_pad=2 / 72, hspace=0.05, wspace=0.05)
@@ -91,7 +102,7 @@ def main():
             for ve, ls, fill in ((True, "-", True), (False, "--", False)):
                 s = base[(base.metric == metric) & (base.tau == t) & (base.view_errors == ve)].sort_values("beat_cv")
                 ax.plot(100 * s.beat_cv, 100 * s.value, ls=ls, color=TCOL[t], marker=TMARK[t],
-                        mfc=TCOL[t] if fill else "white", mec=TCOL[t], mew=0.8, lw=0.9)
+                        mfc=TCOL[t] if fill else "white", mec=TCOL[t], mew=0.8, lw=0.9, ms=MS)
                 for r in s.itertuples():
                     src.append(dict(panel=key, axis=AXIS, series=f"{metric} tau={t:g} view_errors={ve}",
                                     x_beat_cv=r.beat_cv, y=r.value, mcse=r.mcse, n=r.n, table=f"E4_any_trigger.csv cell {r.cell}"))
@@ -116,7 +127,7 @@ def main():
         lo = np.clip(s.ppv - hw, 0, 1)
         hi = np.clip(s.ppv + hw, 0, 1)  # a proportion cannot exceed 100%: clip the Wald bound
         ax.errorbar(100 * s.beat_cv, 100 * s.ppv, yerr=[100 * (s.ppv - lo), 100 * (hi - s.ppv)],
-                    color=TCOL[t], marker=TMARK[t], ms=3, lw=0.9, elinewidth=0.6, capsize=1.2,
+                    color=TCOL[t], marker=TMARK[t], ms=MS, lw=0.9, elinewidth=0.6, capsize=1.2,
                     label=f"{t:g} mm")
         for r, se_r in zip(s.itertuples(), se):
             src.append(dict(panel="c", axis=AXIS, series=f"ppv tau={t:g}", x_beat_cv=r.beat_cv, y=r.ppv,
@@ -135,25 +146,26 @@ def main():
         ax.plot(100 * s.false_alarm, 100 * s.hit, ls=ls, color="0.45", lw=0.8, zorder=1)
         for r in s.itertuples():
             ax.errorbar(100 * r.false_alarm, 100 * r.hit, yerr=100 * Z * clustered(r.cell, r.tau, "sensitivity", r.hit),
-                        color=TCOL[r.tau], marker=TMARK[r.tau], ms=3, ls="none", elinewidth=0.6, capsize=0,
+                        color=TCOL[r.tau], marker=TMARK[r.tau], ms=MS, ls="none", elinewidth=0.6, capsize=0,
                         zorder=2)
             src.append(dict(panel="d", axis=AXIS, series=f"beat_cv={cv:g} tau={r.tau:g}", x_false_alarm=r.false_alarm,
                             x_mcse=clustered(r.cell, r.tau, "false_positive_rate", r.false_alarm), y=r.hit,
                             mcse=clustered(r.cell, r.tau, "sensitivity", r.hit), n=r.n_event_pairs,
                             n_nonevent=r.n_nonevent_pairs, table=f"E4_operating.csv cell {r.cell}"))
-        # CV 5% above its 3 mm point, CV 15% left of its top point, CV 30% above its top point: each label
+        # CV 5% above and left of its 3 mm point, CV 15% left of its top point, CV 30% above its top point: each label
         # is clear of the neighbouring series
         top = s.sort_values("tau").iloc[1 if cv == 0.05 else 0]
-        dx, dy, ha = {0.05: (-3, 5, "center"), 0.15: (-6, 2, "right"), 0.30: (2, 5, "center")}[cv]
+        dx, dy, ha = {0.05: (-7, 10, "center"), 0.15: (-7, 2, "right"), 0.30: (-2, 6, "center")}[cv]
         ax.annotate(f"CV {100 * cv:.0f}%", (100 * top.false_alarm, 100 * top.hit),
                     xytext=(dx, dy), textcoords="offset points", fontsize=es.FS_MIN,
                     ha=ha, va="bottom", color="0.2")
-    ax.set_xlabel("False-positive rate per view pair (%;\nlinear to 0.5, logarithmic above)")
-    ax.set_ylabel("Sensitivity per view pair (%)")
+    ax.set_xlabel("False-positive rate per\nview pair (%; linear to 0.5,\nlogarithmic above)")
+    ax.set_ylabel("Sensitivity per\nview pair (%)")
     ax.set_xscale("symlog", linthresh=0.5, linscale=0.6)
     ax.set_xlim(-0.12, 22)
     ax.set_xticks([0, 0.5, 1, 2, 5, 10, 20])
-    ax.set_xticklabels(["0", "0.5", "1", "2", "5", "10", "20"])
+    # at 10 pt the labels 1 and 10 would touch their neighbours: their ticks are kept, unlabelled
+    ax.set_xticklabels(["0", "0.5", "", "2", "5", "", "20"])
     ax.set_title("Operating points,\nview errors", fontsize=es.FS_TITLE)
     ax.xaxis.set_minor_locator(plt.NullLocator())
     ax.set_ylim(0, 42)
@@ -164,7 +176,7 @@ def main():
     tr = truth[truth.tau.notna()]
     for t in TAUS:
         s = tr[(tr.tau == t) & (tr.source.str.startswith("E4" if t <= 4 else "supplementary"))].sort_values("r_mean")
-        ax.plot(s.r_mean, 100 * s.value, color=TCOL[t], marker=TMARK[t], ms=3, lw=0.9, label=f"{t:g} mm")
+        ax.plot(s.r_mean, 100 * s.value, color=TCOL[t], marker=TMARK[t], ms=MS, lw=0.9, label=f"{t:g} mm")
         for r in s.itertuples():
             src.append(dict(panel="e", axis="AP-SL", series=f"true tau={t:g}", x_r_mean=r.r_mean, y=r.value,
                             mcse=r.mcse, n=r.n, table=f"E4_ellipticity_truth.csv ({r.source})"))
@@ -174,7 +186,7 @@ def main():
     ax.set_xlim(0.51, 0.92)
     ax.spines["bottom"].set_bounds(0.53, 0.90)
     ax.set_xticks([0.53, 0.64, 0.8, 0.9])
-    ax.set_title("True span difference\nbetween axes", fontsize=es.FS_TITLE)
+    ax.set_title("True jet width difference\nbetween axes", fontsize=es.FS_TITLE)
 
     # ---- f: measured anchor-view AP-SL difference exceeds tau (base cell)
     ax = axd["f"]
@@ -182,7 +194,7 @@ def main():
             & (ell.beat_cv == 0.15) & (ell.N_beats == 3)]
     for t in TAUS:
         s = m[m.tau == t].sort_values("r_mean")
-        ax.plot(s.r_mean, 100 * s.value, color=TCOL[t], marker=TMARK[t], ms=3, lw=0.9, label=f"{t:g} mm")
+        ax.plot(s.r_mean, 100 * s.value, color=TCOL[t], marker=TMARK[t], ms=MS, lw=0.9, label=f"{t:g} mm")
         for r in s.itertuples():
             src.append(dict(panel="f", axis="AP-SL", series=f"measured anchor tau={t:g}", x_r_mean=r.r_mean,
                             y=r.value, mcse=r.mcse, n=r.n, table=f"E4_ellipticity_cells.csv cell {r.cell}"))
@@ -194,15 +206,20 @@ def main():
     ax.set_xticks([0.53, 0.64, 0.8, 0.9])
     ax.set_title("Measured difference,\nanchor view", fontsize=es.FS_TITLE)
 
-    # one shared key: threshold (grey level + marker, all panels) and scenario (a, b only)
-    hk = [Line2D([], [], color=TCOL[t], marker=TMARK[t], ms=3, lw=0.9, label=f"{t:g} mm") for t in TAUS]
-    hk += [Line2D([], [], color="0.3", ls="-", marker="o", ms=3, mfc="0.3", lw=0.9,
-                  label="View errors (a, b)"),
-           Line2D([], [], color="0.3", ls="--", marker="o", ms=3, mfc="white", lw=0.9,
-                  label="No view errors (a, b)")]
-    fig.legend(handles=hk, loc="outside upper center", ncol=7, frameon=False, handlelength=2.4,
-               columnspacing=1.2, title="Threshold", title_fontsize=es.FS_MIN, fontsize=es.FS_MIN)
-    figstyle.panel_labels([axd[k] for k in "abcdef"], list("abcdef"), dx=-0.25, dy=1.02, size=es.FS_LETTER)
+    # threshold key (grey level + marker, all panels) above the panels
+    hk = [Line2D([], [], color=TCOL[t], marker=TMARK[t], ms=MS, lw=0.9, label=f"{t:g} mm") for t in TAUS]
+    hs = [Line2D([], [], color="0.3", ls="-", marker="o", ms=MS, mfc="0.3", lw=0.9,
+                 label="View errors"),
+          Line2D([], [], color="0.3", ls="--", marker="o", ms=MS, mfc="white", mew=0.8, lw=0.9,
+                 label="No view errors")]
+    kw = dict(frameon=False, handlelength=2.4, columnspacing=1.2, fontsize=es.FS_MIN, borderpad=0.1,
+              borderaxespad=0.1)
+    fig.legend(handles=hk, loc="outside upper center", ncol=5, title="Threshold",
+               title_fontsize=es.FS_MIN, **kw)
+    # scenario key inside panel B (free upper left corner); it applies to panels A and B
+    axd["b"].legend(handles=hs, loc="upper left", bbox_to_anchor=(0.06, 1.0), handlelength=2.4, frameon=False,
+                    fontsize=es.FS_MIN, borderpad=0.0, borderaxespad=0.0, labelspacing=0.3)
+    figstyle.panel_labels([axd[k] for k in "abcdef"], list("ABCDEF"), dx=-0.36, dy=1.02, size=es.FS_LETTER)
 
     STEM.parent.mkdir(parents=True, exist_ok=True)
     probs = figqa.report(fig, min_pt=es.FS_MIN)

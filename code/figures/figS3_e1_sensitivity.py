@@ -68,10 +68,10 @@ def main():
         ax.set_title(UT[u], fontsize=es.FS_TITLE)
         if m == "bias":
             ax.set_ylim(-1.5, 1.7)
-            ax.set_ylabel("Bias vs true maximal span (mm)")
+            ax.set_ylabel("Bias vs true maximal jet width (mm)")
         else:
             ax.set_ylim(1.4, 3.0)
-            ax.set_ylabel("RMSE vs true maximal span (mm)")
+            ax.set_ylabel("RMSE vs true maximal jet width (mm)")
     for k in "bd":
         axd[k].set_ylabel("")
         axd[k].tick_params(labelleft=False)
@@ -95,7 +95,7 @@ def main():
         ax.set_xlabel("Beat-to-beat CV (%)")
         ax.set_ylim(-0.2, 2.45)
         ax.set_title(UT[u] + ",\n$f_{rej}$ 0.1", fontsize=es.FS_TITLE)
-        ax.set_ylabel("Bias vs true maximal span (mm)" if k == "g" else "")
+        ax.set_ylabel("Bias vs true maximal jet width (mm)" if k == "g" else "")
         if k == "h":
             ax.tick_params(labelleft=False)
     hsd = [Line2D([], [], **kw("A4", ls=SD_LS[s], ms=2.5)) for s in (0.0, 0.5, 0.8, 1.0)]
@@ -107,7 +107,7 @@ def main():
     hs = [Line2D([], [], **kw(e)) for e in EST]
     fig.legend(hs, [LABEL[e] for e in EST], loc="outside upper center", ncol=4, frameon=False,
                handlelength=2.6, columnspacing=1.0, fontsize=es.FS_MIN)
-    figstyle.panel_labels([axd[k] for k in "abcdefgh"], list("abcdefgh"), size=es.FS_LETTER)
+    figstyle.panel_labels([axd[k] for k in "abcdefgh"], list("ABCDEFGH"), size=es.FS_LETTER)
     paths = figstyle.save_all(fig, str(STEM))
     pd.concat(src, ignore_index=True).to_csv(str(STEM) + "_source.csv", index=False)
     fig.canvas.draw()

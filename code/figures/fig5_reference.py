@@ -24,6 +24,12 @@ v07 (2026-10-06, after review): wording of keys and axes brought into line with 
 unrelated to images; model inheriting the systematic error of reads; reader offset; double-read subset of
 500 cases; probability of detection; false-positive rate; AI proposal); the F test series is drawn with
 open markers at full ink (formerly 30% opacity, close to invisible in greyscale). No plotted value changed.
+v08 (2026-10-11, JACC: Advances): all lettering 10 pt (panel letters 12 pt bold capitals). At 10 pt the
+three-column layout no longer holds the tick labels and keys, so the panels are set in four rows of two,
+183 x 240 mm: A (two axes), B with its key beside it, C (two axes), D (probability of detection, and the
+false-positive rate beside it instead of beneath it). The keys of A and D sit above their axes. One-line tick labels
+"1 mm", "2 mm", "3 mm" in A; "toward" (American spelling); larger markers. No plotted value changed
+(figures/fig5_reference_source.csv is identical to the v07 file).
 """
 import os
 import sys
@@ -32,7 +38,12 @@ sys.path.insert(0, "/home/users/u104629/.claude/academic/assets")
 import figstyle  # noqa: E402  (sets Agg)
 import figqa  # noqa: E402
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import estimator_style as es  # noqa: E402  shared text sizes (8 pt floor)
+import estimator_style as es  # noqa: E402  shared text sizes
+# JACC: Advances asks for lettering of at least 10 pt at final size. The shared module keeps the 8 pt
+# values of the earlier submission; they are overridden here, for this figure only.
+es.FS_MIN = 10.0
+es.FS_TITLE = 10.0
+es.FS_LETTER = 12.0
 import matplotlib.pyplot as plt  # noqa: E402
 import numpy as np  # noqa: E402
 import pandas as pd  # noqa: E402
@@ -42,12 +53,15 @@ from matplotlib.transforms import ScaledTranslation  # noqa: E402
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 AN = os.path.join(ROOT, "results", "2026-09-18_amend2", "analysis")
 STEM = os.path.join(ROOT, "figures", "fig5_reference")
-WIDTH_MM, HEIGHT_MM = 183, 170
+WIDTH_MM, HEIGHT_MM = 183, 240
+MAX_HEIGHT_MM = 240   # JACC: Advances page depth allowed for this figure (figstyle default is 170)
+MS = 4.2             # marker size (pt), in proportion to 10 pt lettering
 Z = 1.959964
 
 fam = figstyle.use_print_style()
 
 es.use_journal_text()
+plt.rcParams["lines.markersize"] = MS
 
 # ---------------------------------------------------------------- data
 agr = pd.read_csv(os.path.join(AN, "E5bE6b_E5b_ai_agreement.csv"))
@@ -57,8 +71,8 @@ w0 = agr[agr.p_ai_shared_lambda == 0.0]
 # (six two-line "Adjudicated" ticks do not fit the panel width).
 # v05 (8 pt): the tolerance ticks are stacked ("1" over "mm") like the other two-line ticks, because
 # "1 mm 2 mm 3 mm" on one line touch at 8 pt; the group label moves to a third line.
-REFS = [("true", "\nTruth"), ("single", "Single\nread"), ("adj_tol1", "1\nmm"),
-        ("adj_tol2", "2\nmm"), ("adj_tol3", "3\nmm"), ("mean2", "Mean\nof 2")]
+REFS = [("true", "Truth"), ("single", "Single\nread"), ("adj_tol1", "1 mm"),
+        ("adj_tol2", "2 mm"), ("adj_tol3", "3 mm"), ("mean2", "Mean\nof 2")]
 SIGMAS = [1.0, 2.0, 3.0]
 cmap = plt.get_cmap("viridis")
 SIG_COL = {1.0: cmap(0.0), 2.0: cmap(0.45), 3.0: cmap(0.78)}
@@ -86,10 +100,13 @@ sent = sent[(sent.p_beat_cv == 0.15) & (sent.p_sigma_rb_mm == 0.75) & (sent.p_ai
 
 # ---------------------------------------------------------------- figure
 fig = plt.figure(figsize=figstyle.mm(WIDTH_MM, HEIGHT_MM), layout="constrained")
-assert HEIGHT_MM <= figstyle.MAX_HEIGHT_MM
-axd = fig.subplot_mosaic([["a1", "a2", "b"], ["c1", "c2", "d"], ["c1", "c2", "e"]],
-                         height_ratios=[1.0, 0.74, 0.30], width_ratios=[1.1, 1.1, 1.0])
-fig.get_layout_engine().set(w_pad=2 / 72, h_pad=2 / 72, wspace=0.04, hspace=0.06)
+assert HEIGHT_MM <= MAX_HEIGHT_MM
+# "bk" is an empty cell that holds the key of panel B
+axd = fig.subplot_mosaic([["a1", "a2"], ["b", "bk"], ["c1", "c2"], ["d", "e"]])
+axd["bk"].set_axis_off()
+axd["bk"].set_xticks([])
+axd["bk"].set_yticks([])
+fig.get_layout_engine().set(w_pad=3 / 72, h_pad=3 / 72, wspace=0.05, hspace=0.05)
 
 # ---------------------------------------------------------------- a: apparent vs true, lambda 0
 x = np.arange(len(REFS))
@@ -100,7 +117,7 @@ for key, m, ylab in (("a1", "mae", "MAE vs reference (mm)"),
         for ai, st in AI_STYLE.items():
             y, se = e5_series(ai, sig, m)
             ax.plot(x + st["dx"], y, ls=st["ls"], marker=st["marker"], color=SIG_COL[sig],
-                    mfc=st["mfc"] or SIG_COL[sig], mec=SIG_COL[sig], ms=3.5, lw=0.9)
+                    mfc=st["mfc"] or SIG_COL[sig], mec=SIG_COL[sig], ms=MS, lw=0.9)
             for (r, _), yi, si in zip(REFS, y, se):
                 src.append(dict(panel=key, quantity=m, ai=ai, lam=0.0, sigma_ai_mm=sig, reference=r,
                                 value=yi, mcse=si, n_studies=2000, n_patients_per_study=200))
@@ -109,22 +126,26 @@ for key, m, ylab in (("a1", "mae", "MAE vs reference (mm)"),
     ax.set_xticklabels([lab for _, lab in REFS])
     # group label for the adjudicated ticks (x 2 to 4), on the second tick-label line, with a bracket
     tr = ax.get_xaxis_transform()
-    ax.annotate("Adjudicated", xy=(3, 0), xycoords=tr, xytext=(0, -26.0), textcoords="offset points",
+    ax.annotate("Adjudicated", xy=(3, 0), xycoords=tr, xytext=(0, -21.5), textcoords="offset points",
                 ha="center", va="top", fontsize=es.FS_MIN, annotation_clip=False)
-    ax.plot([1.65, 4.35], [0, 0], transform=tr + ScaledTranslation(0, -25.0 / 72, fig.dpi_scale_trans),
+    ax.plot([1.6, 4.4], [0, 0], transform=tr + ScaledTranslation(0, -20.0 / 72, fig.dpi_scale_trans),
             color="0.3", lw=0.5, clip_on=False)
     ax.set_xlim(-0.5, len(REFS) - 0.5)
     ax.set_ylabel(ylab)
-    ax.set_xlabel("Reference", labelpad=13)   # clears the "Adjudicated" group label
+    ax.set_xlabel("Reference", labelpad=7)   # clears the "Adjudicated" group label
     ax.set_ylim(0, None)
 axd["a1"].set_ylim(0, 3.1)
 axd["a1"].set_yticks(np.arange(0, 3.01, 0.5))
-h_sig = [Line2D([], [], color=SIG_COL[s], lw=0.9, label=f"AI error SD {s:g} mm") for s in SIGMAS]
-h_ai = [Line2D([], [], color="0.3", ls="-", marker="o", ms=3.5, lw=0.9, label="Error unrelated to images"),
-        Line2D([], [], color="0.3", ls="--", marker="s", mfc="white", ms=3.5, lw=0.9,
-               label="Inherits systematic\nerror of reads")]
-axd["a1"].legend(handles=h_sig, loc="lower right", frameon=False, handlelength=1.5)
-axd["a2"].legend(handles=h_ai, loc="lower right", frameon=False, handlelength=2.2)
+h_sig = [Line2D([], [], color=SIG_COL[s], lw=0.9, label=f"{s:g} mm") for s in SIGMAS]
+h_ai = [Line2D([], [], color="0.3", ls="-", marker="o", ms=MS, lw=0.9, label="Error unrelated to images"),
+        Line2D([], [], color="0.3", ls="--", marker="s", mfc="white", ms=MS, lw=0.9,
+               label="Inherits systematic error of reads")]
+# the keys of panels A and D sit above their axes, outside the data area
+KW_TOP = dict(loc="lower left", frameon=False, borderaxespad=0.0, borderpad=0.0, handletextpad=0.5,
+              alignment="left")
+leg_a = axd["a1"].legend(handles=h_sig, bbox_to_anchor=(0.0, 1.05), handlelength=1.8, ncol=3, columnspacing=1.2,
+                         title="AI error SD", **KW_TOP)
+axd["a2"].legend(handles=h_ai, bbox_to_anchor=(0.0, 1.05), handlelength=2.4, **KW_TOP)
 
 # ---------------------------------------------------------------- b: shared AI vs lambda (sigma_AI 2)
 ax = axd["b"]
@@ -144,7 +165,7 @@ for ref, lab, st in B_SERIES:
         else:
             r = g[g.ref == ref].iloc[0]; ys.append(r["apparent"]); ses.append(r["mcse_apparent"])
     ax.errorbar(LAMS, ys, yerr=Z * np.array(ses), color=st["color"], ls=st["ls"], marker=st["marker"],
-                mfc=st["mfc"], mec=st["color"], ms=3.5, lw=st["lw"], elinewidth=0.6, capsize=0, label=lab)
+                mfc=st["mfc"], mec=st["color"], ms=MS, lw=st["lw"], elinewidth=0.6, capsize=0, label=lab)
     for lam, yi, si in zip(LAMS, ys, ses):
         src.append(dict(panel="b", quantity="mae_true" if ref == "T1" else "mae_apparent", ai="shared",
                         lam=lam, sigma_ai_mm=2.0, reference=ref, value=yi, mcse=si, n_studies=2000,
@@ -154,25 +175,27 @@ ax.set_ylabel("MAE of AI (mm)")
 ax.set_xticks(LAMS, ["0%", "50%", "100%"])
 ax.set_xlim(-0.08, 1.08)
 ax.set_ylim(1.0, 2.4)
-ax.legend(loc="lower left", frameon=False, handlelength=4.0, title="AI error SD 2 mm", alignment="left")
+hb, lb = ax.get_legend_handles_labels()
+axd["bk"].legend(hb, lb, loc="center left", bbox_to_anchor=(0.0, 0.5), frameon=False, handlelength=4.0,
+                 title="AI error SD 2 mm", alignment="left", borderaxespad=0.0, labelspacing=0.6)
 
 # ---------------------------------------------------------------- c: precision
 RB = {0.0: dict(color="0.0", mfc="white"), 0.75: dict(color="0.0", mfc="0.0")}
-for key, sdcol, nomcol, ylab in (("c1", "icc_empirical_sd", "icc_ci_width_mean", "ICC(A,1), 95% interval width"),
+for key, sdcol, nomcol, ylab in (("c1", "icc_empirical_sd", "icc_ci_width_mean", "ICC(A,1), 95%\ninterval width"),
                                  ("c2", "loa_hi_empirical_sd", "loa_ci_width_each_mean",
-                                  "Upper LoA 95% interval width (mm)")):
+                                  "Upper LoA 95%\ninterval width (mm)")):
     ax = axd[key]
     for rb, st in RB.items():
         g = prec[prec.p_sigma_rb_mm == rb]
         u = g.drop_duplicates("n_double").sort_values("n_double")
         emp = 2 * Z * u[sdcol]
         emp_se = 2 * Z * u["mcse_" + sdcol]
-        ax.errorbar(u.n_double, emp, yerr=Z * emp_se, color=st["color"], lw=0.9, marker="o", ms=3.2,
+        ax.errorbar(u.n_double, emp, yerr=Z * emp_se, color=st["color"], lw=0.9, marker="o", ms=MS,
                     mfc=st["mfc"], mec=st["color"], mew=0.8, capsize=0, elinewidth=0.6)
-        ax.plot(u.n_double, u[nomcol], color=st["color"], lw=0.9, ls="--", marker="^", ms=3.2,
+        ax.plot(u.n_double, u[nomcol], color=st["color"], lw=0.9, ls="--", marker="^", ms=MS,
                 mfc=st["mfc"], mec=st["color"], mew=0.8)
         ov = g[g.design == "overlap"].sort_values("n_double")
-        ax.plot(ov.n_double, 2 * Z * ov[sdcol], ls="none", marker="D", ms=5.5, mfc="none",
+        ax.plot(ov.n_double, 2 * Z * ov[sdcol], ls="none", marker="D", ms=7.0, mfc="none",
                 mec=st["color"], mew=0.6)
         for _, r in u.iterrows():
             src.append(dict(panel=key, quantity=sdcol.replace("_empirical_sd", "") + "_empirical_95range",
@@ -188,14 +211,16 @@ for key, sdcol, nomcol, ylab in (("c1", "icc_empirical_sd", "icc_ci_width_mean",
     ax.set_xticks([25, 50, 100, 150, 200, 250])
     ax.set_ylim(0, None)
     ax.set_xlim(0, 270)
-h_c = [Line2D([], [], color="0.0", lw=0.9, marker="o", ms=3.2, label="Spread across studies"),
-       Line2D([], [], color="0.0", lw=0.9, ls="--", marker="^", ms=3.2, label="Mean reported CI"),
-       Line2D([], [], color="0.0", ls="none", marker="o", ms=3.2, label="Reader-offset SD 0.75 mm"),
-       Line2D([], [], color="0.0", ls="none", marker="o", mfc="white", ms=3.2,
+h_c = [Line2D([], [], color="0.0", lw=0.9, marker="o", ms=MS, label="Spread across studies"),
+       Line2D([], [], color="0.0", lw=0.9, ls="--", marker="^", ms=MS, label="Mean reported CI"),
+       Line2D([], [], color="0.0", ls="none", marker="o", ms=MS, label="Reader-offset SD 0.75 mm"),
+       Line2D([], [], color="0.0", ls="none", marker="o", mfc="white", ms=MS,
               label="Reader-offset SD 0 mm"),
-       Line2D([], [], color="0.0", ls="none", marker="D", mfc="none", ms=5.5, mew=0.6,
-              label="Double-read subset\nof 500 cases")]
-axd["c2"].set_ylim(0, 7.2)
+       Line2D([], [], color="0.0", ls="none", marker="D", mfc="none", ms=7.0, mew=0.6,
+              label="Double-read subset of 500 cases")]
+axd["c1"].set_ylim(0, 0.40)
+axd["c2"].set_ylim(0, 9.0)
+axd["c2"].set_yticks(range(0, 9, 2))
 # v05 (8 pt): the five-entry key no longer fits beside the n = 25 points, so the two line types are keyed
 # in c1 (above the curves) and the three marker types in c2
 axd["c1"].legend(handles=h_c[:2], loc="upper right", frameon=False, handlelength=2.2, borderaxespad=0.2)
@@ -212,44 +237,40 @@ ax = axd["d"]
 axz = axd["e"]
 for n in NS:
     g = sent[(sent.sentinel_n == n) & (sent.test == "f_variance")].sort_values("w_anchor")
-    ax.plot(g.w_anchor, g.value, color=NS_COL[n], ls="-", lw=0.6, marker=NS_MK[n], ms=2.8, mfc="white",
+    ax.plot(g.w_anchor, g.value, color=NS_COL[n], ls="-", lw=0.6, marker=NS_MK[n], ms=MS - 0.4, mfc="white",
             mec=NS_COL[n], mew=0.6, zorder=1)
     for _, r in g.iterrows():
         src.append(dict(panel="d", quantity="power_f_variance", sentinel_n=n, w_anchor=r.w_anchor,
                         value=r.value, mcse=r.mcse, n_studies=2000))
     z = g[g.w_anchor == 0].iloc[0]
     axz.errorbar([NS.index(n) + 0.15], [z.value], yerr=[Z * z.mcse], color=NS_COL[n],
-                 marker=NS_MK[n], ms=2.8, mfc="white", mec=NS_COL[n], mew=0.6, ls="none", elinewidth=0.6,
+                 marker=NS_MK[n], ms=MS - 0.4, mfc="white", mec=NS_COL[n], mew=0.6, ls="none", elinewidth=0.6,
                  capsize=0)
     g = sent[(sent.sentinel_n == n) & (sent.test == "bf_onesided")].sort_values("w_anchor")
     ax.errorbar(g.w_anchor, g.value, yerr=Z * g.mcse, color=NS_COL[n], ls="-", marker=NS_MK[n],
-                ms=3.2, lw=1.0, elinewidth=0.6, capsize=0, zorder=3)
+                ms=MS, lw=1.0, elinewidth=0.6, capsize=0, zorder=3)
     z = g[g.w_anchor == 0].iloc[0]
     axz.errorbar([NS.index(n) - 0.15], [z.value], yerr=[Z * z.mcse], color=NS_COL[n], marker=NS_MK[n],
-                 ms=3.2, ls="none", elinewidth=0.6, capsize=0)
+                 ms=MS, ls="none", elinewidth=0.6, capsize=0)
     for _, r in g.iterrows():
         src.append(dict(panel="d", quantity="power_bf_onesided", sentinel_n=n, w_anchor=r.w_anchor,
                         value=r.value, mcse=r.mcse, n_studies=2000))
 ax.axhline(0.05, color="0.0", lw=0.5, ls=LV_LS, zorder=0)
 ax.axhline(0.80, color="0.0", lw=0.5, ls=PW_LS, zorder=0)
-ax.set_xlabel("Drift towards AI proposal")
+ax.set_xlabel("Drift toward AI proposal")
 ax.set_ylabel("Probability of detection")
-# head room above 1.0 holds the two keys, so no reference line or data passes through them
-ax.set_ylim(0, 1.62)
+ax.set_ylim(0, 1.05)
 ax.set_yticks(np.arange(0, 1.01, 0.2))
 ax.spines["left"].set_bounds(0, 1.0)
 ax.set_xticks([0, 0.1, 0.2, 0.3, 0.5], ["0%", "10%", "20%", "30%", "50%"])
-h_d = [Line2D([], [], color=NS_COL[n], marker=NS_MK[n], ms=3.2, lw=1.0, label=f"{n}") for n in NS]
-h_t = [Line2D([], [], color="0.3", ls="-", lw=1.0, marker="o", ms=3.2, label="Brown-Forsythe"),
-       Line2D([], [], color="0.3", ls="-", lw=0.6, marker="o", ms=2.8, mfc="white", mew=0.6, label="F test"),
+h_d = [Line2D([], [], color=NS_COL[n], marker=NS_MK[n], ms=MS, lw=1.0, label=f"{n}") for n in NS]
+h_t = [Line2D([], [], color="0.3", ls="-", lw=1.0, marker="o", ms=MS, label="Brown-Forsythe"),
+       Line2D([], [], color="0.3", ls="-", lw=0.6, marker="o", ms=MS - 0.4, mfc="white", mew=0.6, label="F test"),
        Line2D([], [], color="0.0", ls=LV_LS, lw=0.5, label="Level 0.05"),
        Line2D([], [], color="0.0", ls=PW_LS, lw=0.5, label="Power 0.80")]
-leg = ax.legend(handles=h_d, loc="upper left", bbox_to_anchor=(0.0, 1.02), frameon=False, handlelength=1.6,
-                ncol=4, columnspacing=0.8, handletextpad=0.4, title="Sentinel cases", alignment="left",
-                borderaxespad=0.0)
-ax.add_artist(leg)
-ax.legend(handles=h_t, loc="upper left", bbox_to_anchor=(0.0, 0.83), frameon=False, handlelength=2.2,
-          ncol=2, columnspacing=0.8, handletextpad=0.4, borderaxespad=0.0)
+leg = ax.legend(handles=h_d, bbox_to_anchor=(0.0, 1.05), handlelength=1.8, ncol=4, columnspacing=1.0,
+                title="Sentinel cases", **KW_TOP)
+axz.legend(handles=h_t, bbox_to_anchor=(0.0, 1.05), handlelength=2.2, ncol=2, columnspacing=1.2, **KW_TOP)
 axz.axhline(0.05, color="0.0", lw=0.5, ls=LV_LS, zorder=0)
 axz.set_xticks(range(len(NS)))
 axz.set_xticklabels([str(n) for n in NS])
@@ -257,11 +278,15 @@ axz.set_xlim(-0.5, len(NS) - 0.5)
 axz.set_ylim(0, 0.10)
 axz.set_yticks([0, 0.05, 0.10])
 axz.set_xlabel("Sentinel cases (no drift)")
-axz.set_ylabel("False-positive\nrate")
+axz.set_ylabel("False-positive rate")
 
-figstyle.panel_labels([axd[k] for k in ("a1", "b", "c1", "d")], letters=["a", "b", "c", "d"],
-                      dx=-0.28, dy=1.02, size=es.FS_LETTER)
-
+figstyle.panel_labels([axd[k] for k in ("b", "c1")], letters=["B", "C"], dx=-0.20, dy=1.03, size=es.FS_LETTER)
+# A and D: level with the top of the key above the axes
+fig.canvas.draw()
+for key, lg, letter in (("a1", leg_a, "A"), ("d", leg, "D")):
+    bb = lg.get_window_extent().transformed(axd[key].transAxes.inverted())
+    axd[key].text(-0.20, bb.y1, letter, transform=axd[key].transAxes, fontsize=es.FS_LETTER, fontweight="bold",
+                  va="top", ha="left")
 fig.canvas.draw()
 problems = figqa.report(fig, min_pt=es.FS_MIN)
 paths = figstyle.save_all(fig, STEM)

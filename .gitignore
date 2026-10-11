@@ -29,3 +29,7 @@ __pycache__/
 figures/fig1_design_tee*
 code/14_prepare_tee_example.py
 figures/fig1_design_alt.png
+
+# Central Illustration of the manuscript: kept out of the public repository until publication
+figures/central_illustration*
+code/24_central_illustration.py

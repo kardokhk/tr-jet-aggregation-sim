@@ -1,11 +1,15 @@
-# Beat and view aggregation rules for tricuspid regurgitant jet dimensions: simulation code and results
+# Beat and view aggregation rules for tricuspid regurgitant jet width: simulation code and results
 
 Code, configurations, results and figures for a Monte Carlo simulation study of composite multi-beat,
-multi-view echocardiographic measurement rules for tricuspid regurgitant jet dimensions, and of how
+multi-view echocardiographic measurement rules for tricuspid regurgitant jet width, and of how
 reference standards built from them change the apparent performance of artificial intelligence (AI)
 models.
 
-Author: Kardokh Kakabra (RCSI / CVRI Dublin). Archived releases (all versions): https://doi.org/10.5281/zenodo.22833343 (version 0.5.0: https://doi.org/10.5281/zenodo.23189369). Funding: Disruptive Technologies Innovation Fund (DTIF),
+Terminology: since version 0.6.0 the measured quantity is called the color Doppler jet width at the leaflet
+tips ("jet width"). Earlier versions called it the jet span, and code identifiers, result columns and file
+names keep "span"; the quantity and every result are unchanged.
+
+Author: Kardokh Kakabra (RCSI / CVRI Dublin). Archived releases (all versions): https://doi.org/10.5281/zenodo.22833343 (version 0.6.0: https://doi.org/10.5281/zenodo.23298676). Funding: Disruptive Technologies Innovation Fund (DTIF),
 Enterprise Ireland, grant DT20240543A; the funder had no role in the study.
 
 ## Protocol stages
@@ -26,7 +30,7 @@ accounting records (`environment.md`), whereas the timing of the protocol text r
 
 ## Contents
 
-- `notes/parameter-table-2026-09-18.md`: parameter values and literature sources (assumed, or informed by indirect sources; none is a calibration of the jet span)
+- `notes/parameter-table-2026-09-18.md`: parameter values and literature sources (assumed, or informed by indirect sources; none is a calibration of the jet width)
 - `notes/lab-notebook.md`: implementation log, assumptions and deviations
 - `code/lib/duomaxsim/`: simulation package (generative model, rules, estimators, metrics, experiments) and the third-amendment modules `osrev_*.py`, which extend the library without modifying it
 - `code/01_run_experiment.py`: command-line runner; `code/configs/*.yaml`: configurations and seeds
